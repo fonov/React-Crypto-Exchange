@@ -1,0 +1,97 @@
+.it-title {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 6.5px;
+}
+.it-char {
+  span {
+    &:first-child {
+      opacity: 0.6;
+      font-size: 12px;
+      margin-right: .5em;
+    }
+    &:last-child {
+      font-size: 14px;
+    }
+  }
+}
+.it-trading_view {
+  height: 535px;
+}
+.it-icon {
+  width: 18px;
+  opacity: 0.6;
+}
+.it-fs16 {
+  font-size: 16px;
+}
+.it-fs14 {
+  font-size: 14px;
+}
+.it-fs12 {
+  font-size: 12px;
+}
+.it-fs8 {
+  font-size: 8px;
+}
+.it-fs10 {
+  font-size: 10px;
+}
+.it-fs11 {
+  font-size: 11px;
+}
+.it-fs18 {
+  font-size: 18px;
+}
+.it-hr-text {
+  margin-top: 0;
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  &:before {
+    content: '';
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    font-size: 9px;
+    padding: 0 .5em;
+    line-height: 2.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+}
+.it-order-book {
+  .tb-1 {
+    padding-right: 0;
+  }
+  .tb-2 {
+    padding-left: 0;
+  }
+}
+.it-rectangle {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.it-half-opacity {
+  opacity: .5;
+}
+.it-small_btn_gr {
+  padding: 5px 10px 5px 10px;
+  font-size: 12px;
+  color: #282e3d
+}
