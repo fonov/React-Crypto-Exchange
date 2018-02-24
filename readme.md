@@ -1,1 +1,1 @@
-init
+init 1
