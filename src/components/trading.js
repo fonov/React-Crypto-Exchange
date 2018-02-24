@@ -140,8 +140,8 @@ class Trading extends Component{
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row className='mt-4 text-right justify-content-between'>
-                                    <Col className='mr-4 pr-4'>
+                                <Row className='mt-4 text-right'>
+                                    <Col className={css(styles.padding_r_4)}>
                                         <Row className='border-bottom'>
                                             <Col className={css(styles.small)}>Sum BTC</Col>
                                             <Col className={css(styles.small)}>Total XMR</Col>
@@ -167,7 +167,7 @@ class Trading extends Component{
                                             <Col className={css(styles.small, styles.success)}>0.02316050</Col>
                                         </Row>
                                     </Col>
-                                    <Col className={`${css(styles.small)} ml-4 pl-4`}>
+                                    <Col className={`${css(styles.small, styles.padding_l_4)}`}>
                                         <Row className='border-bottom'>
                                             <Col>Ask</Col>
                                             <Col>Size BTC</Col>
@@ -210,7 +210,7 @@ class Trading extends Component{
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col className={`${css(styles.small)} mr-4 pr-4`}>
+                                    <Col className={`${css(styles.small)} pr-4`}>
                                         <Row className={`${css(styles.small)} mt-2 border-bottom`}>
                                             <Col>Time</Col>
                                             <Col>Type</Col>
@@ -246,7 +246,7 @@ class Trading extends Component{
                                             ))
                                         }
                                     </Col>
-                                    <Col className={`${css(styles.small)} ml-4 pl-4`}>
+                                    <Col className={`${css(styles.small)} pl-4`}>
                                         <Row className={`${css(styles.small)} mt-2 border-bottom`}>
                                             <Col>Time</Col>
                                             <Col>Type</Col>
@@ -346,6 +346,12 @@ const styles = StyleSheet.create({
     },
     half_opacity: {
         opacity: 0.5
+    },
+    padding_l_4: {
+        paddingLeft: '4em'
+    },
+    padding_r_4: {
+        paddingRight: '4em'
     }
 });
 
