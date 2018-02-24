@@ -12,7 +12,7 @@ class Trading extends Component{
         return(
             <BasePage>
                 <Row>
-                    <Col className='mt-3' md={8} lg={9} xl={10}>
+                    <Col className='mt-3 col-8' md={8} lg={9} xl={10}>
                         <div className="d-flex flex-row">
                             <div className='it-title'>
                                 XMR/BTC
@@ -68,7 +68,7 @@ class Trading extends Component{
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col className='col-3' md={4} lg={3} xl={2}>
+                    <Col className='col-4' md={4} lg={3} xl={2}>
                         <Card className='mt-4 mr-4'>
                             <CardBody>
                                 <div className='text-center'>
@@ -142,7 +142,7 @@ class Trading extends Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col md='12' lg={6} xl={6}>
+                    <Col className='col-12' md={12} lg={6} xl={6}>
                         <Card className='mt-4 mr-4'>
                             <CardBody>
                                 <Row>
@@ -218,7 +218,7 @@ class Trading extends Component{
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col md='12' lg={6} xl={6} className='mt-4'>
+                    <Col md={12} lg={6} xl={6} className='mt-4 col-12'>
                         <Card className='mr-4'>
                             <CardBody>
                                 <Row>
