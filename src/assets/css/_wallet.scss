@@ -1,0 +1,57 @@
+.it_wallet {
+  .wallet-icon {
+    width: 50px;
+  }
+  .not_active {
+    img {
+      opacity: 0.3;
+    }
+    p {
+      opacity: 0.8;
+      border-bottom: 1px dotted;
+    }
+  }
+  .card {
+    background-color: #f5f7fa;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .card_active {
+    background-color: #fff9e8;
+    box-shadow: 0 0 4px 0 #ffa933, inset 0 0 7px 0 #ffa933;
+  }
+  .add_carrency {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 40px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+  }
+  .oval {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  .cr-logo {
+    width: 82px;
+    height: auto;
+  }
+  .oval-big {
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 70px;
+  }
+  .big_top_p {
+    padding-top: 4em;
+  }
+}

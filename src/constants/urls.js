@@ -1,5 +1,6 @@
 const URLS = {
-    Trading: '/'
+    Trading: '/',
+    Wallet: '/wallet'
 };
 
 export default URLS

@@ -6,20 +6,24 @@ import { store, history } from '../redux/store'
 import URLS from '../constants/urls'
 //Views
 import Trading from './trading'
+import Wallet from './wallet'
 
 
-class App extends Component {
+class Root extends Component {
 
     render() {
 
         return(
             <Provider store={store()}>
                 <ConnectedRouter history={history}>
-                    <Route exact path={URLS.Trading} component={Trading} />
+                    <div>
+                        <Route exact path={URLS.Trading} component={Trading} />
+                        <Route path={URLS.Wallet} component={Wallet} />
+                    </div>
                 </ConnectedRouter>
             </Provider>
         )
     }
 }
 
-export default App
+export default Root

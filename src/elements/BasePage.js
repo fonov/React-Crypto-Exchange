@@ -6,12 +6,12 @@ export default class BasePage extends Component{
 
     render() {
 
-        const {children} = this.props;
+        const {children, active = [false, false, true], wallet_active=false} = this.props;
 
         return (
             <div className='it-container'>
-                <LeftPanel my_orders_badge={2} />
-                <TopPanel />
+                <LeftPanel my_orders_badge={2} wallet_active={wallet_active} />
+                <TopPanel active={active} />
                 <div className='it-page'>
                     {children}
                 </div>

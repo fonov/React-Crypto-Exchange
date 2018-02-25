@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import App from './components/index';
+import Root from './components/root';
 //CSS
 import './assets/css/boostrap/bootstrap.css'
 import './assets/css/itrade.css'
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));
 registerServiceWorker();

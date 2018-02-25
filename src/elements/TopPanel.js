@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome'
 import { Row, Col, Badge } from 'reactstrap';
+import {connect} from "react-redux";
+import {push} from "react-router-redux";
+import URLS from '../constants/urls'
 
 
-export default class TopPanel extends Component {
+class TopPanel extends Component {
 
     render() {
+
+        const {active, push} = this.props;
+
         return(
             <div className='it-top-panel'>
                 <Row>
@@ -15,9 +21,9 @@ export default class TopPanel extends Component {
                                 [
                                     ['ETH/BTC', 'success', '+ 10.4%', '0.049806'],
                                     ['DASH/BTC', 'danger', '- 0.5%', '0.076863'],
-                                    ['XMR/BTC', 'success', '+ 2.02%', '0.023360', true]
+                                    ['XMR/BTC', 'success', '+ 2.02%', '0.023360']
                                 ].map((item, i) => (
-                                    <div className={`nav-item ${item[4] === true ? 'active' : ''}`} key={i}>
+                                    <div className={`nav-item ${active[i] === true ? 'active' : ''}`} key={i} onClick={() => push(URLS.Trading)}>
                                         <div className="d-flex flex-row">
                                             <FontAwesome name='times' className='times it-fs12'/>
                                             <div className="d-flex flex-column ml-2">
@@ -64,3 +70,17 @@ export default class TopPanel extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        push: url => dispatch(push(url))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopPanel);

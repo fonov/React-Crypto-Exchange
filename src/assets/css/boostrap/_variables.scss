@@ -40,7 +40,7 @@ $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
 $red:     #fc4661 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
+$yellow:  #ffa933 !default;
 $green:   #27ae66 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
@@ -780,7 +780,7 @@ $alert-color-level:                 6 !default;
 
 // Progress bars
 
-$progress-height:                   1rem !default;
+$progress-height:                   2rem !default;
 $progress-font-size:                ($font-size-base * .75) !default;
 $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;

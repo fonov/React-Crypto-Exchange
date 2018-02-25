@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome'
 import { Badge } from 'reactstrap';
+import {connect} from "react-redux";
+import {push} from "react-router-redux";
+import URLS from '../constants/urls'
 
 
-export default class LeftPanel extends Component{
+class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3 } = this.props;
+        const { my_orders_badge = 3, push, wallet_active } = this.props;
 
         return (
             <div className='it-left-panel'>
@@ -19,7 +22,7 @@ export default class LeftPanel extends Component{
                     />
                 </div>
 
-                <div className='text-center mt-4'>
+                <div className='item'>
                     <div className="d-flex flex-column">
                         <div>
                             <Badge pill color='primary' className='ml-4'>
@@ -34,22 +37,22 @@ export default class LeftPanel extends Component{
                     </div>
                 </div>
 
-                <div className='text-center'>
+                <div className={`item ${wallet_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
                     <img src={require('../assets/icons/wallet.svg')} className='img_icon' />
                     <p>Wallets</p>
                 </div>
 
-                <div className='text-center mt-4'>
+                <div className='item'>
                     <FontAwesome name='pie-chart' className='icon'/>
                     <p>Analytics</p>
                 </div>
 
-                <div className='text-center mt-4'>
+                <div className='item'>
                     <FontAwesome name='users' className='icon'/>
                     <p>Traders</p>
                 </div>
 
-                <div className='text-center mt-4'>
+                <div className='item'>
                     <FontAwesome name='comment' className='icon'/>
                     <p>Messages</p>
                 </div>
@@ -66,3 +69,17 @@ export default class LeftPanel extends Component{
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        push: url => dispatch(push(url))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LeftPanel);
