@@ -1,0 +1,24 @@
+.it-left-panel {
+  width: 94px;
+  height: 100%;
+  background-color: #f5f7fa;
+  position: absolute;
+  .logo {
+    width: 30px;
+  }
+  .icon {
+    font-size: 22px;
+  }
+  .img_icon, .icon {
+    opacity: 0.8;
+  }
+  .img_icon {
+    width: 22px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: auto;
+  }
+}
