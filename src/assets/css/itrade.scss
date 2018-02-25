@@ -13,6 +13,9 @@
   font-size: 21px;
   font-weight: 600;
   margin-top: 6.5px;
+  @media (min-width: 1440px) {
+    font-size: 34px;
+  }
 }
 .it-char {
   span {
@@ -23,6 +26,29 @@
     }
     &:last-child {
       font-size: 14px;
+    }
+    @media (min-width: 1440px) {
+      &:first-child {
+        font-size: 16px;
+      }
+      &:last-child {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.it-char-flex {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-left: 1.5em;
+  @media (min-width: 1440px) {
+    line-height: 60px;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    div:first-child {
+      padding-right: .5em;
     }
   }
 }
@@ -92,11 +118,15 @@
     padding-left: 0;
   }
 }
-.it-rectangle {
+.it-table-block {
   width: 20px;
   height: 20px;
   border-radius: 3px;
   font-size: 12px;
+  position: absolute;
+  left: 2px;
+  bottom: -3px;
+  line-height: 22.5px;
 }
 .it-half-opacity {
   opacity: .5;
@@ -110,10 +140,10 @@
   position: relative;
   width: 100%;
   min-width: 1024px;
+  max-width: 2088px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   height: 100%;
-  min-height: 1358px;
   font-family: "Avenir Next",sans-serif !important;
   font-size: 14px;
   color: #1b1f2b;
@@ -126,4 +156,9 @@
   border-top-left-radius: 5px;
   box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, .2);
   padding-left: 2em
+}
+.it-market-history-extra-col {
+  @media (min-width: 1440px) {
+    display: none;
+  }
 }

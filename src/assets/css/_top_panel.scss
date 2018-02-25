@@ -47,4 +47,27 @@
     line-height: 46px !important;
     vertical-align: middle !important;
   }
+  .theme-switch {
+    width: 70px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #dbe1ec;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+    margin-top: 9px;
+    margin-right: 15px;
+    div {
+      width: 36px;
+      opacity: 0.8;
+      border-radius: 13px;
+      background-color: #ffffff;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+      font-size: 16px;
+      text-align: center;
+      line-height: 27px;
+    }
+    .non_active {
+      margin-left: 10px;
+      line-height: 27px;
+    }
+  }
 }

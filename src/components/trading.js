@@ -17,7 +17,7 @@ class Trading extends Component{
                             <div className='it-title'>
                                 XMR/BTC
                             </div>
-                            <div className="d-flex flex-column ml-4">
+                            <div className="d-flex it-char-flex">
                                 <div className='it-char'>
                                     <span>Price</span>
                                     <span className='text-success'>0.023206</span>
@@ -74,8 +74,10 @@ class Trading extends Component{
                                 <div className='text-center'>
                                     <img src={require('../assets/icons/wallet.svg')} className='it-icon'/>
                                     <span className='it-fs16 ml-2 align-middle'>40.00600209 XMR</span>
-                                    <span className='it-fs14'>Total 1000.90 USD</span>
-                                    <hr className="it-hr-text" data-content="DEMO"/>
+                                    <p className='it-fs14'>
+                                        Total 1000.90 USD
+                                        <hr className="it-hr-text" data-content="DEMO"/>
+                                    </p>
                                 </div>
                                 <div className='text-center'>
                                     <ButtonGroup >
@@ -142,16 +144,16 @@ class Trading extends Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col className='col-12' md={12} lg={6} xl={6}>
-                        <Card className='mt-4 mr-4'>
+                    <Col className='col-12' md={12} lg={8} xl={8}>
+                        <Card className='mt-4'>
                             <CardBody>
                                 <Row>
                                     <Col>
                                         <div className="d-flex flex-row">
                                             <span className='it-fs18 mr-4'>Order Book</span>
-                                            <ButtonGroup>
-                                                <Button className='it-small_btn_gr it-half-opacity bg-light'>Graph</Button>
-                                                <Button className='it-small_btn_gr bg-white'>Table</Button>
+                                            <ButtonGroup >
+                                                <Button color='light border border-right-0' className='it-fs12'>Graph</Button>
+                                                <Button color='white border' className='it-fs12'>Table</Button>
                                             </ButtonGroup>
                                         </div>
                                     </Col>
@@ -183,10 +185,45 @@ class Trading extends Component{
                                             <Col className='bg-light'>0.00017239</Col>
                                             <Col className='text-success bg-light'>0.02316050</Col>
                                             <Col>
-                                                <div className='bg-success it-rectangle text-white text-center'>
+                                                <div className='bg-success it-table-block text-white text-center'>
                                                     <FontAwesome name='long-arrow-up' />
                                                 </div>
                                             </Col>
+                                        </Row>
+                                        <Row className='it-fs11'>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col className='text-success'>0.02316050</Col>
+                                            <Col/>
+                                        </Row>
+                                        <Row className='it-fs11'>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col className='text-success'>0.02316050</Col>
+                                            <Col/>
+                                        </Row>
+                                        <Row className='it-fs11'>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col className='text-success'>0.02316050</Col>
+                                            <Col/>
+                                        </Row>
+                                        <Row className='it-fs11'>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col className='text-success'>0.02316050</Col>
+                                            <Col/>
+                                        </Row>
+                                        <Row className='it-fs11 it-half-opacity'>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col>0.00017239</Col>
+                                            <Col className='text-success'>0.02316050</Col>
+                                            <Col/>
                                         </Row>
                                     </Col>
                                     <Col className='tb-2'>
@@ -218,7 +255,7 @@ class Trading extends Component{
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col md={12} lg={6} xl={6} className='my-4 col-12'>
+                    <Col md={12} lg={4} xl={4} className='my-4 col-12'>
                         <Card className='mr-4'>
                             <CardBody>
                                 <Row>
@@ -248,13 +285,6 @@ class Trading extends Component{
                                                 ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
                                                 ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
                                                 ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
                                             ].map((item, i, array) => (
                                                 <Row className={`mt-1 ${array.length-1===i ? 'it-half-opacity' : ''}`} key={i}>
                                                     <Col>{item[0]}</Col>
@@ -266,7 +296,7 @@ class Trading extends Component{
                                             ))
                                         }
                                     </Col>
-                                    <Col className='it-fs12 pr-4'>
+                                    <Col className='it-fs12 pr-4 it-market-history-extra-col'>
                                         <Row className='it-fs12 mt-2 border-bottom'>
                                             <Col>Time</Col>
                                             <Col>Type</Col>

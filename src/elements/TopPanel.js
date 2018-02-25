@@ -51,6 +51,12 @@ export default class TopPanel extends Component {
                                     <FontAwesome key={i} name={item} className='icon'/>
                                 ))
                             }
+                            <div className='theme-switch d-flex flex-row'>
+                                <div className='text-primary'>
+                                    <FontAwesome name='sun-o' />
+                                </div>
+                                <FontAwesome name='moon-o' className='non_active' />
+                            </div>
                         </div>
                     </Col>
                 </Row>
