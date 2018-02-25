@@ -218,7 +218,7 @@ class Trading extends Component{
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col md={12} lg={6} xl={6} className='mt-4 col-12'>
+                    <Col md={12} lg={6} xl={6} className='my-4 col-12'>
                         <Card className='mr-4'>
                             <CardBody>
                                 <Row>
