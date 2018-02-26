@@ -1,13 +1,29 @@
-.my_orders {
+.my_orders_full {
   position: absolute;
   z-index: 5;
   left: 94px;
   top: 46px;
-  width: 290px;
+  width: calc(100% - 94px);
   background-color: white;
   height: calc(100% - 46px);
   box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
+  .delimiter {
+    width: 10px;
+    border-bottom: 1px solid black;
+  }
+  .export_btn_small {
+    display: none;
+    @media (max-width: 1440px) {
+      display: block;
+    }
+  }
+  .export_btn_big {
+    display: block;
+    @media (max-width: 1440px) {
+      display: none;
+    }
+  }
   .progress {
     height: 14px;
     border-radius: 1rem;
@@ -68,9 +84,5 @@
         }
       }
     }
-  }
-  .btn {
-    padding: 5px 35px;
-    font-size: 12px;
   }
 }

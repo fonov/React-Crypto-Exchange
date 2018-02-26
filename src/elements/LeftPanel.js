@@ -4,7 +4,7 @@ import { Badge } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
-import {MyOrders} from './index'
+import {MyOrders, MyOrdersFull} from './index'
 
 
 class LeftPanel extends Component{
@@ -13,7 +13,17 @@ class LeftPanel extends Component{
         super(props);
 
         this.state = {
-            orders_active: false
+            orders_active: 0
+        }
+    }
+
+    _orders_active() {
+        const {orders_active} = this.state;
+
+        if (orders_active === 2) {
+            this.setState({orders_active: 0})
+        } else {
+            this.setState({orders_active: orders_active+1})
         }
     }
 
@@ -33,7 +43,7 @@ class LeftPanel extends Component{
                         />
                     </div>
 
-                    <div className={`item ${orders_active && 'active'}`} onClick={() => this.setState({orders_active: !orders_active})}>
+                    <div className={`item ${orders_active && 'active'}`} onClick={() => this._orders_active()}>
                         <div className="d-flex flex-column">
                             <div className='it-badge'>
                                 <Badge pill color='primary' className='ml-4'>
@@ -77,9 +87,7 @@ class LeftPanel extends Component{
                         </div>
                     </div>
                 </div>
-                {
-                    orders_active && <MyOrders />
-                }
+                { orders_active === 1 ? <MyOrders /> : orders_active === 2 ? <MyOrdersFull /> : null }
             </div>
         )
     }

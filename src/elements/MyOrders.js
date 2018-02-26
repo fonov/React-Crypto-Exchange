@@ -80,9 +80,6 @@ class MyOrders extends Component{
                         </div>
                     </div>
                 </Row>
-
-
-
                 <div className="counter-list mt-2 it-fs14 it_light_opacity">
                     <ul>
                         <li>
@@ -103,8 +100,6 @@ class MyOrders extends Component{
                         </li>
                     </ul>
                 </div>
-
-
                 <hr className='mx-2' />
                 <Row className='mt-4 mx-1 text-center'>
                     <Col md={3}>
