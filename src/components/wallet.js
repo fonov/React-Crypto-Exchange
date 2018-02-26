@@ -3,10 +3,15 @@ import { connect } from 'react-redux'
 import {BasePage} from '../elements'
 import { Row, Col, Progress, Card, CardBody, CardText } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
+import URLS from '../constants/urls'
+import {push} from "react-router-redux";
 
 
 class Wallet extends Component{
     render() {
+
+        const {push} = this.props;
+
         return (
             <BasePage
                 active={[false, false, false]}
@@ -77,7 +82,7 @@ class Wallet extends Component{
                     </Progress>
                     <Row className='mt-4'>
                         <Col md={3} xl={3} lg={3} className='col-3'>
-                            <Card>
+                            <Card onClick={() => push(URLS.AddCurrency)}>
                                 <CardBody>
                                     <div className='add_carrency'>
                                         <FontAwesome name='plus'/>
@@ -195,7 +200,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        push: url => dispatch(push(url))
     }
 };
 

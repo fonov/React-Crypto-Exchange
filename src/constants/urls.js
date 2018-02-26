@@ -1,6 +1,8 @@
+
 const URLS = {
     Trading: '/',
-    Wallet: '/wallet'
+    Wallet: '/wallet',
+    AddCurrency: '/add_currency'
 };
 
 export default URLS

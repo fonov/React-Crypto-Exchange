@@ -1,0 +1,30 @@
+.it-add-currency {
+  background-color: white;
+  .search {
+    width: 180px;
+    margin: 0 auto;
+    input {
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+      background-color: #f5f7fa;
+    }
+    .input-group-append {
+      .input-group-text {
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: #f5f7fa;
+      }
+    }
+  }
+  .card-img {
+    width: 70px;
+  }
+  .card {
+    width: 222px;
+    height: 208px;
+    box-shadow: none;
+  }
+  .added {
+    background-color: #eceff4;
+  }
+}
