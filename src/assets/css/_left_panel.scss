@@ -30,10 +30,17 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 9px;
     margin-bottom: 10px;
+    cursor: pointer;
     p {
       margin-bottom: 0;
     }
+    position: relative;
+  }
+  .it-badge {
+    position: absolute;
+    top: -2px;
+    right: 20px;
   }
 }

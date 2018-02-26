@@ -3,6 +3,7 @@
 @import "left_panel";
 @import "top_panel";
 @import "wallet";
+@import "my_orders";
 
 @font-face {
   font-family: "Avenir Next";
@@ -82,6 +83,9 @@
   font-size: 14px;
 }
 .it-fs12 {
+  font-size: 12px;
+}
+.it-fs11 {
   font-size: 12px;
 }
 .it-fs8 {
@@ -190,4 +194,7 @@
   @media (min-width: 1440px) {
     display: none;
   }
+}
+.it-shadow {
+  box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, .2);
 }
