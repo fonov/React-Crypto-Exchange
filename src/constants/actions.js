@@ -1,0 +1,1 @@
+export const SET_TOP_PANEL = 'SET_TOP_PANEL';
