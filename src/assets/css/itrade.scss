@@ -191,7 +191,7 @@
   color: #282e3d
 }
 .it-container {
-  position: relative;
+  position: static;
   width: 100%;
   min-width: 1024px;
   max-width: 2088px;
@@ -201,7 +201,7 @@
   font-family: "Avenir Next" ,sans-serif !important;
   font-size: 14px;
   color: #1b1f2b;
-  background-color: rgba(40, 46, 61, 0.07);
+  background-color: #eaebef;
   overflow-x: hidden;
 }
 .it-page {
@@ -209,7 +209,10 @@
   background-color: #ffffff;
   height: auto;
   border-top-left-radius: 5px;
-  box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-right: 0;
+  border-bottom: 0;
   padding-left: 2em;
   position: relative;
 }

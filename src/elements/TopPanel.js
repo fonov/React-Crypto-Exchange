@@ -34,6 +34,7 @@ class TopPanel extends Component {
                                                 </div>
                                             </div>
                                         </div>
+                                        { active[i] === true && <div className='white_bottom'/>}
                                     </div>
                                 ))
                             }
@@ -58,10 +59,10 @@ class TopPanel extends Component {
                                 ))
                             }
                             <div className='theme-switch d-flex flex-row'>
-                                <div className='text-primary'>
-                                    <FontAwesome name='sun-o' />
+                                <div>
+                                    <img src={require('../assets/icons/noun/noun-1227121-cc@3x.png')} style={{width: 16}}/>
                                 </div>
-                                <FontAwesome name='moon-o' className='non_active' />
+                                <img src={require('../assets/icons/shape/shape@3x.png')} style={{height: 14}} className='non_active'/>
                             </div>
                         </div>
                     </Col>
