@@ -21,6 +21,12 @@
   font-weight: bold;
   src: url('../fonts/Avenir Next Demi Bold.otf')
 }
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Avenir Next Medium.otf')
+}
 .it-title {
   font-size: 21px;
   font-weight: 600;
@@ -65,6 +71,7 @@
     }
     &:last-child {
       font-size: 14px;
+      font-weight: 500;
     }
     @media (min-width: 1440px) {
       &:first-child {
@@ -94,9 +101,18 @@
 .it-trading_view {
   height: 535px;
 }
-.it-icon {
-  width: 18px;
-  opacity: 0.6;
+.it-medium {
+  font-weight: 500;
+}
+.wallet {
+  position: relative;
+  .it-icon {
+    width: 18px;
+    opacity: 0.6;
+    position: absolute;
+    top: 2px;
+    left: 28px;
+  }
 }
 .it-fs16 {
   font-size: 16px;
@@ -180,7 +196,7 @@
   position: absolute;
   left: 2px;
   bottom: -3px;
-  line-height: 22.5px;
+  line-height: 20px;
 }
 .it-half-opacity {
   opacity: .5;
@@ -223,4 +239,30 @@
 }
 .it-shadow {
   box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, .2);
+}
+.it-gr-btn {
+  position: relative;
+  div {
+    position: absolute;
+    border: 1px solid #CBCED4;
+    text-align: center;
+    border-radius: 3px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  div:first-child {
+    background-color: #F5F7FA;
+    width: 79px;
+    height: 25px;
+    color: #282e3d;
+    font-size: 12px;
+  }
+  .active {
+    width: 63px;
+    height: 25px;
+    background-color: white;
+    font-weight: 600;
+    font-size: 12px;
+    left: 75px;
+  }
 }

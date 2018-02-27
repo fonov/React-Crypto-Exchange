@@ -71,25 +71,25 @@ class Trading extends Component{
                     <Col className='col-4' md={4} lg={3} xl={2}>
                         <Card className='mt-4 mr-4'>
                             <CardBody>
-                                <div className='text-center'>
+                                <div className='text-center wallet'>
                                     <img src={require('../assets/icons/wallet.svg')} className='it-icon'/>
-                                    <span className='it-fs16 ml-2 align-middle'>40.00600209 XMR</span>
+                                    <span className='it-fs16 ml-2 align-middle it-medium'>40.00600209 XMR</span>
                                     <p className='it-fs14'>
                                         Total 1000.90 USD
                                         <hr className="it-hr-text" data-content="DEMO"/>
                                     </p>
                                 </div>
-                                <div className='text-center'>
-                                    <ButtonGroup >
+                                <div className='text-center mt-2'>
+                                    <ButtonGroup>
                                         <Button className='bg-success border-0'>
-                                        <span className='px-4'>
+                                        <strong className='px-4'>
                                             <FontAwesome name='long-arrow-up' /> Buy
-                                        </span>
+                                        </strong>
                                         </Button>
-                                        <Button className='bg-light text-dark border'>
-                                        <span className='px-4'>
+                                        <Button className='bg-white text-dark border border-left-0'>
+                                        <strong className='px-4 it-half-opacity'>
                                             <FontAwesome name='long-arrow-down' /> Sell
-                                        </span>
+                                        </strong>
                                         </Button>
                                     </ButtonGroup>
                                 </div>
@@ -137,7 +137,7 @@ class Trading extends Component{
                                 </div>
                                 <Button className='bg-success mt-2 border-0' block>
                                     <FontAwesome name='long-arrow-up' />
-                                    <span className='ml-2'>Buy Monero</span>
+                                    <strong className='ml-2'>Buy Monero</strong>
                                 </Button>
                             </CardBody>
                         </Card>
@@ -145,16 +145,20 @@ class Trading extends Component{
                 </Row>
                 <Row>
                     <Col className='col-12' md={12} lg={8} xl={8}>
-                        <Card className='mt-4'>
+                        <Card className='mt-4 mr-4'>
                             <CardBody>
                                 <Row>
                                     <Col>
                                         <div className="d-flex flex-row">
-                                            <span className='it-fs18 mr-4'>Order Book</span>
-                                            <ButtonGroup >
-                                                <Button color='light border border-right-0' className='it-fs12'>Graph</Button>
-                                                <Button color='white border' className='it-fs12'>Table</Button>
-                                            </ButtonGroup>
+                                            <strong className='it-fs18 mr-4'>Order Book</strong>
+                                            <div className='it-gr-btn'>
+                                                <div>
+                                                    Graph
+                                                </div>
+                                                <div className='active'>
+                                                    Table
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                     <Col>
@@ -259,7 +263,9 @@ class Trading extends Component{
                         <Card className='mr-4'>
                             <CardBody>
                                 <Row>
-                                    <Col className='it-fs18'>Market history</Col>
+                                    <Col className='it-fs18'>
+                                        <strong>Market history</strong>
+                                    </Col>
                                     <Col>
                                         <div className="d-flex flex-row-reverse">
                                             <FontAwesome name='share-square-o' />
