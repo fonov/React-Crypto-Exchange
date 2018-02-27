@@ -15,6 +15,9 @@
   .img_icon {
     width: 22px;
   }
+  .img_icon_c {
+    width: 22px;
+  }
   .footer {
     position: absolute;
     bottom: 10px;
@@ -40,7 +43,11 @@
   }
   .it-badge {
     position: absolute;
-    top: -2px;
-    right: 20px;
+    top: 2px;
+    right: 24px;
+    font-size: 11px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
   }
 }

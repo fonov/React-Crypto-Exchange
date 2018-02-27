@@ -45,14 +45,11 @@ class LeftPanel extends Component{
 
                     <div className={`item ${orders_active && 'active'}`} onClick={() => this._orders_active()}>
                         <div className="d-flex flex-column">
-                            <div className='it-badge'>
-                                <Badge pill color='primary' className='ml-4'>
-                                    {my_orders_badge}
-                                </Badge>
+                            <div className='it-badge bg-primary text-white'>
+                                {my_orders_badge}
                             </div>
                             <div>
-                                <FontAwesome name='long-arrow-down' className='icon' />
-                                <FontAwesome name='long-arrow-up' className='icon' />
+                                <img src={require('../assets/icons/my-orders/icon-my-orders@3x.png')} className='img_icon_c' />
                                 <p>My orders</p>
                             </div>
                         </div>
