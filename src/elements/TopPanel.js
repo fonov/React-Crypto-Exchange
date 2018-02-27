@@ -27,7 +27,7 @@ class TopPanel extends Component {
                                         <div className="d-flex flex-row">
                                             <FontAwesome name='times' className='times it-fs12'/>
                                             <div className="d-flex flex-column ml-2">
-                                                <strong className='it-fs16'>{item[0]}</strong>
+                                                <strong className='it-fs16 it_light_opacity'>{item[0]}</strong>
                                                 <div className='d-flex flex-row nav-desc'>
                                                     <p><Badge color={item[1]} pill>{item[2]}</Badge></p>
                                                     <p className='it-fs12'>{item[3]}</p>
@@ -37,9 +37,9 @@ class TopPanel extends Component {
                                     </div>
                                 ))
                             }
-                            <div className='nav-item it-fs12 text-primary text-center add'>
+                            <div className='nav-item it-fs12 text-center add'>
                                 <div className="d-flex flex-column">
-                                    <FontAwesome name='plus-circle' className='it-fs16'/>
+                                    <FontAwesome name='plus-circle' className='it-fs16 text-primary'/>
                                     <p>Add market</p>
                                 </div>
                             </div>

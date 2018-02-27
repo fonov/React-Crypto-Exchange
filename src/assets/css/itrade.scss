@@ -15,6 +15,12 @@
   font-weight: normal;
   src: url('../fonts/Avenir Next Regular.otf')
 }
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/Avenir Next Demi Bold.otf')
+}
 .it-title {
   font-size: 21px;
   font-weight: 600;
@@ -192,7 +198,7 @@
   padding: 0;
   margin: 0 auto;
   height: 100%;
-  font-family: "Avenir Next",sans-serif !important;
+  font-family: "Avenir Next" ,sans-serif !important;
   font-size: 14px;
   color: #1b1f2b;
   background-color: rgba(40, 46, 61, 0.07);
