@@ -27,4 +27,16 @@
   .added {
     background-color: #eceff4;
   }
+  .currency-name {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+    span:first-child {
+      opacity: 0.6;
+      margin-right: 6px;
+    }
+    span:last-child {
+      opacity: 0.4;
+    }
+  }
 }

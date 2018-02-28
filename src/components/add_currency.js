@@ -69,7 +69,7 @@ class AddCurrency extends Component {
                 <div className='it-add-currency pb-4'>
                     <Row className='justify-content-between mx-4'>
                         <Col className='mt-3'>
-                            <p className='it_page_title'>My wallets</p>
+                            <p className='it_page_title'>Add currency</p>
                         </Col>
                         <Col className='mt-3'>
                             <div className="input-group search">
@@ -93,10 +93,13 @@ class AddCurrency extends Component {
                                 <Col key={i} md={3} lg={2} xl={2} className={'mt-2 col-3'}>
                                     <Card className={`${item[0] && 'added'}`}>
                                         <CardBody>
-                                            <div className='text-center'>
+                                            <div className='text-center mt-2'>
                                                 <img src={item[1]} className='card-img' />
                                             </div>
-                                            <p className='it-fs18 text-center it-half-opacity mt-2'>{item[2]}</p>
+                                            <div className='currency-name'>
+                                                <span>{item[2].split(' ')[0]}</span>
+                                                <span>{item[2].split(' ')[1]}</span>
+                                            </div>
                                             {
                                                 item[0] ? (
                                                     <p className='text-success it-half-opacity text-center it-fs24'>

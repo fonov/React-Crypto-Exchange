@@ -52,16 +52,18 @@
   right: 40px;
 }
 .it_cycle_item {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   background-color: #eceff4;
   border-radius: 50%;
   margin: 0 auto;
   text-align: center;
-  line-height: 45px;
+  line-height: 42px;
+  padding-left: 2px;
   font-size: 20px;
   opacity: 0.8;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, .2);
 }
 .it-char {
   span {
@@ -232,6 +234,7 @@
   border-bottom: 0;
   padding-left: 2em;
   position: relative;
+  min-height: 100%
 }
 .it-market-history-extra-col {
   @media (min-width: 1440px) {
