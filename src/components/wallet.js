@@ -28,44 +28,45 @@ class Wallet extends Component{
                             </div>
                         </Col>
                     </Row>
-                    <div className="d-flex flex-row">
-                        <div className="d-flex flex-column mx-4">
+                    <div className="d-flex flex-row wallet-icon-gr">
+                        <div className="d-flex flex-column wallet-icon">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet.svg')} className='wallet-icon'/>
+                                <img src={require('../assets/icons/wallet/icon-wallets@3x.png')}/>
                             </div>
-                            <p className='it-fs14'>My wallet 1</p>
+                            <p className='it-fs14 it_light_opacity'>My wallet 1</p>
                         </div>
-                        <div className="d-flex flex-column mx-4 not_active">
+                        <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet.svg')} className='wallet-icon'/>
+                                <img src={require('../assets/icons/wallet_opacity/icon-wallets-opacity@3x.png')}/>
                             </div>
                             <p className='it-fs14 text-primary '>Wallet for Marina</p>
                         </div>
-                        <div className="d-flex flex-column mx-4 not_active">
+                        <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet.svg')} className='wallet-icon not_active'/>
+                                <img src={require('../assets/icons/wallet_opacity/icon-wallets-opacity@3x.png')}/>
                             </div>
                             <p className='it-fs14 text-primary'>My new wallet</p>
                         </div>
-                        <div className="d-flex flex-column mx-4 not_active">
+                        <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet.svg')} className='wallet-icon not_active'/>
+                                <img src={require('../assets/icons/wallet_add/icon-wallets-add@3x.png')}/>
                             </div>
                             <p className='it-fs14 text-primary'>Create new wallet</p>
                         </div>
                     </div>
-                    <div className="d-flex flex-row it-fs24">
+                    <div className="d-flex flex-row it-fs24 info-block">
                         <div className='mr-2'>
                             Total
                         </div>
-                        <div className='pr-2 border-right'>
+                        <div className='pr-2'>
                             $ 94 560
                         </div>
+                        <div className='vertical-hr' />
                         <div className='ml-2'>
                             5.51BTC
                         </div>
                     </div>
-                    <Progress multi className='mt-2 mr-4'>
+                    <Progress multi className='mt-3 mr-4'>
                         {
                             [
                                 ['32', '#ff9300', '32% BTC'],
@@ -75,38 +76,38 @@ class Wallet extends Component{
                                 ['22', '#ff6600', '22% XMR'],
                             ].map((item, i) => (
                                 <div className="progress-bar" role="progressbar" style={{width: `${item[0]}%`, backgroundColor: item[1]}} aria-valuenow={item[0]} aria-valuemin="0" aria-valuemax="100">
-                                    <span className='text-dark it-fs16 it-half-opacity'>{item[2]}</span>
+                                    <span className='progress_text'>{item[2]}</span>
                                 </div>
                             ))
                         }
                     </Progress>
-                    <Row className='mt-4'>
+                    <Row className='currency-block'>
                         <Col md={3} xl={3} lg={3} className='col-3'>
                             <Card onClick={() => push(URLS.AddCurrency)}>
                                 <CardBody>
                                     <div className='add_carrency'>
                                         <FontAwesome name='plus'/>
                                     </div>
-                                    <div className='text-center mt-2'>Add Carrency</div>
+                                    <div className='text-center mt-1'>Add Carrency</div>
                                 </CardBody>
                             </Card>
-                            <Card className='my-1 card_active'>
+                            <Card className='card_active'>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
                                         <div className='oval bg-warning'/>
-                                        <div className='it-fs14'>BTC</div>
+                                        <div className='it-fs14 it-medium'>BTC</div>
                                     </div>
                                     <CardText className='text-center'>
-                                        <span className='it-fs18'>5.51004989 BTC</span>
+                                        <span className='it-fs18 it-medium'>5.51004989 BTC</span>
                                         <div className='it-fs14 it_light_opacity'>$ 190.90</div>
                                     </CardText>
                                 </CardBody>
                             </Card>
-                            <Card className='my-1'>
+                            <Card>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
                                         <div className='oval it_bg_silver'/>
-                                        <div className='it-fs14'>LTC</div>
+                                        <div className='it-fs14 it-medium'>LTC</div>
                                     </div>
                                     <CardText className='text-center'>
                                         <span className='it-fs18'>8.49003939 LTC</span>
@@ -114,11 +115,11 @@ class Wallet extends Component{
                                     </CardText>
                                 </CardBody>
                             </Card>
-                            <Card className='my-1'>
+                            <Card className=''>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
                                         <div className='oval it_bg_silver it-half-opacity'/>
-                                        <div className='it-fs14'>ETH</div>
+                                        <div className='it-fs14 it-medium'>ETH</div>
                                     </div>
                                     <CardText className='text-center'>
                                         <span className='it-fs18'>0.89904638 ETH</span>
@@ -126,11 +127,11 @@ class Wallet extends Component{
                                     </CardText>
                                 </CardBody>
                             </Card>
-                            <Card className='my-1'>
+                            <Card className=''>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
                                         <div className='oval bg-primary'/>
-                                        <div className='it-fs14'>DASH</div>
+                                        <div className='it-fs14 it-medium'>DASH</div>
                                     </div>
                                     <CardText className='text-center'>
                                         <span className='it-fs18'>0.000005 DASH</span>
@@ -138,11 +139,11 @@ class Wallet extends Component{
                                     </CardText>
                                 </CardBody>
                             </Card>
-                            <Card className='my-1'>
+                            <Card className=''>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
                                         <div className='oval bg-warning'/>
-                                        <div className='it-fs14'>XMR</div>
+                                        <div className='it-fs14 it-medium'>XMR</div>
                                     </div>
                                     <CardText className='text-center'>
                                         <span className='it-fs18'>0.6 XMR</span>
@@ -151,10 +152,10 @@ class Wallet extends Component{
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col md={9} xl={9} lg={9} className='col-9'>
-                            <div className='text-center mt-4'>
+                        <Col md={9} xl={9} lg={9} className='col-9 current_currency'>
+                            <div className='text-center'>
                                 <img src='https://chain.so/Bitcoin@2x.png' className='cr-logo'/>
-                                <div className='it-fs34 mt-2'>
+                                <div className='it-fs34 mt-2 it-medium'>
                                     5.51004989 BTC
                                 </div>
                                 <div className='it-fs18 it-half-opacity'>

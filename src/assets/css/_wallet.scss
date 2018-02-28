@@ -1,35 +1,34 @@
 .it_wallet {
-  .wallet-icon {
-    width: 50px;
-  }
-  .not_active {
-    img {
-      opacity: 0.3;
+  .wallet-icon-gr {
+    margin-top: 12px;
+    margin-left: 41px;
+    .wallet-icon {
+      div {
+        img {
+          height: 34px;
+        }
+      }
+      p {
+        margin-top: 8px;
+      }
+      margin-right: 52px;
     }
-    p {
-      opacity: 0.8;
-      border-bottom: 1px dotted;
+    .not_active {
+      p {
+        opacity: 0.8;
+        border-bottom: 1px dotted;
+      }
     }
   }
-  .card {
-    background-color: #f5f7fa;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  .vertical-hr{
+    width: 2px;
+    height: 20px;
+    opacity: 0.1;
+    background-color: #1b1f2b;
+    margin-top: 6.5px;
   }
-  .card_active {
-    background-color: #fff9e8;
-    box-shadow: 0 0 4px 0 #ffa933, inset 0 0 7px 0 #ffa933;
-  }
-  .add_carrency {
-    width: 36px;
-    height: 36px;
-    margin: 0 auto;
-    background-color: white;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 20px;
-    line-height: 40px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+  .info-block {
+    margin-top: 45px;
   }
   .oval {
     width: 10px;
@@ -42,16 +41,69 @@
     width: 82px;
     height: auto;
   }
-  .oval-big {
-    width: 70px;
-    height: 70px;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
-    border-radius: 50%;
-    text-align: center;
-    font-size: 32px;
-    line-height: 70px;
+  .progress {
+    .progress-bar {
+      border-right: 1px solid white;
+      .progress_text {
+        opacity: 0.5;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #000000;
+      }
+    }
+    .progress-bar:last-child {
+      border-right: 0;
+    }
   }
-  .big_top_p {
-    padding-top: 4em;
+  .currency-block {
+    margin-top: 45px;
+    .card {
+      background-color: #f5f7fa;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      width: 210px;
+      height: 102px;
+      margin-top: 2px;
+      .add_carrency {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto;
+        background-color: #f5f7fa;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 40px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(0, 0, 0, .2);
+      }
+    }
+    .card:first-child {
+      margin-top: 0;
+    }
+    .card_active {
+      background-color: #fff9e8;
+      box-shadow: 0 0 4px 0 #ffa933, inset 0 0 7px 0 #ffa933;
+      border: 1px solid #deaf6f;
+    }
+    .current_currency {
+      margin-top: 36px;
+      .big_top_p {
+        padding-top: 4em;
+      }
+      .big_top_p:last-child {
+        padding-top: 4.5em;
+      }
+      .oval-big {
+        width: 70px;
+        height: 70px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        line-height: 70px;
+        border: 1px solid rgba(0, 0, 0, .2);
+      }
+    }
   }
 }
