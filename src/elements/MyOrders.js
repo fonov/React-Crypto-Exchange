@@ -22,25 +22,25 @@ class MyOrders extends Component{
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <ButtonGroup className='mt-2'>
-                        <Button color='light' className='bg-white border'>Opened</Button>
-                        <Button color='light' className='border'>Closed</Button>
-                    </ButtonGroup>
+                    <div className="d-flex flex-row it-btn-group mt-4 w-100 ml-3 mr-2">
+                        <div className="it-btn active w-50">Opened</div>
+                        <div className="it-btn border-left-0 w-50"><span>Closed</span></div>
+                    </div>
                 </div>
-                <Row className='mt-4 mx-1 text-center'>
+                <Row className='mt-4 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs12'>04:44</div>
+                            <div className='it-fs14'>04:44</div>
                             <div className='it-fs11 it_light_opacity'>27/11/2017</div>
                         </div>
                     </Col>
-                    <Col md={5}>
-                        <div className="d-flex flex-column">
-                            <div className='it-fs14'>XMR/BTC</div>
+                    <Col md={6}>
+                        <div className="d-flex flex-column pl-4">
+                            <div className='it-fs14'><strong>XMR/BTC</strong></div>
                             <div className='it-fs11 it_light_opacity'>0.83707900 XMR</div>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14 text-success'>+18.09 %</div>
                         </div>
@@ -50,20 +50,20 @@ class MyOrders extends Component{
                     Show more <FontAwesome name='caret-down' />
                 </p>
                 <hr className='mx-2' />
-                <Row className='mt-4 mx-1 text-center'>
+                <Row className='mt-4 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs12'>04:44</div>
+                            <div className='it-fs14'>04:44</div>
                             <div className='it-fs11 it_light_opacity'>27/11/2017</div>
                         </div>
                     </Col>
-                    <Col md={5}>
-                        <div className="d-flex flex-column">
-                            <div className='it-fs14'>XMR/BTC</div>
+                    <Col md={6}>
+                        <div className="d-flex flex-column pl-4">
+                            <div className='it-fs14'><strong>XMR/BTC</strong></div>
                             <div className='it-fs11 it_light_opacity'>0.83707900 XMR</div>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14 text-success'>+18.09 %</div>
                         </div>
@@ -101,21 +101,20 @@ class MyOrders extends Component{
                     </ul>
                 </div>
                 <hr className='mx-2' />
-                <Row className='mt-4 mx-1 text-center'>
+                <Row className='mt-4 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs12'>04:44</div>
-
+                            <div className='it-fs14'>04:44</div>
                             <div className='it-fs11 it_light_opacity'>27/11/2017</div>
                         </div>
                     </Col>
-                    <Col md={5}>
-                        <div className="d-flex flex-column">
-                            <div className='it-fs14'>XMR/BTC</div>
+                    <Col md={6}>
+                        <div className="d-flex flex-column pl-4">
+                            <div className='it-fs14'><strong>XMR/BTC</strong></div>
                             <div className='it-fs11 it_light_opacity'>0.83707900 XMR</div>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14 text-success'>+18.09 %</div>
                         </div>

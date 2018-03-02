@@ -56,12 +56,12 @@ class LeftPanel extends Component{
                         </div>
                     </div>
 
-                    <div className={`item ${wallet_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
+                    <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
                         <img src={require('../assets/icons/wallet.svg')} className='img_icon' />
                         <p>Wallets</p>
                     </div>
 
-                    <div className={`item ${analytics_active && 'active'}`} onClick={() => push(URLS.Analytics)}>
+                    <div className={`item ${analytics_active && !orders_active && 'active'}`} onClick={() => push(URLS.Analytics)}>
                         <FontAwesome name='pie-chart' className='icon'/>
                         <p>Analytics</p>
                     </div>

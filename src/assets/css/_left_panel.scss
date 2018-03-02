@@ -36,26 +36,31 @@
     z-index: 0;
     width: calc(100% + 5px);
     padding-right: 5px;
+    div {
+      .it-badge {
+        right: 29px;
+      }
+    }
   }
   .item {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 9px;
+    margin-top: 1px;
     margin-bottom: 10px;
     cursor: pointer;
     p {
       margin-bottom: 0;
     }
     position: relative;
-  }
-  .it-badge {
-    position: absolute;
-    top: 2px;
-    right: 24px;
-    font-size: 11px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
+    .it-badge {
+      position: absolute;
+      top: 2px;
+      right: 24px;
+      font-size: 11px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+    }
   }
 }

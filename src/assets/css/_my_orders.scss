@@ -1,13 +1,16 @@
 .my_orders {
-  position: absolute;
-  z-index: 5;
+  position: fixed;
+  z-index: 2;
   left: 94px;
-  top: 46px;
+  top: 47px;
   width: 290px;
   background-color: white;
   height: calc(100% - 46px);
   box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
+  .col {
+    padding: 0;
+  }
   .progress {
     height: 14px;
     border-radius: 1rem;

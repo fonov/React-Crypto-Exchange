@@ -11,9 +11,13 @@ import { PieChart, Pie } from 'recharts';
 class Analytics extends Component {
 
     render() {
+
+        const {push} = this.props;
+
         return (
             <BasePage
                 analytics_active={true}
+                active={[false, false, false]}
             >
                 <div className='it-analytics'>
                     <Row className='justify-content-between'>
@@ -21,7 +25,7 @@ class Analytics extends Component {
                             <p className='it_page_title'>Analytics</p>
                         </Col>
                         <Col className='mt-3'>
-                            <div className='it_cycle_times'>
+                            <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
                                 <FontAwesome name='times' className=''/>
                             </div>
                         </Col>
@@ -155,7 +159,7 @@ class Analytics extends Component {
                                             <div className='d-flex flex-column'>
                                                 <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                 <div className='it_light_opacity'>
-                                                    <Badge pill className='bg-secondary'>Closed</Badge>
+                                                    <Badge pill className='bg-secondary my-badge'>Closed</Badge>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,46 +176,48 @@ class Analytics extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='col-2'>
+                                        <div className='col-3'>
                                             <div className='d-flex flex-column'>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>15:19  6 dec 2017</span>
                                                 </div>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>15 hours 46 profits</span>
                                                 </div>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>19:20  15 dec 2017</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className='col-2 text-center'>
                                             <span className='text-primary detail'>Details</span>
                                         </div>
-                                        <div className='col-2'>
-                                            <div className='d-flex flex-column sym'>
-                                                <div>
-                                                    <span className='text-success'>+3.01367 BTC</span>
+                                        <div className='col-3'>
+                                            <div className="d-flex flex-row">
+                                                <div className='d-flex flex-column sym'>
+                                                    <div>
+                                                        <span className='text-success'>+3.01367 BTC</span>
+                                                    </div>
+                                                    <div>
+                                                        <span className='text-success'>+39.19 USD</span>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <span className='text-success'>+39.19 USD</span>
+                                                <div style={{marginLeft: 6+'em'}}>
+                                                    <Badge pill className='bg-success bg-badge'>+17%</Badge>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className='col-2 text-center'>
-                                            <Badge pill className='bg-success bg-badge'>+17%</Badge>
                                         </div>
                                     </Row>
                                 </CardBody>
                             </Card>
-                            <Card className='mt-2'>
+                            <Card className='mt-4'>
                                 <CardBody>
                                     <Row>
                                         <div className='col-2'>
                                             <div className='d-flex flex-column'>
                                                 <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                 <div className='it_light_opacity'>
-                                                    <Badge pill className='bg-primary'>Active</Badge>
+                                                    <Badge pill className='bg-primary my-badge'>Active</Badge>
                                                 </div>
                                             </div>
                                         </div>
@@ -228,34 +234,36 @@ class Analytics extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='col-2'>
+                                        <div className='col-3'>
                                             <div className='d-flex flex-column'>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>15:19  6 dec 2017</span>
                                                 </div>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>15 hours 46 profits</span>
                                                 </div>
                                                 <div className='key-value'>
-                                                    <span>Open orders</span> <span>9</span>
+                                                    <span>Open orders</span> <span>19:20  15 dec 2017</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className='col-2 text-center'>
                                             <span className='text-primary detail'>Details</span>
                                         </div>
-                                        <div className='col-2'>
-                                            <div className='d-flex flex-column sym'>
-                                                <div>
-                                                    <span className='text-success'>+3.01367 BTC</span>
+                                        <div className='col-3'>
+                                            <div className="d-flex flex-row">
+                                                <div className='d-flex flex-column sym'>
+                                                    <div>
+                                                        <span className='text-success'>+3.01367 BTC</span>
+                                                    </div>
+                                                    <div>
+                                                        <span className='text-success'>+39.19 USD</span>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <span className='text-success'>+39.19 USD</span>
+                                                <div style={{marginLeft: 6+'em'}}>
+                                                    <Badge pill className='bg-success bg-badge'>+17%</Badge>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className='col-2 text-center'>
-                                            <Badge pill className='bg-success bg-badge'>+17%</Badge>
                                         </div>
                                     </Row>
                                 </CardBody>

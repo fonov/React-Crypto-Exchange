@@ -12,8 +12,8 @@ class MyOrdersFull extends Component{
 
         return (
             <div className='my_orders_full'>
-                <Row className='justify-content-between mt-3'>
-                    <Col className='ml-4'>
+                <Row className='justify-content-between mt-3 ml-4'>
+                    <Col>
                         <p className='it_page_title'>My orders</p>
                     </Col>
                     <Col>
@@ -24,30 +24,30 @@ class MyOrdersFull extends Component{
                 </Row>
 
                 <Form inline className='mt-2 ml-4'>
-                    <ButtonGroup className='mr-4'>
-                        <Button color='light' className='bg-white border'>Opened</Button>
-                        <Button color='light' className='border'>Closed</Button>
-                    </ButtonGroup>
-                    <Input type="select" name="select" id="exampleSelect" className='mr-2'>
+                    <div className="d-flex flex-row it-btn-group mr-4">
+                        <div className="it-btn active ">Opened</div>
+                        <div className="it-btn border-left-0 "><span>Closed</span></div>
+                    </div>
+                    <Input type="select" name="select" id="exampleSelect" className='mr-2 form-control-sm'>
                         <option>19/10/2016</option>
                     </Input>
                     <div className='it-delimiter' />
-                    <Input type="select" name="select" id="exampleSelect" className='ml-2'>
+                    <Input type="select" name="select" id="exampleSelect" className='ml-2 form-control-sm'>
                         <option>19/10/2016</option>
                     </Input>
-                    <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2'>
+                    <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2 form-control-sm'>
                         <option>All</option>
                     </Input>
                     <div className='it-delimiter' />
-                    <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4'>
+                    <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4 form-control-sm'>
                         <option>BTC</option>
                     </Input>
-                    <Input type="select" name="select" id="exampleSelect">
+                    <Input type="select" name="select" id="exampleSelect" className='form-control-sm'>
                         <option>All type</option>
                     </Input>
                     <Input type="checkbox" className='ml-4'/> Hide all canceled
-                    <Button color='light' className='border ml-4 export_btn_big'>
-                        <FontAwesome name='file'/> Export order list
+                    <Button color='light' className='border ml-4 export_btn_big it-fs14'>
+                        <FontAwesome name='file' className='mr-2'/> Export order list
                     </Button>
                 </Form>
 
@@ -55,7 +55,7 @@ class MyOrdersFull extends Component{
                     <table className="table ">
                         <thead className='mt-3'>
                             <tr>
-                                <th scope="col">Pair</th>
+                                <th scope="col" style={{paddingTop: 3.5+'em'}}>Pair</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Actual price</th>
                                 <th scope="col">Order price</th>
@@ -132,8 +132,8 @@ class MyOrdersFull extends Component{
                     </table>
                 </div>
 
-                <Button color='light' className='border ml-4 export_btn_small'>
-                    <FontAwesome name='file'/> Export order list
+                <Button color='light' className='border ml-4 export_btn_small it-fs14'>
+                    <FontAwesome name='file' className='mr-2'/> Export order list
                 </Button>
             </div>
         )
