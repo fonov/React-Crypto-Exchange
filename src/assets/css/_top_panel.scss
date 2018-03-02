@@ -1,9 +1,10 @@
 .it-top-panel {
   height: 46px;
-  width: auto;
+  width: calc(100% - 96px);
   background-color: #f5f7fa;
   margin-left: 94px;
-  position: relative;
+  position: absolute;
+  overflow-y: hidden;
   .nav-item {
     background-color: rgba(40, 46, 61, 0.07);
     height: 44px;
@@ -16,6 +17,9 @@
     text-align: left;
     opacity: 0.8;
     cursor: pointer;
+    .badge-pill {
+      padding-top: 5px;
+    }
   }
   .active {
     background-color: #ffffff;
@@ -27,11 +31,11 @@
     box-shadow: 0 -1px 2px 0px rgba(0,0,0,0.2);
     .white_bottom {
       position: absolute;
-      width: 177px;
+      width: 178px;
       height: 10px;
       background: #ffffff;
       bottom: -5px;
-      left: 1px;
+      left: 0px;
     }
     .nav-desc {
       top: 18px;

@@ -115,7 +115,7 @@
   }
 }
 .it-trading_view {
-  height: 535px;
+  height: 500px;
 }
 .it-medium {
   font-weight: 500;
@@ -125,9 +125,6 @@
   .it-icon {
     width: 18px;
     opacity: 0.6;
-    position: absolute;
-    top: 2px;
-    left: 28px;
   }
 }
 .it-fs16 {
@@ -237,9 +234,11 @@
   overflow-x: hidden;
 }
 .it-page {
+  top: 46px;
   margin-left: 94px;
   background-color: #ffffff;
   height: auto;
+  width: calc(100% - 96px);
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, .2);
@@ -247,8 +246,9 @@
   border-bottom: 0;
   padding-left: 2em;
   padding-right: 2em;
-  position: relative;
-  min-height: 100%
+  position: absolute;
+  min-height: 100%;
+  overflow-y: hidden;
 }
 .it-market-history-extra-col {
   @media (min-width: 1440px) {
@@ -328,4 +328,34 @@
   width: 9px;
   border-bottom: 1px solid black;
   opacity: 0.4;
+}
+.it-trading {
+  .row {
+    .col {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  @media (max-width: 1430px) {
+    .market {
+      margin-top: 8px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .row {
+      .col {
+        &:first-child {
+          padding-left: 30px;
+        }
+        &:last-child {
+          padding-right: 16px;
+        }
+      }
+    }
+  }
+  .btn-buy-sell {
+    button {
+      width: 50%;
+    }
+  }
 }
