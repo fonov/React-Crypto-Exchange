@@ -31,14 +31,14 @@ class MyOrdersFull extends Component{
                     <Input type="select" name="select" id="exampleSelect" className='mr-2'>
                         <option>19/10/2016</option>
                     </Input>
-                    <div className='delimiter' />
+                    <div className='it-delimiter' />
                     <Input type="select" name="select" id="exampleSelect" className='ml-2'>
                         <option>19/10/2016</option>
                     </Input>
                     <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2'>
                         <option>All</option>
                     </Input>
-                    <div className='delimiter' />
+                    <div className='it-delimiter' />
                     <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4'>
                         <option>BTC</option>
                     </Input>

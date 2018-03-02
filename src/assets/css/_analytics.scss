@@ -1,3 +1,149 @@
 .it-analytics {
-
+  .card {
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  select {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  .performance {
+    position: relative;
+    .cog {
+      position: absolute;
+      top: 5px;
+      right: 9px;
+    }
+  }
+  .row {
+    .col{
+      padding-right: 4.5px;
+      padding-left: 4.5px;
+    }
+    .col:first-child {
+      padding-left: 15px;
+    }
+    .col:last-child {
+      padding-right: 15px;
+    }
+  }
+  .card-info {
+    .card {
+      .label {
+        opacity: 0.6;
+        font-size: 14px;
+        color: #282e3d;
+        text-transform: uppercase;
+      }
+      .info-block {
+        margin-top: 10px;
+        img {
+          height: 13px;
+          margin-top: 20px;
+          margin-right: 8px;
+        }
+        .value {
+          font-size: 36px;
+        }
+        .key {
+          opacity: 0.6;
+          font-size: 14px;
+          margin-top: -10px;
+        }
+        .info {
+          margin-right: 50px;
+          div {
+            position: relative;
+            .symbol {
+              font-weight: 600;
+              position: absolute;
+              top: 14px;
+              font-size: 19px;
+              left: -15px;
+            }
+          }
+        }
+        .info:last-child {
+          margin-right: 0;
+        }
+      }
+      .bottom {
+        margin-top: 28px;
+        .badge-pill {
+          font-size: 14px;
+          font-weight: 500;
+          height: 20px;
+          opacity: 1;
+          margin-right: 7px;
+        }
+        span {
+          opacity: 0.6;
+          font-size: 14px;
+        }
+      }
+    }
+    .card:last-child {
+      margin-right: 0;
+    }
+  }
+  .second-section {
+    margin-top: 24px;
+    .card {
+      height: 261px;
+    }
+  }
+  .chart {
+    margin-top: 21px;
+    .oval {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 5px;
+    }
+  }
+  .trade-session {
+    margin-top: 55px;
+    .form-inline {
+      position: relative;
+      top: -2px;
+      margin-left: 25px;
+    }
+    .key-value {
+      span:first-child {
+        opacity: 0.6;
+        font-size: 16px;
+        margin-right: 14px;
+      }
+      span:last-child {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .detail {
+      border-bottom: dashed 1px #4865d5;
+      position: relative;
+      top: 20px;
+    }
+    .sym {
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      top: 12px;
+    }
+    .bg-badge {
+      font-size: 24px;
+      font-weight: 500;
+      position: relative;
+      top: 18px;
+    }
+    .block {
+      padding-right: 5%;
+    }
+  }
+  .it-btn-group {
+    position: relative;
+    top: -2px;
+  }
+  select {
+    height: 25px !important;
+  }
 }

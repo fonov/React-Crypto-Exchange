@@ -49,7 +49,7 @@
   font-size: 20px;
   opacity: 0.8;
   position: absolute;
-  right: 40px;
+  right: 15px;
 }
 .it_cycle_item {
   width: 40px;
@@ -233,6 +233,7 @@
   border-right: 0;
   border-bottom: 0;
   padding-left: 2em;
+  padding-right: 2em;
   position: relative;
   min-height: 100%
 }
@@ -269,4 +270,49 @@
     font-size: 12px;
     left: 75px;
   }
+}
+.it-btn-group {
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid silver;
+  background-color: #f5f7fa;
+  font-size: 12px;
+  .it-btn {
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    line-height: 15px;
+    span {
+      opacity: 0.5;
+    }
+  }
+  .it-btn:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right: 1px solid silver;
+
+  }
+  .it-btn:last-child {
+    border-left: 1px solid silver;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .active {
+    border-radius: 3px;
+    border: 1px solid silver;
+    position: relative;
+    left: -1px;
+    height: 25px;
+    top: -1px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+  }
+}
+.it-delimiter {
+  width: 9px;
+  border-bottom: 1px solid black;
+  opacity: 0.4;
 }

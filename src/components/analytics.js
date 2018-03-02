@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {BasePage} from '../elements'
-import { Row, Col, Progress, Card, CardBody, CardText } from 'reactstrap';
+import { Row, Col, Progress, Card, CardBody, CardText, Badge, ButtonGroup, Button } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import { PieChart, Pie } from 'recharts';
 
 
 class Analytics extends Component {
@@ -12,7 +13,7 @@ class Analytics extends Component {
     render() {
         return (
             <BasePage
-                wallet_active={true}
+                analytics_active={true}
             >
                 <div className='it-analytics'>
                     <Row className='justify-content-between'>
@@ -25,6 +26,242 @@ class Analytics extends Component {
                             </div>
                         </Col>
                     </Row>
+                    <Row className='card-info'>
+                        {
+                            [
+                                ['today', 24, 190.58, '+ 16%'],
+                                ['This week', 43, 489.39, '+ 16%'],
+                                ['This month', 90, 700, '+ 16%'],
+                                ['This Year', 200, 2500, '+ 26%'],
+                            ].map((item, i) => (
+                                <Col key={i} md={3} xl={3} lg={3} className='col-3'>
+                                    <Card>
+                                        <CardBody>
+                                            <span className='label'>{item[0]}</span>
+                                            <div className="d-flex flex-row info-block">
+                                                <img src={require('../assets/icons/analytics/analytics@3x.png')} />
+                                                <div className="d-flex flex-column info">
+                                                    <span className='value'>{item[1]}</span>
+                                                    <span className='key'>orders</span>
+                                                </div>
+                                                <div className="d-flex flex-column info">
+                                                    <div><div className='symbol'>$</div><span className='value'>{item[2]}</span></div>
+                                                    <span className='key'>investment</span>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex flex-row info-block bottom">
+                                                <Badge pill className='bg-success'>{item[3]}</Badge>
+                                                <span>from average performance</span>
+                                            </div>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                    <Row className='second-section'>
+                        <Col lg={8} xl={8}>
+                            <Card>
+                                <CardBody>
+                                    <div className="d-flex justify-content-between">
+                                        <strong className='it-fs16'>Performance</strong>
+                                        <form className="form-inline">
+                                            <div className="form-group">
+                                                <label className='mr-2 it-fs12'>Step</label>
+                                                <select className="form-control form-control-sm">
+                                                    <option>1 day</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col lg={4} xl={4}>
+                            <Card>
+                                <CardBody className='performance'>
+                                    <div className="d-flex justify-content-between">
+                                        <strong className='it-fs16'>Performance</strong>
+                                        <div className='cog it-fs14 it_light_opacity'><FontAwesome name='cog'/></div>
+                                    </div>
+                                    <div className="d-flex flex-row mt-2">
+                                        <span className='text-success mr-2'>Active 5 sessions</span>
+                                        <span className='text-secondary it_light_opacity'>Closed 278 sessions</span>
+                                    </div>
+                                    <Row className='chart'>
+                                        <Col className='col-6' md={6} lg={6} xl={6}>
+                                            <div className="d-flex flex-column">
+                                                <div className="d-flex flex-row">
+                                                    <div className='oval bg-warning' />
+                                                    <div className="d-flex flex-column ml-2">
+                                                        <span className='it-medium'>1 or less days</span>
+                                                        <span className='text-secondary it_light_opacity'>10 sessions 15%</span>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row mt-3">
+                                                    <div className='oval' style={{backgroundColor: '#9351e5'}} />
+                                                    <div className="d-flex flex-column ml-2">
+                                                        <span className='it-medium'>1 or less days</span>
+                                                        <span className='text-secondary it_light_opacity'>10 sessions 15%</span>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row mt-3">
+                                                    <div className='oval' style={{backgroundColor: '#8598e3'}} />
+                                                    <div className="d-flex flex-column ml-2">
+                                                        <span className='it-medium'>1 or less days</span>
+                                                        <span className='text-secondary it_light_opacity'>10 sessions 15%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col className='col-6' md={6} lg={6} xl={6}>
+
+                                        </Col>
+                                    </Row>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                    <div className='trade-session'>
+                        <div className="d-flex flex-row">
+                            <strong className='it-fs16'>Performance</strong>
+                            <span className='it-fs16 it-half-opacity ml-2 mr-2'>2</span>
+                            <div className="d-flex flex-row it-btn-group ml-2">
+                                <div className="it-btn active">All</div>
+                                <div className="it-btn"><span>Opened</span></div>
+                                <div className="it-btn"><span>Closed</span></div>
+                            </div>
+                            <form className="form-inline">
+                                <div className="form-group">
+                                    <select className="form-control form-control-sm mr-2">
+                                        <option>ALL</option>
+                                    </select>
+                                    <div className='it-delimiter' />
+                                    <select className="form-control form-control-sm ml-2 mr-2">
+                                        <option>BTC</option>
+                                    </select>
+                                    <label className='mr-2 ml-4 it-fs12'>Sort by</label>
+                                    <select className="form-control form-control-sm">
+                                        <option>USD profit session</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <Card className='mt-4'>
+                                <CardBody>
+                                    <Row>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <strong className='it-fs24 text-primary'>LTC/BTC</strong>
+                                                <div className='it_light_opacity'>
+                                                    <Badge pill className='bg-secondary'>Closed</Badge>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2 text-center'>
+                                            <span className='text-primary detail'>Details</span>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column sym'>
+                                                <div>
+                                                    <span className='text-success'>+3.01367 BTC</span>
+                                                </div>
+                                                <div>
+                                                    <span className='text-success'>+39.19 USD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2 text-center'>
+                                            <Badge pill className='bg-success bg-badge'>+17%</Badge>
+                                        </div>
+                                    </Row>
+                                </CardBody>
+                            </Card>
+                            <Card className='mt-2'>
+                                <CardBody>
+                                    <Row>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <strong className='it-fs24 text-primary'>LTC/BTC</strong>
+                                                <div className='it_light_opacity'>
+                                                    <Badge pill className='bg-primary'>Active</Badge>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column'>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                                <div className='key-value'>
+                                                    <span>Open orders</span> <span>9</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2 text-center'>
+                                            <span className='text-primary detail'>Details</span>
+                                        </div>
+                                        <div className='col-2'>
+                                            <div className='d-flex flex-column sym'>
+                                                <div>
+                                                    <span className='text-success'>+3.01367 BTC</span>
+                                                </div>
+                                                <div>
+                                                    <span className='text-success'>+39.19 USD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-2 text-center'>
+                                            <Badge pill className='bg-success bg-badge'>+17%</Badge>
+                                        </div>
+                                    </Row>
+                                </CardBody>
+                            </Card>
+                        </div>
+                    </div>
                 </div>
             </BasePage>
         )
