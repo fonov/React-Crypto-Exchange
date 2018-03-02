@@ -35,6 +35,9 @@
     font-size: 34px;
   }
 }
+body {
+  background-color: #eaebef;
+}
 .it_page_title {
   font-size: 28px;
   font-weight: 600;
@@ -248,7 +251,7 @@
   padding-right: 2em;
   position: absolute;
   min-height: 100%;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .it-market-history-extra-col {
   @media (min-width: 1440px) {

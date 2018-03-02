@@ -34,7 +34,6 @@ class TopPanel extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        { active[i] === true && <div className='white_bottom'/>}
                                     </div>
                                 ))
                             }

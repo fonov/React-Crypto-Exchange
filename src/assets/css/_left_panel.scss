@@ -6,6 +6,13 @@
   .logo {
     width: 30px;
   }
+}
+.it-left-panel-nav {
+  width: 94px;
+  height: 100%;
+  position: fixed;
+  z-index: 5;
+  top: 46px;
   .icon {
     font-size: 22px;
   }
@@ -20,14 +27,15 @@
   }
   .footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 55px;
     width: 100%;
-    height: auto;
   }
   .active {
     background-color: white;
-    box-shadow: -1px -1px 8px 0 rgba(0, 0, 0, .2);
+    box-shadow: -9px -1px 8px 2px rgba(0, 0, 0, 0.2);
     z-index: 0;
+    width: calc(100% + 5px);
+    padding-right: 5px;
   }
   .item {
     text-align: center;

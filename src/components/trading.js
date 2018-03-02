@@ -83,12 +83,12 @@ class Trading extends Component{
                                     <div className='text-center mt-2 w-100'>
                                         <div className="btn-group d-flex btn-buy-sell" role="group">
                                             <Button className='bg-success border-0'>
-                                                <strong className='px-4'>
+                                                <strong>
                                                     <FontAwesome name='long-arrow-up' /> Buy
                                                 </strong>
                                             </Button>
                                             <Button className='bg-white text-dark border border-left-0'>
-                                                <strong className='px-4 it-half-opacity'>
+                                                <strong className='it-half-opacity'>
                                                     <FontAwesome name='long-arrow-down' /> Sell
                                                 </strong>
                                             </Button>

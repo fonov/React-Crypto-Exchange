@@ -23,7 +23,7 @@ class Wallet extends Component{
                             <p className='it_page_title'>My wallets</p>
                         </Col>
                         <Col className='mt-3'>
-                            <div className='it_cycle_times'>
+                            <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
                                 <FontAwesome name='times' className=''/>
                             </div>
                         </Col>
@@ -130,7 +130,7 @@ class Wallet extends Component{
                             <Card className=''>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
-                                        <div className='oval bg-primary'/>
+                                        <div className='oval' style={{backgroundColor: '#33a5f0'}}/>
                                         <div className='it-fs14 it-medium'>DASH</div>
                                     </div>
                                     <CardText className='text-center'>
@@ -142,7 +142,7 @@ class Wallet extends Component{
                             <Card className=''>
                                 <CardBody>
                                     <div className="d-flex justify-content-center text-center">
-                                        <div className='oval bg-warning'/>
+                                        <div className='oval' style={{backgroundColor: '#ff8533'}}/>
                                         <div className='it-fs14 it-medium'>XMR</div>
                                     </div>
                                     <CardText className='text-center'>

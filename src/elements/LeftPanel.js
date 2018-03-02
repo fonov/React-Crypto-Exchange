@@ -42,7 +42,8 @@ class LeftPanel extends Component{
                             alt='logo'
                         />
                     </div>
-
+                </div>
+                <div className='it-left-panel-nav'>
                     <div className={`item ${orders_active && 'active'}`} onClick={() => this._orders_active()}>
                         <div className="d-flex flex-column">
                             <div className='it-badge bg-primary text-white'>
