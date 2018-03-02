@@ -99,6 +99,19 @@
     div:first-child {
       padding-right: .5em;
     }
+    .it-char {
+      span:first-child {
+        position: relative;
+        top: -3px;
+        font-size: 12px;
+      }
+      span:last-child {
+        font-size: 20px;
+      }
+    }
+    .it-char:first-child {
+      margin-right: 20px;
+    }
   }
 }
 .it-trading_view {
