@@ -49,7 +49,7 @@ class Traders extends Component{
                                         4
                                     ].map((item) => (
                                         <Col key={item} className='col-3' md={3} lg={3} xl={3}>
-                                            <Card>
+                                            <Card onClick={() => push(URLS.Trader)}>
                                                 <CardBody>
                                                     <div className='top-100'>
                                                         <Badge color='warning' pill>

@@ -1,0 +1,183 @@
+.it-trader {
+  .it_cycle_times {
+    right: 0;
+  }
+  .back {
+    width: 38px;
+    height: 38px;
+    background-color: #eceff4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    opacity: 0.8;
+  }
+  .back-label {
+    margin-top: 0.65rem;
+    margin-left: 0.5rem;
+  }
+  .bio {
+    margin-top: 32px;
+  }
+  .badge {
+    padding: 0.4em 1.0em;
+    span {
+      color: white !important;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .badge-2 {
+    position: relative;
+    span:first-child {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    span:last-child {
+      margin-left: 3px;
+      position: relative;
+      top: -3px;
+      font-size: 12px;
+      opacity: 0.6;
+      font-weight: normal;
+    }
+  }
+  .profit {
+    margin-left: 2em;
+    img {
+      width: 27px;
+      height: 27px;
+    }
+    .text {
+      margin-top: 4px;
+      line-height: 10px;
+      margin-left: 5px;
+    }
+  }
+  .investments {
+    position: relative;
+    border-right: 1px solid #dee2e6;
+    padding-right: 30px;
+    .row {
+      border-bottom: 1px solid #dee2e6;
+    }
+    .row:last-child {
+      border-bottom: 0;
+    }
+    .col {
+      position: relative;
+      img {
+        width: 30px;
+        position: relative;
+      }
+      img:last-child {
+        left: -10px;
+      }
+      .name {
+        line-height: 35px;
+      }
+    }
+    .number {
+      line-height: 20px;
+      position: relative;
+      top: -5px;
+    }
+    padding-bottom: 10px;
+  }
+  .trades {
+    padding-left: 30px;
+    .rating {
+      font-size: 24px;
+      font-weight: normal;
+      color: #282e3d;
+      background-color: #e5be56;
+    }
+    .gr-rating {
+      width: 80%;
+      margin: 10px auto;
+      border-radius: 5px;
+      background-color: #eceff4;
+      height: 24px;
+      .gradient {
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        height: 100%;
+        width: 50%;
+        background-image: linear-gradient(to right, #27ae66, #f0a202 51%), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+      }
+    }
+  }
+  .investments_trades {
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .section-2 {
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+  .time-line {
+    position: relative;
+    .date {
+      background-color: #eceff4;
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 15px;
+      position: relative;
+      padding-top: 10px;
+      margin: 0 auto;
+      span {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      div {
+        font-size: 9px;
+        font-weight: 500;
+      }
+    }
+    .line {
+      background-color: #eceff4;
+      width: 1px;
+      height: 223px;
+      margin: 0 auto;
+    }
+  }
+  .posts {
+    .post {
+      background-color: #f5f7fa;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+      position: relative;
+      .share {
+        position: relative;
+        top: -8px;
+        margin-left: 23px;
+        width: 33px;
+        height: 33px;
+        background-color: #f5f7fa;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        text-align: center;
+        font-size: 15px;
+        padding-top: 7px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+    .card:first-child {
+      margin-top: 0;
+    }
+    .card {
+      margin-top: 80px;
+    }
+  }
+  .trading_journal {
+    margin-top: 30px;
+    .row {
+      margin-top: 40px;
+    }
+  }
+}
