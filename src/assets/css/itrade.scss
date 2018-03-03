@@ -7,6 +7,7 @@
 @import "my_orders_full";
 @import "add_currency";
 @import "analytics";
+@import "traders";
 
 
 @font-face {
@@ -156,6 +157,9 @@ body {
 }
 .it-fs24 {
   font-size: 24px;
+}
+.it-fs22 {
+  font-size: 22px;
 }
 .it-fs34 {
   font-size: 24px;

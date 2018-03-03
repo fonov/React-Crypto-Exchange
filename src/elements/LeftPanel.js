@@ -29,7 +29,7 @@ class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3, push, wallet_active, analytics_active } = this.props,
+        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active } = this.props,
             {orders_active} = this.state;
 
         return (
@@ -66,7 +66,7 @@ class LeftPanel extends Component{
                         <p>Analytics</p>
                     </div>
 
-                    <div className='item'>
+                    <div className={`item ${traders_active && !orders_active && 'active'}`} onClick={() => push(URLS.Traders)}>
                         <FontAwesome name='users' className='icon'/>
                         <p>Traders</p>
                     </div>
