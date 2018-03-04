@@ -5,7 +5,8 @@ const URLS = {
     Analytics: '/analytics',
     Traders: '/traders',
     Trader: '/trader',
-    Post: '/post'
+    Post: '/post',
+    Messages: '/messages'
 };
 
 export default URLS

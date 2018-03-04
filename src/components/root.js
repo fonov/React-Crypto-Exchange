@@ -12,6 +12,7 @@ import Analytics from './analytics'
 import Traders from './traders'
 import Trader from './trader'
 import Post from './post'
+import Messages from './messages'
 
 
 class Root extends Component {
@@ -29,6 +30,7 @@ class Root extends Component {
                         <Route path={URLS.Traders} component={Traders} />
                         <Route path={URLS.Trader} component={Trader} />
                         <Route path={URLS.Post} component={Post} />
+                        <Route path={URLS.Messages} component={Messages} />
                     </div>
                 </ConnectedRouter>
             </Provider>

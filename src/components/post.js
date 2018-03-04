@@ -13,7 +13,7 @@ class Trading extends Component{
             <BasePage
                 active={[false, false, false]}
             >
-                <div className='post'>
+                <div className='it-post'>
                     <div className="d-flex justify-content-center">
                         <div>
                             <img src='http://via.placeholder.com/140x140' className='rounded-circle mb-4'/>

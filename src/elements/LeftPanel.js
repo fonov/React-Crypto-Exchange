@@ -29,7 +29,7 @@ class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active } = this.props,
+        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active, message_active } = this.props,
             {orders_active} = this.state;
 
         return (
@@ -71,8 +71,8 @@ class LeftPanel extends Component{
                         <p>Traders</p>
                     </div>
 
-                    <div className='item'>
-                        <FontAwesome name='comment' className='icon'/>
+                    <div className={`item ${message_active && !orders_active && 'active'}`} onClick={() => push(URLS.Messages)}>
+                        <img src={require('../assets/icons/message/message.png')} className='img_icon' style={{opacity: 1}} />
                         <p>Messages</p>
                     </div>
 
