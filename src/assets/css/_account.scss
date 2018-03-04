@@ -18,7 +18,39 @@
       position: relative;
     }
     .active_nav {
-      background-color: rgba(72, 101, 213, 0.05);
+      display: none;
     }
   }
+  .active_tab {
+    background-color: rgba(72, 101, 213, 0.05);
+    .active_line {
+      background-color: rgba(72, 101, 213, 1);
+      height: 100%;
+      width: 4px;
+      position: absolute;
+      top: 0;
+      left: -1px;
+    }
+  }
+  .account {
+    margin-top: 32px;
+    padding-right: 60px;
+    padding-left: 60px;
+    .personal_information {
+      margin-top: 30px;
+    }
+  }
+  .other-setting {
+    margin-top: 30px;
+  }
+  .password {
+    margin-top: 40px;
+  }
+  .timezone {
+    margin-top: 42px;
+  }
+  .avatar {
+    margin-top: 120px;
+  }
+
 }
