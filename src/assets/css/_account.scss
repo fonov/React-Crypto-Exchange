@@ -56,17 +56,70 @@
     margin-top: 32px;
   }
   .security {
-    padding-right: 350px;
-    table {
+    .security-data {
       margin-top: 40px;
-      tbody {
-        tr {
-          border-top: 1px solid white;
-          td {
-            font-weight: 400;
+      .login {
+        padding-right: 350px;
+        table {
+          tbody {
+            tr {
+              border-top: 1px solid white;
+              td {
+                font-weight: 400;
+              }
+            }
           }
         }
       }
+      .session {
+        padding-right: 150px;
+        table {
+          tbody {
+            border-top: 10px solid white;
+            tr {
+              td {
+                font-weight: 400;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+        .current-sessions {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+  .notification {
+    margin-top: 22px;
+    .row {
+      margin-top: 20px;
+      padding-left: 7.5px;
+      .col {
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+      }
+    }
+    img {
+      max-height: 24px;
+    }
+    .added {
+      margin: 0 auto;
+      margin-top: 15px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);;
+      span {
+        font-size: 20px;
+        position: relative;
+        top: 5px
+      }
+    }
+    .added.not {
+      background-color: #eceff4;
     }
   }
 }

@@ -15,14 +15,18 @@ class Account extends Component{
 
         this.state = {
             account: false,
-            security: true
+            security: false,
+            notification: true,
+            security_login: false,
+            security_session: false,
+            security_two_step: true,
         }
     }
 
     render() {
 
         const {push} = this.props,
-            {account, security} = this.state;
+            {account, security, security_login, security_session, security_two_step, notification} = this.state;
 
         return (
             <BasePage
@@ -66,7 +70,7 @@ class Account extends Component{
                                 <ListGroupItem className='text_with_icon'>
                                     <img src={require('../assets/icons/reports.svg')} /> <span className='it-fs14 it_light_opacity text'>Reports</span>
                                 </ListGroupItem>
-                                <ListGroupItem className='text_with_icon'>
+                                <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`}>
                                     <FontAwesome name='bell' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Notifications</span>
                                 </ListGroupItem>
                             </ListGroup>
@@ -183,27 +187,143 @@ class Account extends Component{
                                 <Col className='col-9 base-account security'>
                                     <strong className='it-fs28'>Security</strong>
                                     <div className='d-flex flex-row'>
-                                        <div className="d-flex flex-row it-btn-group mt-4">
-                                            <div className="it-btn active">Login history</div>
+                                        <div className="d-flex flex-row it-btn-group mt-4 border-right-0">
+                                            <div className="it-btn">Login history</div>
                                             <div className="it-btn"><span>Active sessions</span></div>
-                                            <div className="it-btn it-btn_m"><span>Two-step authentication</span></div>
+                                            <div className="it-btn it-btn_m active"><span>Two-step authentication</span></div>
                                         </div>
                                     </div>
 
-                                    <Table>
-                                        <tbody>
+                                    <div className='security-data'>
                                         {
-                                            [1,2,3,4,5,6,7,8,9,10].map(item => (
-                                                <tr key={item}>
-                                                    <td width="20">185.27.49.66</td>
-                                                    <td><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
-                                                    <td>05:36</td>
-                                                    <td>09-06-2017</td>
-                                                </tr>
-                                            ))
+                                            security_login ? (
+                                                <Table className='login'>
+                                                    <tbody>
+                                                    {
+                                                        [1,2,3,4,5,6,7,8,9,10].map(item => (
+                                                            <tr key={item}>
+                                                                <td width="20">185.27.49.66</td>
+                                                                <td><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
+                                                                <td>05:36</td>
+                                                                <td>09-06-2017</td>
+                                                            </tr>
+                                                        ))
+                                                    }
+                                                    </tbody>
+                                                </Table>
+                                            ) : null
                                         }
-                                        </tbody>
-                                    </Table>
+                                        {
+                                            security_session ? (
+                                                <div className='session'>
+                                                    <strong className='it-fs16'>Current sessions</strong>
+                                                    <Table>
+                                                        <tbody className='border-bottom'>
+                                                            <tr>
+                                                                <td>OS X 10.13.2, Chrome, 63.0.2347.65</td>
+                                                                <td>162.27.19.10 <span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
+                                                                <td>05:36</td>
+                                                                <td>09-06-2017</td>
+                                                                <td><span className='text-primary'>Online</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </Table>
+                                                    <span className='text-danger'>Terminate all other sessions</span>
+                                                    <div className='current-sessions'>
+                                                        <strong className='it-fs16'>Current sessions</strong>
+                                                        <Table>
+                                                            <tbody className='border-bottom'>
+                                                            {
+                                                                [1,2,3,4].map(item => (
+                                                                    <tr key={item}>
+                                                                        <td>OS X 10.13.2, Chrome, 63.0.2347.65</td>
+                                                                        <td>162.27.19.10 <span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
+                                                                        <td>05:36</td>
+                                                                        <td>09-06-2017</td>
+                                                                        <td><span className='text-primary'>Revoke</span></td>
+                                                                    </tr>
+                                                                ))
+                                                            }
+                                                            </tbody>
+                                                        </Table>
+                                                    </div>
+                                                </div>
+                                            ) : null
+                                        }
+                                        {
+                                            security_two_step ? (
+                                                <div>
+                                                    <span>Using Two-factor authentication is highly recommended.</span>
+                                                    <div className='mt-2'>
+                                                        <Button color='light' className='border it-fs14'>
+                                                            <strong>SetUp Two-step authentication</strong>
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            ) : null
+                                        }
+                                    </div>
+                                </Col>
+                            ) : null
+                        }
+                        {
+                            notification ? (
+                                <Col className='col-9'>
+                                    <div className='notification'>
+                                        <strong className='it-fs28'>Notifications</strong>
+                                        <Row>
+                                            <Col className='col-3'>
+                                                <Card>
+                                                    <CardBody className='text-center'>
+                                                        <img src={require('../assets/icons/noun-540071-cc.svg')} />
+                                                        <div className='mt-2'>
+                                                            <span className='it-medium it-fs18'>SMS</span>
+                                                        </div>
+                                                        <div className='added'>
+                                                            <FontAwesome name='check' className='text-success'/>
+                                                        </div>
+                                                    </CardBody>
+                                                </Card>
+                                            </Col>
+                                            <Col className='col-3'>
+                                                <Card>
+                                                    <CardBody className='text-center'>
+                                                        <img src={require('../assets/icons/noun-553134-cc.svg')} />
+                                                        <div className='mt-2'>
+                                                            <span className='it-medium it-fs18'>Email</span>
+                                                        </div>
+                                                        <div className='added not'>
+                                                        </div>
+                                                    </CardBody>
+                                                </Card>
+                                            </Col>
+                                            <Col className='col-3'>
+                                                <Card>
+                                                    <CardBody className='text-center'>
+                                                        <img src={require('../assets/icons/noun-993426-cc.svg')} />
+                                                        <div className='mt-2'>
+                                                            <span className='it-medium it-fs18'>Browser</span>
+                                                        </div>
+                                                        <div className='added'>
+                                                            <FontAwesome name='check' className='text-success'/>
+                                                        </div>
+                                                    </CardBody>
+                                                </Card>
+                                            </Col>
+                                            <Col className='col-3'>
+                                                <Card>
+                                                    <CardBody className='text-center'>
+                                                        <img src={require('../assets/icons/noun-1198083-cc.svg')} />
+                                                        <div className='mt-2'>
+                                                            <span className='it-medium it-fs18'>Sound</span>
+                                                        </div>
+                                                        <div className='added not'>
+                                                        </div>
+                                                    </CardBody>
+                                                </Card>
+                                            </Col>
+                                        </Row>
+                                    </div>
                                 </Col>
                             ) : null
                         }
