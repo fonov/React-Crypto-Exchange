@@ -11,6 +11,7 @@
 @import "trader";
 @import "post";
 @import "messages";
+@import "markets_list";
 
 
 @font-face {
@@ -385,4 +386,7 @@ body {
     flex: 0 0 20%;
     max-width: 20%;
   }
+}
+.it-dashed {
+  border-bottom: 1px dashed #282e3d;
 }

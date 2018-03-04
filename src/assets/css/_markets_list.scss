@@ -1,0 +1,84 @@
+.it-market-list {
+  .top-nav {
+    .item {
+      padding-left: 20px;
+      padding-right: 20px;
+      img {
+        width: 22px;
+        position: relative;
+        margin-right: 8px;
+        top: -5px
+      }
+      .active {
+        position: relative;
+        bottom: -24px;
+        width: 100%;
+        border: 2px solid #3454d1;
+        border-radius: 1.5px;
+      }
+    }
+    .search {
+      width: 180px;
+      margin: 0 auto;
+      input {
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        background-color: #f5f7fa;
+      }
+      .input-group-append {
+        .input-group-text {
+          border-bottom-right-radius: 20px;
+          border-top-right-radius: 20px;
+          background-color: #f5f7fa;
+        }
+      }
+    }
+    .icon-fa {
+      font-size: 28px;
+      position: relative;
+      top: 2px;
+    }
+    .tile {
+      position: relative;
+      top: 9px;
+    }
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 12px;
+    .non_active {
+      opacity: 0.2;
+    }
+  }
+  .with_img {
+    img {
+      width: 35px;
+    }
+    strong {
+      position: relative;
+      top: 2px;
+    }
+  }
+  td {
+    .fa {
+      position: relative;
+      top: 3px;
+    }
+  }
+  thead {
+    tr {
+      th {
+        padding-top: 40px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        position: relative;
+        top: 6px;
+      }
+      td:first-child {
+        top: 0;
+      }
+    }
+  }
+}
