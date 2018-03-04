@@ -5,7 +5,7 @@ import { Row, Col, Progress, Card, CardBody, CardText, Badge, ButtonGroup, Butto
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
-import { PieChart, Pie } from 'recharts';
+import { PieChart, Pie, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
 
 class Analytics extends Component {
@@ -13,6 +13,34 @@ class Analytics extends Component {
     render() {
 
         const {push} = this.props;
+
+        const pie_chart = [
+            {value: 40, color: '#8598e3'},
+            {value: 50, color: '#9351e5'},
+            {value: 10, color: '#f7c331'},
+        ], performance = [
+            {name: '14 nov', up: 50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+            {name: 'Page A', up: 50},
+            {name: 'Page A', down: -50},
+
+        ];
 
         return (
             <BasePage
@@ -78,6 +106,11 @@ class Analytics extends Component {
                                             </div>
                                         </form>
                                     </div>
+                                    {/*<BarChart width={730} height={250} data={performance}>*/}
+                                        {/*<XAxis dataKey="name" allowDecimals={false}/>*/}
+                                        {/*<Bar dataKey="up" fill="#27ae66" />*/}
+                                        {/*<Bar dataKey="down" fill="#f26451" />*/}
+                                    {/*</BarChart>*/}
                                 </CardBody>
                             </Card>
                         </Col>
@@ -119,7 +152,11 @@ class Analytics extends Component {
                                             </div>
                                         </Col>
                                         <Col className='col-6' md={6} lg={6} xl={6}>
-
+                                            <PieChart width={400} height={200}>
+                                                <Pie data={pie_chart} cx={50} cy={60} innerRadius={0} outerRadius={50} fill="#82ca9d">
+                                                    {pie_chart.map((entry, index) => <Cell fill={entry.color}/>)}
+                                                </Pie>
+                                            </PieChart>
                                         </Col>
                                     </Row>
                                 </CardBody>
