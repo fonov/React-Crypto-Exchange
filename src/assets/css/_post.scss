@@ -1,0 +1,61 @@
+.post {
+  margin-top: 90px;
+  .badge-2 {
+    position: relative;
+    span:first-child {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    span:last-child {
+      margin-left: 3px;
+      position: relative;
+      top: -3px;
+      font-size: 12px;
+      opacity: 0.6;
+      font-weight: normal;
+    }
+  }
+  .profit {
+    margin-top: -3px;
+    margin-left: 2em;
+    img {
+      width: 27px;
+      height: 27px;
+    }
+    .text {
+      margin-top: 4px;
+      line-height: 10px;
+      margin-left: 5px;
+    }
+  }
+  .post {
+    margin-top: 25px;
+    background-color: #f5f7fa;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    .share {
+      position: relative;
+      top: -8px;
+      margin-left: 23px;
+      width: 33px;
+      height: 33px;
+      background-color: #f5f7fa;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      text-align: center;
+      font-size: 15px;
+      padding-top: 7px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  .comments {
+    .comment {
+      margin-top: 32px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .comment:last-child {
+      border-bottom: 0;
+    }
+  }
+}

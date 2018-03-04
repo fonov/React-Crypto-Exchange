@@ -198,7 +198,7 @@ class Trader extends Component{
                                         </div>
                                     </Col>
                                     <Col className='col-10 posts' md={10} xl={10} lg={10}>
-                                        <Card className='post'>
+                                        <Card className='post' onClick={() => push(URLS.Post)}>
                                             <CardBody>
                                             <span className='it-fs14'>
                                                 So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are.

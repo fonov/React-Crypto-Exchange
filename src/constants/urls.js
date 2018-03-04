@@ -4,7 +4,8 @@ const URLS = {
     AddCurrency: '/add_currency',
     Analytics: '/analytics',
     Traders: '/traders',
-    Trader: '/trader'
+    Trader: '/trader',
+    Post: '/post'
 };
 
 export default URLS

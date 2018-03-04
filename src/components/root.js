@@ -11,6 +11,7 @@ import AddCurrency from './add_currency'
 import Analytics from './analytics'
 import Traders from './traders'
 import Trader from './trader'
+import Post from './post'
 
 
 class Root extends Component {
@@ -27,6 +28,7 @@ class Root extends Component {
                         <Route path={URLS.Analytics} component={Analytics} />
                         <Route path={URLS.Traders} component={Traders} />
                         <Route path={URLS.Trader} component={Trader} />
+                        <Route path={URLS.Post} component={Post} />
                     </div>
                 </ConnectedRouter>
             </Provider>
