@@ -81,4 +81,35 @@
       }
     }
   }
+  .tile-block {
+    margin-top: 24px;
+    .row {
+      .col {
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+        margin-top: 16px;
+        .card {
+          .card-body {
+            .badge {
+              position: relative;
+              top: 3px;
+              padding-top: 0.6em;
+              padding-bottom: 0.6em;
+            }
+            .fa {
+              position: relative;
+              top: 3px;
+            }
+            .delimiter {
+              margin: auto 0;
+              height: 50%;
+              width: 1px;
+              background-color: #282e3d;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
 }
