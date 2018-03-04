@@ -1,0 +1,24 @@
+.it-account {
+  margin-top: 40px;
+  .left-nav {
+    padding-right: 55px;
+  }
+  .name {
+    position: relative;
+    top: 8px;
+  }
+  .text_with_icon {
+    padding-left: 36px;
+    vertical-align: middle;
+    img {
+      width: 16px;
+    }
+    .text {
+      padding-left: 15px;
+      position: relative;
+    }
+    .active_nav {
+      background-color: rgba(72, 101, 213, 0.05);
+    }
+  }
+}

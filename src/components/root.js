@@ -14,6 +14,7 @@ import Trader from './trader'
 import Post from './post'
 import Messages from './messages'
 import MarketsList from './markets_list'
+import Account from './account'
 
 
 class Root extends Component {
@@ -33,6 +34,7 @@ class Root extends Component {
                         <Route path={URLS.Post} component={Post} />
                         <Route path={URLS.Messages} component={Messages} />
                         <Route path={URLS.MarketsList} component={MarketsList} />
+                        <Route path={URLS.Account} component={Account} />
                     </div>
                 </ConnectedRouter>
             </Provider>

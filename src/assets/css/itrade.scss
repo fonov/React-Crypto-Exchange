@@ -12,6 +12,7 @@
 @import "post";
 @import "messages";
 @import "markets_list";
+@import "account";
 
 
 @font-face {
@@ -166,7 +167,10 @@ body {
   font-size: 24px;
 }
 .it-fs22 {
-  font-size: 22px;
+   font-size: 22px;
+}
+.it-fs28 {
+  font-size: 28px;
 }
 .it-fs34 {
   font-size: 24px;

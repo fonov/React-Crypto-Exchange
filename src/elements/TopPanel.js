@@ -54,7 +54,9 @@ class TopPanel extends Component {
                                     'cog',
                                     'bell'
                                 ].map((item, i) => (
-                                    <FontAwesome key={i} name={item} className='icon'/>
+                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null}>
+                                        <FontAwesome key={i} name={item} className='icon'/>
+                                    </div>
                                 ))
                             }
                             <div className='theme-switch d-flex flex-row'>
