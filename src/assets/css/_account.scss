@@ -52,5 +52,21 @@
   .avatar {
     margin-top: 120px;
   }
-
+  .base-account {
+    margin-top: 32px;
+  }
+  .security {
+    padding-right: 350px;
+    table {
+      margin-top: 40px;
+      tbody {
+        tr {
+          border-top: 1px solid white;
+          td {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
 }
