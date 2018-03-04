@@ -346,7 +346,12 @@ body {
     background-color: #ffffff;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     font-weight: 600;
-    color: #282e3d;
+    span {
+      opacity: 1;
+    }
+  }
+  .it-btn.active:last-child {
+    left: 1px;
   }
 }
 .it-delimiter {

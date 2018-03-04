@@ -14,13 +14,31 @@ class Account extends Component{
         super(props);
 
         this.state = {
+            account: true,
+            security: false,
+            notification: false,
+            security_login: true,
+            security_session: false,
+            security_two_step: false,
+        }
+    }
+
+    changeLeftNav(item) {
+        this.setState({
             account: false,
             security: false,
-            notification: true,
+            notification: false,
+            [item]: true
+        })
+    }
+
+    changeSession(item) {
+        this.setState({
             security_login: false,
             security_session: false,
-            security_two_step: true,
-        }
+            security_two_step: false,
+            [item]: true
+        })
     }
 
     render() {
@@ -51,26 +69,32 @@ class Account extends Component{
                                     <div className='active_line' />
                                     <FontAwesome name='home' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Overview</span>
                                 </ListGroupItem>
-                                <ListGroupItem className={`text_with_icon ${account ? 'active_tab': ''}`}>
+                                <ListGroupItem className={`text_with_icon ${account ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('account')}>
                                     <div className='active_line' />
                                     <FontAwesome name='user' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Account</span>
                                 </ListGroupItem>
-                                <ListGroupItem className={`text_with_icon ${security ? 'active_tab': ''}`}>
+                                <ListGroupItem className={`text_with_icon ${security ? 'active_tab': ''}`}  onClick={() => this.changeLeftNav('security')}>
+                                    <div className='active_line' />
                                     <img src={require('../assets/icons/security.svg')} /> <span className='it-fs14 it_light_opacity text'>Security</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
+                                    <div className='active_line' />
                                     <img src={require('../assets/icons/verifications.svg')} /> <span className='it-fs14 it_light_opacity text'>Verifications</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
+                                    <div className='active_line' />
                                     <img src={require('../assets/icons/api.svg')} /> <span className='it-fs14 it_light_opacity text'>API</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
+                                    <div className='active_line' />
                                     <img src={require('../assets/icons/interface.svg')} /> <span className='it-fs14 it_light_opacity text'>Interface</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
+                                    <div className='active_line' />
                                     <img src={require('../assets/icons/reports.svg')} /> <span className='it-fs14 it_light_opacity text'>Reports</span>
                                 </ListGroupItem>
-                                <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`}>
+                                <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('notification')}>
+                                    <div className='active_line' />
                                     <FontAwesome name='bell' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Notifications</span>
                                 </ListGroupItem>
                             </ListGroup>
@@ -187,10 +211,10 @@ class Account extends Component{
                                 <Col className='col-9 base-account security'>
                                     <strong className='it-fs28'>Security</strong>
                                     <div className='d-flex flex-row'>
-                                        <div className="d-flex flex-row it-btn-group mt-4 border-right-0">
-                                            <div className="it-btn">Login history</div>
-                                            <div className="it-btn"><span>Active sessions</span></div>
-                                            <div className="it-btn it-btn_m active"><span>Two-step authentication</span></div>
+                                        <div className="d-flex flex-row it-btn-group mt-4">
+                                            <div className={`it-btn ${security_login ? 'active': ''}`} onClick={() => this.changeSession('security_login')}><span>Login history</span></div>
+                                            <div className={`it-btn ${security_session ? 'active': ''}`} onClick={() => this.changeSession('security_session')}><span>Active sessions</span></div>
+                                            <div className={`it-btn it-btn it-btn_m ${security_session ? 'border-left-0': ''} ${security_two_step  ? 'active': ''}`} onClick={() => this.changeSession('security_two_step')}><span>Two-step authentication</span></div>
                                         </div>
                                     </div>
 
@@ -256,7 +280,7 @@ class Account extends Component{
                                                     <span>Using Two-factor authentication is highly recommended.</span>
                                                     <div className='mt-2'>
                                                         <Button color='light' className='border it-fs14'>
-                                                            <strong>SetUp Two-step authentication</strong>
+                                                            <span className='it-medium'>SetUp Two-step authentication</span>
                                                         </Button>
                                                     </div>
                                                 </div>
