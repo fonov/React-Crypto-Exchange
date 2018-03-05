@@ -42,7 +42,7 @@ class MyOrders extends Component{
                     </Col>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs14 text-success'>+18.09 %</div>
+                            <strong className='it-fs14 text-success'>+18.09 %</strong>
                         </div>
                     </Col>
                 </Row>
@@ -65,7 +65,7 @@ class MyOrders extends Component{
                     </Col>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs14 text-success'>+18.09 %</div>
+                            <strong className='it-fs14 text-success'>+18.09 %</strong>
                         </div>
                     </Col>
                 </Row>
@@ -116,7 +116,7 @@ class MyOrders extends Component{
                     </Col>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <div className='it-fs14 text-success'>+18.09 %</div>
+                            <strong className='it-fs14 text-success'>+18.09 %</strong>
                         </div>
                     </Col>
                 </Row>

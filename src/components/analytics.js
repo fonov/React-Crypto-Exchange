@@ -106,11 +106,6 @@ class Analytics extends Component {
                                             </div>
                                         </form>
                                     </div>
-                                    {/*<BarChart width={730} height={250} data={performance}>*/}
-                                        {/*<XAxis dataKey="name" allowDecimals={false}/>*/}
-                                        {/*<Bar dataKey="up" fill="#27ae66" />*/}
-                                        {/*<Bar dataKey="down" fill="#f26451" />*/}
-                                    {/*</BarChart>*/}
                                 </CardBody>
                             </Card>
                         </Col>
@@ -181,7 +176,7 @@ class Analytics extends Component {
                                     <select className="form-control form-control-sm ml-2 mr-2">
                                         <option>BTC</option>
                                     </select>
-                                    <label className='mr-2 ml-4 it-fs12'>Sort by</label>
+                                    <label className='mr-2 ml-4 it-fs12 night_lite_op'>Sort by</label>
                                     <select className="form-control form-control-sm">
                                         <option>USD profit session</option>
                                     </select>

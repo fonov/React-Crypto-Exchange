@@ -22,7 +22,6 @@ class MyOrdersFull extends Component{
                         </div>
                     </Col>
                 </Row>
-
                 <Form inline className='mt-2 ml-4'>
                     <div className="d-flex flex-row it-btn-group mr-4">
                         <div className="it-btn active ">Opened</div>
@@ -45,14 +44,13 @@ class MyOrdersFull extends Component{
                     <Input type="select" name="select" id="exampleSelect" className='form-control-sm'>
                         <option>All type</option>
                     </Input>
-                    <Input type="checkbox" className='ml-4'/> Hide all canceled
+                    <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
                     <Button color='light' className='border ml-4 export_btn_big it-fs14'>
                         <FontAwesome name='file' className='mr-2'/> Export order list
                     </Button>
                 </Form>
-
                 <div className='mt-3 mx-4'>
-                    <table className="table ">
+                    <table className="table">
                         <thead className='mt-3'>
                             <tr>
                                 <th scope="col" style={{paddingTop: 3.5+'em'}}>Pair</th>
@@ -69,7 +67,9 @@ class MyOrdersFull extends Component{
                         </thead>
                         <tbody>
                         <tr>
-                            <td className='align-middle'>XMR/BTC</td>
+                            <td className='align-middle'>
+                                <strong className='text-primary'>XMR/BTC</strong>
+                            </td>
                             <td className='text-danger align-middle'>
                                 <FontAwesome name='long-arrow-down' /> Market
                             </td>
@@ -89,7 +89,11 @@ class MyOrdersFull extends Component{
                             </td>
                         </tr>
                         <tr>
-                            <td className='align-middle'>XMR/BTC</td>
+                            <td className='align-middle'>
+                                <strong className='text-primary'>
+                                    <strong className='text-primary'>XMR/BTC</strong>
+                                </strong>
+                            </td>
                             <td className='text-danger align-middle'>
                                 <FontAwesome name='long-arrow-down' /> Market
                             </td>
@@ -109,7 +113,9 @@ class MyOrdersFull extends Component{
                             </td>
                         </tr>
                         <tr>
-                            <td className='align-middle'>XMR/BTC</td>
+                            <td className='align-middle'>
+                                <strong className='text-primary'>XMR/BTC</strong>
+                            </td>
                             <td className='text-danger align-middle'>
                                 <FontAwesome name='long-arrow-down' /> Market
                             </td>

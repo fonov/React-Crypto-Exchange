@@ -29,7 +29,7 @@ class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active, message_active } = this.props,
+        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active, message_active, theme } = this.props,
             {orders_active} = this.state;
 
         return (
@@ -50,14 +50,14 @@ class LeftPanel extends Component{
                                 {my_orders_badge}
                             </div>
                             <div>
-                                <img src={require('../assets/icons/my-orders/icon-my-orders@3x.png')} className='img_icon_c' />
+                                <img src={theme.my_orders_icon} className='img_icon_c' />
                                 <p>My orders</p>
                             </div>
                         </div>
                     </div>
 
                     <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
-                        <img src={require('../assets/icons/wallet.svg')} className='img_icon' />
+                        <img src={theme.wallet_icon} className='img_icon non_op' />
                         <p>Wallets</p>
                     </div>
 
@@ -72,7 +72,7 @@ class LeftPanel extends Component{
                     </div>
 
                     <div className={`item ${message_active && !orders_active && 'active'}`} onClick={() => push(URLS.Messages)}>
-                        <img src={require('../assets/icons/message/message.png')} className='img_icon' style={{opacity: 1}} />
+                        <img src={theme.message_icon} className='img_icon' style={{opacity: 1}} />
                         <p>Messages</p>
                     </div>
 
@@ -93,7 +93,7 @@ class LeftPanel extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

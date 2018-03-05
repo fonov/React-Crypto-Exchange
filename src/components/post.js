@@ -42,7 +42,7 @@ class Trading extends Component{
                     </div>
 
                     <Row className='justify-content-center'>
-                        <Col className='col-6'>
+                        <Col className='col-7'>
                             <Card className='post'>
                                 <CardBody>
                                     <div className='it-half-opacity it-fs12 it-medium'>

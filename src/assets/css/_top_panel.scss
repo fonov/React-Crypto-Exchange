@@ -39,8 +39,12 @@
   }
   .nav-desc {
     position: absolute;
-    top: 20px;
+    top: 25px;
     opacity: 0.8;
+    .badge {
+      padding-top: 0.3em;
+      font-weight: 400;
+    }
     p:last-child {
       padding-left: 0.5em;
       line-height: 25px;

@@ -14,7 +14,7 @@ class MarketList extends Component{
         super(props);
 
         this.state = {
-            tile: true
+            tile: false
         }
     }
 
@@ -24,7 +24,7 @@ class MarketList extends Component{
 
     render() {
 
-        const {push} = this.props,
+        const {push, theme} = this.props,
             {tile} = this.state;
 
         return (
@@ -69,11 +69,11 @@ class MarketList extends Component{
                                     </span>
                                 </div>
                             </div>
-                            <div className={`ml-4 icon-fa mr-4 ${tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
-                                <FontAwesome name='bars' />
+                            <div className={`ml-4 type_icon mr-4 ${tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
+                                <img src={theme.colomn} />
                             </div>
-                            <div className={`tile ${!tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
-                                <img src={require('../assets/icons/tile.svg')} />
+                            <div className={`type_icon ${!tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
+                                <img src={theme.tile} />
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@ class MarketList extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

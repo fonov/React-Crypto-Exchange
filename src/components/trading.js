@@ -4,11 +4,16 @@ import {BasePage} from '../elements'
 import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input, } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import TradingViewWidget from 'react-tradingview-widget';
+import URLS from '../constants/urls'
+import {push} from "react-router-redux";
 
 
 class Trading extends Component{
 
     render() {
+
+        const {theme, push} = this.props;
+
         return(
             <BasePage>
                 <div className='it-trading'>
@@ -65,15 +70,16 @@ class Trading extends Component{
                                         symbol="BITFINEX:BTCUSD"
                                         autosize
                                         locale="ru"
+                                        theme={theme.main_chart}
                                     />
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col className='col-4 mt-4' md={3} lg={3} xl={2}>
+                        <Col className='col-4 mt-4 wallet' md={3} lg={3} xl={2}>
                             <Card>
                                 <CardBody>
                                     <div className='text-center wallet'>
-                                        <img src={require('../assets/icons/wallet.svg')} className='it-icon'/>
+                                        <img src={theme.wallet_icon} className='it-icon non_op'/>
                                         <span className='it-fs16 ml-2 align-middle it-medium'>40.00600209 XMR</span>
                                         <p className='it-fs14'>
                                             Total 1000.90 USD
@@ -184,7 +190,7 @@ class Trading extends Component{
                                                 <Col className='text-success'>0.02316050</Col>
                                                 <Col/>
                                             </Row>
-                                            <Row className='it-fs11 align-middle'>
+                                            <Row className='it-fs11 align-middle active-o-b'>
                                                 <Col className='bg-light'>0.00017239</Col>
                                                 <Col className='bg-light'>0.00017239</Col>
                                                 <Col className='bg-light'>0.00017239</Col>
@@ -289,7 +295,7 @@ class Trading extends Component{
                                         </Col>
                                         <Col>
                                             <div className="d-flex flex-row-reverse">
-                                                <FontAwesome name='share-square-o' />
+                                                <FontAwesome name='share-square-o'  onClick={() => push(URLS.MarketsList)}/>
                                             </div>
                                         </Col>
                                     </Row>
@@ -373,13 +379,13 @@ class Trading extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        push: url => dispatch(push(url))
     }
 };
 

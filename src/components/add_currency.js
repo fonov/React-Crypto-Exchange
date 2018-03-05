@@ -11,7 +11,7 @@ class AddCurrency extends Component {
 
     render() {
 
-        const {push} = this.props;
+        const {push, theme} = this.props;
 
         let counts = [
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
@@ -65,7 +65,7 @@ class AddCurrency extends Component {
         ];
 
         return (
-            <div className='it-container'>
+            <div className={`it-container ${theme.night_class}`}>
                 <div className='it-add-currency pb-4'>
                     <Row className='justify-content-between mx-4'>
                         <Col className='mt-3'>
@@ -126,7 +126,7 @@ class AddCurrency extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

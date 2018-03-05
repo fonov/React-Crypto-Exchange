@@ -68,7 +68,7 @@ class Trader extends Component{
                                 </div>
                             </div>
                             <div className='mt-4 mb-4'>
-                                <Button color='light' className='border export_btn_big it-fs14' block>
+                                <Button color='light' className='border it-fs14 copy_trader' block>
                                     <FontAwesome name='plus' className='mr-2'/> Copy trader
                                 </Button>
                             </div>

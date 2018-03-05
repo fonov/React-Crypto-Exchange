@@ -1,0 +1,376 @@
+body {
+  background-color: #202434 !important;
+}
+.it-container.night {
+  .it-market-list {
+    .top-nav {
+      .item {
+        .active {
+          background-color: #3454d1;
+        }
+      }
+    }
+    table {
+      border-color: rgba(255, 255, 255, 0.2) !important;
+      thead, tr, th {
+        border-color: rgba(255, 255, 255, 0.2) !important;
+
+      }
+      tbody {
+        tr {
+          border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+      }
+    }
+  }
+  .it-messages {
+    .new-message {
+      width: 47px;
+      height: 47px;
+      position: relative;
+      top: -1px;
+    }
+    .list-group-item {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    .chat {
+      background-color: #333845;
+      border: 0;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+    }
+    .text-block {
+      background-color: #323745;
+      border: 0;
+      textarea {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: solid 1px rgba(255, 255, 255, 0.2);
+      }
+    }
+    .btn.btn-light {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+  }
+  .it-post {
+    .post {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+      .share {
+        background-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      }
+      input {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border: solid 1px rgba(255, 255, 255, 0.2) !important;
+      }
+      .comments {
+        .comment {
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+  .border-top, .investments .row, .investments{
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .it-trader {
+    .back {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+    .copy_trader {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      border: 0 !important;
+      color: #ffffff;
+    }
+    .trading_journal {
+      .time-line {
+        .date {
+          background-color: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+        }
+        .line {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+    .row {
+      .col {
+        .card {
+          background-color: rgba(255, 255, 255, 0.05);
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+          .share {
+            background-color: #1b1f2b;
+          }
+          input {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: solid 1px rgba(255, 255, 255, 0.2) !important;
+          }
+        }
+      }
+    }
+  }
+  .traders-cards {
+    .col {
+      .card {
+        background-color: rgba(255, 255, 255, 0.04) !important;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+      }
+    }
+    .plus_icon {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+  }
+  .input-group.search {
+    input {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .input-group-append {
+      .input-group-text {
+        background-color: rgba(255, 255, 255, 0.17) !important;
+      }
+    }
+  }
+  .it-analytics {
+    .row.card-info {
+      .col {
+        .card {
+          .card-body {
+            span.label {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+    .trade-session {
+      .detail {
+        border-color: #7087de !important;
+      }
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+  }
+  .night_lite_op {
+    opacity: 0.9;
+  }
+  .it-delimiter {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .it-add-currency {
+    background-color: #282e3d;
+    .row {
+      .col {
+        .card {
+          border: 0;
+          background-color: #282e3d;
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+          .card-body {
+            .it_cycle_item {
+              background-color: rgba(255, 255, 255, 0.08);
+              box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+            }
+          }
+        }
+        .card.added {
+          background-image: linear-gradient(#202434, #202434), linear-gradient(to left, #000000, rgba(0, 0, 0, 0));
+          span.fa {
+            opacity: 0.6;
+            color: #27c97b;
+          }
+        }
+      }
+    }
+  }
+  .night-opacity {
+    opacity: 0.5;
+  }
+  .text-primary {
+    color: #7087de !important;
+  }
+  .border-primary {
+    border-color: #7087de !important;
+  }
+  .add_carrency_title {
+    color: #7087de !important;
+  }
+  .vertical-hr {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .it_cycle_times {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  .it_wallet {
+    .card {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+      .card-body {
+        .add_carrency {
+          background-color: rgba(255, 255, 255, 0.08);
+          color: white;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+    .card.card_active {
+      background-color: rgba(249, 198, 95, 0.1) !important;
+    }
+    .big_top_p {
+      .oval-big {
+        background-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+  .my_orders_full {
+    background-color: #282e3d;
+    .export_btn_big, .export_btn_small {
+      .fa.fa-file{
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      border: 0 !important;
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+    table, thead, tbody, tr, td {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+  hr {
+    background-color: white;
+    opacity: 0.15;
+  }
+  .progress {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .counter-list {
+    .key, .value {
+      background-color: #282e3d;
+    }
+  }
+  .non_op {
+   opacity: 1;
+  }
+  .it-btn-group {
+    background-color: #202434;
+    border: 0;
+    .active {
+      background-color: #383e4c;
+      border: 0;
+      top: 0px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+    div:last-child {
+      border-color: #202434;
+    }
+    .it-btn_m {
+      border-left: 1px solid #202434;
+    }
+  }
+  background-color: #1b1f2b;
+  .it-gr-btn {
+    div {
+      background-color: #181b29;
+      opacity: 0.3;
+      color: #ffffff;
+      border: 0;
+    }
+    div.active {
+      background-color:  #282e3d;
+      opacity: 1;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+  .it-left-panel, .it-left-panel-nav{
+    background-color: #202434;
+    color: white;
+    .icon {
+      opacity: 1;
+    }
+    .active {
+      background-color: #282e3d;
+    }
+  }
+  .it-top-panel {
+    background-color: #202434;
+    .nav-item.active {
+      background-color: #282e3d;
+    }
+    .theme-switch {
+      background-color: #0b0d14;
+      div:first-child {
+        background-color: #3a4255;
+        border: 1px solid #0a0c12;
+      }
+    }
+  }
+  strong, p, div {
+    color: white;
+  }
+  .my_orders {
+    background-color: #282e3d;
+    .text-primary, .fa.fa-caret-up, .fa.fa-caret-down {
+      color: #7087de !important;
+    }
+  }
+  select {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    background-color: #383e4c;
+    box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+    border-color: #202434 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  input.form-control {
+    background-color: #282e3d !important;
+    border-color:rgba(255, 255, 255, 0.25) !important;
+    border-right: 0;
+  }
+  .input-group-append {
+    .input-group-text {
+      background-color: #4a5060 !important;
+      border-color:rgba(255, 255, 255, 0.25) !important;
+      border-left: 0;
+      color: #f4f4f5 !important;
+      opacity: 0.6;
+    }
+  }
+  input[type='checkbox'] {
+    background-color: #383e4c;
+    color: #383e4c;
+  }
+  .it-page {
+    background-color: #282e3d;
+    .it-trading {
+      .wallet {
+        .text-primary {
+          color: #7087de !important;
+        }
+        .bg-success.btn-secondary {
+          background-color: #27c97b !important;
+        }
+      }
+      .it-order-book {
+        .active-o-b {
+          .bg-light {
+            background-color: #1b1f2b !important;
+          }
+        }
+      }
+    }
+    .btn-buy-sell {
+      button:last-child {
+        background-color: #282e3d !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
+      }
+    }
+    .card, .it-hr-text, .it-hr-text:after {
+      background-color: #282e3d;
+    }
+  }
+}

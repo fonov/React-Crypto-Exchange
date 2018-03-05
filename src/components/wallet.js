@@ -10,7 +10,7 @@ import {push} from "react-router-redux";
 class Wallet extends Component{
     render() {
 
-        const {push} = this.props;
+        const {push, theme} = this.props;
 
         return (
             <BasePage
@@ -31,32 +31,32 @@ class Wallet extends Component{
                     <div className="d-flex flex-row wallet-icon-gr">
                         <div className="d-flex flex-column wallet-icon">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet/icon-wallets@3x.png')}/>
+                                <img src={theme.wallet_1}/>
                             </div>
                             <p className='it-fs14 it_light_opacity'>My wallet 1</p>
                         </div>
                         <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet_opacity/icon-wallets-opacity@3x.png')}/>
+                                <img src={theme.hide_wallet}/>
                             </div>
                             <p className='it-fs14 text-primary '>Wallet for Marina</p>
                         </div>
                         <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet_opacity/icon-wallets-opacity@3x.png')}/>
+                                <img src={theme.hide_wallet}/>
                             </div>
                             <p className='it-fs14 text-primary'>My new wallet</p>
                         </div>
                         <div className="d-flex flex-column wallet-icon not_active">
                             <div className='text-center'>
-                                <img src={require('../assets/icons/wallet_add/icon-wallets-add@3x.png')}/>
+                                <img src={theme.add_wallet}/>
                             </div>
                             <p className='it-fs14 text-primary'>Create new wallet</p>
                         </div>
                     </div>
                     <div className="d-flex flex-row it-fs24 info-block">
                         <div className='mr-2'>
-                            Total
+                            <span className='night-opacity'>Total</span>
                         </div>
                         <div className='pr-2'>
                             $ 94 560
@@ -88,7 +88,9 @@ class Wallet extends Component{
                                     <div className='add_carrency'>
                                         <FontAwesome name='plus'/>
                                     </div>
-                                    <div className='text-center mt-1'>Add Carrency</div>
+                                    <div className='text-center mt-1'>
+                                        <span className='add_carrency_title'>Add Carrency</span>
+                                    </div>
                                 </CardBody>
                             </Card>
                             <Card className='card_active'>
@@ -195,7 +197,7 @@ class Wallet extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

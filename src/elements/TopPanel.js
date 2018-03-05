@@ -10,7 +10,7 @@ class TopPanel extends Component {
 
     render() {
 
-        const {active, push} = this.props;
+        const {active, push, theme} = this.props;
 
         return(
             <div className='it-top-panel'>
@@ -61,9 +61,9 @@ class TopPanel extends Component {
                             }
                             <div className='theme-switch d-flex flex-row'>
                                 <div>
-                                    <img src={require('../assets/icons/noun/noun-1227121-cc@3x.png')} style={{width: 16}}/>
+                                    <img src={theme.moon_icon} style={{width: 16}}/>
                                 </div>
-                                <img src={require('../assets/icons/shape/shape@3x.png')} style={{height: 14}} className='non_active'/>
+                                <img src={theme.sun_icon} style={{height: 14}} className='non_active'/>
                             </div>
                         </div>
                     </Col>
@@ -75,7 +75,7 @@ class TopPanel extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

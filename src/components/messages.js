@@ -10,7 +10,7 @@ import {push} from "react-router-redux";
 class Messages extends Component{
     render() {
 
-        const {push} = this.props;
+        const {push, theme} = this.props;
 
         return (
             <BasePage
@@ -42,7 +42,7 @@ class Messages extends Component{
                                     </div>
                                 </Col>
                                 <Col className='col-2' md={2} xl={2} lg={2}>
-                                    <img src={require('../assets/icons/new_message/new-mess@3x.png')} className='new-message'/>
+                                    <img src={theme.add_message} className='new-message'/>
                                 </Col>
                             </Row>
                             <ListGroup className='mt-4'>
@@ -95,7 +95,7 @@ class Messages extends Component{
                                                     <div className='d-flex justify-content-between'>
                                                         <span className='it-medium it-fs14'>Sergey Surin</span>
                                                         <div>
-                                                            <img src={require('../assets/icons/double-check/double-check.png')} className='double-check' />
+                                                            <img src={theme.read} className='double-check' />
                                                             <span className='it-fs12 it-medium it-half-opacity ml-2'>15:40</span>
                                                         </div>
                                                     </div>
@@ -178,7 +178,7 @@ class Messages extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 
