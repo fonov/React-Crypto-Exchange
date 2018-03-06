@@ -1,10 +1,12 @@
 .it-top-panel {
   height: auto;
   width: calc(100% - 96px);
+  min-width: 1030px;
   background-color: #f5f7fa;
   margin-left: 94px;
   position: absolute;
   overflow-x: hidden;
+  overflow-y: hidden;
   .nav-item {
     background-color: rgba(40, 46, 61, 0.07);
     height: 44px;
@@ -17,8 +19,32 @@
     text-align: left;
     opacity: 0.8;
     cursor: pointer;
+    position: relative;
     .badge-pill {
       padding-top: 5px;
+    }
+    .closed {
+      position: relative;
+      top: -3px
+    }
+    .title {
+      margin-top: 6px;
+    }
+    .nav-desc {
+      position: absolute;
+      top: 23px;
+      .badge {
+        padding-top: 0.3em;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      p:last-child {
+        padding-left: 0.5em;
+        line-height: 25px;
+      }
+      p:first-child {
+        padding-left: 1px;
+      }
     }
   }
   .active {
@@ -31,33 +57,27 @@
     position: relative;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
     .nav-desc {
-      top: 18px;
+      margin-top: 1px;
+      .badge {
+        padding-top: 0.3em;
+      }
+      p {
+        position: relative;
+        top: -1px
+      }
     }
   }
   .times {
     opacity: 0.3;
   }
-  .nav-desc {
-    position: absolute;
-    top: 25px;
-    opacity: 0.8;
-    .badge {
-      padding-top: 0.3em;
-      font-weight: 400;
-    }
-    p:last-child {
-      padding-left: 0.5em;
-      line-height: 25px;
-    }
-    p:first-child {
-      padding-left: 1px;
-    }
-  }
   .add {
     padding-top: 6px;
     width: 102px;
     border: 1px dashed #717171;
-    border-bottom: 0
+    border-bottom: 0;
+    img {
+      margin-bottom: 1px;
+    }
   }
   .icon {
     margin-right: 10px !important;

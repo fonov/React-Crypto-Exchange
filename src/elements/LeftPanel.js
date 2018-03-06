@@ -57,7 +57,7 @@ class LeftPanel extends Component{
                     </div>
 
                     <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
-                        <img src={theme.wallet_icon} className='img_icon non_op' />
+                        <img src={theme.nav_wallet} className='img_icon non_op' />
                         <p>Wallets</p>
                     </div>
 

@@ -17,8 +17,8 @@ class Trading extends Component{
         return(
             <BasePage>
                 <div className='it-trading'>
-                    <Row className='mb-2'>
-                        <Col className='mt-3 col-8' md={9} lg={9} xl={10}>
+                    <div className='d-flex flex-row mb-2'>
+                        <div className='mt-3 main-view'>
                             <div className="d-flex flex-row">
                                 <div className='it-title'>
                                     XMR/BTC
@@ -33,7 +33,7 @@ class Trading extends Component{
                                         <span>8,480</span>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-column ml-4">
+                                <div className="d-flex flex-column ml-4 it-char-flex-other">
                                     <div className='it-char'>
                                         <span>24h</span>
                                         <span className='text-success'>+6.29%</span>
@@ -43,7 +43,7 @@ class Trading extends Component{
                                         <span className='text-danger'>−0.01%</span>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-column ml-4">
+                                <div className="d-flex flex-column ml-4 it-char-flex-other">
                                     <div className='it-char'>
                                         <span>Bid</span>
                                         <span className='text-success'>0.023159</span>
@@ -53,7 +53,7 @@ class Trading extends Component{
                                         <span className='text-danger'>0.023194</span>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-column ml-4">
+                                <div className="d-flex flex-column ml-4 it-char-flex-other">
                                     <div className='it-char'>
                                         <span>24H high</span>
                                         <span>0.024957</span>
@@ -64,8 +64,8 @@ class Trading extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <Card className='mt-3'>
-                                <CardBody className='it-trading_view'>
+                            <Card className='mt-2 it-trading_view'>
+                                <CardBody>
                                     <TradingViewWidget
                                         symbol="BITFINEX:BTCUSD"
                                         autosize
@@ -74,12 +74,12 @@ class Trading extends Component{
                                     />
                                 </CardBody>
                             </Card>
-                        </Col>
-                        <Col className='col-4 mt-4 wallet' md={3} lg={3} xl={2}>
+                        </div>
+                        <div className='mt-4 buy-sell'>
                             <Card>
                                 <CardBody>
-                                    <div className='text-center wallet'>
-                                        <img src={theme.wallet_icon} className='it-icon non_op'/>
+                                    <div className='text-center'>
+                                        <img src={theme.nav_wallet} className='it-icon non_op'/>
                                         <span className='it-fs16 ml-2 align-middle it-medium'>40.00600209 XMR</span>
                                         <p className='it-fs14'>
                                             Total 1000.90 USD
@@ -89,14 +89,12 @@ class Trading extends Component{
                                     <div className='text-center mt-2 w-100'>
                                         <div className="btn-group d-flex btn-buy-sell" role="group">
                                             <Button className='bg-success border-0'>
-                                                <strong>
-                                                    <FontAwesome name='long-arrow-up' /> Buy
-                                                </strong>
+                                                <img src={require('../assets/icons/raw_up.svg')} />
+                                                <strong>Buy</strong>
                                             </Button>
                                             <Button className='bg-white text-dark border border-left-0'>
-                                                <strong className='it-half-opacity'>
-                                                    <FontAwesome name='long-arrow-down' /> Sell
-                                                </strong>
+                                                <img src={require('../assets/icons/raw_down.svg')} />
+                                                <strong className='it-half-opacity'>Sell</strong>
                                             </Button>
                                         </div>
                                     </div>
@@ -118,7 +116,7 @@ class Trading extends Component{
                                             <span className="input-group-text">BTC</span>
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-row mt-2">
+                                    <div className="d-flex flex-row mt-1">
                                         <span className='text-primary mr-2'>Bid</span>
                                         <span className='text-primary mr-2'>Ask</span>
                                     </div>
@@ -136,20 +134,20 @@ class Trading extends Component{
                                             <span className="input-group-text">BTC</span>
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-row mt-2">
+                                    <div className="d-flex flex-row mt-1">
                                         <span className='text-primary mr-2'>2%</span>
                                         <span className='text-primary mr-2'>5%</span>
                                         <span className='text-primary mr-2'>10%</span>
                                         <span className='text-secondary ml-4'>23%</span>
                                     </div>
                                     <Button className='bg-success mt-2 border-0 py-2' block>
-                                        <FontAwesome name='long-arrow-up' />
+                                        <img src={require('../assets/icons/raw_up.svg')} style={{height: 17}} className='mb-1'/>
                                         <strong className='ml-2'>Buy Monero</strong>
                                     </Button>
                                 </CardBody>
                             </Card>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
                     <Row className='mt-4'>
                         <Col className='col-12' md={12} lg={8} xl={8}>
                             <Card>

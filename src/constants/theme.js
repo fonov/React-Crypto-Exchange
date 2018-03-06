@@ -131,6 +131,10 @@ const theme = {
     trader_chart_fill: [
         'rgba(52, 84, 209, 0.5)',
         'rgba(247, 195, 49, 0.5)',
+    ],
+    nav_wallet: [
+        require('../assets/icons/nav_wallet.svg'),
+        require('../assets/icons/white_nav_wallet.svg'),
     ]
 };
 

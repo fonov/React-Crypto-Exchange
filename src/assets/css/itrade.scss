@@ -34,11 +34,15 @@
   font-weight: 500;
   src: url('../fonts/Avenir Next Medium.otf')
 }
+body {
+  background-color: #eaebef;
+}
 .it-title {
   font-size: 21px;
   font-weight: 600;
-  margin-top: 6.5px;
+  margin-top: 8px;
   @media (min-width: 1440px) {
+    margin-top: 5px;
     font-size: 34px;
   }
 }
@@ -93,13 +97,21 @@
     }
   }
 }
+.it-char-flex-other {
+  margin-top: 5px;
+  @media (min-width: 1440px) {
+    margin-top: 0;
+  }
+}
 .it-char-flex {
   -ms-flex-direction: column !important;
   flex-direction: column !important;
   padding-left: .5em;
   padding-right: .5em;
   margin-left: 1.5em;
+  margin-top: 5px;
   @media (min-width: 1440px) {
+    margin-top: 0;
     line-height: 60px;
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -122,16 +134,31 @@
   }
 }
 .it-trading_view {
-  height: 512px;
+  .card-body {
+    height: 453px;
+  }
 }
 .it-medium {
   font-weight: 500;
 }
-.wallet {
+.buy-sell {
+  width: 278px;
+  .card {
+    padding: 0;
+    .card-body {
+      padding-top: 8px;
+      label {
+        margin-bottom: 2px;
+      }
+      .input-group {
+        height: 34px;
+      }
+
+    }
+  }
   position: relative;
   .it-icon {
     width: 18px;
-    opacity: 0.6;
   }
 }
 .it-fs16 {
@@ -258,6 +285,7 @@
   background-color: #ffffff;
   height: auto;
   width: calc(100% - 96px);
+  min-width: 934px;
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, .2);
@@ -384,6 +412,14 @@
   .btn-buy-sell {
     button {
       width: 50%;
+      position: relative;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      img {
+        position: relative;
+        top: -2.5px;
+        margin-right: 5.5px;
+      }
     }
   }
   .col-lg-9 {
@@ -393,6 +429,17 @@
   .col-lg-3 {
     flex: 0 0 20%;
     max-width: 20%;
+  }
+  .main-view {
+    width: calc(100% - 16px - 278px);
+    margin-right: 16px;
+  }
+  @media (max-width: 1435px) {
+    .main-view {
+      .it-trading_view {
+        height: 482px;
+      }
+    }
   }
 }
 .it-dashed {

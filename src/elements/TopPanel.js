@@ -26,9 +26,9 @@ class TopPanel extends Component {
                                 ].map((item, i) => (
                                     <div className={`nav-item ${active[i] === true ? 'active' : ''}`} key={i} onClick={() => push(URLS.Trading)}>
                                         <div className="d-flex flex-row">
-                                            <FontAwesome name='times' className='times it-fs12'/>
+                                            <img src={require('../assets/icons/close.svg')} className='closed'/>
                                             <div className="d-flex flex-column ml-2">
-                                                <strong className='it-fs16 it_light_opacity'>{item[0]}</strong>
+                                                <strong className='it-fs16 it_light_opacity title'>{item[0]}</strong>
                                                 <div className='d-flex flex-row nav-desc'>
                                                     <p><Badge color={item[1]} pill>{item[2]}</Badge></p>
                                                     <p className='it-fs12'>{item[3]}</p>
@@ -40,7 +40,6 @@ class TopPanel extends Component {
                             }
                             <div className='nav-item it-fs12 text-center add'>
                                 <div className="d-flex flex-column">
-                                    {/*<FontAwesome name='plus-circle' className='it-fs16 text-primary'/>*/}
                                     <img src={require('../assets/icons/blue_plus.svg')}  className='mb-1'/>
                                     <p>Add market</p>
                                 </div>
@@ -49,8 +48,6 @@ class TopPanel extends Component {
                     </Col>
                     <Col>
                         <div className='d-flex flex-row-reverse mr-3'>
-
-                            {/*<img src={theme.si}>*/}
                             {
                                 [
                                     'logout',
