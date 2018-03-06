@@ -6,6 +6,7 @@ import { Row, Col, Progress, Card, CardBody, CardText, Badge, Button, ListGroup,
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
 
 class MarketList extends Component{
@@ -14,7 +15,7 @@ class MarketList extends Component{
         super(props);
 
         this.state = {
-            tile: false
+            tile: true
         }
     }
 
@@ -25,7 +26,36 @@ class MarketList extends Component{
     render() {
 
         const {push, theme} = this.props,
-            {tile} = this.state;
+            {tile} = this.state,
+            data = [
+                {uv: 4000, pv: 2400, amt: 2400},
+                {uv: 3000, pv: 1398, amt: 2210},
+                {uv: 2000, pv: 9800, amt: 2290},
+                {uv: 2780, pv: 3908, amt: 2000},
+                {uv: 1890, pv: 4800, amt: 2181},
+                {uv: 2390, pv: 3800, amt: 2500},
+                {uv: 3490, pv: 4300, amt: 2100},
+                {uv: 4000, pv: 2400, amt: 2400},
+                {uv: 3000, pv: 1398, amt: 2210},
+                {uv: 2000, pv: 9800, amt: 2290},
+                {uv: 2780, pv: 3908, amt: 2000},
+                {uv: 1890, pv: 4800, amt: 2181},
+                {uv: 2390, pv: 3800, amt: 2500},
+                {uv: 3490, pv: 4300, amt: 2100},
+                {uv: 4000, pv: 2400, amt: 2400},
+                {uv: 3000, pv: 1398, amt: 2210},
+                {uv: 2000, pv: 9800, amt: 2290},
+                {uv: 2780, pv: 3908, amt: 2000},
+                {uv: 1890, pv: 4800, amt: 2181},
+                {uv: 2390, pv: 3800, amt: 2500},
+                {uv: 3490, pv: 4300, amt: 2100},
+            ];
+
+        const base_chart = () => (
+            <AreaChart width={390} height={145} data={data} margin={{top: 15, right: 0, bottom: 20, left: 0}}>
+                <Area type='monotone' dataKey='uv' strokeWidth={4} stroke='#3454d1' fill='rgba(52, 84, 209, 0.5)' />
+            </AreaChart>
+        );
 
         return (
             <BasePage
@@ -91,6 +121,7 @@ class MarketList extends Component{
                                                     </div>
                                                 </div>
                                                 <span className='text-success it-fs16 it-medium'><FontAwesome name='sort-asc'/> 0.01810002</span>
+                                                {base_chart()}
                                                 <div className='d-flex justify-content-around'>
                                                     <div className='text-center'>
                                                         <span className='it-fs12 it-half-opacity'>Bid</span>
@@ -124,6 +155,7 @@ class MarketList extends Component{
                                                     </div>
                                                 </div>
                                                 <span className='text-success it-fs16 it-medium'><FontAwesome name='sort-asc'/> 0.01810002</span>
+                                                {base_chart()}
                                                 <div className='d-flex justify-content-around'>
                                                     <div className='text-center'>
                                                         <span className='it-fs12 it-half-opacity'>Bid</span>
@@ -157,6 +189,7 @@ class MarketList extends Component{
                                                     </div>
                                                 </div>
                                                 <span className='text-danger it-fs16 it-medium'><FontAwesome name='sort-asc'/> 0.01810002</span>
+                                                {base_chart()}
                                                 <div className='d-flex justify-content-around'>
                                                     <div className='text-center'>
                                                         <span className='it-fs12 it-half-opacity'>Bid</span>
