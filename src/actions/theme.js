@@ -7,9 +7,11 @@ export const set_theme = () => {
         let index = 0;
 
         if (theme.theme_night) {
-            index = 0
+            index = 0;
+            document.body.className = '';
         } else {
-            index = 1
+            index = 1;
+            document.body.className = 'body_night';
         }
 
         dispatch({
