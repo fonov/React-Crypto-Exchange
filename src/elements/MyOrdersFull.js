@@ -50,7 +50,7 @@ class MyOrdersFull extends Component{
                     </Button>
                 </Form>
                 <div className='mt-3 mx-4'>
-                    <table className="table">
+                    <table className="table table-night">
                         <thead className='mt-3'>
                             <tr>
                                 <th scope="col" style={{paddingTop: 3.5+'em'}}>Pair</th>

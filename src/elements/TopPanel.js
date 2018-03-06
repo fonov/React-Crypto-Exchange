@@ -40,7 +40,8 @@ class TopPanel extends Component {
                             }
                             <div className='nav-item it-fs12 text-center add'>
                                 <div className="d-flex flex-column">
-                                    <FontAwesome name='plus-circle' className='it-fs16 text-primary'/>
+                                    {/*<FontAwesome name='plus-circle' className='it-fs16 text-primary'/>*/}
+                                    <img src={require('../assets/icons/blue_plus.svg')}  className='mb-1'/>
                                     <p>Add market</p>
                                 </div>
                             </div>
@@ -48,15 +49,17 @@ class TopPanel extends Component {
                     </Col>
                     <Col>
                         <div className='d-flex flex-row-reverse mr-3'>
+
+                            {/*<img src={theme.si}>*/}
                             {
                                 [
-                                    'sign-out',
-                                    'question-circle',
+                                    'logout',
+                                    'help',
                                     'cog',
                                     'bell'
                                 ].map((item, i) => (
-                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null}>
-                                        <FontAwesome key={i} name={item} className='icon'/>
+                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null} key={i}>
+                                        <img src={theme[item]} className='icon'/>
                                     </div>
                                 ))
                             }

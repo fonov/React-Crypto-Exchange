@@ -60,12 +60,10 @@
     border-bottom: 0
   }
   .icon {
-    font-size: 18px !important;
     margin-right: 10px !important;
     margin-left: 10px !important;
-    opacity: 0.8 !important;
-    line-height: 46px !important;
-    vertical-align: middle !important;
+    position: relative;
+    top: 12px;
   }
   .theme-switch {
     width: 70px;
@@ -104,12 +102,16 @@
       border: solid 1px #0a0c12;
       img {
         position: relative;
-        top: 2px;
+        top: 1px;
       }
     }
     div.non_active {
       left: 8px;
       background-color: transparent !important;
+      img {
+        top: -2px;
+        position: relative;
+      }
     }
   }
 }

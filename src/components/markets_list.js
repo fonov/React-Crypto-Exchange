@@ -15,7 +15,7 @@ class MarketList extends Component{
         super(props);
 
         this.state = {
-            tile: true
+            tile: false
         }
     }
 
@@ -53,7 +53,7 @@ class MarketList extends Component{
 
         const base_chart = () => (
             <AreaChart width={390} height={145} data={data} margin={{top: 15, right: 0, bottom: 20, left: 0}}>
-                <Area type='monotone' dataKey='uv' strokeWidth={4} stroke='#3454d1' fill='rgba(52, 84, 209, 0.5)' />
+                <Area type='monotone' dataKey='uv' strokeWidth={4} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
             </AreaChart>
         );
 
@@ -102,7 +102,7 @@ class MarketList extends Component{
                             <div className={`ml-4 type_icon mr-4 ${tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
                                 <img src={theme.colomn} />
                             </div>
-                            <div className={`type_icon ${!tile ? 'non_active' : ''}`} onClick={this.changeView.bind(this)}>
+                            <div className={`type_icon ${!tile ? 'non_active' : ''} mr-2`} onClick={this.changeView.bind(this)}>
                                 <img src={theme.tile} />
                             </div>
                         </div>
@@ -216,7 +216,7 @@ class MarketList extends Component{
                                 </Row>
                             </div>
                         ) : (
-                            <Table className='border-bottom'>
+                            <Table className='border-bottom table-night'>
                                 <thead>
                                 <tr>
                                     <th><span className='it-dashed'>Coin</span></th>

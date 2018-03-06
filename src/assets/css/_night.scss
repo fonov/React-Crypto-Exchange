@@ -1,5 +1,9 @@
+//Variables
+$night_bg: #202434;
+
+
 .body_night {
-  background-color: #202434 !important;
+  background-color: $night_bg !important;
 }
 .it-container.night {
   .it-account {
@@ -19,6 +23,13 @@
       input, textarea {
         background-color: rgba(255, 255, 255, 0.05) !important;
         border: solid 1px rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+    .session {
+      table {
+        tbody {
+          border-color: transparent !important;
+        }
       }
     }
     .notification {
@@ -50,9 +61,11 @@
   }
   .it-market-list {
     .top-nav {
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
       .item {
         .active {
           background-color: #3454d1;
+          bottom: -21px;
         }
       }
     }
@@ -68,8 +81,18 @@
         }
       }
     }
+    .tile-block {
+      .card {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+      }
+    }
   }
   .it-messages {
+    .contact-list {
+      .active.list-group-item {
+        background-color: #4865d5;
+      }
+    }
     .new-message {
       width: 47px;
       height: 47px;
@@ -80,12 +103,12 @@
       background-color: rgba(255, 255, 255, 0.08);
     }
     .chat {
-      background-color: #333845;
+      background-color: rgba(255, 255, 255, 0.08);
       border: 0;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
     }
     .text-block {
-      background-color: #323745;
+      background-color: #313644;
       border: 0;
       textarea {
         background-color: rgba(255, 255, 255, 0.05);
@@ -117,7 +140,7 @@
       }
     }
   }
-  .border-top, .investments .row, .investments{
+  .border-top, .border-right, .border-bottom, .investments .row, .investments{
     border-color: rgba(255, 255, 255, 0.1) !important;
   }
   .it-trader {
@@ -171,12 +194,20 @@
     }
   }
   .input-group.search {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     input {
-      background-color: rgba(255, 255, 255, 0.1) !important;
+      background-color: #394154 !important;
+      border: 0;
     }
     .input-group-append {
       .input-group-text {
-        background-color: rgba(255, 255, 255, 0.17) !important;
+        border: 0;
+        background-color: #394154 !important;
+        opacity: 1 !important;
+        span {
+          opacity: 0.6;
+        }
       }
     }
   }
@@ -205,7 +236,7 @@
     opacity: 0.9;
   }
   .it-delimiter {
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 1);
   }
   .it-add-currency {
     background-color: #282e3d;
@@ -316,6 +347,9 @@
     .it-btn_m {
       border-left: 1px solid #202434;
     }
+    div:first-child {
+      border-right: 0;
+    }
   }
   background-color: #1b1f2b;
   .it-gr-btn {
@@ -408,6 +442,9 @@
           }
         }
       }
+      .card {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
     }
     .btn-buy-sell {
       button:last-child {
@@ -418,5 +455,15 @@
     .card, .it-hr-text, .it-hr-text:after {
       background-color: #282e3d;
     }
+  }
+  .table-night > tbody > tr > td,
+  .table-night > tbody > tr > th,
+  .table-night > tfoot > tr > td,
+  .table-night > tfoot > tr > th,
+  .table-night > thead > tr > td,
+  .table-night > thead > tr > th {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 }

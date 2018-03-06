@@ -15,10 +15,10 @@ class Account extends Component{
 
         this.state = {
             account: false,
-            security: false,
-            notification: true,
-            security_login: true,
-            security_session: false,
+            security: true,
+            notification: false,
+            security_login: false,
+            security_session: true,
             security_two_step: false,
         }
     }
@@ -221,27 +221,29 @@ class Account extends Component{
                                     <div className='security-data'>
                                         {
                                             security_login ? (
-                                                <Table className='login'>
-                                                    <tbody>
-                                                    {
-                                                        [1,2,3,4,5,6,7,8,9,10].map(item => (
-                                                            <tr key={item}>
-                                                                <td width="20">185.27.49.66</td>
-                                                                <td><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
-                                                                <td>05:36</td>
-                                                                <td>09-06-2017</td>
-                                                            </tr>
-                                                        ))
-                                                    }
-                                                    </tbody>
-                                                </Table>
+                                                <div className='login'>
+                                                    <Table className='table-night'>
+                                                        <tbody>
+                                                        {
+                                                            [1,2,3,4,5,6,7,8,9,10].map(item => (
+                                                                <tr key={item}>
+                                                                    <td width="20">185.27.49.66</td>
+                                                                    <td><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
+                                                                    <td>05:36</td>
+                                                                    <td>09-06-2017</td>
+                                                                </tr>
+                                                            ))
+                                                        }
+                                                        </tbody>
+                                                    </Table>
+                                                </div>
                                             ) : null
                                         }
                                         {
                                             security_session ? (
                                                 <div className='session'>
                                                     <strong className='it-fs16'>Current sessions</strong>
-                                                    <Table>
+                                                    <Table className='table-night'>
                                                         <tbody className='border-bottom'>
                                                             <tr>
                                                                 <td>OS X 10.13.2, Chrome, 63.0.2347.65</td>
@@ -255,7 +257,7 @@ class Account extends Component{
                                                     <span className='text-danger'>Terminate all other sessions</span>
                                                     <div className='current-sessions'>
                                                         <strong className='it-fs16'>Current sessions</strong>
-                                                        <Table>
+                                                        <Table className='table-night'>
                                                             <tbody className='border-bottom'>
                                                             {
                                                                 [1,2,3,4].map(item => (

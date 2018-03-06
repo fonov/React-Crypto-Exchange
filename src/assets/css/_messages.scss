@@ -65,6 +65,9 @@
   .list-group-item {
     padding-bottom: 0;
   }
+  .list-group-item.active {
+    z-index: 0;
+  }
   .contact-list {
     padding-right: 35px;
     padding-left: 35px;

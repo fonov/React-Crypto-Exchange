@@ -99,6 +99,38 @@ const theme = {
     sound: [
         require('../assets/icons/noun-1198083-cc.svg'),
         require('../assets/icons/white_noun-1198083-cc.svg')
+    ],
+    analytics: [
+        require('../assets/icons/analytics.svg'),
+        require('../assets/icons/white_analytics.svg'),
+    ],
+    traders: [
+        require('../assets/icons/traders.svg'),
+        require('../assets/icons/white_traders.svg'),
+    ],
+    logout: [
+        require('../assets/icons/logout.svg'),
+        require('../assets/icons/white_logout.svg'),
+    ],
+    help: [
+        require('../assets/icons/help.svg'),
+        require('../assets/icons/white_help.svg'),
+    ],
+    cog: [
+        require('../assets/icons/cog.svg'),
+        require('../assets/icons/white_cog.svg'),
+    ],
+    bell: [
+        require('../assets/icons/bell.svg'),
+        require('../assets/icons/white_bell.svg'),
+    ],
+    trader_chart_stroke: [
+        '#3454d1',
+        '#f7c331',
+    ],
+    trader_chart_fill: [
+        'rgba(52, 84, 209, 0.5)',
+        'rgba(247, 195, 49, 0.5)',
     ]
 };
 

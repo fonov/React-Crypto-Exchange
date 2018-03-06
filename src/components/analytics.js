@@ -12,7 +12,7 @@ class Analytics extends Component {
 
     render() {
 
-        const {push} = this.props;
+        const {push, theme} = this.props;
 
         const pie_chart = [
             {value: 40, color: '#8598e3'},
@@ -88,7 +88,7 @@ class Analytics extends Component {
                                         <CardBody>
                                             <span className='label'>{item[0]}</span>
                                             <div className="d-flex flex-row info-block">
-                                                <img src={require('../assets/icons/analytics/analytics@3x.png')} />
+                                                <img src={theme.my_orders_icon} />
                                                 <div className="d-flex flex-column info">
                                                     <span className='value'>{item[1]}</span>
                                                     <span className='key'>orders</span>
@@ -144,7 +144,9 @@ class Analytics extends Component {
                                 <CardBody className='performance'>
                                     <div className="d-flex justify-content-between">
                                         <strong className='it-fs16'>Performance</strong>
-                                        <div className='cog it-fs14 it_light_opacity'><FontAwesome name='cog'/></div>
+                                        <div className='cog it-fs14 it_light_opacity'>
+                                            <img src={theme.cog} />
+                                        </div>
                                     </div>
                                     <div className="d-flex flex-row mt-2">
                                         <span className='text-success mr-2'>Active 5 sessions</span>
@@ -340,7 +342,7 @@ class Analytics extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

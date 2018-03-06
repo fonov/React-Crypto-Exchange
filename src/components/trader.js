@@ -11,7 +11,7 @@ import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, 
 class Trader extends Component{
     render() {
 
-        const {push} = this.props,
+        const {push, theme} = this.props,
             data = [
                 {name: '26.11', uv: 4000, pv: 2400, amt: 2400},
                 {name: '26.11', uv: 3000, pv: 1398, amt: 2210},
@@ -101,7 +101,7 @@ class Trader extends Component{
                                 <Col className='col-10' md={10} lg={10} xl={10}>
                                     <AreaChart width={800} height={170} data={data}>
                                         <XAxis dataKey="name"  axisLine={false} tickLine={false}/>/>
-                                        <Area type='monotone' dataKey='uv' strokeWidth={4} stroke='#3454d1' fill='rgba(52, 84, 209, 0.5)' />
+                                        <Area type='monotone' dataKey='uv' strokeWidth={4} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
                                     </AreaChart>
                                 </Col>
                                 <Col className='col-10 text-center return-percent' md={2} lg={2} xl={2}>
@@ -274,7 +274,7 @@ class Trader extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 
