@@ -2,6 +2,52 @@ body {
   background-color: #202434 !important;
 }
 .it-container.night {
+  .it-account {
+    .left-nav {
+      .list-group {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+        .list-group-item {
+          border: 0;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+        .list-group-item.active_tab {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+    .account {
+      input, textarea {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border: solid 1px rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+    .notification {
+      .row {
+        .col {
+          .card {
+            border-radius: 5px;
+            .card-body {
+              background-color: rgba(255, 255, 255, 0.08);
+              .added {
+                background-color: #202434;
+                box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.11);
+              }
+              .added.not {
+                background-color: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+              }
+            }
+          }
+        }
+      }
+    }
+    .btn.btn-light {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+  }
   .it-market-list {
     .top-nav {
       .item {

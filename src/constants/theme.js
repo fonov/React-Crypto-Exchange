@@ -1,4 +1,8 @@
 const theme = {
+    theme_night: [
+      false,
+      true
+    ],
     my_orders_icon: [
         require('../assets/icons/my-orders/icon-my-orders@3x.png'),
         require('../assets/icons/icon-my-orders.svg'),
@@ -16,12 +20,13 @@ const theme = {
         'Dark'
     ],
     sun_icon: [
-        require('../assets/icons/shape/shape@3x.png'),
-        require('../assets/icons/sun.svg'),
+        require('../assets/icons/noun/noun-1227121-cc@3x.png'),
+        require('../assets/icons/sun.svg')
+
     ],
     moon_icon: [
-        require('../assets/icons/noun/noun-1227121-cc@3x.png'),
-        require('../assets/icons/moon.svg'),
+        require('../assets/icons/shape/shape@3x.png'),
+        require('../assets/icons/moon.svg')
     ],
     wallet_1: [
         require('../assets/icons/wallet/icon-wallets@3x.png'),
@@ -54,6 +59,46 @@ const theme = {
     tile: [
         require('../assets/icons/tile.svg'),
         require('../assets/icons/white_tile.svg'),
+    ],
+    account: [
+        require('../assets/icons/account.svg'),
+        require('../assets/icons/white_account.svg')
+    ],
+    security: [
+        require('../assets/icons/security.svg'),
+        require('../assets/icons/white_security.svg'),
+    ],
+    verifications: [
+        require('../assets/icons/verifications.svg'),
+        require('../assets/icons/white_verifications.svg'),
+    ],
+    api: [
+        require('../assets/icons/api.svg'),
+        require('../assets/icons/white_api.svg'),
+    ],
+    interface: [
+        require('../assets/icons/interface.svg'),
+        require('../assets/icons/white_interface.svg')
+    ],
+    reports: [
+        require('../assets/icons/reports.svg'),
+        require('../assets/icons/white_reports.svg')
+    ],
+    on_sms: [
+        require('../assets/icons/noun-540071-cc.svg'),
+        require('../assets/icons/white_noun-540071-cc.svg'),
+    ],
+    on_email: [
+        require('../assets/icons/noun-553134-cc.svg'),
+        require('../assets/icons/white_noun-553134-cc.svg'),
+    ],
+    browser: [
+        require('../assets/icons/noun-993426-cc.svg'),
+        require('../assets/icons/white_noun-993426-cc.svg'),
+    ],
+    sound: [
+        require('../assets/icons/noun-1198083-cc.svg'),
+        require('../assets/icons/white_noun-1198083-cc.svg')
     ]
 };
 

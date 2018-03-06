@@ -14,9 +14,9 @@ class Account extends Component{
         super(props);
 
         this.state = {
-            account: true,
+            account: false,
             security: false,
-            notification: false,
+            notification: true,
             security_login: true,
             security_session: false,
             security_two_step: false,
@@ -43,7 +43,7 @@ class Account extends Component{
 
     render() {
 
-        const {push} = this.props,
+        const {push, theme} = this.props,
             {account, security, security_login, security_session, security_two_step, notification} = this.state;
 
         return (
@@ -71,27 +71,27 @@ class Account extends Component{
                                 </ListGroupItem>
                                 <ListGroupItem className={`text_with_icon ${account ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('account')}>
                                     <div className='active_line' />
-                                    <FontAwesome name='user' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Account</span>
+                                    <img src={theme.account} /> <span className='it-fs14 it_light_opacity text'>Account</span>
                                 </ListGroupItem>
                                 <ListGroupItem className={`text_with_icon ${security ? 'active_tab': ''}`}  onClick={() => this.changeLeftNav('security')}>
                                     <div className='active_line' />
-                                    <img src={require('../assets/icons/security.svg')} /> <span className='it-fs14 it_light_opacity text'>Security</span>
+                                    <img src={theme.security} />  <span className='it-fs14 it_light_opacity text'>Security</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <img src={require('../assets/icons/verifications.svg')} /> <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                    <img src={theme.verifications} />  <span className='it-fs14 it_light_opacity text'>Verifications</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <img src={require('../assets/icons/api.svg')} /> <span className='it-fs14 it_light_opacity text'>API</span>
+                                    <img src={theme.api} />  <span className='it-fs14 it_light_opacity text'>API</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <img src={require('../assets/icons/interface.svg')} /> <span className='it-fs14 it_light_opacity text'>Interface</span>
+                                    <img src={theme.interface} />  <span className='it-fs14 it_light_opacity text'>Interface</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <img src={require('../assets/icons/reports.svg')} /> <span className='it-fs14 it_light_opacity text'>Reports</span>
+                                    <img src={theme.reports} />  <span className='it-fs14 it_light_opacity text'>Reports</span>
                                 </ListGroupItem>
                                 <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('notification')}>
                                     <div className='active_line' />
@@ -299,7 +299,7 @@ class Account extends Component{
                                             <Col className='col-3'>
                                                 <Card>
                                                     <CardBody className='text-center'>
-                                                        <img src={require('../assets/icons/noun-540071-cc.svg')} />
+                                                        <img src={theme.on_sms} />
                                                         <div className='mt-2'>
                                                             <span className='it-medium it-fs18'>SMS</span>
                                                         </div>
@@ -312,7 +312,7 @@ class Account extends Component{
                                             <Col className='col-3'>
                                                 <Card>
                                                     <CardBody className='text-center'>
-                                                        <img src={require('../assets/icons/noun-553134-cc.svg')} />
+                                                        <img src={theme.on_email} />
                                                         <div className='mt-2'>
                                                             <span className='it-medium it-fs18'>Email</span>
                                                         </div>
@@ -324,7 +324,7 @@ class Account extends Component{
                                             <Col className='col-3'>
                                                 <Card>
                                                     <CardBody className='text-center'>
-                                                        <img src={require('../assets/icons/noun-993426-cc.svg')} />
+                                                        <img src={theme.browser} />
                                                         <div className='mt-2'>
                                                             <span className='it-medium it-fs18'>Browser</span>
                                                         </div>
@@ -337,7 +337,7 @@ class Account extends Component{
                                             <Col className='col-3'>
                                                 <Card>
                                                     <CardBody className='text-center'>
-                                                        <img src={require('../assets/icons/noun-1198083-cc.svg')} />
+                                                        <img src={theme.sound} />
                                                         <div className='mt-2'>
                                                             <span className='it-medium it-fs18'>Sound</span>
                                                         </div>
@@ -360,7 +360,7 @@ class Account extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 

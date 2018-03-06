@@ -98,6 +98,11 @@
       .col {
         padding-left: 7.5px;
         padding-right: 7.5px;
+        .card {
+          .card-body {
+            padding-top: 40px;
+          }
+        }
       }
     }
     img {

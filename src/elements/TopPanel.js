@@ -4,13 +4,14 @@ import { Row, Col, Badge } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
+import {set_theme} from '../actions/theme'
 
 
 class TopPanel extends Component {
 
     render() {
 
-        const {active, push, theme} = this.props;
+        const {active, push, theme, set_theme} = this.props;
 
         return(
             <div className='it-top-panel'>
@@ -59,11 +60,13 @@ class TopPanel extends Component {
                                     </div>
                                 ))
                             }
-                            <div className='theme-switch d-flex flex-row'>
-                                <div>
-                                    <img src={theme.moon_icon} style={{width: 16}}/>
+                            <div className={`theme-switch d-flex flex-row ${theme.theme_night ? 'reverse': ''}`} onClick={() => set_theme()}>
+                                <div className={`${theme.theme_night ? 'non_active' : 'active'}`}>
+                                    <img src={theme.sun_icon} className='non_active'/>
                                 </div>
-                                <img src={theme.sun_icon} style={{height: 14}} className='non_active'/>
+                                <div className={`${!theme.theme_night ? 'non_active' : 'active'}`}>
+                                    <img src={theme.moon_icon}/>
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -81,7 +84,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        set_theme: index => dispatch(set_theme(index))
     }
 };
 
