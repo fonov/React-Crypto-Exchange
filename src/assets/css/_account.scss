@@ -2,6 +2,35 @@
   margin-top: 40px;
   .left-nav {
     padding-right: 55px;
+    .list-group {
+      .list-group-item {
+        position: relative;
+      }
+      .list-group-item.with_c_prog {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        position: relative;
+        .text {
+          margin-top: 0.45rem;
+        }
+        $CircularProgressbarColor: #4865d5;
+        .CircularProgressbar {
+          position: relative;
+          left: 70px;
+        }
+        .CircularProgressbar-path {
+          stroke: $CircularProgressbarColor !important;
+        }
+        .CircularProgressbar-trail {
+          stroke: #dbe1ec !important;
+        }
+        .CircularProgressbar-text {
+          fill: #282e3d !important;
+          font-size: 30px !important;
+          font-weight: 500;
+        }
+      }
+    }
   }
   .name {
     position: relative;

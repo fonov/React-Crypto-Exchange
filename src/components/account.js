@@ -6,6 +6,7 @@ import { Row, Col, Progress, Card, CardBody, CardText, Badge, Button, ListGroup,
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import CircularProgressbar from 'react-circular-progressbar';
 
 
 class Account extends Component{
@@ -14,8 +15,8 @@ class Account extends Component{
         super(props);
 
         this.state = {
-            account: false,
-            security: true,
+            account: true,
+            security: false,
             notification: false,
             security_login: false,
             security_session: true,
@@ -77,9 +78,18 @@ class Account extends Component{
                                     <div className='active_line' />
                                     <img src={theme.security} />  <span className='it-fs14 it_light_opacity text'>Security</span>
                                 </ListGroupItem>
-                                <ListGroupItem className='text_with_icon'>
+                                <ListGroupItem className='text_with_icon with_c_prog'>
                                     <div className='active_line' />
-                                    <img src={theme.verifications} />  <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                    <div className='d-flex flex-row'>
+                                        <img src={theme.verifications} />
+                                        <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                        <div style={{width: 33, height: 33}}>
+                                            <CircularProgressbar
+                                                percentage={66}
+                                                textForPercentage={() => '2/3'}
+                                            />
+                                        </div>
+                                    </div>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
