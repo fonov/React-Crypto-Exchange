@@ -110,7 +110,7 @@
     }
   }
   .investments_trades {
-    margin-top: 50px;
+    margin-top: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
     margin-left: 0;
@@ -119,6 +119,9 @@
   .section-2 {
     padding-left: 120px;
     padding-right: 30px;
+    .return-percent {
+      padding-top: 35px;
+    }
   }
   .time-line {
     position: relative;

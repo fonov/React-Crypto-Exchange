@@ -5,12 +5,22 @@ import { Row, Col, Progress, Card, CardBody, CardText, Badge, Button, Input } fr
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
 
 class Trader extends Component{
     render() {
 
-        const {push} = this.props;
+        const {push} = this.props,
+            data = [
+                {name: '26.11', uv: 4000, pv: 2400, amt: 2400},
+                {name: '26.11', uv: 3000, pv: 1398, amt: 2210},
+                {name: '26.11', uv: 2000, pv: 9800, amt: 2290},
+                {name: '26.11', uv: 2780, pv: 3908, amt: 2000},
+                {name: '26.11', uv: 1890, pv: 4800, amt: 2181},
+                {name: '26.11', uv: 2390, pv: 3800, amt: 2500},
+                {name: '26.11', uv: 3490, pv: 4300, amt: 2100},
+            ];
 
         return (
             <BasePage
@@ -87,11 +97,14 @@ class Trader extends Component{
                                     <div className="it-btn"><span>Last day</span></div>
                                 </div>
                             </div>
-                            <Row>
+                            <Row className='pt-4'>
                                 <Col className='col-10' md={10} lg={10} xl={10}>
-
+                                    <AreaChart width={800} height={170} data={data}>
+                                        <XAxis dataKey="name"/>
+                                        <Area type='monotone' dataKey='uv' strokeWidth={4} stroke='#3454d1' fill='rgba(52, 84, 209, 0.5)' />
+                                    </AreaChart>
                                 </Col>
-                                <Col className='col-10 text-center' md={2} lg={2} xl={2}>
+                                <Col className='col-10 text-center return-percent' md={2} lg={2} xl={2}>
                                     <span className='text-success it-fs36'>64%</span>
                                     <div className='it-medium it-half-opacity'>
                                         Average Return for month
