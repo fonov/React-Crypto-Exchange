@@ -100,7 +100,7 @@ class Trader extends Component{
                             <Row className='pt-4'>
                                 <Col className='col-10' md={10} lg={10} xl={10}>
                                     <AreaChart width={800} height={170} data={data}>
-                                        <XAxis dataKey="name"/>
+                                        <XAxis dataKey="name"  axisLine={false} tickLine={false}/>/>
                                         <Area type='monotone' dataKey='uv' strokeWidth={4} stroke='#3454d1' fill='rgba(52, 84, 209, 0.5)' />
                                     </AreaChart>
                                 </Col>

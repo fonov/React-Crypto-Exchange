@@ -20,27 +20,44 @@ class Analytics extends Component {
             {value: 10, color: '#f7c331'},
         ], performance = [
             {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
             {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
             {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
             {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
             {name: '14 nov', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-            {name: 'Page A', up: 50},
-            {name: 'Page A', down: -50},
-
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
+            {name: '14 nov', up: 50},
+            {name: '14 nov', down: -50},
         ];
+
+        let c_index = 0;
 
         return (
             <BasePage
@@ -106,6 +123,19 @@ class Analytics extends Component {
                                             </div>
                                         </form>
                                     </div>
+
+                                    <BarChart
+                                        width={830}
+                                        height={200}
+                                        data={performance}
+                                        barCategoryGap={2}
+                                        barGap={-20}
+                                        margin={{top: 20}}
+                                    >
+                                        <XAxis dataKey="name" axisLine={false} tickLine={false}/>
+                                        <Bar dataKey='up' fill='#27ae66'/>
+                                        <Bar dataKey='down' fill='#f26451'/>
+                                    </BarChart>
                                 </CardBody>
                             </Card>
                         </Col>
