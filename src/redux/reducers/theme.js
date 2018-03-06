@@ -13,7 +13,7 @@ const get_theme = (index) => {
 };
 
 
-const state = (state = get_theme(0), action) => {
+const state = (state = get_theme(1), action) => {
     switch (action.type) {
         case SET_THEME:
             return {

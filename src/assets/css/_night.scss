@@ -17,6 +17,30 @@ $night_bg: #202434;
         .list-group-item.active_tab {
           background-color: rgba(255, 255, 255, 0.15);
         }
+        .list-group-item.with_c_prog {
+          padding-top: 0.4rem;
+          padding-bottom: 0.4rem;
+          position: relative;
+          .text {
+            margin-top: 0.45rem;
+          }
+          $CircularProgressbarColor: #4865d5;
+          .CircularProgressbar {
+            position: relative;
+            left: 70px;
+          }
+          .CircularProgressbar-path {
+            stroke: $CircularProgressbarColor !important;
+          }
+          .CircularProgressbar-trail {
+            stroke: #1b1f2b !important;
+          }
+          .CircularProgressbar-text {
+            fill: white !important;
+            font-size: 30px !important;
+            font-weight: 500;
+          }
+        }
       }
     }
     .account {
