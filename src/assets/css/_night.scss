@@ -1,11 +1,15 @@
 //Variables
 $night_bg: #202434;
-
-
 .body_night {
   background-color: $night_bg !important;
 }
 .it-container.night {
+  svg:not(.recharts-surface){
+    path, g {
+      fill: white;
+      stroke: white;
+    }
+  }
   .it-account {
     .left-nav {
       .list-group {
@@ -451,6 +455,30 @@ $night_bg: #202434;
   .it-page {
     background-color: #282e3d;
     .it-trading {
+      table.order-book-table.reverse {
+        tbody {
+          tr:hover, tr.active {
+            td, td:last-child {
+              background-color: #1b1f2b;
+            }
+            td:first-child {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      table.order-book-table {
+        tbody {
+          tr:hover, tr.active {
+            td {
+              background-color: #1b1f2b;
+            }
+            td:last-child {
+              background-color: transparent;
+            }
+          }
+        }
+      }
       .wallet {
         .text-primary {
           color: #7087de !important;
