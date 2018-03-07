@@ -11,21 +11,82 @@
   overflow-x: hidden;
   padding-left: 2em;
   padding-right: 2em;
+  .arrow {
+    div {
+      position: relative;
+      svg path {
+        color: #f26451 !important;
+        fill:  #f26451 !important;
+        opacity: 1;
+      }
+      svg {
+        position: relative;
+        top: 1px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .table {
+    thead {
+      tr {
+        th {
+          opacity: 0.7;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+        }
+      }
+    }
+    .it_cycle_times {
+      width: 32px;
+      height: 32px;
+      div {
+        position: relative;
+        svg {
+          position: relative;
+          top: -5px;
+        }
+      }
+    }
+  }
+  .it-btn-group {
+    height: 32px;
+    .it-btn {
+      padding-top: 0.75em;
+    }
+    .it-btn.active {
+      height: 32px;
+    }
+  }
   .col {
     padding: 0;
   }
   .form-control-sm {
     height: 23px;
   }
+  .export_btn_small, .export_btn_big {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    padding-left: 21px;
+    padding-right: 21px;
+    > span {
+      opacity: 0.7;
+    }
+  }
   .export_btn_small {
     display: none;
-    @media (max-width: 1440px) {
+    @media (max-width: 1430px) {
       display: block;
     }
   }
   .export_btn_big {
     display: block;
-    @media (max-width: 1440px) {
+    margin-right: 25px;
+    @media (max-width: 1430px) {
       display: none;
     }
   }

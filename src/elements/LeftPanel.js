@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {MyOrders, MyOrdersFull} from './index'
+import {set_top_panel} from '../actions/menu'
 
 
 class LeftPanel extends Component{
@@ -18,13 +19,22 @@ class LeftPanel extends Component{
     }
 
     _orders_active() {
-        const {orders_active} = this.state;
+        const {orders_active} = this.state,
+            {set_top_panel} = this.props;
 
         if (orders_active === 2) {
-            this.setState({orders_active: 0})
+            this.setState({orders_active: 0});
         } else {
-            this.setState({orders_active: orders_active+1})
+            this.setState({orders_active: orders_active+1});
+            set_top_panel(-1)
         }
+    }
+
+    _open_left_item(url) {
+        const {push, set_top_panel} = this.props;
+
+        push(url);
+        set_top_panel(-1)
     }
 
     render() {
@@ -56,22 +66,22 @@ class LeftPanel extends Component{
                         </div>
                     </div>
 
-                    <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => push(URLS.Wallet)}>
+                    <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Wallet)}>
                         <img src={theme.nav_wallet} className='img_icon non_op' />
                         <p>Wallets</p>
                     </div>
 
-                    <div className={`item ${analytics_active && !orders_active && 'active'}`} onClick={() => push(URLS.Analytics)}>
+                    <div className={`item ${analytics_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Analytics)}>
                         <img src={theme.analytics} className='img_icon non_op' />
                         <p>Analytics</p>
                     </div>
 
-                    <div className={`item ${traders_active && !orders_active && 'active'}`} onClick={() => push(URLS.Traders)}>
+                    <div className={`item ${traders_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Traders)}>
                         <img src={theme.traders} className='img_icon non_op' />
                         <p>Traders</p>
                     </div>
 
-                    <div className={`item ${message_active && !orders_active && 'active'}`} onClick={() => push(URLS.Messages)}>
+                    <div className={`item ${message_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Messages)}>
                         <img src={theme.message_icon} className='img_icon' style={{opacity: 1}} />
                         <p>Messages</p>
                     </div>
@@ -99,7 +109,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        set_top_panel: number => dispatch(set_top_panel(number))
     }
 };
 

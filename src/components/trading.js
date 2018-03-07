@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {BasePage} from '../elements'
-import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input, } from 'reactstrap';
+import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input, Table} from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import TradingViewWidget from 'react-tradingview-widget';
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import ReactSVG from 'react-svg';
 
 
 class Trading extends Component{
@@ -150,8 +151,8 @@ class Trading extends Component{
                     </div>
                     <Row className='mt-4'>
                         <Col className='col-12' md={12} lg={8} xl={8}>
-                            <Card>
-                                <CardBody>
+                            <Card className='order-book-card'>
+                                <CardBody className='ml-4'>
                                     <Row>
                                         <Col>
                                             <div className="d-flex flex-row">
@@ -167,118 +168,75 @@ class Trading extends Component{
                                             </div>
                                         </Col>
                                         <Col>
-                                            <div className="d-flex flex-row-reverse">
-                                                <FontAwesome name='share-square-o' />
+                                            <div className="d-flex flex-row-reverse pr-2">
+                                                <ReactSVG
+                                                    path={require('../assets/icons/share.svg')}
+                                                />
                                             </div>
                                         </Col>
                                     </Row>
                                     <Row className='mt-4 text-right it-order-book'>
-                                        <Col className='tb-1'>
-                                            <Row className='it-fs12'>
-                                                <Col className='border-bottom'>Sum BTC</Col>
-                                                <Col className='border-bottom'>Total XMR</Col>
-                                                <Col className='border-bottom'>Size BTC</Col>
-                                                <Col className='border-bottom'>Bid</Col>
-                                                <Col/>
-                                            </Row>
-                                            <Row className='it-fs11'>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col className='text-success'>0.02316050</Col>
-                                                <Col/>
-                                            </Row>
-                                            <Row className='it-fs11 align-middle active-o-b'>
-                                                <Col className='bg-light'>0.00017239</Col>
-                                                <Col className='bg-light'>0.00017239</Col>
-                                                <Col className='bg-light'>0.00017239</Col>
-                                                <Col className='text-success bg-light'>0.02316050</Col>
-                                                <Col>
-                                                    <div className='bg-success it-table-block text-white text-center'>
-                                                        <FontAwesome name='long-arrow-up' />
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                            <Row className='it-fs11'>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col className='text-success'>0.02316050</Col>
-                                                <Col/>
-                                            </Row>
-                                            <Row className='it-fs11'>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col className='text-success'>0.02316050</Col>
-                                                <Col/>
-                                            </Row>
-                                            <Row className='it-fs11'>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col className='text-success'>0.02316050</Col>
-                                                <Col/>
-                                            </Row>
-                                            {
-                                                [
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                ].map((item, i, array) => (
-                                                    <Row className='it-fs11' key={i}>
-                                                        <Col>{item[0]}</Col>
-                                                        <Col>{item[1]}</Col>
-                                                        <Col>{item[2]}</Col>
-                                                        <Col className='text-success'>{item[3]}</Col>
-                                                        <Col/>
-                                                    </Row>
-                                                ))
-                                            }
-                                            <Row className='it-fs11 it-half-opacity'>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col>0.00017239</Col>
-                                                <Col className='text-success'>0.02316050</Col>
-                                                <Col/>
-                                            </Row>
+                                        <Col className='tb-1 col-6'>
+                                            <Table className='order-book-table'>
+                                                <thead>
+                                                <tr>
+                                                    <th>Sum BTC</th>
+                                                    <th>Total XMR</th>
+                                                    <th>Size BTC</th>
+                                                    <th>Bid</th>
+                                                    <th/>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {
+                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                        <tr key={item}>
+                                                            <td>0.00017239</td>
+                                                            <td>0.00017239</td>
+                                                            <td>0.00017239</td>
+                                                            <td className='text-success'>0.00017239</td>
+                                                            <td className='icon'>
+                                                                <div className='bg-success'>
+                                                                    <img src={require('../assets/icons/raw_up.svg')} />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                                </tbody>
+                                            </Table>
                                         </Col>
-                                        <Col className='tb-2'>
-                                            <Row className='border-bottom it-fs12'>
-                                                <Col>Ask</Col>
-                                                <Col>Size BTC</Col>
-                                                <Col>Total XMR</Col>
-                                                <Col>Sum BTC</Col>
-                                            </Row>
-                                            {
-                                                [
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                    [0.02319393, 0.02319393, 0.02319393, 0.02319393],
-                                                ].map((item, i, array) => (
-                                                    <Row key={i} className={`${array.length-1 === i ? 'it-half-opacity' : ''} mt-1 it-fs11`}>
-                                                        <Col className='text-danger'>{item[0]}</Col>
-                                                        <Col>{item[1]}</Col>
-                                                        <Col>{item[2]}</Col>
-                                                        <Col>{item[3]}</Col>
-                                                    </Row>
-                                                ))
-                                            }
+                                        <Col className='tb-2 col-6'>
+                                            <Table className='order-book-table reverse'>
+                                                <thead>
+                                                <tr>
+                                                    <th/>
+                                                    <th>Ask</th>
+                                                    <th>Total BTC</th>
+                                                    <th>Size XMR</th>
+                                                    <th>Sum BTC</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {
+                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                        <tr key={item}>
+                                                            <td className='icon'>
+                                                                <div className='bg-danger'>
+                                                                    <ReactSVG
+                                                                        path={require('../assets/icons/raw_down.svg')}
+                                                                    />
+                                                                </div>
+                                                            </td>
+                                                            <td className='text-danger'>0.00017239</td>
+                                                            <td>0.00017239</td>
+                                                            <td>0.00017239</td>
+                                                            <td>0.00017239</td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                                </tbody>
+                                            </Table>
                                         </Col>
                                     </Row>
                                 </CardBody>
@@ -286,83 +244,72 @@ class Trading extends Component{
                         </Col>
                         <Col md={12} lg={4} xl={4} className='col-12 market'>
                             <Card>
-                                <CardBody>
+                                <CardBody className='ml-4'>
                                     <Row>
                                         <Col className='it-fs18'>
                                             <strong>Market history</strong>
                                         </Col>
                                         <Col>
-                                            <div className="d-flex flex-row-reverse">
-                                                <FontAwesome name='share-square-o'  onClick={() => push(URLS.MarketsList)}/>
+                                            <div className="d-flex flex-row-reverse pr-2">
+                                                <ReactSVG
+                                                    path={require('../assets/icons/share.svg')}
+                                                />
                                             </div>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row className='mt-4'>
                                         <Col className='it-fs12 pr-4'>
-                                            <Row className='it-fs12 mt-2 border-bottom'>
-                                                <Col>Time</Col>
-                                                <Col>Type</Col>
-                                                <Col>Price</Col>
-                                                <Col>Amount</Col>
-                                                <Col>Total cost</Col>
-                                            </Row>
-                                            {
-                                                [
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ].map((item, i, array) => (
-                                                    <Row className={`mt-1 ${array.length-1===i ? 'it-half-opacity' : ''}`} key={i}>
-                                                        <Col>{item[0]}</Col>
-                                                        <Col className={item[1] === 'Buy' ? 'text-success' : 'text-danger'}>{item[1]}</Col>
-                                                        <Col>{item[2]}</Col>
-                                                        <Col>{item[3]}</Col>
-                                                        <Col>{item[4]}</Col>
-                                                    </Row>
-                                                ))
-                                            }
+
+                                            <Table className='market-history-table'>
+                                                <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Type</th>
+                                                    <th>Price</th>
+                                                    <th>Amount</th>
+                                                    <th>Total cost</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {
+                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                        <tr key={item}>
+                                                            <td>15:19</td>
+                                                            <td className='text-success'>Buy</td>
+                                                            <td>0.02315000</td>
+                                                            <td>1.05022332</td>
+                                                            <td>1.05022332</td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                                </tbody>
+                                            </Table>
                                         </Col>
                                         <Col className='it-fs12 pr-4 it-market-history-extra-col'>
-                                            <Row className='it-fs12 mt-2 border-bottom'>
-                                                <Col>Time</Col>
-                                                <Col>Type</Col>
-                                                <Col>Price</Col>
-                                                <Col>Amount</Col>
-                                                <Col>Total cost</Col>
-                                            </Row>
-                                            {
-                                                [
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Sell', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                    ['15:19', 'Buy', '0.02315000', '1.05022332', '0.00467415'],
-                                                ].map((item, i, array) => (
-                                                    <Row className={`mt-1 ${array.length-1===i ? 'it-half-opacity' : ''}`} key={i}>
-                                                        <Col>{item[0]}</Col>
-                                                        <Col className={item[1] === 'Buy' ? 'text-success' : 'text-danger'}>{item[1]}</Col>
-                                                        <Col>{item[2]}</Col>
-                                                        <Col>{item[3]}</Col>
-                                                        <Col>{item[4]}</Col>
-                                                    </Row>
-                                                ))
-                                            }
+                                            <Table className='market-history-table'>
+                                                <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Type</th>
+                                                    <th>Price</th>
+                                                    <th>Amount</th>
+                                                    <th>Total cost</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {
+                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                        <tr key={item}>
+                                                            <td>15:19</td>
+                                                            <td className='text-success'>Buy</td>
+                                                            <td>0.02315000</td>
+                                                            <td>1.05022332</td>
+                                                            <td>1.05022332</td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                                </tbody>
+                                            </Table>
                                         </Col>
                                     </Row>
                                 </CardBody>

@@ -5,13 +5,21 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {set_theme} from '../actions/theme'
+import {set_top_panel} from "../actions/menu";
 
 
 class TopPanel extends Component {
 
+    open_item(path) {
+        const {push, set_top_panel} = this.props;
+
+        push(path);
+        set_top_panel(2)
+    }
+
     render() {
 
-        const {active, push, theme, set_theme} = this.props;
+        const {active, push, theme, set_theme, menu, set_top_panel} = this.props;
 
         return(
             <div className='it-top-panel'>
@@ -24,7 +32,7 @@ class TopPanel extends Component {
                                     ['DASH/BTC', 'danger', '- 0.5%', '0.076863'],
                                     ['XMR/BTC', 'success', '+ 2.02%', '0.023360']
                                 ].map((item, i) => (
-                                    <div className={`nav-item ${active[i] === true ? 'active' : ''}`} key={i} onClick={() => push(URLS.Trading)}>
+                                    <div className={`nav-item ${menu === i ? 'active' : ''}`} key={i} onClick={() => this.open_item(URLS.Trading)}>
                                         <div className="d-flex flex-row">
                                             <img src={require('../assets/icons/close.svg')} className='closed'/>
                                             <div className="d-flex flex-column ml-2">
@@ -78,14 +86,16 @@ class TopPanel extends Component {
 
 const mapStateToProps = state => {
     return {
-        theme: state.theme
+        theme: state.theme,
+        menu: state.menu.top_panel
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
-        set_theme: index => dispatch(set_theme(index))
+        set_theme: index => dispatch(set_theme(index)),
+        set_top_panel: number => dispatch(set_top_panel(number))
     }
 };
 

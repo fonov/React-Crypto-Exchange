@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import FontAwesome from 'react-fontawesome'
 import { ButtonGroup, Button, Progress, Row, Col } from 'reactstrap';
+import ReactSVG from 'react-svg';
 
 
 class MyOrders extends Component{
@@ -16,18 +17,24 @@ class MyOrders extends Component{
                     <div className='ml-3 it-fs14 it_light_opacity'>
                         My orders
                     </div>
-                    <div className='it-fs16 it-half-opacity mr-2'>
-                        <FontAwesome name='share-square-o' className='mr-2'/>
-                        <FontAwesome name='times' />
+                    <div className='mr-2 d-flex flex-row'>
+                        <ReactSVG
+                            path={require('../assets/icons/share.svg')}
+                            className='icon mr-3'
+                        />
+                        <ReactSVG
+                            path={require('../assets/icons/close_bg.svg')}
+                            className='icon'
+                        />
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <div className="d-flex flex-row it-btn-group mt-4 w-100 ml-3 mr-2">
+                    <div className="d-flex flex-row it-btn-group w-100 ml-3 mr-2">
                         <div className="it-btn active w-50">Opened</div>
                         <div className="it-btn border-left-0 w-50"><span>Closed</span></div>
                     </div>
                 </div>
-                <Row className='mt-4 mx-1 text-left ml-3'>
+                <Row className='mt-3 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14'>04:44</div>
@@ -50,7 +57,7 @@ class MyOrders extends Component{
                     Show more <FontAwesome name='caret-down' />
                 </p>
                 <hr className='mx-2' />
-                <Row className='mt-4 mx-1 text-left ml-3'>
+                <Row className='mt-3 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14'>04:44</div>
@@ -72,14 +79,13 @@ class MyOrders extends Component{
                 <p className='mt-2 text-primary text-center'>
                     Show less <FontAwesome name='caret-up' />
                 </p>
-                <Row className='mx-2 progress-block'>
-                    <div className='col-12'>
-                        <Progress color="success" value="50">50%</Progress>
-                        <div className='times it-fs18'>
-                            <FontAwesome name='times' />
-                        </div>
-                    </div>
-                </Row>
+                <div className='progress-block d-flex flex-row'>
+                    <Progress color="success" value="50">50%</Progress>
+                    <ReactSVG
+                        path={require('../assets/icons/close_bg.svg')}
+                        className='icon'
+                    />
+                </div>
                 <div className="counter-list mt-2 it-fs14 it_light_opacity">
                     <ul>
                         <li>
@@ -101,7 +107,7 @@ class MyOrders extends Component{
                     </ul>
                 </div>
                 <hr className='mx-2' />
-                <Row className='mt-4 mx-1 text-left ml-3'>
+                <Row className='mt-3 mx-1 text-left ml-3'>
                     <Col md={3}>
                         <div className="d-flex flex-column">
                             <div className='it-fs14'>04:44</div>

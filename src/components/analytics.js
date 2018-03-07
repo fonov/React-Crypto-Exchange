@@ -6,6 +6,7 @@ import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import { PieChart, Pie, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
+import ReactSVG from 'react-svg';
 
 
 class Analytics extends Component {
@@ -94,7 +95,13 @@ class Analytics extends Component {
                                                     <span className='key'>orders</span>
                                                 </div>
                                                 <div className="d-flex flex-column info">
-                                                    <div><div className='symbol'>$</div><span className='value'>{item[2]}</span></div>
+                                                    <div className='d-flex flex-row'>
+                                                        <ReactSVG
+                                                            path={require('../assets/icons/dollor.svg')}
+                                                            className='symbol'
+                                                        />
+                                                        <span className='value'>{item[2]}</span>
+                                                    </div>
                                                     <span className='key'>investment</span>
                                                 </div>
                                             </div>
@@ -143,12 +150,12 @@ class Analytics extends Component {
                             <Card>
                                 <CardBody className='performance'>
                                     <div className="d-flex justify-content-between">
-                                        <strong className='it-fs16'>Performance</strong>
+                                        <strong className='it-fs16'>Time session</strong>
                                         <div className='cog it-fs14 it_light_opacity'>
                                             <img src={theme.cog} />
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-row mt-2">
+                                    <div className="d-flex flex-row mt-1">
                                         <span className='text-success mr-2'>Active 5 sessions</span>
                                         <span className='text-secondary it_light_opacity'>Closed 278 sessions</span>
                                     </div>
@@ -178,7 +185,7 @@ class Analytics extends Component {
                                                 </div>
                                             </div>
                                         </Col>
-                                        <Col className='col-6' md={6} lg={6} xl={6}>
+                                        <Col className='col-6 pt-2' md={6} lg={6} xl={6}>
                                             <PieChart width={400} height={200}>
                                                 <Pie data={pie_chart} cx={50} cy={60} innerRadius={0} outerRadius={50} fill="#82ca9d">
                                                     {pie_chart.map((entry, index) => <Cell fill={entry.color}/>)}

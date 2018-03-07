@@ -5,6 +5,7 @@ import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input,
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import ReactSVG from 'react-svg';
 
 
 class AddCurrency extends Component {
@@ -15,49 +16,49 @@ class AddCurrency extends Component {
 
         let counts = [
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
             [true, 'https://upload.wikimedia.org/wikipedia/commons/f/f8/LTC-400.png', 'Lightcoin LTC'],
             [true, 'https://chain.so/Bitcoin@2x.png', 'Bitcoin BTC'],
-            [false, 'https://themerkle.com/wp-content/uploads/2017/05/ethereum-classic-logo-600x600.png', 'Ethereum ETH'],
+            [false, require('../assets/icons/ethereum.png'), 'Ethereum ETH'],
             [false, 'https://proinvest.me/wp-content/uploads/2017/12/DASH_logo.png', 'Dash DASH'],
             [false, 'https://avatars1.githubusercontent.com/u/7450663?v=3', 'Monero XMR'],
             [false, 'https://cryptostate.ru/wp-content/uploads/2017/12/3370.jpg', 'GameCredits GAME'],
@@ -91,7 +92,7 @@ class AddCurrency extends Component {
                         {
                             counts.map((item, i) => (
                                 <Col key={i} md={3} lg={2} xl={2} className={'mt-2 col-3'}>
-                                    <Card className={`${item[0] && 'added'}`}>
+                                    <Card className={`${item[0] ? 'added' : 'not_added'}`}>
                                         <CardBody>
                                             <div className='text-center mt-2'>
                                                 <img src={item[1]} className='card-img' />
@@ -107,7 +108,9 @@ class AddCurrency extends Component {
                                                     </p>
                                                 ) : (
                                                     <div className='it_cycle_item'>
-                                                        <FontAwesome name='plus' className=''/>
+                                                        <ReactSVG
+                                                            path={require('../assets/icons/plus_big.svg')}
+                                                        />
                                                     </div>
                                                 )
                                             }

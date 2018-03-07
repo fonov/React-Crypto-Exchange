@@ -17,6 +17,7 @@
     "react-router": "^4.2.0",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.1",
+    "react-svg": "^2.2.14",
     "react-switch": "^2.3.0",
     "react-tradingview-widget": "^1.2.2",
     "reactstrap": "^5.0.0-beta",

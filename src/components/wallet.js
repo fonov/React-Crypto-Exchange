@@ -5,6 +5,7 @@ import { Row, Col, Progress, Card, CardBody, CardText } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import ReactSVG from 'react-svg';
 
 
 class Wallet extends Component{
@@ -86,7 +87,9 @@ class Wallet extends Component{
                             <Card onClick={() => push(URLS.AddCurrency)}>
                                 <CardBody>
                                     <div className='add_carrency'>
-                                        <FontAwesome name='plus'/>
+                                        <ReactSVG
+                                            path={require('../assets/icons/plus.svg')}
+                                        />
                                     </div>
                                     <div className='text-center mt-1'>
                                         <span className='add_carrency_title'>Add Carrency</span>
@@ -157,7 +160,7 @@ class Wallet extends Component{
                         <Col md={9} xl={9} lg={9} className='col-9 current_currency'>
                             <div className='text-center'>
                                 <img src='https://chain.so/Bitcoin@2x.png' className='cr-logo'/>
-                                <div className='it-fs34 mt-2 it-medium'>
+                                <div className='it-fs34 mt-3 it-medium'>
                                     5.51004989 BTC
                                 </div>
                                 <div className='it-fs18 it-half-opacity'>
@@ -167,19 +170,26 @@ class Wallet extends Component{
                             <div className="d-flex justify-content-center big_top_p">
                                 <div className='mr-4'>
                                     <div className='oval-big'>
-                                        <FontAwesome name='long-arrow-down' />
+                                        <ReactSVG
+                                            path={require('../assets/icons/dep.svg')}
+                                        />
                                     </div>
                                     <div className='text-center it-fs18 mt-2'>Deposit</div>
                                 </div>
                                 <div className='mx-4'>
                                     <div className='oval-big'>
-                                        <FontAwesome name='long-arrow-up' />
+                                        <ReactSVG
+                                            path={require('../assets/icons/wit.svg')}
+                                        />
                                     </div>
                                     <div className='text-center it-fs18 mt-2'>Withdraw</div>
                                 </div>
                                 <div className='ml-4'>
                                     <div className='oval-big'>
-                                        <FontAwesome name='refresh' />
+                                        <ReactSVG
+                                            path={require('../assets/icons/tran.svg')}
+                                            className='oval-big-svg'
+                                        />
                                     </div>
                                     <div className='text-center it-fs18 mt-2'>Transfer</div>
                                 </div>

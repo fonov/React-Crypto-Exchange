@@ -98,7 +98,12 @@ body {
   }
 }
 .it-char-flex-other {
-  margin-top: 5px;
+  margin-top: 3px;
+  position: relative;
+  .it-char:last-child {
+    position: relative;
+    top: -3px;
+  }
   @media (min-width: 1440px) {
     margin-top: 0;
   }
@@ -109,7 +114,14 @@ body {
   padding-left: .5em;
   padding-right: .5em;
   margin-left: 1.5em;
-  margin-top: 5px;
+  margin-top: 3px;
+  position: relative;
+  @media (max-width: 1439px) {
+    .it-char:last-child {
+      position: relative;
+      top: -3px;
+    }
+  }
   @media (min-width: 1440px) {
     margin-top: 0;
     line-height: 60px;
@@ -245,6 +257,135 @@ body {
   }
   .tb-2 {
     padding-left: 0;
+    padding-right: 80px !important;
+  }
+  table.order-book-table.reverse {
+    tbody {
+      tr {
+        td {
+          border-top: none;
+          font-size: 12px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+        td.icon {
+          position: relative;
+          > div {
+            position: relative;
+            right: -14px;
+            width: 30px;
+            height: 24px;
+            text-align: center;
+            border-radius: 3px;
+            img {
+              margin-top: 6px;
+            }
+            svg {
+              margin-top: 7px;
+              path {
+                fill: white;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      tr:first-child {
+        td, td:last-child {
+          border-top: 1px solid #dee2e6;
+        }
+        td.icon {
+          padding-top: 2px;
+        }
+        td:first-child {
+          border-top: none;
+        }
+      }
+      tr:last-child {
+        opacity: 0.5;
+      }
+      tr:hover {
+        td, td:last-child {
+          background-color: #eceff4;
+        }
+        td:first-child {
+          background-color: white;
+        }
+        td.icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  table.order-book-table {
+    margin-bottom: 10px;
+    thead {
+      tr {
+        th {
+          border: none;
+          font-size: 12px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-top: none;
+          font-size: 12px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+        td.icon {
+          opacity: 0;
+          padding-left: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          div {
+            width: 30px;
+            height: 24px;
+            text-align: center;
+            border-radius: 3px;
+            img {
+              margin-top: 6px;
+            }
+            svg {
+              margin-top: 7px;
+              path {
+                fill: white;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      tr:first-child {
+        td {
+          border-top: 1px solid #dee2e6;
+        }
+        td.icon {
+          padding-top: 2px;
+        }
+        td:last-child {
+          border-top: none;
+        }
+      }
+      tr:last-child {
+        opacity: 0.5;
+      }
+      tr:hover {
+        td {
+          background-color: #eceff4;
+        }
+        td:last-child {
+          background-color: white;
+        }
+        td.icon {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 .it-table-block {
@@ -386,27 +527,47 @@ body {
   opacity: 0.4;
 }
 .it-trading {
+  .market {
+    .card-body {
+      padding: 0;
+      padding-top: 10px;
+    }
+    table.market-history-table {
+        margin-bottom: 10px;
+        thead {
+          tr {
+            th {
+              border: none;
+              font-size: 12px;
+              padding-top: 4px;
+              padding-bottom: 4px;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              border-top: none;
+              font-size: 12px;
+              padding-top: 4px;
+              padding-bottom: 4px;
+            }
+          }
+          tr:first-child {
+            td {
+              border-top: 1px solid #dee2e6;
+            }
+          }
+          tr:last-child {
+            opacity: 0.5;
+          }
+        }
+    }
+  }
   .row {
     .col {
-      padding-left: 8px;
-      padding-right: 8px;
-    }
-  }
-  @media (max-width: 1430px) {
-    .market {
-      margin-top: 8px;
-    }
-  }
-  @media (min-width: 1440px) {
-    .row {
-      .col {
-        &:first-child {
-          padding-left: 30px;
-        }
-        &:last-child {
-          padding-right: 16px;
-        }
-      }
+      padding-left: 13px;
+      padding-right: 16px;
     }
   }
   .btn-buy-sell {
@@ -433,15 +594,37 @@ body {
   .main-view {
     width: calc(100% - 16px - 278px);
     margin-right: 16px;
+    .it-trading_view {
+      height: 462px;
+    }
   }
   @media (max-width: 1435px) {
     .main-view {
       .it-trading_view {
-        height: 482px;
+        height: 480px;
       }
+    }
+  }
+  .order-book-card {
+    .card-body {
+      padding-bottom: 0;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-top: 10px;
     }
   }
 }
 .it-dashed {
   border-bottom: 1px dashed #282e3d;
+}
+@media (max-width: 1439px) {
+  .market, .order-book-card {
+    .card-body {
+      padding-left: 20px !important;
+      padding-right: 10px !important;
+    }
+  }
+  .market {
+    margin-top: 10px;
+  }
 }

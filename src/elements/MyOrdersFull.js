@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import FontAwesome from 'react-fontawesome'
 import { ButtonGroup, Button, Progress, Row, Col, Input, Form, Label, FormGroup } from 'reactstrap';
+import ReactSVG from 'react-svg';
 
 
 class MyOrdersFull extends Component{
@@ -22,33 +23,37 @@ class MyOrdersFull extends Component{
                         </div>
                     </Col>
                 </Row>
-                <Form inline className='mt-2 ml-4'>
-                    <div className="d-flex flex-row it-btn-group mr-4">
-                        <div className="it-btn active ">Opened</div>
-                        <div className="it-btn border-left-0 "><span>Closed</span></div>
-                    </div>
-                    <Input type="select" name="select" id="exampleSelect" className='mr-2 form-control-sm'>
-                        <option>19/10/2016</option>
-                    </Input>
-                    <div className='it-delimiter' />
-                    <Input type="select" name="select" id="exampleSelect" className='ml-2 form-control-sm'>
-                        <option>19/10/2016</option>
-                    </Input>
-                    <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2 form-control-sm'>
-                        <option>All</option>
-                    </Input>
-                    <div className='it-delimiter' />
-                    <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4 form-control-sm'>
-                        <option>BTC</option>
-                    </Input>
-                    <Input type="select" name="select" id="exampleSelect" className='form-control-sm'>
-                        <option>All type</option>
-                    </Input>
-                    <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
+                <div className='d-flex justify-content-between'>
+                    <Form inline className='mt-2 ml-4'>
+                        <div className="d-flex flex-row it-btn-group mr-4">
+                            <div className="it-btn active ">Opened</div>
+                            <div className="it-btn border-left-0 "><span>Closed</span></div>
+                        </div>
+                        <Input type="select" name="select" id="exampleSelect" className='mr-2 form-control-sm'>
+                            <option>19/10/2016</option>
+                        </Input>
+                        <div className='it-delimiter' />
+                        <Input type="select" name="select" id="exampleSelect" className='ml-2 form-control-sm'>
+                            <option>19/10/2016</option>
+                        </Input>
+                        <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2 form-control-sm'>
+                            <option>All</option>
+                        </Input>
+                        <div className='it-delimiter' />
+                        <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4 form-control-sm'>
+                            <option>BTC</option>
+                        </Input>
+                        <Input type="select" name="select" id="exampleSelect" className='form-control-sm'>
+                            <option>All type</option>
+                        </Input>
+                        <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
+                    </Form>
                     <Button color='light' className='border ml-4 export_btn_big it-fs14'>
-                        <FontAwesome name='file' className='mr-2'/> Export order list
+                        <span>
+                            <FontAwesome name='file' className='mr-2'/> Export order list
+                        </span>
                     </Button>
-                </Form>
+                </div>
                 <div className='mt-3 mx-4'>
                     <table className="table table-night">
                         <thead className='mt-3'>
@@ -70,8 +75,15 @@ class MyOrdersFull extends Component{
                             <td className='align-middle'>
                                 <strong className='text-primary'>XMR/BTC</strong>
                             </td>
-                            <td className='text-danger align-middle'>
-                                <FontAwesome name='long-arrow-down' /> Market
+                            <td className='text-danger align-middle arrow'>
+                                <div className='d-flex flex-row'>
+                                    <ReactSVG
+                                        path={require('../assets/icons/raw_down.svg')}
+                                    />
+                                    <span>
+                                        Market
+                                    </span>
+                                </div>
                             </td>
                             <td className='align-middle'>0.023238</td>
                             <td className='align-middle'>0.02315878</td>
@@ -84,7 +96,9 @@ class MyOrdersFull extends Component{
                             <td className='align-middle'>04:44 27/11/2017 </td>
                             <td>
                                 <div className='it_cycle_times position-static'>
-                                    <FontAwesome name='times' className=''/>
+                                    <ReactSVG
+                                        path={require('../assets/icons/close_bg.svg')}
+                                    />
                                 </div>
                             </td>
                         </tr>
@@ -94,8 +108,15 @@ class MyOrdersFull extends Component{
                                     <strong className='text-primary'>XMR/BTC</strong>
                                 </strong>
                             </td>
-                            <td className='text-danger align-middle'>
-                                <FontAwesome name='long-arrow-down' /> Market
+                            <td className='text-danger align-middle arrow'>
+                                <div className='d-flex flex-row'>
+                                    <ReactSVG
+                                        path={require('../assets/icons/raw_down.svg')}
+                                    />
+                                    <span>
+                                        Market
+                                    </span>
+                                </div>
                             </td>
                             <td className='align-middle'>0.023238</td>
                             <td className='align-middle'>0.02315878</td>
@@ -108,7 +129,9 @@ class MyOrdersFull extends Component{
                             <td className='align-middle'>04:44 27/11/2017 </td>
                             <td>
                                 <div className='it_cycle_times position-static'>
-                                    <FontAwesome name='times' className=''/>
+                                    <ReactSVG
+                                        path={require('../assets/icons/close_bg.svg')}
+                                    />
                                 </div>
                             </td>
                         </tr>
@@ -116,8 +139,15 @@ class MyOrdersFull extends Component{
                             <td className='align-middle'>
                                 <strong className='text-primary'>XMR/BTC</strong>
                             </td>
-                            <td className='text-danger align-middle'>
-                                <FontAwesome name='long-arrow-down' /> Market
+                            <td className='text-danger align-middle arrow'>
+                                <div className='d-flex flex-row'>
+                                    <ReactSVG
+                                        path={require('../assets/icons/raw_down.svg')}
+                                    />
+                                    <span>
+                                        Market
+                                    </span>
+                                </div>
                             </td>
                             <td className='align-middle'>0.023238</td>
                             <td className='align-middle'>0.02315878</td>
@@ -130,7 +160,9 @@ class MyOrdersFull extends Component{
                             <td className='align-middle'>04:44 27/11/2017 </td>
                             <td>
                                 <div className='it_cycle_times position-static'>
-                                    <FontAwesome name='times' className=''/>
+                                    <ReactSVG
+                                        path={require('../assets/icons/close_bg.svg')}
+                                    />
                                 </div>
                             </td>
                         </tr>
@@ -139,7 +171,9 @@ class MyOrdersFull extends Component{
                 </div>
 
                 <Button color='light' className='border ml-4 export_btn_small it-fs14'>
-                    <FontAwesome name='file' className='mr-2'/> Export order list
+                   <span>
+                        <FontAwesome name='file' className='mr-2'/> Export order list
+                    </span>
                 </Button>
             </div>
         )

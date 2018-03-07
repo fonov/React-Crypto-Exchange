@@ -30,7 +30,7 @@
     .card {
       .label {
         opacity: 0.6;
-        font-size: 14px;
+        font-size: 12px;
         color: #282e3d;
         text-transform: uppercase;
       }
@@ -54,10 +54,8 @@
           div {
             position: relative;
             .symbol {
-              font-weight: 600;
               position: absolute;
-              top: 14px;
-              font-size: 19px;
+              top: 17px;
               left: -15px;
             }
           }
@@ -70,7 +68,7 @@
         margin-top: 28px;
         .badge-pill {
           font-size: 14px;
-          font-weight: 500;
+          font-weight: 400;
           height: 20px;
           opacity: 1;
           margin-right: 7px;
@@ -92,7 +90,7 @@
     }
   }
   .chart {
-    margin-top: 21px;
+    margin-top: 18px;
     .oval {
       width: 10px;
       height: 10px;

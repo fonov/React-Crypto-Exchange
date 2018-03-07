@@ -8,6 +8,15 @@
   height: calc(100% - 46px);
   box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
+  .it-btn-group {
+    margin-top: 0.6em;
+  }
+  svg.icon {
+    path {
+      opacity: 0.8;
+      width: 12px;
+    }
+  }
   .col {
     padding: 0;
   }
@@ -22,16 +31,14 @@
   }
   .progress-block {
     position: relative;
-    .col-12 {
-      padding-right: 20px;
-      .progress {
-        position: relative;
-      }
-      .times {
-        position: absolute;
-        right: 0;
-        top: -6px;
-      }
+    margin-left: 1rem;
+    .progress {
+      width: 85%;
+    }
+    svg {
+      margin-left: 10px;
+      position: relative;
+      top: -2px;
     }
   }
   .counter-list {
