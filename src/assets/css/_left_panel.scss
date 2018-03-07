@@ -64,4 +64,10 @@
       border-radius: 50px;
     }
   }
+  .item:hover {
+    opacity: 0.8;
+  }
+  .item.active:hover {
+    opacity: 1;
+  }
 }

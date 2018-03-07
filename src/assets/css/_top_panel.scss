@@ -47,6 +47,9 @@
       }
     }
   }
+  .nav-item:hover {
+    opacity: 1;
+  }
   .active {
     background-color: #ffffff;
     opacity: 1;
@@ -133,5 +136,8 @@
         position: relative;
       }
     }
+  }
+  .left-icon:hover {
+    opacity: 0.7;
   }
 }

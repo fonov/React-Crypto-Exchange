@@ -29,8 +29,8 @@ class MyOrdersFull extends Component{
                             </div>
                         </Col>
                     </Row>
-                    <div className='d-flex justify-content-between'>
-                        <Form inline className='mt-2 ml-4'>
+                    <div className='d-flex justify-content-between mt-2'>
+                        <Form inline className='ml-4'>
                             <div className="d-flex flex-row it-btn-group mr-4">
                                 <div className="it-btn active ">Opened</div>
                                 <div className="it-btn border-left-0 "><span>Closed</span></div>
@@ -54,11 +54,13 @@ class MyOrdersFull extends Component{
                             </Input>
                             <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
                         </Form>
-                        <Button color='light' className='border ml-4 export_btn_big it-fs14'>
-                        <span>
-                            <FontAwesome name='file' className='mr-2'/> Export order list
-                        </span>
-                        </Button>
+                        <div>
+                            <Button color='light' className='border ml-4 export_btn_big it-fs14'>
+                                <span>
+                                    <FontAwesome name='file' className='mr-2'/> Export order list
+                                </span>
+                            </Button>
+                        </div>
                     </div>
                     <div className='mt-3 mx-4'>
                         <table className="table table-night">

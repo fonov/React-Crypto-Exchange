@@ -63,7 +63,7 @@ class TopPanel extends Component {
                                     'cog',
                                     'bell'
                                 ].map((item, i) => (
-                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null} key={i}>
+                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null} key={i} className='left-icon'>
                                         <img src={theme[item]} className='icon'/>
                                     </div>
                                 ))
