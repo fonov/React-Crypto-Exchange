@@ -11,9 +11,34 @@ import ReactSVG from 'react-svg';
 
 class Trading extends Component{
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            active_index: -1,
+            active_index_1: -1
+        }
+    }
+
+    componentDidMount(){
+        setInterval(() => {
+            this.setState({
+                active_index: Math.floor(Math.random() * 9),
+                active_index_1: Math.floor(Math.random() * 9)
+            });
+            setTimeout(() => {
+                this.setState({
+                    active_index: -1,
+                    active_index_1: -1
+                });
+            }, 300)
+        }, 1000)
+    }
+
     render() {
 
-        const {theme, push} = this.props;
+        const {theme, push} = this.props,
+            {active_index, active_index_1} = this.state;
 
         return(
             <BasePage>
@@ -190,7 +215,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item}>
+                                                        <tr key={item} className={`${active_index === item ? 'active' : ''}`}>
                                                             <td>0.00017239</td>
                                                             <td>0.00017239</td>
                                                             <td>0.00017239</td>
@@ -220,7 +245,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item}>
+                                                        <tr key={item} className={`${active_index_1 === item ? 'active' : ''}`}>
                                                             <td className='icon'>
                                                                 <div className='bg-danger'>
                                                                     <ReactSVG

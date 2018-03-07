@@ -267,6 +267,7 @@ body {
           font-size: 12px;
           padding-top: 4px;
           padding-bottom: 4px;
+          transition: background-color 300ms, opacity 300ms;
         }
         td.icon {
           position: relative;
@@ -304,7 +305,7 @@ body {
       tr:last-child {
         opacity: 0.5;
       }
-      tr:hover {
+      tr:hover, tr.active {
         td, td:last-child {
           background-color: #eceff4;
         }
@@ -336,6 +337,7 @@ body {
           font-size: 12px;
           padding-top: 4px;
           padding-bottom: 4px;
+          transition: background-color 300ms, opacity 300ms;
         }
         td.icon {
           opacity: 0;
@@ -374,7 +376,7 @@ body {
       tr:last-child {
         opacity: 0.5;
       }
-      tr:hover {
+      tr:hover, tr.active {
         td {
           background-color: #eceff4;
         }
