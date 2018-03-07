@@ -3,13 +3,15 @@ import {connect} from "react-redux";
 import FontAwesome from 'react-fontawesome'
 import { ButtonGroup, Button, Progress, Row, Col, Input, Form, Label, FormGroup } from 'reactstrap';
 import ReactSVG from 'react-svg';
+import {set_my_orders, set_top_panel} from "../actions/menu";
+import {push} from "react-router-redux";
 
 
 class MyOrdersFull extends Component{
 
     render() {
 
-        const {} = this.props;
+        const {my_orders, push, set_my_orders, set_top_panel} = this.props;
 
         return (
             <div className='my_orders_full'>
@@ -18,7 +20,10 @@ class MyOrdersFull extends Component{
                         <p className='it_page_title'>My orders</p>
                     </Col>
                     <Col>
-                        <div className='it_cycle_times'>
+                        <div className='it_cycle_times' onClick={() => {
+                            set_my_orders(0);
+                            set_top_panel(2)
+                        }}>
                             <FontAwesome name='times' className=''/>
                         </div>
                     </Col>
@@ -182,13 +187,15 @@ class MyOrdersFull extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        my_orders: state.menu.my_orders
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        push: url => dispatch(push(url)),
+        set_top_panel: number => dispatch(set_top_panel(number)),
+        set_my_orders: number => dispatch(set_my_orders(number))
     }
 };
 

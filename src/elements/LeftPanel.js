@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {MyOrders, MyOrdersFull} from './index'
-import {set_top_panel} from '../actions/menu'
+import {set_top_panel, set_my_orders} from '../actions/menu'
 
 
 class LeftPanel extends Component{
@@ -13,21 +13,14 @@ class LeftPanel extends Component{
     constructor(props) {
         super(props);
 
-        this.state = {
-            orders_active: 0
-        }
+        this.state = {}
     }
 
-    _orders_active() {
-        const {orders_active} = this.state,
-            {set_top_panel} = this.props;
+    orders_active() {
+        const {set_top_panel, set_my_orders} = this.props;
 
-        if (orders_active === 2) {
-            this.setState({orders_active: 0});
-        } else {
-            this.setState({orders_active: orders_active+1});
-            set_top_panel(-1)
-        }
+        set_my_orders(1);
+        set_top_panel(-1)
     }
 
     _open_left_item(url) {
@@ -39,8 +32,8 @@ class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3, push, wallet_active, analytics_active, traders_active, message_active, theme } = this.props,
-            {orders_active} = this.state;
+        const { my_orders_badge = 3, push, wallet_active,
+                analytics_active, traders_active, message_active, theme, my_orders } = this.props;
 
         return (
             <div>
@@ -54,7 +47,7 @@ class LeftPanel extends Component{
                     </div>
                 </div>
                 <div className='it-left-panel-nav'>
-                    <div className={`item ${orders_active && 'active'}`} onClick={() => this._orders_active()}>
+                    <div className={`item ${my_orders ? 'active' : ''}`} onClick={() => this.orders_active()}>
                         <div className="d-flex flex-column">
                             <div className='it-badge bg-primary text-white'>
                                 {my_orders_badge}
@@ -65,23 +58,22 @@ class LeftPanel extends Component{
                             </div>
                         </div>
                     </div>
-
-                    <div className={`item ${wallet_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Wallet)}>
+                    <div className={`item ${wallet_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Wallet)}>
                         <img src={theme.nav_wallet} className='img_icon non_op' />
                         <p>Wallets</p>
                     </div>
 
-                    <div className={`item ${analytics_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Analytics)}>
+                    <div className={`item ${analytics_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Analytics)}>
                         <img src={theme.analytics} className='img_icon non_op' />
                         <p>Analytics</p>
                     </div>
 
-                    <div className={`item ${traders_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Traders)}>
+                    <div className={`item ${traders_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Traders)}>
                         <img src={theme.traders} className='img_icon non_op' />
                         <p>Traders</p>
                     </div>
 
-                    <div className={`item ${message_active && !orders_active && 'active'}`} onClick={() => this._open_left_item(URLS.Messages)}>
+                    <div className={`item ${message_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Messages)}>
                         <img src={theme.message_icon} className='img_icon' style={{opacity: 1}} />
                         <p>Messages</p>
                     </div>
@@ -95,7 +87,7 @@ class LeftPanel extends Component{
                         </div>
                     </div>
                 </div>
-                { orders_active === 1 ? <MyOrders /> : orders_active === 2 ? <MyOrdersFull /> : null }
+                { my_orders === 1 ? <MyOrders /> :  my_orders === 2 ? <MyOrdersFull /> : null }
             </div>
         )
     }
@@ -103,14 +95,16 @@ class LeftPanel extends Component{
 
 const mapStateToProps = state => {
     return {
-        theme: state.theme
+        theme: state.theme,
+        my_orders: state.menu.my_orders
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
-        set_top_panel: number => dispatch(set_top_panel(number))
+        set_top_panel: number => dispatch(set_top_panel(number)),
+        set_my_orders: number => dispatch(set_my_orders(number))
     }
 };
 

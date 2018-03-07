@@ -3,13 +3,16 @@ import {connect} from "react-redux";
 import FontAwesome from 'react-fontawesome'
 import { ButtonGroup, Button, Progress, Row, Col } from 'reactstrap';
 import ReactSVG from 'react-svg';
+import {set_my_orders, set_top_panel} from "../actions/menu";
+import {push} from "react-router-redux";
+import URLS from '../constants/urls'
 
 
 class MyOrders extends Component{
 
     render() {
 
-        const {} = this.props;
+        const {my_orders, push, set_my_orders, set_top_panel} = this.props;
 
         return (
             <div className='my_orders'>
@@ -18,14 +21,23 @@ class MyOrders extends Component{
                         My orders
                     </div>
                     <div className='mr-2 d-flex flex-row'>
-                        <ReactSVG
-                            path={require('../assets/icons/share.svg')}
-                            className='icon mr-3'
-                        />
-                        <ReactSVG
-                            path={require('../assets/icons/close_bg.svg')}
-                            className='icon'
-                        />
+                        <div onClick={() => {
+                            set_my_orders(2)
+                        }}>
+                            <ReactSVG
+                                path={require('../assets/icons/share.svg')}
+                                className='icon mr-3'
+                            />
+                        </div>
+                        <div onClick={() => {
+                            set_top_panel(2);
+                            set_my_orders(0)
+                        }}>
+                            <ReactSVG
+                                path={require('../assets/icons/close_bg.svg')}
+                                className='icon'
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
@@ -137,13 +149,15 @@ class MyOrders extends Component{
 
 const mapStateToProps = state => {
     return {
-
+        my_orders: state.menu.my_orders
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        push: url => dispatch(push(url)),
+        set_top_panel: number => dispatch(set_top_panel(number)),
+        set_my_orders: number => dispatch(set_my_orders(number))
     }
 };
 
