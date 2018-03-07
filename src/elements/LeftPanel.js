@@ -87,7 +87,7 @@ class LeftPanel extends Component{
                         </div>
                     </div>
                 </div>
-                { my_orders === 1 ? <MyOrders /> :  my_orders === 2 ? <MyOrdersFull /> : null }
+                <MyOrders />
             </div>
         )
     }
