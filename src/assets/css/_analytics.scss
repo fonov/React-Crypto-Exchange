@@ -100,6 +100,12 @@
   }
   .trade-session {
     margin-top: 55px;
+    .performance-card {
+      .card-body {
+        padding-left: 40px;
+        padding-right: 10px;
+      }
+    }
     .form-inline {
       position: relative;
       top: -2px;
@@ -129,9 +135,10 @@
     }
     .bg-badge {
       font-size: 24px;
-      font-weight: 500;
+      font-weight: 400;
       position: relative;
       top: 18px;
+      background-color: #27ae66;
     }
     .block {
       padding-right: 5%;
@@ -146,5 +153,6 @@
   }
   .my-badge {
     line-height: 10px;
+    font-weight: 400;
   }
 }
