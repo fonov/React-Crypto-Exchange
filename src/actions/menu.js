@@ -1,4 +1,4 @@
-import {SET_TOP_PANEL, SET_MY_ORDERS} from '../constants/actions'
+import {SET_TOP_PANEL, SET_MY_ORDERS, SET_ORDER_CLOSE_MODAL} from '../constants/actions'
 
 
 export const set_top_panel = number => {
@@ -16,6 +16,15 @@ export const set_my_orders = number => {
         dispatch({
             type: SET_MY_ORDERS,
             number
+        })
+    }
+};
+
+export const set_order_close_modal = modal => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: SET_ORDER_CLOSE_MODAL,
+            modal
         })
     }
 };

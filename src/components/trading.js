@@ -7,6 +7,8 @@ import TradingViewWidget from 'react-tradingview-widget';
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
+import Blur from 'react-css-blur'
+import {set_order_close_modal} from "../actions/menu";
 
 
 class Trading extends Component{
@@ -37,11 +39,12 @@ class Trading extends Component{
 
     render() {
 
-        const {theme, push} = this.props,
+        const {theme, push, set_order_close_modal} = this.props,
             {active_index, active_index_1} = this.state;
 
         return(
             <BasePage>
+                {/*<Blur radius={ true ? '5px' : '0' } transition="400ms">*/}
                 <div className='it-trading'>
                     <div className='d-flex flex-row mb-2'>
                         <div className='mt-3 main-view'>
@@ -119,8 +122,13 @@ class Trading extends Component{
                                                 <strong>Buy</strong>
                                             </Button>
                                             <Button className='bg-white text-dark border border-left-0'>
-                                                <img src={require('../assets/icons/raw_down.svg')} />
-                                                <strong className='it-half-opacity'>Sell</strong>
+                                                <div className='d-flex justify-content-center'>
+                                                    <ReactSVG
+                                                        path={require('../assets/icons/raw_down.svg')}
+                                                        className='mr-1'
+                                                    />
+                                                    <strong className='it-half-opacity'>Sell</strong>
+                                                </div>
                                             </Button>
                                         </div>
                                     </div>
@@ -298,7 +306,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item}>
+                                                        <tr key={item} onClick={() => set_order_close_modal(true)}>
                                                             <td>15:19</td>
                                                             <td className='text-success'>Buy</td>
                                                             <td>0.02315000</td>
@@ -324,7 +332,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item}>
+                                                        <tr key={item} onClick={() => set_order_close_modal(true)}>
                                                             <td>15:19</td>
                                                             <td className='text-success'>Buy</td>
                                                             <td>0.02315000</td>
@@ -342,6 +350,7 @@ class Trading extends Component{
                         </Col>
                     </Row>
                 </div>
+                {/*</Blur>*/}
             </BasePage>
         )
     }
@@ -355,7 +364,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        set_order_close_modal: modal => dispatch(set_order_close_modal(modal))
     }
 };
 
