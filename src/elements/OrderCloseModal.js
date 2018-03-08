@@ -38,7 +38,7 @@ class OrderCloseModal extends Component{
                             <div className='mt-4'>
                                 <span className='it-fs14 it-half-opacity'>Order profit</span>
                             </div>
-                            <div className='text-success it-medium it-fs18'>
+                            <div className='it-medium it-fs18'>
                                 $ 48.10
                             </div>
                             <div className='mt-4'>

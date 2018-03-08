@@ -7,8 +7,8 @@ import TradingViewWidget from 'react-tradingview-widget';
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
-import Blur from 'react-css-blur'
 import {set_order_close_modal} from "../actions/menu";
+import {AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts";
 
 
 class Trading extends Component{
@@ -18,7 +18,8 @@ class Trading extends Component{
 
         this.state = {
             active_index: -1,
-            active_index_1: -1
+            active_index_1: -1,
+            order_book: 2
         }
     }
 
@@ -40,11 +41,60 @@ class Trading extends Component{
     render() {
 
         const {theme, push, set_order_close_modal} = this.props,
-            {active_index, active_index_1} = this.state;
+            {active_index, active_index_1, order_book} = this.state;
+
+        const data = [
+            {name: 'Page A', uv: 4000,  amt: 2400},
+            {name: 'Page B', uv: 3000,  amt: 2210},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page A', uv: 4000,  amt: 2400},
+            {name: 'Page B', uv: 3000,  amt: 2210},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page C', uv: 2000,  amt: 2290},
+            {name: 'Page B', uv: 3000,  amt: 2210},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page A', uv: 4000,  amt: 2400},
+            {name: 'Page B', uv: 3000,  amt: 2210},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page C', uv: 2000,  amt: 2290},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page A', uv: 4000,  amt: 2400},
+            {name: 'Page B', uv: 3000,  amt: 2210},
+            {name: 'Page B', uv: 1000,  amt: 2210},
+            {name: 'Page B', uv: 3700,  amt: 2210},
+            {name: 'Page C', uv: 2000,  amt: 2290},
+            {name: 'Page C', uv: 0,  amt: 2290},
+            {name: 'Page D',  pv: 0, amt: 2000},
+            {name: 'Page E',  pv: 4800, amt: 2181},
+            {name: 'Page F',  pv: 3800, amt: 2500},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2300, amt: 2100},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2400, amt: 2100},
+            {name: 'Page E',  pv: 4800, amt: 2181},
+            {name: 'Page F',  pv: 3800, amt: 2500},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2300, amt: 2100},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2400, amt: 2100},
+            {name: 'Page G',  pv: 2300, amt: 2100},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2400, amt: 2100},
+            {name: 'Page E',  pv: 4800, amt: 2181},
+            {name: 'Page F',  pv: 3800, amt: 2500},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2300, amt: 2100},
+            {name: 'Page G',  pv: 4300, amt: 2100},
+            {name: 'Page G',  pv: 2400, amt: 2100},
+        ];
 
         return(
             <BasePage>
-                {/*<Blur radius={ true ? '5px' : '0' } transition="400ms">*/}
                 <div className='it-trading'>
                     <div className='d-flex flex-row mb-2'>
                         <div className='mt-3 main-view'>
@@ -186,92 +236,128 @@ class Trading extends Component{
                         <Col className='col-12' md={12} lg={8} xl={8}>
                             <Card className='order-book-card'>
                                 <CardBody className='ml-4'>
-                                    <Row>
-                                        <Col>
+                                    <div className='d-flex justify-content-between'>
+                                        <div>
                                             <div className="d-flex flex-row">
                                                 <strong className='it-fs18 mr-4'>Order Book</strong>
-                                                <div className='it-gr-btn'>
-                                                    <div>
-                                                        Graph
+                                                {/*<div className='it-gr-btn'>*/}
+                                                {/*<div className={`${order_book === 1 ? 'active' : ''}`}>*/}
+                                                {/*Graph*/}
+                                                {/*</div>*/}
+                                                {/*<div className={`${order_book === 2 ? 'active' : ''}`}>*/}
+                                                {/*Table*/}
+                                                {/*</div>*/}
+                                                {/*</div>*/}
+                                                <div className="d-flex flex-row it-btn-group ml-2 two mr-2">
+                                                    <div
+                                                        className={`it-btn ${order_book === 1 ? 'active' : ''}`}
+                                                        onClick={() => this.setState({order_book: 1})}
+                                                    >
+                                                        <span>Graph</span>
                                                     </div>
-                                                    <div className='active'>
-                                                        Table
+                                                    <div
+                                                        className={`it-btn ${order_book === 2 ? 'active' : ''}`}
+                                                        onClick={() => this.setState({order_book: 2})}
+                                                    >
+                                                        <span>Table</span>
                                                     </div>
                                                 </div>
+                                                {
+                                                    order_book === 1 ? [
+                                                        <div className='price_range'>
+                                                            <span className='ml-4 mr-1 it-fs12'>Price range</span>
+                                                        </div>,
+                                                        <div className="d-flex flex-row it-btn-group ml-2 four">
+                                                            <div className='it-btn active'><span>25%</span></div>
+                                                        <div className='it-btn'><span>50%</span></div>
+                                                        <div className='it-btn'><span>75%</span></div>
+                                                        <div className='it-btn'><span>100%</span></div>
+                                                        </div>
+                                                    ] : null
+                                                }
                                             </div>
-                                        </Col>
-                                        <Col>
+                                        </div>
+                                        <div>
                                             <div className="d-flex flex-row-reverse pr-2">
                                                 <ReactSVG
                                                     path={require('../assets/icons/share.svg')}
                                                 />
                                             </div>
-                                        </Col>
-                                    </Row>
-                                    <Row className='mt-4 text-right it-order-book'>
-                                        <Col className='tb-1 col-6'>
-                                            <Table className='order-book-table'>
-                                                <thead>
-                                                <tr>
-                                                    <th>Sum BTC</th>
-                                                    <th>Total XMR</th>
-                                                    <th>Size BTC</th>
-                                                    <th>Bid</th>
-                                                    <th/>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {
-                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} className={`${active_index === item ? 'active' : ''}`}>
-                                                            <td>0.00017239</td>
-                                                            <td>0.00017239</td>
-                                                            <td>0.00017239</td>
-                                                            <td className='text-success'>0.00017239</td>
-                                                            <td className='icon'>
-                                                                <div className='bg-success'>
-                                                                    <img src={require('../assets/icons/raw_up.svg')} />
-                                                                </div>
-                                                            </td>
+                                        </div>
+                                    </div>
+                                    {
+                                        order_book ? (
+                                            <Row className='mt-4 text-right it-order-book'>
+                                                <Col className='tb-1 col-6'>
+                                                    <Table className='order-book-table'>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Sum BTC</th>
+                                                            <th>Total XMR</th>
+                                                            <th>Size BTC</th>
+                                                            <th>Bid</th>
+                                                            <th/>
                                                         </tr>
-                                                    ))
-                                                }
-                                                </tbody>
-                                            </Table>
-                                        </Col>
-                                        <Col className='tb-2 col-6'>
-                                            <Table className='order-book-table reverse'>
-                                                <thead>
-                                                <tr>
-                                                    <th/>
-                                                    <th>Ask</th>
-                                                    <th>Total BTC</th>
-                                                    <th>Size XMR</th>
-                                                    <th>Sum BTC</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {
-                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} className={`${active_index_1 === item ? 'active' : ''}`}>
-                                                            <td className='icon'>
-                                                                <div className='bg-danger'>
-                                                                    <ReactSVG
-                                                                        path={require('../assets/icons/raw_down.svg')}
-                                                                    />
-                                                                </div>
-                                                            </td>
-                                                            <td className='text-danger'>0.00017239</td>
-                                                            <td>0.00017239</td>
-                                                            <td>0.00017239</td>
-                                                            <td>0.00017239</td>
+                                                        </thead>
+                                                        <tbody>
+                                                        {
+                                                            [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                                <tr key={item} className={`${active_index === item ? 'active' : ''}`}>
+                                                                    <td>0.00017239</td>
+                                                                    <td>0.00017239</td>
+                                                                    <td>0.00017239</td>
+                                                                    <td className='text-success'>0.00017239</td>
+                                                                    <td className='icon'>
+                                                                        <div className='bg-success'>
+                                                                            <img src={require('../assets/icons/raw_up.svg')} />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            ))
+                                                        }
+                                                        </tbody>
+                                                    </Table>
+                                                </Col>
+                                                <Col className='tb-2 col-6'>
+                                                    <Table className='order-book-table reverse'>
+                                                        <thead>
+                                                        <tr>
+                                                            <th/>
+                                                            <th>Ask</th>
+                                                            <th>Total BTC</th>
+                                                            <th>Size XMR</th>
+                                                            <th>Sum BTC</th>
                                                         </tr>
-                                                    ))
-                                                }
-                                                </tbody>
-                                            </Table>
-                                        </Col>
-                                    </Row>
+                                                        </thead>
+                                                        <tbody>
+                                                        {
+                                                            [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                                <tr key={item} className={`${active_index_1 === item ? 'active' : ''}`}>
+                                                                    <td className='icon'>
+                                                                        <div className='bg-danger'>
+                                                                            <ReactSVG
+                                                                                path={require('../assets/icons/raw_down.svg')}
+                                                                            />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td className='text-danger'>0.00017239</td>
+                                                                    <td>0.00017239</td>
+                                                                    <td>0.00017239</td>
+                                                                    <td>0.00017239</td>
+                                                                </tr>
+                                                            ))
+                                                        }
+                                                        </tbody>
+                                                    </Table>
+                                                </Col>
+                                            </Row>
+                                        ) : (
+                                            <AreaChart width={390} height={145} data={data} margin={{top: 15, right: 0, bottom: 20, left: 0}}>
+                                                <XAxis dataKey="name" />
+                                                <Area type='monotone' dataKey='pv' strokeWidth={2} stroke={'#f26451'} fill={'rgba(242, 100, 81, 0.3)'} />
+                                            </AreaChart>
+                                        )
+                                    }
                                 </CardBody>
                             </Card>
                         </Col>
@@ -283,7 +369,7 @@ class Trading extends Component{
                                             <strong>Market history</strong>
                                         </Col>
                                         <Col>
-                                            <div className="d-flex flex-row-reverse pr-2">
+                                            <div className="d-flex flex-row-reverse pr-2" onClick={() => push(URLS.MarketsList)}>
                                                 <ReactSVG
                                                     path={require('../assets/icons/share.svg')}
                                                 />
@@ -350,7 +436,6 @@ class Trading extends Component{
                         </Col>
                     </Row>
                 </div>
-                {/*</Blur>*/}
             </BasePage>
         )
     }

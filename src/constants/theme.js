@@ -53,7 +53,7 @@ const theme = {
         require('../assets/icons/white_read.svg'),
     ],
     colomn: [
-      '',
+      require('../assets/icons/colomn.svg'),
       require('../assets/icons/white_colomn.svg'),
     ],
     tile: [

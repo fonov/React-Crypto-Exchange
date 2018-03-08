@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {LeftPanel, TopPanel} from './index'
 import {connect} from "react-redux";
-import OrderCloseModal from './order_close_modal'
+import OrderCloseModal from './OrderCloseModal'
 
 
 class BasePage extends Component{

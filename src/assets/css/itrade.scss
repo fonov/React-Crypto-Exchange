@@ -524,6 +524,19 @@ body {
   .it-btn.active:last-child {
     left: 1px;
   }
+  &.two {
+    .it-btn:first-child:not(.active) {
+      border-right: 0;
+    }
+    .it-btn:last-child:not(.active) {
+      border-left: 0;
+    }
+  }
+  &.four {
+    .it-btn:nth-child(3) {
+      border-left: 1px solid silver;
+    }
+  }
 }
 .it-delimiter {
   width: 9px;
@@ -630,5 +643,13 @@ body {
   }
   .market {
     margin-top: 10px;
+  }
+}
+.price_range {
+  position: relative;
+  span {
+    position: relative;
+    top: 3px;
+    opacity: 0.6;
   }
 }
