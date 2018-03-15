@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {BasePage} from '../elements'
-import { Row, Col, Progress, Card, CardBody, CardText, Badge } from 'reactstrap';
+import { Row, Col, Card, CardBody, Badge } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
+import BaseLeftPage from '../elements/BaseLeftPage'
+import {ClosePageAction} from '../actions/LeftPage'
 
 
 class Traders extends Component{
     render() {
 
-        const {push} = this.props;
+        const {push, ClosePageAction, theme} = this.props;
 
         return (
-            <BasePage
-                active={[false, false, false]}
-                traders_active={true}
+            <BaseLeftPage
+                BasePageProps={{
+                    active: [false, false, false],
+                    traders_active: true
+                }}
             >
                 <div className='it-traders'>
                     <Row className='justify-content-between'>
@@ -33,8 +36,8 @@ class Traders extends Component{
                             </div>
                         </Col>
                         <Col className='mt-3'>
-                            <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
-                                <FontAwesome name='times' className=''/>
+                            <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
+                                <img src={theme['close']} />
                             </div>
                         </Col>
                     </Row>
@@ -70,7 +73,7 @@ class Traders extends Component{
                                                         </div>
                                                         <div>
                                                             <div className='plus_icon mt-3' onClick={() => push(URLS.Trading)}>
-                                                                <FontAwesome name='plus' className=''/>
+                                                                <img src={theme['plus']} />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -101,20 +104,21 @@ class Traders extends Component{
                         ))
                     }
                 </div>
-            </BasePage>
+            </BaseLeftPage>
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-
+        theme: state.theme
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        ClosePageAction: url => dispatch(ClosePageAction(url))
     }
 };
 

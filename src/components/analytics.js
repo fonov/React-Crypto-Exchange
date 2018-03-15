@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {BasePage} from '../elements'
-import { Row, Col, Progress, Card, CardBody, CardText, Badge, ButtonGroup, Button } from 'reactstrap';
+import { Row, Col, Card, CardBody, Badge } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
-import { PieChart, Pie, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
+import { PieChart, Pie, Cell, BarChart, XAxis, Bar, ResponsiveContainer } from 'recharts';
 import ReactSVG from 'react-svg';
+import BaseLeftPage from '../elements/BaseLeftPage'
+import {ClosePageAction} from '../actions/LeftPage'
 
 
 class Analytics extends Component {
 
     render() {
 
-        const {push, theme} = this.props;
+        const {push, theme, ClosePageAction} = this.props;
 
         const pie_chart = [
             {value: 40, color: '#8598e3'},
@@ -61,9 +62,11 @@ class Analytics extends Component {
         let c_index = 0;
 
         return (
-            <BasePage
-                analytics_active={true}
-                active={[false, false, false]}
+            <BaseLeftPage
+                BasePageProps={{
+                    active: [false, false, false],
+                    analytics_active: true
+                }}
             >
                 <div className='it-analytics'>
                     <Row className='justify-content-between'>
@@ -71,8 +74,8 @@ class Analytics extends Component {
                             <p className='it_page_title'>Analytics</p>
                         </Col>
                         <Col className='mt-3'>
-                            <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
-                                <FontAwesome name='times' className=''/>
+                            <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
+                                <img src={theme['close']} />
                             </div>
                         </Col>
                     </Row>
@@ -130,19 +133,18 @@ class Analytics extends Component {
                                             </div>
                                         </form>
                                     </div>
-
-                                    <BarChart
-                                        width={830}
-                                        height={200}
-                                        data={performance}
-                                        barCategoryGap={2}
-                                        barGap={-20}
-                                        margin={{top: 20}}
-                                    >
-                                        <XAxis dataKey="name" axisLine={false} tickLine={false}/>
-                                        <Bar dataKey='up' fill='#27ae66'/>
-                                        <Bar dataKey='down' fill='#f26451'/>
-                                    </BarChart>
+                                    <ResponsiveContainer width='100%' height={200}>
+                                        <BarChart
+                                            data={performance}
+                                            barCategoryGap={2}
+                                            barGap={-20}
+                                            margin={{top: 20}}
+                                        >
+                                            <XAxis dataKey="name" axisLine={false} tickLine={false}/>
+                                            <Bar dataKey='up' fill='#27ae66'/>
+                                            <Bar dataKey='down' fill='#f26451'/>
+                                        </BarChart>
+                                    </ResponsiveContainer>
                                 </CardBody>
                             </Card>
                         </Col>
@@ -228,7 +230,7 @@ class Analytics extends Component {
                                     <Row>
                                         <div className='col-7'>
                                             <div className='d-flex flex-row'>
-                                                <div className='d-flex flex-column' style={{marginRight: 12+'%'}}>
+                                                <div className='d-flex flex-column block-1'>
                                                     <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                     <div className='it_light_opacity'>
                                                         <Badge pill className='bg-secondary my-badge'>Closed</Badge>
@@ -245,7 +247,7 @@ class Analytics extends Component {
                                                         <span>Open orders</span> <span>9</span>
                                                     </div>
                                                 </div>
-                                                <div className='d-flex flex-column' style={{marginLeft: 15+'%'}}>
+                                                <div className='d-flex flex-column block-2'>
                                                     <div className='key-value'>
                                                         <span>Open orders</span> <span>15:19  6 dec 2017</span>
                                                     </div>
@@ -271,7 +273,7 @@ class Analytics extends Component {
                                                         <span className='text-success'>+39.19 USD</span>
                                                     </div>
                                                 </div>
-                                                <div style={{marginLeft: 15+'%'}}>
+                                                <div className='block-2'>
                                                     <Badge pill className='bg-badge'>+17%</Badge>
                                                 </div>
                                             </div>
@@ -284,7 +286,7 @@ class Analytics extends Component {
                                     <Row>
                                         <div className='col-7'>
                                             <div className='d-flex flex-row'>
-                                                <div className='d-flex flex-column' style={{marginRight: 12+'%'}}>
+                                                <div className='d-flex flex-column block-1'>
                                                     <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                     <div className='it_light_opacity'>
                                                         <Badge pill className='bg-secondary my-badge'>Closed</Badge>
@@ -301,7 +303,7 @@ class Analytics extends Component {
                                                         <span>Open orders</span> <span>9</span>
                                                     </div>
                                                 </div>
-                                                <div className='d-flex flex-column' style={{marginLeft: 15+'%'}}>
+                                                <div className='d-flex flex-column block-2'>
                                                     <div className='key-value'>
                                                         <span>Open orders</span> <span>15:19  6 dec 2017</span>
                                                     </div>
@@ -327,7 +329,7 @@ class Analytics extends Component {
                                                         <span className='text-success'>+39.19 USD</span>
                                                     </div>
                                                 </div>
-                                                <div style={{marginLeft: 15+'%'}}>
+                                                <div className='block-2'>
                                                     <Badge pill className='bg-badge'>+17%</Badge>
                                                 </div>
                                             </div>
@@ -338,7 +340,7 @@ class Analytics extends Component {
                         </div>
                     </div>
                 </div>
-            </BasePage>
+            </BaseLeftPage>
         )
     }
 }
@@ -351,7 +353,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        ClosePageAction: url => dispatch(ClosePageAction(url))
     }
 };
 

@@ -60,6 +60,21 @@
             }
           }
         }
+        @media (max-width: 1300px) {
+          .value {
+            font-size: 21px;
+          }
+          .key {
+            font-size: 12px;
+          }
+          .symbol {
+            width: 8px;
+            top: 5px !important;
+          }
+          img {
+            margin-top: 8px;
+          }
+        }
         .info:last-child {
           margin-right: 0;
         }
@@ -76,6 +91,11 @@
         span {
           opacity: 0.6;
           font-size: 14px;
+        }
+        @media (max-width: 1300px) {
+          span {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -105,6 +125,11 @@
         padding-left: 40px;
         padding-right: 10px;
       }
+      @media (max-width: 1300px) {
+        strong.it-fs24.text-primary {
+          font-size: 21px;
+        }
+      }
     }
     .form-inline {
       position: relative;
@@ -121,6 +146,11 @@
         font-size: 16px;
         font-weight: 500;
       }
+      @media (max-width: 1300px) {
+        span {
+          font-size: 14px !important;
+        }
+      }
     }
     .detail {
       border-bottom: dashed 1px #4865d5;
@@ -132,6 +162,9 @@
       font-weight: 500;
       position: relative;
       top: 12px;
+      @media (max-width: 1300px) {
+        font-size: 14px;
+      }
     }
     .bg-badge {
       font-size: 24px;
@@ -139,6 +172,9 @@
       position: relative;
       top: 18px;
       background-color: #27ae66;
+      @media (max-width: 1300px) {
+        font-size: 21px;
+      }
     }
     .block {
       padding-right: 5%;
@@ -154,5 +190,19 @@
   .my-badge {
     line-height: 10px;
     font-weight: 400;
+  }
+  .block-1 {
+    margin-right: 12%;
+  }
+  .block-2 {
+    margin-left: 15%;
+  }
+  @media (max-width: 1300px) {
+    .block-1 {
+      margin-right: 5%;
+    }
+    .block-2 {
+      margin-left: 7%;
+    }
   }
 }

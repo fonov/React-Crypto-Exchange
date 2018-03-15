@@ -37,6 +37,13 @@
 }
 body {
   background-color: #eaebef;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.it_pages.fixed {
+  .it-page {
+    position: fixed;
+  }
 }
 .it-title {
   font-size: 21px;
@@ -62,6 +69,10 @@ body {
   opacity: 0.8;
   position: absolute;
   right: 15px;
+  img {
+    position: relative;
+    top: -1px;
+  }
 }
 .it_cycle_item {
   width: 40px;
@@ -106,7 +117,15 @@ body {
     top: -3px;
   }
   @media (min-width: 1440px) {
-    margin-top: 0;
+    margin-top: 9px;
+    .it-char {
+      span:first-child {
+        font-size: 12px;
+      }
+      span:last-child {
+        font-size: 14px;
+      }
+    }
   }
 }
 .it-char-flex {
@@ -153,26 +172,6 @@ body {
 }
 .it-medium {
   font-weight: 500;
-}
-.buy-sell {
-  width: 278px;
-  .card {
-    padding: 0;
-    .card-body {
-      padding-top: 8px;
-      label {
-        margin-bottom: 2px;
-      }
-      .input-group {
-        height: 34px;
-      }
-
-    }
-  }
-  position: relative;
-  .it-icon {
-    width: 18px;
-  }
 }
 .it-fs16 {
   font-size: 16px;
@@ -253,12 +252,14 @@ body {
   }
 }
 .it-order-book {
+  position: relative;
   .tb-1 {
     padding-right: 0;
   }
   .tb-2 {
+    position: relative;
+    left: -20px;
     padding-left: 0;
-    padding-right: 80px !important;
   }
   table.order-book-table.reverse {
     tbody {
@@ -315,6 +316,11 @@ body {
         }
         td.icon {
           opacity: 1;
+        }
+      }
+      tr.active {
+        td.icon {
+          opacity: 0;
         }
       }
     }
@@ -388,6 +394,11 @@ body {
           opacity: 1;
         }
       }
+      tr.active {
+        td.icon {
+          opacity: 0;
+        }
+      }
     }
   }
 }
@@ -412,11 +423,12 @@ body {
 .it-container {
   position: static;
   width: 100%;
-  min-width: 1024px;
+  min-width: 1030px;
   max-width: 2088px;
   padding: 0;
   margin: 0 auto;
   height: 100%;
+  min-height: 1024px;
   font-family: "Avenir Next" ,sans-serif !important;
   font-size: 14px;
   color: #1b1f2b;
@@ -428,7 +440,7 @@ body {
   top: 46px;
   margin-left: 94px;
   background-color: #ffffff;
-  height: auto;
+  height: calc(100% - 47px);
   width: calc(100% - 96px);
   min-width: 934px;
   border-top-left-radius: 5px;
@@ -438,9 +450,21 @@ body {
   border-bottom: 0;
   padding-left: 2em;
   padding-right: 2em;
-  position: absolute;
-  min-height: 100%;
+  position: fixed;
   overflow-x: hidden;
+  transition: width 300ms;
+  padding-bottom: 10px;
+  > div {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  &.load {
+    min-width: 0px;
+    width: calc(10% - 96px);
+    > div {
+      opacity: 0;
+    }
+  }
 }
 .it-market-history-extra-col {
   @media (min-width: 1440px) {
@@ -608,8 +632,10 @@ body {
     flex: 0 0 20%;
     max-width: 20%;
   }
+  $buy-sell-width: 250px;
+
   .main-view {
-    width: calc(100% - 16px - 278px);
+    width: calc(100% - 16px - #{$buy-sell-width});
     margin-right: 16px;
     .it-trading_view {
       height: 470px;
@@ -620,6 +646,28 @@ body {
       .it-trading_view {
         height: 488px;
       }
+    }
+  }
+  .buy-sell {
+    width: $buy-sell-width;
+    .card {
+      padding: 0;
+      .card-body {
+        padding-top: 8px;
+        padding-right: 24px;
+        padding-left: 24px;
+        label {
+          margin-bottom: 2px;
+        }
+        .input-group {
+          height: 34px;
+        }
+
+      }
+    }
+    position: relative;
+    .it-icon {
+      width: 18px;
     }
   }
   .order-book-card {
@@ -651,5 +699,15 @@ body {
     position: relative;
     top: 3px;
     opacity: 0.6;
+  }
+}
+.copy_trader {
+  position: relative;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  > img {
+    position: relative;
+    width: 14px;
+    top: -2px;
+    left: -8px;
   }
 }

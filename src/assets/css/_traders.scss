@@ -25,6 +25,11 @@
     text-align: center;
     line-height: 43px;
     font-size: 20px;
+    position: relative;
+    img {
+      position: relative;
+      top: -5px;
+    }
   }
   .risk {
     border-bottom-left-radius: 0.25rem;;
@@ -47,6 +52,11 @@
           left: calc(50% - 39px);
           .badge {
             padding: 0.4em 1.0em;
+            position: relative;
+            > span {
+              position: relative;
+              top: 1px;
+            }
           }
           span {
             span {

@@ -6,7 +6,8 @@ import { Row, Col, Progress, Card, CardBody, CardText, Badge, Button, ListGroup,
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
-import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
+import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
+import {set_top_panel} from "../actions/menu";
 
 
 class MarketList extends Component{
@@ -15,8 +16,14 @@ class MarketList extends Component{
         super(props);
 
         this.state = {
-            tile: false
+            tile: true
         }
+    }
+
+    componentDidMount() {
+        const {set_top_panel} = this.props;
+
+        set_top_panel(3)
     }
 
     changeView() {
@@ -52,16 +59,19 @@ class MarketList extends Component{
             ];
 
         const base_chart = () => (
-            <AreaChart width={390} height={145} data={data} margin={{top: 15, right: 0, bottom: 20, left: 0}}>
-                <Area type='monotone' dataKey='uv' strokeWidth={4} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
-            </AreaChart>
+            <ResponsiveContainer width='100%' height={145}>
+                <AreaChart data={data} margin={{top: 15, right: 0, bottom: 20, left: 0}}>
+                    <Area type='monotone' dataKey='uv' strokeWidth={4} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
+                </AreaChart>
+            </ResponsiveContainer>
         );
 
         return (
             <BasePage
                 active={[false, false, false]}
             >
-                <div className='it-market-list'>
+                <div className='it-page'>
+                    <div className='it-market-list'>
                     <Row className='justify-content-between'>
                         <Col className='mt-3'>
                             <p className='it_page_title'>Markets</p>
@@ -270,6 +280,7 @@ class MarketList extends Component{
                         )
                     }
                 </div>
+                </div>
             </BasePage>
         )
     }
@@ -283,7 +294,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        set_top_panel: number => dispatch(set_top_panel(number))
     }
 };
 

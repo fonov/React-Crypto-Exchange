@@ -3,11 +3,14 @@ import { routerReducer } from 'react-router-redux'
 //Custom
 import menu from './menu'
 import theme from './theme'
+import LeftPage from './LeftPage'
+
 
 const reducers = combineReducers({
     router: routerReducer,
     menu,
-    theme
+    theme,
+    LeftPage
 });
 
 export default reducers

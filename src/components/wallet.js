@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {BasePage} from '../elements'
 import { Row, Col, Progress, Card, CardBody, CardText } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
+import BaseLeftPage from '../elements/BaseLeftPage'
+import {ClosePageAction} from '../actions/LeftPage'
 
 
 class Wallet extends Component{
+
     render() {
 
-        const {push, theme} = this.props;
+        const {push, theme, ClosePageAction} = this.props;
 
         return (
-            <BasePage
-                active={[false, false, false]}
-                wallet_active={true}
+            <BaseLeftPage
+                BasePageProps={{
+                    active: [false, false, false],
+                    wallet_active: true
+                }}
             >
                 <div className='it_wallet'>
                     <Row className='justify-content-between'>
@@ -24,8 +28,8 @@ class Wallet extends Component{
                             <p className='it_page_title'>My wallets</p>
                         </Col>
                         <Col className='mt-3'>
-                            <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
-                                <FontAwesome name='times' className=''/>
+                            <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
+                                <img src={theme['close']} />
                             </div>
                         </Col>
                     </Row>
@@ -200,7 +204,8 @@ class Wallet extends Component{
                         </Col>
                     </Row>
                 </div>
-            </BasePage>
+
+            </BaseLeftPage>
         )
     }
 }
@@ -213,7 +218,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        ClosePageAction: url => dispatch(ClosePageAction(url))
     }
 };
 

@@ -22,7 +22,6 @@ const theme = {
     sun_icon: [
         require('../assets/icons/noun/noun-1227121-cc@3x.png'),
         require('../assets/icons/sun.svg')
-
     ],
     moon_icon: [
         require('../assets/icons/shape/shape@3x.png'),
@@ -112,6 +111,10 @@ const theme = {
         require('../assets/icons/logout.svg'),
         require('../assets/icons/white_logout.svg'),
     ],
+    bg_logout: [
+        require('../assets/icons/bg-signout.svg'),
+        require('../assets/icons/white_bg-signout.svg'),
+    ],
     help: [
         require('../assets/icons/help.svg'),
         require('../assets/icons/white_help.svg'),
@@ -135,6 +138,14 @@ const theme = {
     nav_wallet: [
         require('../assets/icons/nav_wallet.svg'),
         require('../assets/icons/white_nav_wallet.svg'),
+    ],
+    close: [
+        require('../assets/icons/close_bg.svg'),
+        require('../assets/icons/white_close_bg.svg')
+    ],
+    plus: [
+        require('../assets/icons/plus_big.svg'),
+        require('../assets/icons/white_plus_big.svg')
     ]
 };
 

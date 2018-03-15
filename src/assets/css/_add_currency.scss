@@ -1,4 +1,12 @@
 .it-add-currency {
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  .it_cycle_times {
+    right: 5px;
+  }
   background-color: white;
   .search {
     width: 180px;
@@ -47,6 +55,7 @@
     svg {
       position: relative;
       top: 1px;
+      left: -1px;
     }
   }
 }

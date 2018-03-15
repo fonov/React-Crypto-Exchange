@@ -30,35 +30,40 @@ class TopPanel extends Component {
                                 [
                                     ['ETH/BTC', 'success', '+ 10.4%', '0.049806'],
                                     ['DASH/BTC', 'danger', '- 0.5%', '0.076863'],
-                                    ['XMR/BTC', 'success', '+ 2.02%', '0.023360']
-                                ].map((item, i) => (
-                                    <div className={`nav-item ${menu === i ? 'active' : ''}`} key={i} onClick={() => this.open_item(URLS.Trading)}>
-                                        <div className="d-flex flex-row">
-                                            <img src={require('../assets/icons/close.svg')} className='closed'/>
+                                    ['XMR/BTC', 'success', '+ 2.02%', '0.023360'],
+                                    ['Add market']
+                                ].map((item, i, array) => array.length-1 === i ? (
+                                    <div className={`nav-item it-fs12 text-center add ${menu === i ? 'active' : ''}`} onClick={() => {
+                                        push(URLS.MarketsList);
+                                        set_top_panel(-1)
+                                    }}>
+                                        <div className="d-flex flex-column">
+                                            <img src={require('../assets/icons/blue_plus.svg')}  className='mb-1'/>
+                                            <p>{item[0]}</p>
+                                        </div>
+                                    </div>
+                                ) : (
+                                <div className={`nav-item ${menu === i ? 'active' : ''}`} key={i} onClick={() => this.open_item(URLS.Trading)}>
+                                    <div className="d-flex flex-row">
+                                        <img src={require('../assets/icons/close.svg')} className='closed'/>
                                             <div className="d-flex flex-column ml-2">
                                                 <strong className='it-fs16 it_light_opacity title'>{item[0]}</strong>
                                                 <div className='d-flex flex-row nav-desc'>
-                                                    <p><Badge color={item[1]} pill>{item[2]}</Badge></p>
-                                                    <p className='it-fs12'>{item[3]}</p>
-                                                </div>
+                                                <p><Badge color={item[1]} pill>{item[2]}</Badge></p>
+                                                <p className='it-fs12'>{item[3]}</p>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 ))
                             }
-                            <div className='nav-item it-fs12 text-center add'>
-                                <div className="d-flex flex-column">
-                                    <img src={require('../assets/icons/blue_plus.svg')}  className='mb-1'/>
-                                    <p>Add market</p>
-                                </div>
-                            </div>
                         </div>
                     </Col>
                     <Col>
                         <div className='d-flex flex-row-reverse mr-3'>
                             {
                                 [
-                                    'logout',
+                                    'bg_logout',
                                     'help',
                                     'cog',
                                     'bell'

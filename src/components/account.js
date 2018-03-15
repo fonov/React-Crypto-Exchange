@@ -7,6 +7,7 @@ import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import CircularProgressbar from 'react-circular-progressbar';
+import {set_top_panel} from "../actions/menu";
 
 
 class Account extends Component{
@@ -22,6 +23,12 @@ class Account extends Component{
             security_session: true,
             security_two_step: false,
         }
+    }
+
+    componentDidMount() {
+        const {set_top_panel} = this.props;
+
+        set_top_panel(-1)
     }
 
     changeLeftNav(item) {
@@ -51,7 +58,8 @@ class Account extends Component{
             <BasePage
                 active={[false, false, false]}
             >
-                <div className='it-account'>
+                <div className='it-page'>
+                    <div className='it-account'>
                     <Row>
                         <Col className='col-3 left-nav'>
                             <ListGroup>
@@ -365,6 +373,7 @@ class Account extends Component{
                         }
                     </Row>
                 </div>
+                </div>
             </BasePage>
         )
     }
@@ -378,7 +387,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: url => dispatch(push(url))
+        push: url => dispatch(push(url)),
+        set_top_panel: number => dispatch(set_top_panel(number))
     }
 };
 
