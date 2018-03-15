@@ -13,41 +13,20 @@ class MyOrders extends Component{
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            zIndex: 6
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.my_orders === 0 && this.props.my_orders === 1) {
-            setTimeout(() => {
-                this.setState({
-                    zIndex: 2
-                })
-            }, 300)
-        }
-        if ((prevProps.my_orders === 1 || prevProps.my_orders === 2) && this.props.my_orders === 0) {
-            this.setState({
-                zIndex: 6
-            })
-        }
     }
 
     render() {
 
-        const {my_orders, push, set_my_orders, set_top_panel} = this.props,
-            {zIndex} = this.state;
+        const {my_orders, push, set_my_orders, set_top_panel} = this.props;
 
         return (
             <div className='my_orders' style={{
-                left: my_orders ? 94 : -384,
-                zIndex,
-                width: my_orders === 2 ? 'calc(100% - 94px)' : '290px'
+                width: my_orders ? my_orders === 2 ? 'calc(100% - 94px)' : '290px' : 0
             }}>
                 <div
                     style={{
-                        display: my_orders === 2 ? 'none': 'block'
+                        display: my_orders === 1 ? 'block' : 'none',
+                        opacity: my_orders === 1 ? 1 : 0
                     }}
                 >
                     <div className="d-flex justify-content-between mt-2">
@@ -178,7 +157,7 @@ class MyOrders extends Component{
                     <hr className='mx-2' />
                 </div>
                 <div style={{
-                    display: my_orders === 0 || my_orders === 1 ? 'none': 'block'
+                    display: my_orders === 2 ? 'block' : 'none'
                 }}>
                     <MyOrdersFull />
                 </div>
