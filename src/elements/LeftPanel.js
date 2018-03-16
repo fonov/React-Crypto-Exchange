@@ -4,7 +4,7 @@ import { Badge } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
-import {MyOrders, MyOrdersFull} from './index'
+import {MyOrdersContainer} from './index'
 import {set_top_panel, set_my_orders} from '../actions/menu'
 
 
@@ -87,7 +87,7 @@ class LeftPanel extends Component{
                         </div>
                     </div>
                 </div>
-                <MyOrders />
+                <MyOrdersContainer />
             </div>
         )
     }

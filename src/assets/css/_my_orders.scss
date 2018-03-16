@@ -2,12 +2,11 @@
   position: fixed;
   left: 94px;
   top: 47px;
-  width: 290px;
+  width: auto;
   background-color: white;
   height: calc(100% - 46px);
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
-  transition: left 300ms, width 300ms;
   z-index: 2;
   > div:first-child {
     transition: opacity 200ms;

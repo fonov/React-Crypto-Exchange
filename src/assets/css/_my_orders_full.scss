@@ -1,7 +1,16 @@
 .my_orders_full {
+  position: fixed;
+  left: 94px;
+  top: 47px;
+  background-color: white;
+  width: calc(100% - 94px);
+  height: calc(100% - 46px);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
+  border-top-right-radius: 5px;
   overflow-x: hidden;
   padding-left: 2em;
   padding-right: 2em;
+  z-index: 2;
   .arrow {
     div {
       position: relative;

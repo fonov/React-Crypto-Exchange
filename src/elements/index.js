@@ -1,8 +1,9 @@
 import BasePage from './BasePage'
 import LeftPanel from './LeftPanel'
 import TopPanel from './TopPanel'
-import MyOrders from './MyOrders'
-import MyOrdersFull from './MyOrdersFull'
+import MyOrders from './myOrders/MyOrders'
+import MyOrdersFull from './myOrders/MyOrdersFull'
+import MyOrdersContainer from './myOrders/myOrdersContainer'
 
 
 export {
@@ -10,5 +11,6 @@ export {
     LeftPanel,
     TopPanel,
     MyOrders,
-    MyOrdersFull
+    MyOrdersFull,
+    MyOrdersContainer
 }
