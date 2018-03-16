@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Modal } from 'reactstrap';
-import {LineChart, Line, CartesianGrid, ReferenceLine, XAxis} from 'recharts';
+import {LineChart, Line, CartesianGrid, ReferenceLine, XAxis, ResponsiveContainer} from 'recharts';
 import {FacebookIcon, TwitterIcon} from 'react-share';
 import {set_order_close_modal} from '../actions/menu'
+import ReactSVG from 'react-svg';
 
 
 class OrderCloseModal extends Component{
@@ -23,7 +24,16 @@ class OrderCloseModal extends Component{
         ];
 
         return (
-            <Modal isOpen={order_close_modal} toggle={() => set_order_close_modal(false)} className='it-order-close-modal'>
+            <Modal
+                isOpen={order_close_modal}
+                toggle={() => set_order_close_modal(false)}
+                className='it-order-close-modal'
+            >
+                <div className='it-close' onClick={() => set_order_close_modal(false)}>
+                    <ReactSVG
+                        path={require('../assets/icons/close_bg.svg')}
+                    />
+                </div>
                 <div className='text-center it-fs24'>Order closed</div>
                 <div className='mt-4'>
                     <div className='d-flex flex-row'>
@@ -48,15 +58,15 @@ class OrderCloseModal extends Component{
                                 189 hours 16 min
                             </div>
                         </div>
-                        <div>
-                            <LineChart width={700} height={300} data={data} margin={{left: 100}}>
+                        <ResponsiveContainer width='80%' height={350}>
+                            <LineChart data={data} margin={{left: 100}}>
                                 <XAxis dataKey="name" hide={true}/>
                                 <CartesianGrid strokeDasharray="3 3"/>
                                 <ReferenceLine x="Page C" stroke="red" label="16189.1836"/>
                                 <ReferenceLine x="Page F" stroke="green" label="16189.1836"/>
                                 <Line type='monotone' dataKey='pv' stroke='#f26451' strokeWidth={2} dot={{ stroke: 'red', strokeWidth: 2 }}/>
                             </LineChart>
-                        </div>
+                        </ResponsiveContainer>
                     </div>
                     <div className='d-flex justify-content-center mt-4'>
                         <div className='d-flex flex-row social'>

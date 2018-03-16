@@ -6,6 +6,7 @@ import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import BaseLeftPage from '../elements/BaseLeftPage'
 import {ClosePageAction} from '../actions/LeftPage'
+import ReactSVG from 'react-svg';
 
 
 class Traders extends Component{
@@ -37,7 +38,9 @@ class Traders extends Component{
                         </Col>
                         <Col className='mt-3'>
                             <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
-                                <img src={theme['close']} />
+                                <ReactSVG
+                                    path={require('../assets/icons/close_bg.svg')}
+                                />
                             </div>
                         </Col>
                     </Row>

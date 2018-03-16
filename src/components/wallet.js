@@ -29,7 +29,9 @@ class Wallet extends Component{
                         </Col>
                         <Col className='mt-3'>
                             <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
-                                <img src={theme['close']} />
+                                <ReactSVG
+                                    path={require('../assets/icons/close_bg.svg')}
+                                />
                             </div>
                         </Col>
                     </Row>

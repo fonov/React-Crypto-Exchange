@@ -24,7 +24,9 @@ class MyOrdersFull extends Component{
                             set_my_orders(0);
                             set_top_panel(2)
                         }}>
-                            <FontAwesome name='times' className=''/>
+                            <ReactSVG
+                                path={require('../../assets/icons/close_bg.svg')}
+                            />
                         </div>
                     </Col>
                 </Row>

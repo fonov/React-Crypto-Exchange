@@ -37,7 +37,7 @@
   position: relative;
   width: auto;
   margin: $modal-dialog-margin;
-  margin-top: 12% !important;
+  margin-top: calc(10%) !important;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
 

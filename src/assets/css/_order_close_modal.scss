@@ -1,4 +1,19 @@
 .it-order-close-modal {
+  position: relative;
+  .it-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background-color: #eceff4;
+    text-align: center;
+    svg {
+      position: relative;
+      top: 8px;
+    }
+  }
   .social {
     position: relative;
     span {

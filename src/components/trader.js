@@ -7,6 +7,7 @@ import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 import TradeBio from '../elements/trader_bio'
+import ReactSVG from 'react-svg';
 
 
 class Trader extends Component{
@@ -39,7 +40,9 @@ class Trader extends Component{
                             </div>
                             <Col>
                                 <div className='it_cycle_times' onClick={() => push(URLS.Traders)}>
-                                    <FontAwesome name='times' className=''/>
+                                    <ReactSVG
+                                        path={require('../assets/icons/close_bg.svg')}
+                                    />
                                 </div>
                             </Col>
                         </div>
