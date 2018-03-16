@@ -4,6 +4,7 @@
   top: 0;
   bottom: 0;
   width: 100%;
+  min-width: 1030px;
   .it_cycle_times {
     right: 5px;
   }
@@ -23,6 +24,12 @@
         background-color: #f5f7fa;
       }
     }
+  }
+  .sprite-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background-image: url('../sprite/icons-crypto-1x.png');
   }
   .card-img {
     width: 70px;
