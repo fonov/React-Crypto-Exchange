@@ -4,6 +4,7 @@ import TopPanel from './TopPanel'
 import MyOrders from './myOrders/MyOrders'
 import MyOrdersFull from './myOrders/MyOrdersFull'
 import MyOrdersContainer from './myOrders/myOrdersContainer'
+import Notification from './Notification'
 
 
 export {
@@ -12,5 +13,6 @@ export {
     TopPanel,
     MyOrders,
     MyOrdersFull,
-    MyOrdersContainer
+    MyOrdersContainer,
+    Notification
 }

@@ -1,4 +1,4 @@
-import {SET_TOP_PANEL, SET_MY_ORDERS, SET_ORDER_CLOSE_MODAL} from '../constants/actions'
+import {SET_TOP_PANEL, SET_MY_ORDERS, SET_ORDER_CLOSE_MODAL, SWITCH_NOTIFICATION} from '../constants/actions'
 
 
 export const set_top_panel = number => {
@@ -26,5 +26,11 @@ export const set_order_close_modal = modal => {
             type: SET_ORDER_CLOSE_MODAL,
             modal
         })
+    }
+};
+
+export const switch_notification = () => {
+    return (dispatch, getState) => {
+        dispatch({type: SWITCH_NOTIFICATION})
     }
 };

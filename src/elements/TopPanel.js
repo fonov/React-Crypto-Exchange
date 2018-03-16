@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {set_theme} from '../actions/theme'
-import {set_top_panel} from "../actions/menu";
+import {set_top_panel, switch_notification} from "../actions/menu";
 
 
 class TopPanel extends Component {
@@ -19,7 +19,7 @@ class TopPanel extends Component {
 
     render() {
 
-        const {active, push, theme, set_theme, menu, set_top_panel} = this.props;
+        const {active, push, theme, set_theme, menu, set_top_panel, switch_notification} = this.props;
 
         return(
             <div className='it-top-panel'>
@@ -68,7 +68,8 @@ class TopPanel extends Component {
                                     'cog',
                                     'bell'
                                 ].map((item, i) => (
-                                    <div onClick={() => item === 'cog' ? push(URLS.Account) : null} key={i} className='left-icon'>
+                                    <div onClick={() => item === 'cog' ? push(URLS.Account) :
+                                        item === 'bell' ? switch_notification() : null} key={i} className='left-icon'>
                                         <img src={theme[item]} className='icon'/>
                                     </div>
                                 ))
@@ -100,7 +101,8 @@ const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
         set_theme: index => dispatch(set_theme(index)),
-        set_top_panel: number => dispatch(set_top_panel(number))
+        set_top_panel: number => dispatch(set_top_panel(number)),
+        switch_notification: () => dispatch(switch_notification())
     }
 };
 

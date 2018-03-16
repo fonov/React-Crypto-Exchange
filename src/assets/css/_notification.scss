@@ -1,0 +1,33 @@
+.it-notification {
+  background-color: #ffffff;
+  position: fixed;
+  width: 324px;
+  height: calc(100% - 46px);
+  top: 46px;
+  box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  right: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  overflow-y: scroll;
+  .icon-action {
+    margin-top: 2px;
+  }
+  svg {
+    opacity: 0.8;
+  }
+  .lists {
+    .list {
+      padding: 12px;
+      border-top: 1px solid rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      &.active {
+        background-color: rgba(52, 84, 209, 0.15);
+      }
+    }
+    .list:last-child {
+      border-bottom: 0;
+    }
+  }
+}

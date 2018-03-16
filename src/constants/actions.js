@@ -4,3 +4,4 @@ export const SET_MY_ORDERS = 'SET_MY_ORDERS';
 export const SET_ORDER_CLOSE_MODAL = 'SET_ORDER_CLOSE_MODAL';
 export const OPEN_PAGE = 'OPEN_PAGE';
 export const CLOSE_PAGE = 'CLOSE_PAGE';
+export const SWITCH_NOTIFICATION = 'SWITCH_NOTIFICATION';

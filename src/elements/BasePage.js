@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {LeftPanel, TopPanel} from './index'
+import {LeftPanel, TopPanel, Notification} from './index'
 import {connect} from "react-redux";
 import OrderCloseModal from './OrderCloseModal'
+import {Motion, spring} from 'react-motion';
 
 
 class BasePage extends Component{
@@ -9,7 +10,7 @@ class BasePage extends Component{
     render() {
 
         const {children, active = [false, false, true], wallet_active=false, orders_active=true, analytics_active=false,
-            traders_active = false, message_active = false, theme, order_close_modal} = this.props;
+            traders_active = false, message_active = false, theme, order_close_modal, notification} = this.props;
 
         return (
             <div>
@@ -25,6 +26,13 @@ class BasePage extends Component{
                     />
                     <TopPanel active={active} />
                     {children}
+                    <Motion defaultStyle={{right: -350}} style={{right: spring(notification ? 4 : -350)}}>
+                        {value => (
+                            <div className='it-notification' style={{right: value.right}}>
+                                <Notification />
+                            </div>
+                        )}
+                    </Motion>
                 </div>
             </div>
         )
@@ -35,7 +43,8 @@ const mapStateToProps = state => {
     return {
         theme: state.theme,
         order_close_modal: state.menu.order_close_modal,
-        my_orders: state.menu.my_orders
+        my_orders: state.menu.my_orders,
+        notification: state.menu.notification,
     }
 };
 
