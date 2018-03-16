@@ -4,6 +4,7 @@ import {BasePage} from './index'
 import {push} from "react-router-redux";
 import PureTrading from '../components/pure/PureTrading'
 import {OpenPageAction} from '../actions/LeftPage'
+import {Motion, spring, presets} from 'react-motion';
 
 
 class BaseLeftPage extends Component{
@@ -20,14 +21,31 @@ class BaseLeftPage extends Component{
 
     render() {
 
-        const {BasePageProps, children, LeftPage} = this.props;
+        const {BasePageProps, children, LeftPage} = this.props,
+            page_width = window.innerWidth-96;
 
         return (
             <BasePage {...BasePageProps}>
                 <PureTrading/>
-                <div className={`it-page ${!LeftPage ? 'load': ''}`}>
-                    {children}
-                </div>
+                <Motion defaultStyle={{
+                    width: page_width/2,
+                    opacity: 0
+                }} style={{
+                    width: spring(LeftPage ? page_width : page_width/2),
+                    opacity: spring(LeftPage ? 1 : 0)
+                }}>
+                    {
+                        value => (
+                            <div className='it-page' style={{
+                                width: value.width,
+                                opacity: value.opacity,
+                                overflowY: value.opacity === 1 ? 'scroll' : 'hidden'
+                            }}>
+                                {children}
+                            </div>
+                        )
+                    }
+                </Motion>
             </BasePage>
         )
     }

@@ -40,11 +40,6 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
-.it_pages.fixed {
-  .it-page {
-    position: fixed;
-  }
-}
 .it-title {
   font-size: 21px;
   font-weight: 600;
@@ -442,7 +437,7 @@ body {
   background-color: #ffffff;
   height: calc(100% - 47px);
   width: calc(100% - 96px);
-  min-width: 934px;
+  //min-width: 934px;
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, .2);
@@ -452,12 +447,7 @@ body {
   padding-right: 2em;
   position: fixed;
   overflow-x: hidden;
-  transition: width 300ms;
   padding-bottom: 10px;
-  > div {
-    opacity: 1;
-    transition: opacity 300ms;
-  }
   &.load {
     min-width: 0px;
     width: calc(10% - 96px);

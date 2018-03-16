@@ -9,7 +9,7 @@ class BasePage extends Component{
     render() {
 
         const {children, active = [false, false, true], wallet_active=false, orders_active=true, analytics_active=false,
-            traders_active = false, message_active = false, theme, order_close_modal, my_orders} = this.props;
+            traders_active = false, message_active = false, theme, order_close_modal} = this.props;
 
         return (
             <div>
@@ -24,9 +24,7 @@ class BasePage extends Component{
                         message_active={message_active}
                     />
                     <TopPanel active={active} />
-                    <div className={`it_pages ${my_orders ? 'fixed' : ''}`}>
-                        {children}
-                    </div>
+                    {children}
                 </div>
             </div>
         )

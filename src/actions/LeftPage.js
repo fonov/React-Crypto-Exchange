@@ -4,22 +4,16 @@ import {push} from "react-router-redux";
 
 export const OpenPageAction = () => {
     return (dispatch, getState) => {
-        setTimeout(() => {
-            dispatch({
-                type: OPEN_PAGE
-            })
-        }, 70)
+        dispatch({type: OPEN_PAGE})
     }
 };
 
 export const ClosePageAction = url => {
     return (dispatch, getState) => {
-        dispatch({
-            type: CLOSE_PAGE
-        });
+        dispatch({type: CLOSE_PAGE, back_url: url});
 
         setTimeout(() => {
             dispatch(push(url))
-        }, 200)
+        }, 350)
     }
 };

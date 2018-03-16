@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Card, CardBody, Row, Col, Button, FormGroup, Label, Input, Table} from 'reactstrap';
-import TradingViewWidget from 'react-tradingview-widget';
+// import TradingViewWidget from 'react-tradingview-widget';
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
 import {set_order_close_modal} from "../../actions/menu";
@@ -91,12 +91,12 @@ class Trading extends Component{
                             </div>
                             <Card className='mt-2 it-trading_view'>
                                 <CardBody>
-                                    <TradingViewWidget
-                                        symbol="BITFINEX:BTCUSD"
-                                        autosize
-                                        locale="ru"
-                                        theme={theme.main_chart}
-                                    />
+                                    {/*<TradingViewWidget*/}
+                                        {/*symbol="BITFINEX:BTCUSD"*/}
+                                        {/*autosize*/}
+                                        {/*locale="ru"*/}
+                                        {/*theme={theme.main_chart}*/}
+                                    {/*/>*/}
                                 </CardBody>
                             </Card>
                         </div>
