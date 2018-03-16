@@ -35,7 +35,7 @@ class Wallet extends Component{
                             </div>
                         </Col>
                     </Row>
-                    <div className="d-flex flex-row wallet-icon-gr">
+                    <div className="d-flex flex-row wallet-icon-gr it-pointer">
                         <div className="d-flex flex-column wallet-icon">
                             <div className='text-center'>
                                 <img src={theme.wallet_1}/>
@@ -89,7 +89,7 @@ class Wallet extends Component{
                         }
                     </Progress>
                     <Row className='currency-block'>
-                        <Col md={3} xl={3} lg={3} className='col-3'>
+                        <Col md={3} xl={3} lg={3} className='col-3 it-pointer'>
                             <Card onClick={() => push(URLS.AddCurrency)}>
                                 <CardBody>
                                     <div className='add_carrency'>
@@ -173,7 +173,7 @@ class Wallet extends Component{
                                     $ 190.90
                                 </div>
                             </div>
-                            <div className="d-flex justify-content-center big_top_p">
+                            <div className="d-flex justify-content-center big_top_p it-pointer">
                                 <div className='mr-4'>
                                     <div className='oval-big'>
                                         <ReactSVG

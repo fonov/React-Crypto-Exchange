@@ -7,6 +7,7 @@ import {push} from "react-router-redux";
 import TradeBio from '../elements/trader_bio'
 import BaseLeftPage from '../elements/BaseLeftPage'
 import {ClosePageAction} from '../actions/LeftPage'
+import ReactSVG from 'react-svg';
 
 
 class Messages extends Component{
@@ -28,7 +29,9 @@ class Messages extends Component{
                         </Col>
                         <Col className='mt-3'>
                             <div className='it_cycle_times' onClick={() => ClosePageAction(URLS.Trading)}>
-                                <img src={theme['close']} />
+                                <ReactSVG
+                                    path={require('../assets/icons/close_bg.svg')}
+                                />
                             </div>
                         </Col>
                     </Row>
@@ -45,14 +48,14 @@ class Messages extends Component{
                                         </div>
                                     </div>
                                 </Col>
-                                <Col className='col-2' md={2} xl={2} lg={2}>
+                                <Col className='col-2 it-pointer' md={2} xl={2} lg={2}>
                                     <img src={theme.add_message} className='new-message'/>
                                 </Col>
                             </Row>
                             <ListGroup className='mt-4'>
                                 {
                                     [1,2,3,4].map(item => (
-                                        <ListGroupItem key={item}>
+                                        <ListGroupItem key={item} className='it-pointer'>
                                             <Row>
                                                 <Col className='col-2'>
                                                     <img src='http://via.placeholder.com/38x38' className='rounded-circle'/>

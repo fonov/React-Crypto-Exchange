@@ -146,7 +146,7 @@ class Trading extends Component{
                                             <span className="input-group-text">BTC</span>
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-row mt-1">
+                                    <div className="d-flex flex-row mt-1 it-pointer">
                                         <span className='text-primary mr-2'>Bid</span>
                                         <span className='text-primary mr-2'>Ask</span>
                                     </div>
@@ -164,7 +164,7 @@ class Trading extends Component{
                                             <span className="input-group-text">BTC</span>
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-row mt-1">
+                                    <div className="d-flex flex-row mt-1 it-pointer">
                                         <span className='text-primary mr-2'>2%</span>
                                         <span className='text-primary mr-2'>5%</span>
                                         <span className='text-primary mr-2'>10%</span>
@@ -233,7 +233,7 @@ class Trading extends Component{
                                                         <tbody>
                                                         {
                                                             [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                                <tr key={item} className={`${active_index === item ? 'active' : ''}`}>
+                                                                <tr key={item} className={`${active_index === item ? 'active' : ''} it-pointer`}>
                                                                     <td>0.00017239</td>
                                                                     <td>0.00017239</td>
                                                                     <td>0.00017239</td>
@@ -263,7 +263,7 @@ class Trading extends Component{
                                                         <tbody>
                                                         {
                                                             [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                                <tr key={item} className={`${active_index_1 === item ? 'active' : ''}`}>
+                                                                <tr key={item} className={`${active_index_1 === item ? 'active' : ''} it-pointer`}>
                                                                     <td className='icon'>
                                                                         <div className='bg-danger'>
                                                                             <ReactSVG
@@ -311,7 +311,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} onClick={() => set_order_close_modal(true)}>
+                                                        <tr key={item} onClick={() => set_order_close_modal(true)} className='it-pointer'>
                                                             <td>15:19</td>
                                                             <td className='text-success'>Buy</td>
                                                             <td>0.02315000</td>
@@ -337,7 +337,7 @@ class Trading extends Component{
                                                 <tbody>
                                                 {
                                                     [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} onClick={() => set_order_close_modal(true)}>
+                                                        <tr key={item} onClick={() => set_order_close_modal(true)} className='it-pointer'>
                                                             <td>15:19</td>
                                                             <td className='text-success'>Buy</td>
                                                             <td>0.02315000</td>

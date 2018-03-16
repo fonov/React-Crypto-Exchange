@@ -62,7 +62,7 @@ class Account extends Component{
                     <div className='it-account'>
                     <Row>
                         <Col className='col-3 left-nav'>
-                            <ListGroup>
+                            <ListGroup className='it-pointer'>
                                 <ListGroupItem>
                                     <Row>
                                         <Col className='col-3'>
@@ -116,7 +116,7 @@ class Account extends Component{
                                     <FontAwesome name='bell' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Notifications</span>
                                 </ListGroupItem>
                             </ListGroup>
-                            <p className='mt-4 pl-4'>
+                            <p className='mt-4 pl-4 it-pointer'>
                                 <FontAwesome name='sign-out' className='it-fs18'/> <span className='it-fs14 ml-2'>Logout</span>
                             </p>
                         </Col>
@@ -219,7 +219,7 @@ class Account extends Component{
                                     <Button color='light' className='border it-fs14 mt-4' block>
                                         <strong>Edit avatar</strong>
                                     </Button>
-                                    <div className='mt-4 it-fs14 text-danger'>
+                                    <div className='mt-4 it-fs14 text-danger it-pointer'>
                                         <FontAwesome name='ban' /> <span>Delete account</span>
                                     </div>
                                 </Col>] : null
@@ -284,7 +284,7 @@ class Account extends Component{
                                                                         <td>162.27.19.10 <span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
                                                                         <td>05:36</td>
                                                                         <td>09-06-2017</td>
-                                                                        <td><span className='text-primary'>Revoke</span></td>
+                                                                        <td><span className='text-primary it-pointer'>Revoke</span></td>
                                                                     </tr>
                                                                 ))
                                                             }
@@ -315,7 +315,7 @@ class Account extends Component{
                                 <Col className='col-9'>
                                     <div className='notification'>
                                         <strong className='it-fs28'>Notifications</strong>
-                                        <Row>
+                                        <Row className='it-pointer'>
                                             <Col className='col-3'>
                                                 <Card>
                                                     <CardBody className='text-center'>

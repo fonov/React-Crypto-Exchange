@@ -89,6 +89,7 @@
     top: 12px;
   }
   .theme-switch {
+    cursor: pointer;
     width: 70px;
     height: 26px;
     border-radius: 13px;
@@ -138,6 +139,7 @@
     }
   }
   .left-icon {
+    cursor: pointer;
     margin-right: 5px;
     margin-left: 5px;
     &:hover {

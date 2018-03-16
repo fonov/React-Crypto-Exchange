@@ -216,6 +216,9 @@ body {
 .it_bg_silver {
   background-color: #bebebe;
 }
+select, .it-pointer, svg {
+  cursor: pointer;
+}
 .it-hr-text {
   margin-top: 0;
   line-height: 1em;

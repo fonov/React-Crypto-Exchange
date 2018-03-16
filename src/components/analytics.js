@@ -153,7 +153,7 @@ class Analytics extends Component {
                                 <CardBody className='performance'>
                                     <div className="d-flex justify-content-between">
                                         <strong className='it-fs16'>Time session</strong>
-                                        <div className='cog it-fs14 it_light_opacity'>
+                                        <div className='cog it-fs14 it_light_opacity it-pointer'>
                                             <img src={theme.cog} />
                                         </div>
                                     </div>
@@ -261,7 +261,7 @@ class Analytics extends Component {
                                             </div>
                                         </div>
                                         <div className='col-2 text-center'>
-                                            <span className='text-primary detail'>Details</span>
+                                            <span className='text-primary detail it-pointer'>Details</span>
                                         </div>
                                         <div className='col-3'>
                                             <div className="d-flex flex-row">
@@ -317,7 +317,7 @@ class Analytics extends Component {
                                             </div>
                                         </div>
                                         <div className='col-2 text-center'>
-                                            <span className='text-primary detail'>Details</span>
+                                            <span className='text-primary detail it-pointer'>Details</span>
                                         </div>
                                         <div className='col-3'>
                                             <div className="d-flex flex-row">

@@ -68,7 +68,7 @@ class MyOrders extends Component{
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center'>
+                <p className='mt-2 text-primary text-center it-pointer'>
                     Show more <FontAwesome name='caret-down' />
                 </p>
                 <hr className='mx-2' />
@@ -91,7 +91,7 @@ class MyOrders extends Component{
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center'>
+                <p className='mt-2 text-primary text-center it-pointer'>
                     Show less <FontAwesome name='caret-up' />
                 </p>
                 <div className='progress-block d-flex flex-row'>
@@ -141,7 +141,7 @@ class MyOrders extends Component{
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center'>
+                <p className='mt-2 text-primary text-center it-pointer'>
                     Show more <FontAwesome name='caret-down' />
                 </p>
                 <hr className='mx-2' />

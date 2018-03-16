@@ -104,7 +104,7 @@ class AddCurrency extends Component {
                                 <div className="d-flex justify-content-center">
                                     {
                                         group.map((item) => (
-                                            <Card className={`${item[0] ? 'added' : 'not_added'} m-1`}>
+                                            <Card className={`${item[0] ? 'added' : 'not_added'} m-1 it-pointer`}>
                                                 <CardBody>
                                                     <div className='text-center mt-2'>
                                                         <img src={item[1]} className='card-img' />
