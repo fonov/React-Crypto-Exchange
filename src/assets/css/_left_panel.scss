@@ -71,4 +71,11 @@
   .item.active:hover {
     opacity: 1;
   }
+  .it-timezone {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+  }
 }

@@ -82,6 +82,14 @@ class LeftPanel extends Component{
                         <div className='it-fs12'>
                             15:48
                         </div>
+                        <select className='it-timezone'>
+                            <option>+3</option>
+                            <option>+4</option>
+                            <option>+5</option>
+                            <option>+6</option>
+                            <option>+7</option>
+                            <option>+8</option>
+                        </select>
                         <div className='it-fs12 it-half-opacity'>
                             UTC +3 <FontAwesome name='caret-down ' />
                         </div>
