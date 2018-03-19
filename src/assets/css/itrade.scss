@@ -16,6 +16,7 @@
 @import "night";
 @import "order_close_modal";
 @import "notification";
+@import "sign";
 
 
 @font-face {
@@ -35,6 +36,24 @@
   font-style: normal;
   font-weight: 500;
   src: url('../fonts/Avenir Next Medium.otf')
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/lato/Lato-Regular.ttf')
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/lato/Lato-Bold.ttf')
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/lato/Lato-Hairline.ttf')
 }
 body {
   background-color: #eaebef;

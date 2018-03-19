@@ -15,6 +15,8 @@ import Post from './post'
 import Messages from './messages'
 import MarketsList from './markets_list'
 import Account from './account'
+import SingIn from './sign/singIn'
+import SignUp from './sign/signUp'
 
 
 class Root extends Component {
@@ -35,6 +37,8 @@ class Root extends Component {
                         <Route path={URLS.Messages} component={Messages} />
                         <Route path={URLS.MarketsList} component={MarketsList} />
                         <Route path={URLS.Account} component={Account} />
+                        <Route path={URLS.SIGNIN} component={SingIn} />
+                        <Route path={URLS.SIGNUP} component={SignUp} />
                     </div>
                 </ConnectedRouter>
             </Provider>

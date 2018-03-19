@@ -8,7 +8,9 @@ const URLS = {
     Post: '/post',
     Messages: '/messages',
     MarketsList: '/markets_list',
-    Account: '/account'
+    Account: '/account',
+    SIGNIN: '/signin',
+    SIGNUP: '/signup'
 };
 
 export default URLS
