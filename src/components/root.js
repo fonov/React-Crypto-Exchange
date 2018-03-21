@@ -17,6 +17,7 @@ import MarketsList from './markets_list'
 import Account from './account'
 import SingIn from './sign/singIn'
 import SignUp from './sign/signUp'
+import ResetPassword from './sign/resetPassword'
 
 
 class Root extends Component {
@@ -39,6 +40,7 @@ class Root extends Component {
                         <Route path={URLS.Account} component={Account} />
                         <Route path={URLS.SIGNIN} component={SingIn} />
                         <Route path={URLS.SIGNUP} component={SignUp} />
+                        <Route path={URLS.RESETPASSWORD} component={ResetPassword} />
                     </div>
                 </ConnectedRouter>
             </Provider>

@@ -10,7 +10,8 @@ const URLS = {
     MarketsList: '/markets_list',
     Account: '/account',
     SIGNIN: '/signin',
-    SIGNUP: '/signup'
+    SIGNUP: '/signup',
+    RESETPASSWORD: '/reset_password'
 };
 
 export default URLS
