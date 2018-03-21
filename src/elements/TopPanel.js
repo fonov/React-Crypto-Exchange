@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome'
-import { Row, Col, Badge } from 'reactstrap';
+import { Row, Col, Badge, Button } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../constants/urls'
@@ -19,7 +19,11 @@ class TopPanel extends Component {
 
     render() {
 
-        const {active, push, theme, set_theme, menu, set_top_panel, switch_notification} = this.props;
+        const {
+            active, push, theme, set_theme, menu,
+            set_top_panel, switch_notification,
+            account
+        } = this.props;
 
         return(
             <div className='it-top-panel'>
@@ -62,7 +66,7 @@ class TopPanel extends Component {
                     <Col>
                         <div className='d-flex flex-row-reverse mr-3'>
                             {
-                                [
+                                account ? [
                                     'bg_logout',
                                     'help',
                                     'cog',
@@ -72,7 +76,16 @@ class TopPanel extends Component {
                                         item === 'bell' ? switch_notification() : null} key={i} className='left-icon'>
                                         <img src={theme[item]} className='icon'/>
                                     </div>
-                                ))
+                                )) : (
+                                    <div className='no-account'>
+                                        <strong className='it-fs14 singin'>
+                                            Sign In
+                                        </strong>
+                                        <Button className='bnt-light singup' color="link">
+                                            Sign Up
+                                        </Button>
+                                    </div>
+                                )
                             }
                             <div className={`theme-switch d-flex flex-row ${theme.theme_night ? 'reverse': ''}`} onClick={() => set_theme()}>
                                 <div className={`${theme.theme_night ? 'non_active' : 'active'}`}>
@@ -93,7 +106,8 @@ class TopPanel extends Component {
 const mapStateToProps = state => {
     return {
         theme: state.theme,
-        menu: state.menu.top_panel
+        menu: state.menu.top_panel,
+        account: state.account
     }
 };
 

@@ -1,7 +1,8 @@
-import { applyMiddleware, createStore, compose } from 'redux';
+import { applyMiddleware, createStore, compose, combineReducers } from 'redux';
 import logger from 'redux-logger'
 import ReduxThunk from 'redux-thunk'
 import reducers from './reducers/index'
+import otherReducers from './otherReducers/index'
 import createHistory from 'history/createBrowserHistory'
 import { routerMiddleware } from 'react-router-redux'
 
@@ -14,7 +15,10 @@ const route_middleware = routerMiddleware(history);
 const store = () => {
     if (process.env.NODE_ENV === 'development') {
         return createStore(
-            reducers,
+            combineReducers({
+                ...reducers,
+                ...otherReducers
+            }),
             compose(
                 applyMiddleware(ReduxThunk),
                 applyMiddleware(route_middleware),
@@ -23,7 +27,10 @@ const store = () => {
         );
     } else {
         return createStore(
-            reducers,
+            combineReducers({
+                ...reducers,
+                ...otherReducers
+            }),
             compose(
                 applyMiddleware(ReduxThunk),
                 applyMiddleware(route_middleware)

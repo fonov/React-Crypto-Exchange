@@ -150,4 +150,18 @@
       margin-left: 0;
     }
   }
+  .no-account {
+    margin-left: 15px;
+    .singin {
+      position: relative;
+      top: 7px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .singup {
+      position: relative;
+      top: 4px;
+      right: -10px;
+    }
+  }
 }

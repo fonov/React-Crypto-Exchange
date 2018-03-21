@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
-import TradeBio from '../elements/trader_bio'
+import TradeBio from '../elements/traderBio'
 import ReactSVG from 'react-svg';
 
 

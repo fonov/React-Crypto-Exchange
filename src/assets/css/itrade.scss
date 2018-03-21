@@ -721,3 +721,17 @@ select, .it-pointer, svg {
     left: -8px;
   }
 }
+.bnt-light {
+  color: #202434;
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border-color: #cbced4;
+  padding: 0.31rem 0.75rem;
+  &:hover,
+  &:focus {
+    background-color: whitesmoke;
+    color: #202434;
+    border-color: #cbced4;
+    text-decoration: none;
+  }
+}

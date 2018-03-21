@@ -4,7 +4,7 @@ import { Row, Col, Badge, Button, ListGroup, ListGroupItem, Input } from 'reacts
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
-import TradeBio from '../elements/trader_bio'
+import TradeBio from '../elements/traderBio'
 import BaseLeftPage from '../elements/BaseLeftPage'
 import {ClosePageAction} from '../actions/LeftPage'
 import ReactSVG from 'react-svg';

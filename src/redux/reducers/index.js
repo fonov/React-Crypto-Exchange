@@ -1,16 +1,15 @@
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-//Custom
 import menu from './menu'
 import theme from './theme'
 import LeftPage from './LeftPage'
+import account from './account'
 
 
-const reducers = combineReducers({
-    router: routerReducer,
+
+const reducers = {
     menu,
     theme,
-    LeftPage
-});
+    LeftPage,
+    account
+};
 
 export default reducers
