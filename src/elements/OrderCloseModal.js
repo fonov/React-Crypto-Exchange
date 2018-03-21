@@ -11,7 +11,7 @@ class OrderCloseModal extends Component{
 
     render() {
 
-        const {order_close_modal, set_order_close_modal} = this.props;
+        const {order_close_modal, set_order_close_modal, theme} = this.props;
 
         const data = [
             {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
@@ -27,7 +27,7 @@ class OrderCloseModal extends Component{
             <Modal
                 isOpen={order_close_modal}
                 toggle={() => set_order_close_modal(false)}
-                className='it-order-close-modal'
+                className={`it-order-close-modal ${theme.night_class}`}
             >
                 <div className='it-close' onClick={() => set_order_close_modal(false)}>
                     <ReactSVG

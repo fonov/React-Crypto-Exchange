@@ -514,4 +514,38 @@ $night_bg: #202434;
     border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
+  .bnt-light {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: white;
+      border-color: transparent;
+    }
+  }
+}
+.it-order-close-modal.night {
+  .modal-content {
+    background-color: #282e3d;
+    span, div {
+      color: white;
+    }
+    .text-primary {
+      color: #7087de !important;
+    }
+    .it-close {
+      background-color: #444d62;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+    text {
+      fill: white;
+    }
+  }
 }
