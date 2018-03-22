@@ -3,6 +3,9 @@ import {LeftPanel, TopPanel, Notification} from './index'
 import {connect} from "react-redux";
 import OrderCloseModal from './OrderCloseModal'
 import {Motion, spring} from 'react-motion';
+import SingUpModal from '../components/sign/modal/singUpModal'
+import SingInModal from '../components/sign/modal/singInModal'
+import ResetPasswordModal from '../components/sign/modal/resetPasswordModal'
 
 
 class BasePage extends Component{
@@ -15,6 +18,9 @@ class BasePage extends Component{
         return (
             <div>
                 <OrderCloseModal />
+                <SingUpModal />
+                <SingInModal />
+                <ResetPasswordModal />
                 <div className={`it-container ${theme.night_class}`} style={{filter: order_close_modal ? 'blur(5px)' : 'none'}}>
                     <LeftPanel
                         my_orders_badge={2}
@@ -42,7 +48,7 @@ class BasePage extends Component{
 const mapStateToProps = state => {
     return {
         theme: state.theme,
-        order_close_modal: state.menu.order_close_modal,
+        order_close_modal: state.modals.order_close,
         my_orders: state.menu.my_orders,
         notification: state.menu.notification,
     }

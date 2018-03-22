@@ -27,7 +27,7 @@ class OrderCloseModal extends Component{
             <Modal
                 isOpen={order_close_modal}
                 toggle={() => set_order_close_modal(false)}
-                className={`it-order-close-modal ${theme.night_class}`}
+                className={`it-modal ${theme.night_class}`}
             >
                 <div className='it-close' onClick={() => set_order_close_modal(false)}>
                     <ReactSVG
@@ -87,7 +87,7 @@ class OrderCloseModal extends Component{
 const mapStateToProps = state => {
     return {
         theme: state.theme,
-        order_close_modal: state.menu.order_close_modal
+        order_close_modal: state.modals.order_close
     }
 };
 

@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import Sign from './baseSing'
 import { FormGroup, Input, Label, Button } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
-import URLS from '../../constants/urls'
+import URLS from '../../../constants/urls'
+import BaseSingModal from './baseSingModal'
+import {switchSingUPModal, switchSingINModal} from '../../../actions/modals'
 
 
-class SingUp extends Component {
+class SingUpModal extends Component {
 
     render() {
 
-        const {push} = this.props;
+        const {push, singup, switchSingUPModal, switchSingINModal} = this.props;
 
         return (
-            <Sign>
+            <BaseSingModal
+                isOpen={singup}
+                toggle={() => switchSingUPModal(false)}
+            >
                 <div className='text-center'>
                     <strong className='it-fs24'>
                         Create an account
@@ -40,23 +44,33 @@ class SingUp extends Component {
                 </Button>
                 <div className='text-center it-fs16 mt-4'>
                     Already have an account?
-                    <span className='text-primary it-pointer ml-1' onClick={() => push(URLS.SIGNIN)}>
+                    <span
+                        className='text-primary it-pointer ml-1'
+                        onClick={() => {
+                            switchSingUPModal(false);
+                            setTimeout(() => switchSingINModal(true), 150)
+                        }}
+                    >
                         Sign in
                     </span>
                 </div>
-            </Sign>
+            </BaseSingModal>
         )
     }
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        singup: state.modals.singup
+    }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
+        switchSingUPModal: state => dispatch(switchSingUPModal(state)),
+        switchSingINModal: state => dispatch(switchSingINModal(state))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SingUpModal);

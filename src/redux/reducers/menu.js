@@ -1,7 +1,7 @@
-import {SET_TOP_PANEL, SET_MY_ORDERS, SET_ORDER_CLOSE_MODAL, SWITCH_NOTIFICATION} from '../../constants/actions'
+import {SET_TOP_PANEL, SET_MY_ORDERS, SWITCH_NOTIFICATION} from '../../constants/actions'
 
 
-const initialState = {top_panel: 2, left_panel: 0, my_orders: 0, order_close_modal: false, notification: false};
+const initialState = {top_panel: 2, left_panel: 0, my_orders: 0, notification: false};
 
 const menu = (state=initialState, action) => {
     switch (action.type) {
@@ -14,11 +14,6 @@ const menu = (state=initialState, action) => {
             return {
                 ...state,
                 my_orders: action.number
-            };
-        case SET_ORDER_CLOSE_MODAL:
-            return {
-                ...state,
-                order_close_modal: action.modal
             };
         case SWITCH_NOTIFICATION:
             return {

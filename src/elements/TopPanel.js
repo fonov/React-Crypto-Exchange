@@ -6,6 +6,8 @@ import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {set_theme} from '../actions/theme'
 import {set_top_panel, switch_notification} from "../actions/menu";
+import {switchSingUPModal, switchSingINModal} from '../actions/modals'
+import {baseWrapper} from '../actions/eventWrapper'
 
 
 class TopPanel extends Component {
@@ -22,7 +24,8 @@ class TopPanel extends Component {
         const {
             active, push, theme, set_theme, menu,
             set_top_panel, switch_notification,
-            account
+            account, switchSingUPModal, switchSingINModal,
+            baseWrapper
         } = this.props;
 
         return(
@@ -37,10 +40,12 @@ class TopPanel extends Component {
                                     ['XMR/BTC', 'success', '+ 2.02%', '0.023360'],
                                     ['Add market']
                                 ].map((item, i, array) => array.length-1 === i ? (
-                                    <div className={`nav-item it-fs12 text-center add ${menu === i ? 'active' : ''}`} onClick={() => {
-                                        push(URLS.MarketsList);
-                                        set_top_panel(-1)
-                                    }}>
+                                    <div className={`nav-item it-fs12 text-center add ${menu === i ? 'active' : ''}`}
+                                         onClick={() => baseWrapper(() => {
+                                             push(URLS.MarketsList);
+                                             set_top_panel(-1)
+                                         })}
+                                    >
                                         <div className="d-flex flex-column">
                                             <img src={require('../assets/icons/blue_plus.svg')}  className='mb-1'/>
                                             <p>{item[0]}</p>
@@ -78,10 +83,10 @@ class TopPanel extends Component {
                                     </div>
                                 )) : (
                                     <div className='no-account'>
-                                        <strong className='it-fs14 singin'>
+                                        <strong className='it-fs14 singin' onClick={() => switchSingINModal(true)}>
                                             Sign In
                                         </strong>
-                                        <Button className='bnt-light singup' color="link">
+                                        <Button className='bnt-light singup' color="link" onClick={() => switchSingUPModal(true)}>
                                             Sign Up
                                         </Button>
                                     </div>
@@ -116,7 +121,10 @@ const mapDispatchToProps = dispatch => {
         push: url => dispatch(push(url)),
         set_theme: index => dispatch(set_theme(index)),
         set_top_panel: number => dispatch(set_top_panel(number)),
-        switch_notification: () => dispatch(switch_notification())
+        switch_notification: () => dispatch(switch_notification()),
+        switchSingUPModal: state => dispatch(switchSingUPModal(state)),
+        switchSingINModal: state => dispatch(switchSingINModal(state)),
+        baseWrapper: event => dispatch(baseWrapper(event))
     }
 };
 

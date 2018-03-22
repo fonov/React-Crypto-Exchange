@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import Sign from './baseSing'
 import { FormGroup, Input, Label, Button } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
-import URLS from "../../constants/urls";
+import URLS from '../../../constants/urls'
+import BaseSingModal from './baseSingModal'
+import {switchResetPasswordModal} from '../../../actions/modals'
 
 
-class ResetPassword extends Component {
+class ResetPasswordModal extends Component {
 
     render() {
 
-        const {push} = this.props;
+        const {push, reset_password, switchResetPasswordModal} = this.props;
 
         return (
-            <Sign>
+            <BaseSingModal
+                isOpen={reset_password}
+                toggle={() => switchResetPasswordModal(false)}
+            >
                 <div className='text-center'>
                     <strong className='it-fs24'>
                         Reset password
@@ -32,19 +36,22 @@ class ResetPassword extends Component {
                         Sign up
                     </span>
                 </div>
-            </Sign>
+            </BaseSingModal>
         )
     }
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        reset_password: state.modals.reset_password
+    }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
+        switchResetPasswordModal: state => dispatch(switchResetPasswordModal(state))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResetPassword);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordModal);

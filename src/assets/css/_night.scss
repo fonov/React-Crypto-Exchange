@@ -527,7 +527,7 @@ $night_bg: #202434;
     }
   }
 }
-.it-order-close-modal.night {
+.it-modal.night {
   .modal-content {
     background-color: #282e3d;
     span, div {
@@ -546,6 +546,15 @@ $night_bg: #202434;
     }
     text {
       fill: white;
+    }
+  }
+  &.it-modal-sing {
+    .modal-content {
+      background-color: #282e3d;
+      input {
+        background-color: #282e3d;
+        border: solid 1px rgba(255, 255, 255, 0.4);
+      }
     }
   }
 }

@@ -5,6 +5,7 @@ import { Card, CardBody, Row, Col, Button, FormGroup, Label, Input, Table} from 
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
 import {set_order_close_modal} from "../../actions/menu";
+import {baseWrapper} from "../../actions/eventWrapper";
 
 
 class Trading extends Component{
@@ -36,8 +37,13 @@ class Trading extends Component{
 
     render() {
 
-        const {theme, set_order_close_modal} = this.props,
-            {active_index, active_index_1, order_book} = this.state;
+        const {
+                theme, set_order_close_modal,
+                baseWrapper
+        } = this.props,
+            {
+                active_index, active_index_1, order_book
+            } = this.state;
 
         return(
             <div className='it-page'>
@@ -113,15 +119,23 @@ class Trading extends Component{
                                     </div>
                                     <div className='text-center mt-2 w-100'>
                                         <div className="btn-group d-flex btn-buy-sell" role="group">
-                                            <Button className='bg-success border-0'>
+                                            <Button
+                                                className='border-0'
+                                                onClick={() => baseWrapper(() => null)}
+                                                color='success'
+                                            >
                                                 <img src={require('../../assets/icons/raw_up.svg')} />
                                                 <strong>Buy</strong>
                                             </Button>
-                                            <Button className='bg-white text-dark border border-left-0'>
+                                            <Button
+                                                className='bg-white text-dark border border-left-0'
+                                                onClick={() => baseWrapper(() => null)}
+                                            >
                                                 <div className='d-flex justify-content-center'>
                                                     <ReactSVG
                                                         path={require('../../assets/icons/raw_down.svg')}
                                                         className='mr-1'
+                                                        color='light'
                                                     />
                                                     <strong className='it-half-opacity'>Sell</strong>
                                                 </div>
@@ -170,7 +184,11 @@ class Trading extends Component{
                                         <span className='text-primary mr-2'>10%</span>
                                         <span className='text-secondary ml-4'>23%</span>
                                     </div>
-                                    <Button className='bg-success mt-2 border-0 py-2' block>
+                                    <Button
+                                        className='bg-success mt-2 border-0 py-2'
+                                        block
+                                        onClick={() => baseWrapper(() => null)}
+                                    >
                                         <img src={require('../../assets/icons/raw_up.svg')} style={{height: 17}} className='mb-1'/>
                                         <strong className='ml-2'>Buy Monero</strong>
                                     </Button>
@@ -369,7 +387,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
-        set_order_close_modal: modal => dispatch(set_order_close_modal(modal))
+        set_order_close_modal: modal => dispatch(set_order_close_modal(modal)),
+        baseWrapper: event => dispatch(baseWrapper(event))
     }
 };
 

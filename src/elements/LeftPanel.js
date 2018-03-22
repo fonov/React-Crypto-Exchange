@@ -6,6 +6,7 @@ import {push} from "react-router-redux";
 import URLS from '../constants/urls'
 import {MyOrdersContainer} from './index'
 import {set_top_panel, set_my_orders} from '../actions/menu'
+import {baseWrapper} from "../actions/eventWrapper";
 
 
 class LeftPanel extends Component{
@@ -32,8 +33,11 @@ class LeftPanel extends Component{
 
     render() {
 
-        const { my_orders_badge = 3, push, wallet_active,
-                analytics_active, traders_active, message_active, theme, my_orders } = this.props;
+        const {
+            my_orders_badge = 3, push, wallet_active,
+            analytics_active, traders_active,
+            message_active, theme, my_orders, baseWrapper
+        } = this.props;
 
         return (
             <div>
@@ -47,7 +51,12 @@ class LeftPanel extends Component{
                     </div>
                 </div>
                 <div className='it-left-panel-nav'>
-                    <div className={`item ${my_orders ? 'active' : ''}`} onClick={() => this.orders_active()}>
+                    <div
+                        className={`item ${my_orders ? 'active' : ''}`}
+                        onClick={() => baseWrapper(() => {
+                            this.orders_active()
+                        })}
+                    >
                         <div className="d-flex flex-column">
                             <div className='it-badge bg-primary text-white'>
                                 {my_orders_badge}
@@ -58,26 +67,25 @@ class LeftPanel extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className={`item ${wallet_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Wallet)}>
-                        <img src={theme.nav_wallet} className='img_icon non_op' />
-                        <p>Wallets</p>
-                    </div>
-
-                    <div className={`item ${analytics_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Analytics)}>
-                        <img src={theme.analytics} className='img_icon non_op' />
-                        <p>Analytics</p>
-                    </div>
-
-                    <div className={`item ${traders_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Traders)}>
-                        <img src={theme.traders} className='img_icon non_op' />
-                        <p>Traders</p>
-                    </div>
-
-                    <div className={`item ${message_active && !my_orders && 'active'}`} onClick={() => this._open_left_item(URLS.Messages)}>
-                        <img src={theme.message_icon} className='img_icon' style={{opacity: 1}} />
-                        <p>Messages</p>
-                    </div>
-
+                    {
+                        [
+                            [wallet_active, URLS.Wallet, theme.nav_wallet, 'Wallets'],
+                            [analytics_active, URLS.Analytics, theme.analytics, 'Analytics'],
+                            [traders_active, URLS.Traders, theme.traders, 'Traders'],
+                            [message_active, URLS.Messages, theme.message_icon, 'Messages']
+                        ].map((item, index) => (
+                            <div
+                                key={index}
+                                className={`item ${item[0] && !my_orders && 'active'}`}
+                                onClick={() => baseWrapper(() => {
+                                    this._open_left_item(item[1])
+                                })}
+                            >
+                                <img src={item[2]} className='img_icon' style={{opacity: 1}} />
+                                <p>{item[3]}</p>
+                            </div>
+                        ))
+                    }
                     <div className='footer text-center'>
                         <div className='it-fs12'>
                             15:48
@@ -112,7 +120,8 @@ const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
         set_top_panel: number => dispatch(set_top_panel(number)),
-        set_my_orders: number => dispatch(set_my_orders(number))
+        set_my_orders: number => dispatch(set_my_orders(number)),
+        baseWrapper: event => dispatch(baseWrapper(event))
     }
 };
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Sign from './sign'
+import Sign from './baseSing'
 import { FormGroup, Input, Label, Button } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
@@ -28,7 +28,7 @@ class SingIn extends Component {
                     <Input type="password" name="password" />
                 </FormGroup>
                 <div className='text-center it-fs16 mt-4'>
-                    <span className='text-primary'>Forgot your password?</span>
+                    <span className='text-primary it-pointer'>Forgot your password?</span>
                 </div>
                 <Button color="primary" size="lg" block className='mt-4'>
                     Sign in

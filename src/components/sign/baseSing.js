@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class Sing extends Component {
+export default class BaseSing extends Component {
 
     render() {
 

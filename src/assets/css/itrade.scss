@@ -14,7 +14,7 @@
 @import "markets_list";
 @import "account";
 @import "night";
-@import "order_close_modal";
+@import "modal";
 @import "notification";
 @import "sign";
 
@@ -457,7 +457,7 @@ select, .it-pointer, svg {
   background-color: #ffffff;
   height: calc(100% - 47px);
   width: calc(100% - 96px);
-  //min-width: 934px;
+  min-width: 936px;
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, .2);
