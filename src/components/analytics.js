@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Row, Col, Card, CardBody, Badge } from 'reactstrap';
+import {
+    Row, Col, Card, CardBody, Badge,
+    Dropdown, DropdownToggle, DropdownMenu, DropdownItem
+} from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
@@ -11,6 +14,17 @@ import {ClosePageAction} from '../actions/LeftPage'
 
 
 class Analytics extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            dropdownOpen: false,
+            dropdownOpen1: false,
+            dropdownOpen2: false,
+            dropdownOpen3: false,
+        };
+    }
 
     render() {
 
@@ -127,9 +141,19 @@ class Analytics extends Component {
                                         <form className="form-inline">
                                             <div className="form-group">
                                                 <label className='mr-2 it-fs12'>Step</label>
-                                                <select className="form-control form-control-sm">
-                                                    <option>1 day</option>
-                                                </select>
+                                                <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.setState({
+                                                    dropdownOpen: !this.state.dropdownOpen
+                                                })}>
+                                                    <DropdownToggle color='light small'>
+                                                        <div className='d-flex justify-content-between'>
+                                                            <div className='mr-3'>1 day</div>
+                                                            <FontAwesome name='caret-down'/>
+                                                        </div>
+                                                    </DropdownToggle>
+                                                    <DropdownMenu>
+                                                        <DropdownItem>1 day</DropdownItem>
+                                                    </DropdownMenu>
+                                                </Dropdown>
                                             </div>
                                         </form>
                                     </div>
@@ -210,17 +234,47 @@ class Analytics extends Component {
                             </div>
                             <form className="form-inline">
                                 <div className="form-group">
-                                    <select className="form-control form-control-sm mr-2">
-                                        <option>ALL</option>
-                                    </select>
+                                    <Dropdown isOpen={this.state.dropdownOpen1} toggle={() => this.setState({
+                                        dropdownOpen1: !this.state.dropdownOpen1
+                                    })} className='mr-2'>
+                                        <DropdownToggle color='light small'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='mr-3'>ALL</div>
+                                                <FontAwesome name='caret-down'/>
+                                            </div>
+                                        </DropdownToggle>
+                                        <DropdownMenu>
+                                            <DropdownItem>ALL</DropdownItem>
+                                        </DropdownMenu>
+                                    </Dropdown>
                                     <div className='it-delimiter' />
-                                    <select className="form-control form-control-sm ml-2 mr-2">
-                                        <option>BTC</option>
-                                    </select>
+                                    <Dropdown isOpen={this.state.dropdownOpen2} toggle={() => this.setState({
+                                        dropdownOpen2: !this.state.dropdownOpen2
+                                    })} className='ml-2 mr-2'>
+                                        <DropdownToggle color='light small'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='mr-3'>BTC</div>
+                                                <FontAwesome name='caret-down'/>
+                                            </div>
+                                        </DropdownToggle>
+                                        <DropdownMenu>
+                                            <DropdownItem>BTC</DropdownItem>
+                                        </DropdownMenu>
+                                    </Dropdown>
                                     <label className='mr-2 ml-4 it-fs12 night_lite_op'>Sort by</label>
-                                    <select className="form-control form-control-sm">
-                                        <option>USD profit session</option>
-                                    </select>
+                                    <Dropdown isOpen={this.state.dropdownOpen3} toggle={() => this.setState({
+                                        dropdownOpen3: !this.state.dropdownOpen3
+                                    })} className='mr-2'>
+                                        <DropdownToggle color='light small'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='mr-3'>USD profit session</div>
+                                                <FontAwesome name='caret-down'/>
+                                            </div>
+                                        </DropdownToggle>
+                                        <DropdownMenu style={{width: '120%'}}>
+                                            <DropdownItem>USD profit session</DropdownItem>
+                                        </DropdownMenu>
+                                    </Dropdown>
                                 </div>
                             </form>
                         </div>
@@ -274,7 +328,9 @@ class Analytics extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='block-2'>
-                                                    <Badge pill className='bg-badge'>+17%</Badge>
+                                                    <Badge pill className='bg-badge'>
+                                                        <span>+17%</span>
+                                                    </Badge>
                                                 </div>
                                             </div>
                                         </div>
@@ -330,7 +386,9 @@ class Analytics extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='block-2'>
-                                                    <Badge pill className='bg-badge'>+17%</Badge>
+                                                    <Badge pill className='bg-badge'>
+                                                        <span>+17%</span>
+                                                    </Badge>
                                                 </div>
                                             </div>
                                         </div>

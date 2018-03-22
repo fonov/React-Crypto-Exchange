@@ -8,6 +8,16 @@
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
   z-index: 2;
+  .icons {
+    position: relative;
+    div:first-child {
+      position: relative;
+      top: 1px;
+    }
+    svg {
+      opacity: 0.6;
+    }
+  }
   > div:first-child {
     transition: opacity 200ms;
   }

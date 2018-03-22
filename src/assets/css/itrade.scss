@@ -86,7 +86,11 @@ body {
   right: 15px;
   img {
     position: relative;
-    top: -1px;
+    top: -2px;
+  }
+  svg {
+    position: relative;
+    top: -1px
   }
 }
 .it_cycle_item {
@@ -235,6 +239,9 @@ body {
 }
 select, .it-pointer, svg {
   cursor: pointer;
+}
+.it-fw6 {
+  font-weight: 600;
 }
 .it-hr-text {
   margin-top: 0;
@@ -456,7 +463,7 @@ select, .it-pointer, svg {
   margin-left: 94px;
   background-color: #ffffff;
   height: calc(100% - 47px);
-  width: calc(100% - 96px);
+  width: calc(100% - 95px);
   min-width: 936px;
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -654,13 +661,13 @@ select, .it-pointer, svg {
     width: calc(100% - 16px - #{$buy-sell-width});
     margin-right: 16px;
     .it-trading_view {
-      height: 470px;
+      height: 530px;
     }
   }
   @media (max-width: 1435px) {
     .main-view {
       .it-trading_view {
-        height: 488px;
+        height: 548px;
       }
     }
   }
@@ -752,5 +759,31 @@ select, .it-pointer, svg {
 .btn-secondary {
   &:hover, &:active {
     background-color: rgba(0,0,0,0.05) !important;
+  }
+}
+.dropdown {
+  .btn.btn-light {
+    background-color: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0, 0.2);
+    position: relative;
+    span {
+      position: relative;
+      top: 3px;
+      font-size: 20px;
+      opacity: 0.5;
+      color: #282e3d;
+    }
+  }
+  .btn.btn-light.small {
+    font-size: 12px;
+    padding: 0.1rem 0.5rem;
+    span {
+      top: 0px;
+    }
+  }
+  .dropdown-menu {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
   }
 }

@@ -1,6 +1,6 @@
 .it-top-panel {
   height: auto;
-  width: calc(100% - 96px);
+  width: calc(100% - 95px);
   min-width: 936px;
   background-color: #f5f7fa;
   margin-left: 94px;
@@ -22,6 +22,11 @@
     position: relative;
     .badge-pill {
       padding-top: 5px;
+      position: relative;
+      > span {
+        position: relative;
+        top: 1px;
+      }
     }
     .closed {
       position: relative;
@@ -59,6 +64,10 @@
     border-bottom: 0;
     position: relative;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    > div.d-flex.flex-row {
+      position: relative;
+      top: -1px;
+    }
     .nav-desc {
       margin-top: 1px;
       .badge {

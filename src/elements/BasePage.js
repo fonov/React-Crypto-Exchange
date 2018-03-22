@@ -23,7 +23,7 @@ class BasePage extends Component{
                 <ResetPasswordModal />
                 <div className={`it-container ${theme.night_class}`} style={{filter: order_close_modal ? 'blur(5px)' : 'none'}}>
                     <LeftPanel
-                        my_orders_badge={2}
+                        my_orders_badge={888}
                         wallet_active={wallet_active}
                         orders_active={orders_active}
                         analytics_active={analytics_active}

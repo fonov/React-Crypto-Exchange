@@ -62,6 +62,11 @@
     tr {
       th {
         padding-top: 40px;
+        position: relative;
+        .fa {
+          position: relative;
+          top: -2px;
+        }
       }
     }
   }

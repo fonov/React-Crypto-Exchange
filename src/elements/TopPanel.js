@@ -58,7 +58,11 @@ class TopPanel extends Component {
                                             <div className="d-flex flex-column ml-2">
                                                 <strong className='it-fs16 it_light_opacity title'>{item[0]}</strong>
                                                 <div className='d-flex flex-row nav-desc'>
-                                                <p><Badge color={item[1]} pill>{item[2]}</Badge></p>
+                                                <p>
+                                                    <Badge color={item[1]} pill>
+                                                        <span>{item[2]}</span>
+                                                    </Badge>
+                                                </p>
                                                 <p className='it-fs12'>{item[3]}</p>
                                             </div>
                                         </div>
@@ -69,7 +73,7 @@ class TopPanel extends Component {
                         </div>
                     </Col>
                     <Col>
-                        <div className='d-flex flex-row-reverse mr-3'>
+                        <div className='d-flex flex-row-reverse mr-2'>
                             {
                                 account ? [
                                     'bg_logout',

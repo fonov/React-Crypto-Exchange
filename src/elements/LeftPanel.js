@@ -21,7 +21,6 @@ class LeftPanel extends Component{
         const {set_top_panel, set_my_orders} = this.props;
 
         set_my_orders(1);
-        set_top_panel(-1)
     }
 
     _open_left_item(url) {
@@ -59,7 +58,7 @@ class LeftPanel extends Component{
                     >
                         <div className="d-flex flex-column">
                             <div className='it-badge bg-primary text-white'>
-                                {my_orders_badge}
+                                <span>{my_orders_badge}</span>
                             </div>
                             <div>
                                 <img src={theme.my_orders_icon} className='img_icon_c' />

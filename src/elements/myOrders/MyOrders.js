@@ -23,7 +23,7 @@ class MyOrders extends Component{
                     <div className='ml-3 it-fs14 it_light_opacity'>
                         My orders
                     </div>
-                    <div className='mr-2 d-flex flex-row'>
+                    <div className='mr-2 d-flex flex-row icons'>
                         <div onClick={() => {
                             set_my_orders(2)
                         }}>
@@ -43,7 +43,7 @@ class MyOrders extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mt-3">
                     <div className="d-flex flex-row it-btn-group w-100 ml-3 mr-2">
                         <div className="it-btn active w-50">Opened</div>
                         <div className="it-btn border-left-0 w-50"><span>Closed</span></div>
@@ -58,19 +58,25 @@ class MyOrders extends Component{
                     </Col>
                     <Col md={6}>
                         <div className="d-flex flex-column pl-4">
-                            <div className='it-fs14'><strong>XMR/BTC</strong></div>
+                            <div className='it-fs14 it-fw6'>XMR/BTC</div>
                             <div className='it-fs11 it_light_opacity'>0.83707900 XMR</div>
                         </div>
                     </Col>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <strong className='it-fs14 text-success'>+18.09 %</strong>
+                            <span className='it-fs14 text-success it-fw6'>+18.09 %</span>
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center it-pointer'>
-                    Show more <FontAwesome name='caret-down' />
-                </p>
+                <Row className='mt-2 mx-1 text-left ml-3'>
+                    <Col md={{ size: 6, offset: 3 }}>
+                        <div className="d-flex flex-column pl-4">
+                            <span className='text-primary it-pointer text-left'>
+                            Show more <FontAwesome name='caret-down' />
+                        </span>
+                        </div>
+                    </Col>
+                </Row>
                 <hr className='mx-2' />
                 <Row className='mt-3 mx-1 text-left ml-3'>
                     <Col md={3}>
@@ -81,20 +87,26 @@ class MyOrders extends Component{
                     </Col>
                     <Col md={6}>
                         <div className="d-flex flex-column pl-4">
-                            <div className='it-fs14'><strong>XMR/BTC</strong></div>
+                            <div className='it-fs14 it-fw6'>XMR/BTC</div>
                             <div className='it-fs11 it_light_opacity'>0.83707900 XMR</div>
                         </div>
                     </Col>
                     <Col md={3}>
                         <div className="d-flex flex-column">
-                            <strong className='it-fs14 text-success'>+18.09 %</strong>
+                            <span className='it-fs14 text-success it-fw6'>+18.09 %</span>
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center it-pointer'>
-                    Show less <FontAwesome name='caret-up' />
-                </p>
-                <div className='progress-block d-flex flex-row'>
+                <Row className='mt-2 mx-1 text-left ml-3'>
+                    <Col md={{ size: 6, offset: 3 }}>
+                        <div className="d-flex flex-column pl-4">
+                            <span className='text-primary it-pointer text-left'>
+                            Show less <FontAwesome name='caret-up' />
+                        </span>
+                        </div>
+                    </Col>
+                </Row>
+                <div className='progress-block d-flex flex-row mt-3'>
                     <Progress color="success" value="50">50%</Progress>
                     <ReactSVG
                         path={require('../../assets/icons/close_bg.svg')}
@@ -141,9 +153,15 @@ class MyOrders extends Component{
                         </div>
                     </Col>
                 </Row>
-                <p className='mt-2 text-primary text-center it-pointer'>
-                    Show more <FontAwesome name='caret-down' />
-                </p>
+                <Row className='mt-2 mx-1 text-left ml-3'>
+                    <Col md={{ size: 6, offset: 3 }}>
+                        <div className="d-flex flex-column pl-4">
+                            <span className='text-primary it-pointer text-left'>
+                            Show more <FontAwesome name='caret-down' />
+                        </span>
+                        </div>
+                    </Col>
+                </Row>
                 <hr className='mx-2' />
             </div>
         )

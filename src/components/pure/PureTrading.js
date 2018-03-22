@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Card, CardBody, Row, Col, Button, FormGroup, Label, Input, Table} from 'reactstrap';
+import {
+    Card, CardBody, Row, Col, Button,
+    FormGroup, Label, Input, Table,
+    Dropdown, DropdownToggle, DropdownMenu, DropdownItem
+} from 'reactstrap';
 // import TradingViewWidget from 'react-tradingview-widget';
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
 import {set_order_close_modal} from "../../actions/menu";
 import {baseWrapper} from "../../actions/eventWrapper";
+import FontAwesome from 'react-fontawesome'
 
 
 class Trading extends Component{
@@ -13,10 +18,12 @@ class Trading extends Component{
     constructor(props) {
         super(props);
 
+        this.toggle = this.toggle.bind(this);
         this.state = {
             active_index: -1,
             active_index_1: -1,
-            order_book: 2
+            order_book: 2,
+            dropdownOpen: false
         }
     }
 
@@ -33,6 +40,12 @@ class Trading extends Component{
                 });
             }, 300)
         }, 1000)
+    }
+
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
     }
 
     render() {
@@ -117,7 +130,7 @@ class Trading extends Component{
                                             <hr className="it-hr-text" data-content="DEMO"/>
                                         </p>
                                     </div>
-                                    <div className='text-center mt-2 w-100'>
+                                    <div className='text-center mt-4 w-100 pt-1 mb-1'>
                                         <div className="btn-group d-flex btn-buy-sell" role="group">
                                             <Button
                                                 className='border-0'
@@ -125,7 +138,7 @@ class Trading extends Component{
                                                 color='success'
                                             >
                                                 <img src={require('../../assets/icons/raw_up.svg')} />
-                                                <strong>Buy</strong>
+                                                <span className='it-fw6'>Buy</span>
                                             </Button>
                                             <Button
                                                 className='bg-white text-dark border border-left-0'
@@ -137,23 +150,37 @@ class Trading extends Component{
                                                         className='mr-1'
                                                         color='light'
                                                     />
-                                                    <strong className='it-half-opacity'>Sell</strong>
+                                                    <span className='it-half-opacity it-fw6'>Sell</span>
                                                 </div>
                                             </Button>
                                         </div>
                                     </div>
-                                    <FormGroup className='mt-4'>
-                                        <Label for="exampleSelect">Order type</Label>
-                                        <Input type="select" name="select" id="exampleSelect">
-                                            <option>Limit</option>
-                                            <option selected>Market</option>
-                                            <option>Stop</option>
-                                            <option>Stop-Limit</option>
-                                            <option>Trailing stop</option>
-                                            <option>Fill or Kill</option>
-                                        </Input>
-                                    </FormGroup>
-                                    <Label for="total">Price</Label>
+                                    <Label className='mt-3'>Order type</Label>
+                                    <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className='mb-3'>
+                                        <DropdownToggle color='light' className='w-100'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div>Order type</div>
+                                                <FontAwesome name='caret-down'/>
+                                            </div>
+                                        </DropdownToggle>
+                                        <DropdownMenu>
+                                            {
+                                                [
+                                                    'Limit',
+                                                    'Market',
+                                                    'Stop',
+                                                    'Stop-Limit',
+                                                    'Trailing stop',
+                                                    'Fill or Kill'
+                                                ].map((item, i) => (
+                                                    <DropdownItem key={i}>
+                                                        {item}
+                                                    </DropdownItem>
+                                                ))
+                                            }
+                                        </DropdownMenu>
+                                    </Dropdown>
+                                    <Label for="total" className='mt1'>Price</Label>
                                     <div className="input-group">
                                         <input type="text" className="form-control" value='0.023194'/>
                                         <div className="input-group-append">
@@ -164,14 +191,14 @@ class Trading extends Component{
                                         <span className='text-primary mr-2'>Bid</span>
                                         <span className='text-primary mr-2'>Ask</span>
                                     </div>
-                                    <Label for="total" className='mt-2'>Amount</Label>
-                                    <div className="input-group">
+                                    <Label for="total" className='mt-3'>Amount</Label>
+                                    <div className="input-group mb-1">
                                         <input type="text" className="form-control" />
                                         <div className="input-group-append">
                                             <span className="input-group-text">XMR</span>
                                         </div>
                                     </div>
-                                    <Label for="total" className='mt-2'>Total</Label>
+                                    <Label for="total" className='mt-3'>Total</Label>
                                     <div className="input-group">
                                         <input type="text" className="form-control" />
                                         <div className="input-group-append">
@@ -185,12 +212,12 @@ class Trading extends Component{
                                         <span className='text-secondary ml-4'>23%</span>
                                     </div>
                                     <Button
-                                        className='bg-success mt-2 border-0 py-2'
+                                        className='bg-success mt-4 mb-3 border-0 py-2'
                                         block
                                         onClick={() => baseWrapper(() => null)}
                                     >
                                         <img src={require('../../assets/icons/raw_up.svg')} style={{height: 17}} className='mb-1'/>
-                                        <strong className='ml-2'>Buy Monero</strong>
+                                        <span className='ml-2 it-fw6'>Buy Monero</span>
                                     </Button>
                                 </CardBody>
                             </Card>
@@ -200,10 +227,10 @@ class Trading extends Component{
                         <Col className='col-12' md={12} lg={8} xl={8}>
                             <Card className='order-book-card'>
                                 <CardBody className='ml-3'>
-                                    <div className='d-flex justify-content-between'>
+                                    <div className='d-flex justify-content-between mt-2'>
                                         <div>
                                             <div className="d-flex flex-row">
-                                                <strong className='it-fs18 mr-4'>Order Book</strong>
+                                                <strong className='it-fs18 mr-2'>Order Book</strong>
                                                 <div className="d-flex flex-row it-btn-group ml-2 two mr-2">
                                                     <div
                                                         className={`it-btn ${order_book === 1 ? 'active' : ''}`}
@@ -308,7 +335,7 @@ class Trading extends Component{
                         <Col md={12} lg={4} xl={4} className='col-12 market'>
                             <Card>
                                 <CardBody className='ml-4'>
-                                    <Row>
+                                    <Row className='mt-2'>
                                         <Col className='it-fs18'>
                                             <strong>Market history</strong>
                                         </Col>

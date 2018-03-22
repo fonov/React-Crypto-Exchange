@@ -8,6 +8,7 @@ import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 import {set_top_panel} from "../actions/menu";
+import ReactSVG from 'react-svg';
 
 
 class MarketList extends Component{
@@ -78,7 +79,9 @@ class MarketList extends Component{
                         </Col>
                         <Col className='mt-3'>
                             <div className='it_cycle_times' onClick={() => push(URLS.Trading)}>
-                                <FontAwesome name='times'/>
+                                <ReactSVG
+                                    path={require('../assets/icons/close_bg.svg')}
+                                />
                             </div>
                         </Col>
                     </Row>
@@ -125,7 +128,7 @@ class MarketList extends Component{
                                         <Card>
                                             <CardBody>
                                                 <div className='d-flex justify-content-between'>
-                                                    <strong className='it-fs24'>LTC/BTC</strong>
+                                                    <span className='it-fs24 it-fw6'>LTC/BTC</span>
                                                     <div className='it-medium it-fs16'>
                                                         <Badge color='success' pill>+24.7%</Badge>
                                                     </div>
@@ -159,7 +162,7 @@ class MarketList extends Component{
                                         <Card>
                                             <CardBody>
                                                 <div className='d-flex justify-content-between'>
-                                                    <strong className='it-fs24'>LTC/BTC</strong>
+                                                    <span className='it-fs24 it-fw6'>LTC/BTC</span>
                                                     <div className='it-medium it-fs16'>
                                                         <Badge color='success' pill>+24.7%</Badge>
                                                     </div>
@@ -193,7 +196,7 @@ class MarketList extends Component{
                                         <Card>
                                             <CardBody>
                                                 <div className='d-flex justify-content-between'>
-                                                    <strong className='it-fs24'>LTC/BTC</strong>
+                                                    <span className='it-fs24 it-fw6'>LTC/BTC</span>
                                                     <div className='it-medium it-fs16'>
                                                         <Badge color='danger' pill>+24.7%</Badge>
                                                     </div>
@@ -234,7 +237,7 @@ class MarketList extends Component{
                                     <th><span className='it-dashed'>Last price</span></th>
                                     <th><span className='it-dashed'>High</span></th>
                                     <th><span className='it-dashed'>Low</span></th>
-                                    <th><span className='it-dashed text-primary border-primary'>Volume</span> <FontAwesome name='sort-desc'/></th>
+                                    <th><span className='it-dashed text-primary border-primary'>Volume</span> <FontAwesome name='sort-desc caret'/></th>
                                     <th><span className='it-dashed'>% 1h</span></th>
                                     <th><span className='it-dashed'>% 1d</span></th>
                                     <th><span className='it-dashed'>% 1w</span></th>
@@ -246,10 +249,10 @@ class MarketList extends Component{
                                         <tr key={item}>
                                             <td className='with_img'>
                                                 <img src='https://chain.so/Bitcoin@2x.png' />
-                                                <strong className='it-fs16 ml-3'>Litecoin</strong>
+                                                <span className='it-fs16 ml-3 it-medium'>Litecoin</span>
                                             </td>
                                             <td>
-                                                <strong className='it-fs16 text-primary'>LTC/BTC</strong>
+                                                <span className='it-fs16 text-primary it-medium'>LTC/BTC</span>
                                             </td>
                                             <td>
                                                 <span className='text-success it-fs16 it-medium'><FontAwesome name='sort-asc'/> 0.01810002</span>

@@ -80,20 +80,26 @@ class Traders extends Component{
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex justify-content-around mt-4'>
-                                                        <div className='d-flex flex-column text-center'>
-                                                            <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                            <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                        </div>
-                                                        <div className='d-flex flex-column text-center'>
-                                                            <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                            <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                        </div>
-                                                        <div className='d-flex flex-column text-center'>
-                                                            <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                            <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                        </div>
-                                                    </div>
+                                                    <Row className='mt-4'>
+                                                        <Col md={4}>
+                                                            <div className='d-flex flex-column text-center'>
+                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
+                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                            </div>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <div className='d-flex flex-column text-center'>
+                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
+                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                            </div>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <div className='d-flex flex-column text-center'>
+                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
+                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                            </div>
+                                                        </Col>
+                                                    </Row>
                                                 </CardBody>
                                                 <div className='risk it-fs14 text-center'>
                                                     <span className='it_light_opacity mr-2'>Risk</span>

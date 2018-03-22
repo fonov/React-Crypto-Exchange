@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import FontAwesome from 'react-fontawesome'
-import { Button, Progress, Row, Col, Input, Form } from 'reactstrap';
+import {
+    Button, Progress, Row, Col, Input, Form,
+    Dropdown, DropdownToggle, DropdownMenu, DropdownItem
+} from 'reactstrap';
 import ReactSVG from 'react-svg';
 import {set_my_orders, set_top_panel} from "../../actions/menu";
 import {push} from "react-router-redux";
@@ -9,9 +12,29 @@ import {push} from "react-router-redux";
 
 class MyOrdersFull extends Component{
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            dropdownOpen1: false,
+            dropdownOpen2: false,
+            dropdownOpen3: false,
+            dropdownOpen4: false,
+            dropdownOpen5: false,
+        };
+    }
+
     render() {
 
         const {set_my_orders, set_top_panel} = this.props;
+
+        const ExportBtn = props => (
+            <Button color='light' className={`border ml-4 ${props.extraClass} it-fs14`}>
+                <span>
+                    <FontAwesome name='file' className='mr-2 it-fs12'/> <span className='it_light_opacity'>Export order list</span>
+                </span>
+            </Button>
+        );
 
         return (
             <div>
@@ -20,7 +43,7 @@ class MyOrdersFull extends Component{
                         <p className='it_page_title'>My orders</p>
                     </Col>
                     <Col>
-                        <div className='it_cycle_times' onClick={() => {
+                        <div className='it_cycle_times main' onClick={() => {
                             set_my_orders(0);
                             set_top_panel(2)
                         }}>
@@ -30,37 +53,83 @@ class MyOrdersFull extends Component{
                         </div>
                     </Col>
                 </Row>
-                <div className='d-flex justify-content-between mt-2'>
+                <div className='d-flex justify-content-between body'>
                     <Form inline className='ml-4'>
                         <div className="d-flex flex-row it-btn-group mr-4">
                             <div className="it-btn active ">Opened</div>
                             <div className="it-btn border-left-0 "><span>Closed</span></div>
                         </div>
-                        <Input type="select" name="select" id="exampleSelect" className='mr-2 form-control-sm'>
-                            <option>19/10/2016</option>
-                        </Input>
+                        <Dropdown isOpen={this.state.dropdownOpen1} toggle={() => this.setState({
+                            dropdownOpen1: !this.state.dropdownOpen1
+                        })} className='mr-2'>
+                            <DropdownToggle color='light small'>
+                                <div className='d-flex justify-content-between'>
+                                    <div className='mr-3'>19/10/2016</div>
+                                    <FontAwesome name='caret-down'/>
+                                </div>
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>19/10/2016</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                         <div className='it-delimiter' />
-                        <Input type="select" name="select" id="exampleSelect" className='ml-2 form-control-sm'>
-                            <option>19/10/2016</option>
-                        </Input>
-                        <Input type="select" name="select" id="exampleSelect" className='ml-4 mr-2 form-control-sm'>
-                            <option>All</option>
-                        </Input>
+                        <Dropdown isOpen={this.state.dropdownOpen2} toggle={() => this.setState({
+                            dropdownOpen2: !this.state.dropdownOpen2
+                        })} className='ml-2'>
+                            <DropdownToggle color='light small'>
+                                <div className='d-flex justify-content-between'>
+                                    <div className='mr-3'>19/10/2016</div>
+                                    <FontAwesome name='caret-down'/>
+                                </div>
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>19/10/2016</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                        <Dropdown isOpen={this.state.dropdownOpen3} toggle={() => this.setState({
+                            dropdownOpen3: !this.state.dropdownOpen3
+                        })} className='ml-4 mr-2'>
+                            <DropdownToggle color='light small'>
+                                <div className='d-flex justify-content-between'>
+                                    <div className='mr-3'>All</div>
+                                    <FontAwesome name='caret-down'/>
+                                </div>
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>All</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                         <div className='it-delimiter' />
-                        <Input type="select" name="select" id="exampleSelect" className='ml-2 mr-4 form-control-sm'>
-                            <option>BTC</option>
-                        </Input>
-                        <Input type="select" name="select" id="exampleSelect" className='form-control-sm'>
-                            <option>All type</option>
-                        </Input>
+                        <Dropdown isOpen={this.state.dropdownOpen4} toggle={() => this.setState({
+                            dropdownOpen4: !this.state.dropdownOpen4
+                        })} className='ml-2 mr-4'>
+                            <DropdownToggle color='light small'>
+                                <div className='d-flex justify-content-between'>
+                                    <div className='mr-3'>BTC</div>
+                                    <FontAwesome name='caret-down'/>
+                                </div>
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>BTC</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                        <Dropdown isOpen={this.state.dropdownOpen5} toggle={() => this.setState({
+                            dropdownOpen5: !this.state.dropdownOpen5
+                        })} className='ml-2 mr-4'>
+                            <DropdownToggle color='light small'>
+                                <div className='d-flex justify-content-between'>
+                                    <div className='mr-3'>All type</div>
+                                    <FontAwesome name='caret-down'/>
+                                </div>
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>All type</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                         <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
                     </Form>
                     <div>
-                        <Button color='light' className='border ml-4 export_btn_big it-fs14'>
-                                    <span>
-                                        <FontAwesome name='file' className='mr-2'/> Export order list
-                                    </span>
-                        </Button>
+                        <ExportBtn extraClass='export_btn_big'/>
                     </div>
                 </div>
                 <div className='mt-3 mx-4'>
@@ -82,7 +151,7 @@ class MyOrdersFull extends Component{
                         <tbody>
                         <tr>
                             <td className='align-middle'>
-                                <strong className='text-primary'>XMR/BTC</strong>
+                                <span className='text-primary it-fw6'>XMR/BTC</span>
                             </td>
                             <td className='text-danger align-middle arrow'>
                                 <div className='d-flex flex-row'>
@@ -113,9 +182,7 @@ class MyOrdersFull extends Component{
                         </tr>
                         <tr>
                             <td className='align-middle'>
-                                <strong className='text-primary'>
-                                    <strong className='text-primary'>XMR/BTC</strong>
-                                </strong>
+                                <span className='text-primary it-fw6'>XMR/BTC</span>
                             </td>
                             <td className='text-danger align-middle arrow'>
                                 <div className='d-flex flex-row'>
@@ -146,7 +213,7 @@ class MyOrdersFull extends Component{
                         </tr>
                         <tr>
                             <td className='align-middle'>
-                                <strong className='text-primary'>XMR/BTC</strong>
+                                <span className='text-primary it-fw6'>XMR/BTC</span>
                             </td>
                             <td className='text-danger align-middle arrow'>
                                 <div className='d-flex flex-row'>
@@ -178,12 +245,7 @@ class MyOrdersFull extends Component{
                         </tbody>
                     </table>
                 </div>
-
-                <Button color='light' className='border ml-4 export_btn_small it-fs14'>
-                       <span>
-                            <FontAwesome name='file' className='mr-2'/> Export order list
-                        </span>
-                </Button>
+                <ExportBtn extraClass='export_btn_small'/>
             </div>
         )
     }
