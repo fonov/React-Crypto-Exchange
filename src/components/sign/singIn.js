@@ -4,13 +4,14 @@ import { FormGroup, Input, Label, Button } from 'reactstrap';
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from "../../constants/urls";
+import {singIN} from '../../actions/index'
 
 
 class SingIn extends Component {
 
     render() {
 
-        const {push} = this.props;
+        const {push, singIN} = this.props;
 
         return (
             <Sign>
@@ -30,7 +31,7 @@ class SingIn extends Component {
                 <div className='text-center it-fs16 mt-4'>
                     <span className='text-primary it-pointer'>Forgot your password?</span>
                 </div>
-                <Button color="primary" size="lg" block className='mt-4'>
+                <Button color="primary" size="lg" block className='mt-4' onClick={() => singIN()}>
                     Sign in
                 </Button>
                 <div className='text-center it-fs16 mt-4'>
@@ -51,6 +52,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         push: url => dispatch(push(url)),
+        singIN: () => dispatch(singIN())
     }
 };
 

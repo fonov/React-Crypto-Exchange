@@ -527,6 +527,12 @@ select, .it-pointer, svg {
     span {
       opacity: 0.5;
     }
+    &:hover {
+      background-color: #fafcff !important;
+    }
+    &.active:hover {
+      background-color: whitesmoke !important;
+    }
   }
   .it-btn:first-child {
     border-top-left-radius: 3px;
@@ -733,5 +739,18 @@ select, .it-pointer, svg {
     color: #202434;
     border-color: #cbced4;
     text-decoration: none;
+  }
+}
+.btn {
+  &:focus:active {
+    box-shadow: none !important;
+  };
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+.btn-secondary {
+  &:hover, &:active {
+    background-color: rgba(0,0,0,0.05) !important;
   }
 }

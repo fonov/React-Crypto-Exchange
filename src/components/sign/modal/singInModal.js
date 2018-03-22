@@ -4,14 +4,16 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import URLS from '../../../constants/urls'
 import BaseSingModal from './baseSingModal'
-import {switchSingINModal, switchSingUPModal, switchResetPasswordModal} from '../../../actions/modals'
+import {singIN, switchSingINModal, switchSingUPModal, switchResetPasswordModal} from '../../../actions/index'
 
 
 class SingUpModal extends Component {
 
     render() {
 
-        const {push, switchSingINModal, singin, switchSingUPModal, switchResetPasswordModal} = this.props;
+        const {
+            push, switchSingINModal, singin, switchSingUPModal, switchResetPasswordModal, singIN
+        } = this.props;
 
         return (
             <BaseSingModal
@@ -42,7 +44,10 @@ class SingUpModal extends Component {
                         Forgot your password?
                     </span>
                 </div>
-                <Button color="primary" size="lg" block className='mt-4'>
+                <Button color="primary" size="lg" block className='mt-4' onClick={() => {
+                    switchSingINModal(false);
+                    singIN()
+                }}>
                     Sign in
                 </Button>
                 <div className='text-center it-fs16 mt-4'>
@@ -73,7 +78,8 @@ const mapDispatchToProps = dispatch => {
         push: url => dispatch(push(url)),
         switchSingINModal: state => dispatch(switchSingINModal(state)),
         switchSingUPModal: state => dispatch(switchSingUPModal(state)),
-        switchResetPasswordModal: state => dispatch(switchResetPasswordModal(state))
+        switchResetPasswordModal: state => dispatch(switchResetPasswordModal(state)),
+        singIN: () => dispatch(singIN())
     }
 };
 
