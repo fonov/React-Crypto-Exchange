@@ -11,11 +11,10 @@
   padding-left: 2em;
   padding-right: 2em;
   z-index: 2;
-  input[type=checkbox]:after {
-    content: " ";
-    background-color: #9FFF9D;
-    display: inline-block;
-    visibility: visible;
+  .checkbox-label {
+    margin-left: 8px;
+    position: relative;
+    top: 1px;
   }
   .body {
     margin-top: 1.75em;

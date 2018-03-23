@@ -8,6 +8,7 @@ import {
 import ReactSVG from 'react-svg';
 import {set_my_orders, set_top_panel} from "../../actions/menu";
 import {push} from "react-router-redux";
+import CheckBox from '../checkBox'
 
 
 class MyOrdersFull extends Component{
@@ -126,7 +127,8 @@ class MyOrdersFull extends Component{
                                 <DropdownItem>All type</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <Input type="checkbox" className='ml-4'/> <span className='it_light_opacity'>Hide all canceled</span>
+                        <CheckBox />
+                        <span className='it_light_opacity checkbox-label'>Hide all canceled</span>
                     </Form>
                     <div>
                         <ExportBtn extraClass='export_btn_big'/>

@@ -787,3 +787,20 @@ select, .it-pointer, svg {
     width: 100%;
   }
 }
+.my-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px transparent;
+  background-image: linear-gradient(#f5f7fa, #f5f7fa), linear-gradient(to bottom, #d8d8d8, #c2c2c2 99%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: relative;
+  span.fa.fa-check {
+    position: relative;
+    top: -3px;
+    left: 2px;
+    font-size: 12px;
+  }
+}
