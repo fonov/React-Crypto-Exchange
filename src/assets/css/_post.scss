@@ -1,5 +1,9 @@
 .it-post {
-  margin-top: 90px;
+  padding-top: 90px;
+  input::placeholder, input:-ms-input-placeholder {
+    color: #282e3d;
+    opacity: 0.6;
+  }
   .badge-2 {
     position: relative;
     span:first-child {

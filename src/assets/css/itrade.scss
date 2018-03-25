@@ -17,6 +17,7 @@
 @import "modal";
 @import "notification";
 @import "sign";
+@import "trader_bio";
 
 
 @font-face {
@@ -30,6 +31,12 @@
   font-style: normal;
   font-weight: bold;
   src: url('../fonts/Avenir Next Demi Bold.otf')
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Avenir Next Medium.otf')
 }
 @font-face {
   font-family: "Avenir Next";
@@ -241,10 +248,10 @@ select, .it-pointer, svg {
   cursor: pointer;
 }
 .it-fw6 {
-  font-weight: 600;
+  font-weight: 500;
 }
 .it-hr-text {
-  margin-top: 0;
+  margin-top: 1px;
   line-height: 1em;
   position: relative;
   outline: 0;
@@ -253,14 +260,15 @@ select, .it-pointer, svg {
   text-align: center;
   height: 1.5em;
   opacity: .5;
+  font-weight: 600;
   &:before {
     content: '';
-    background: linear-gradient(to right, transparent, #818078, transparent);
+    background: #818078;
     position: absolute;
     left: 0;
     top: 50%;
     width: 100%;
-    height: 1px;
+    height: 0.05em;
   }
   &:after {
     content: attr(data-content);
@@ -268,7 +276,7 @@ select, .it-pointer, svg {
     display: inline-block;
     font-size: 9px;
     padding: 0 .5em;
-    line-height: 2.5em;
+    line-height: 2.2em;
     color: #818078;
     background-color: #fcfcfa;
   }
@@ -463,7 +471,7 @@ select, .it-pointer, svg {
   margin-left: 94px;
   background-color: #ffffff;
   height: calc(100% - 47px);
-  width: calc(100% - 95px);
+  width: calc(100% - 94px);
   min-width: 936px;
   border-top-left-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -483,9 +491,9 @@ select, .it-pointer, svg {
     }
   }
 }
-.it-market-history-extra-col {
-  @media (min-width: 1440px) {
-    display: none;
+.it-market-history-row {
+  @media (max-width: 1439px) {
+    justify-content: center !important;
   }
 }
 .it-shadow {
@@ -591,6 +599,27 @@ select, .it-pointer, svg {
   opacity: 0.4;
 }
 .it-trading {
+  .order-dropdown {
+    height: 34px;
+    padding: 0 0.4em;
+  }
+  .dropdown-item {
+    padding-left: 30px;
+  }
+  .disabled.dropdown-item {
+    position: relative;
+    .dropdown-check {
+      position: absolute;
+      left: 8px;
+      top: 7px
+    }
+  }
+  .btn-buy {
+    margin-top: 20px;
+  }
+  .label-amount {
+    margin-top: 12px;
+  }
   .market {
     .card-body {
       padding: 0;
@@ -616,6 +645,11 @@ select, .it-pointer, svg {
               padding-top: 4px;
               padding-bottom: 4px;
             }
+            &:hover, tr.active {
+              td {
+                background-color: #eceff4;
+              }
+            }
           }
           tr:first-child {
             td {
@@ -628,7 +662,7 @@ select, .it-pointer, svg {
         }
     }
   }
-  .row {
+  .row-padding {
     .col {
       padding-left: 13px;
       padding-right: 16px;
@@ -692,6 +726,13 @@ select, .it-pointer, svg {
     .it-icon {
       width: 18px;
     }
+    .wallet-count-block {
+      margin-top: 2px;
+      .wallet-count {
+        position: relative;
+        top: 1px;
+      }
+    }
   }
   .order-book-card {
     .card-body {
@@ -699,6 +740,9 @@ select, .it-pointer, svg {
       padding-right: 5px;
       padding-left: 5px;
       padding-top: 10px;
+    }
+    .row-padding .col {
+      padding: 0;
     }
   }
 }
@@ -802,5 +846,12 @@ select, .it-pointer, svg {
     top: -3px;
     left: 2px;
     font-size: 12px;
+  }
+}
+.it-fixed-badge {
+  position: relative;
+  span {
+    position: relative;
+    top: 1px
   }
 }

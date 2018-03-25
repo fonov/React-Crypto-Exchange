@@ -1,4 +1,8 @@
 .it-trader {
+  input::placeholder, input:-ms-input-placeholder {
+    color: #282e3d;
+    opacity: 0.6;
+  }
   .it_cycle_times {
     right: 0;
   }
@@ -18,73 +22,6 @@
   }
   .bio {
     margin-top: 32px;
-  }
-  .badge {
-    padding: 0.4em 1.0em;
-    span {
-      color: white !important;
-      text-transform: uppercase;
-      font-size: 14px;
-      font-weight: 600;
-    }
-  }
-  .badge-2 {
-    position: relative;
-    span:first-child {
-      font-weight: 500;
-      font-size: 18px;
-    }
-    span:last-child {
-      margin-left: 3px;
-      position: relative;
-      top: -3px;
-      font-size: 12px;
-      opacity: 0.6;
-      font-weight: normal;
-    }
-  }
-  .profit {
-    margin-top: -1px;
-    margin-left: 2em;
-    img {
-      width: 27px;
-      height: 27px;
-    }
-    .text {
-      margin-top: 4px;
-      line-height: 10px;
-      margin-left: 5px;
-    }
-  }
-  .investments {
-    position: relative;
-    border-right: 1px solid #dee2e6;
-    padding-right: 30px;
-    .row {
-      border-bottom: 1px solid #dee2e6;
-    }
-    .row:last-child {
-      border-bottom: 0;
-    }
-    .col {
-      position: relative;
-      img {
-        width: 30px;
-        position: relative;
-      }
-      img:last-child {
-        left: -10px;
-      }
-      .name {
-        line-height: 35px;
-      }
-    }
-    .number {
-      line-height: 20px;
-      position: relative;
-      top: -5px;
-    }
-    padding-bottom: 10px;
   }
   .trades {
     padding-left: 30px;
@@ -115,6 +52,40 @@
     padding-bottom: 30px;
     margin-left: 0;
     margin-right: 0;
+    .investments {
+      position: relative;
+      border-right: 1px solid #dee2e6;
+      padding-right: 30px;
+      .investments-title {
+        padding-bottom: 16px;
+      }
+      .row {
+        border-bottom: 1px solid #dee2e6;
+        margin-top: 14px;
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+      .col {
+        position: relative;
+        img {
+          width: 30px;
+          position: relative;
+        }
+        img:last-child {
+          left: -10px;
+        }
+        .name {
+          line-height: 35px;
+        }
+      }
+      .number {
+        line-height: 20px;
+        position: relative;
+        top: -5px;
+      }
+      padding-bottom: 10px;
+    }
   }
   .section-2 {
     padding-left: 120px;

@@ -21,11 +21,11 @@ class SingUpModal extends Component {
                 toggle={() => switchSingINModal(false)}
             >
                 <div className='text-center'>
-                    <strong className='it-fs24'>
+                    <strong className='it-fs24 it-fw6'>
                         Sign In
                     </strong>
                 </div>
-                <FormGroup className='text-left'>
+                <FormGroup className='text-left mt-4'>
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name="email" />
                 </FormGroup>

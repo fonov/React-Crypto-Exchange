@@ -64,8 +64,8 @@ class Trader extends Component{
                                     <Col className='col-10' md={10} lg={10} xl={10}>
                                         <ResponsiveContainer width='100%' height={170}>
                                             <AreaChart data={data}>
-                                                <XAxis dataKey="name"  axisLine={false} tickLine={false}/>/>
-                                                <Area type='monotone' dataKey='uv' strokeWidth={4} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
+                                                <XAxis dataKey="name" axisLine={false} tickLine={false}/>
+                                                <Area type='monotone' dataKey='uv' strokeWidth={3} stroke={theme.trader_chart_stroke} fill={theme.trader_chart_fill} />
                                             </AreaChart>
                                         </ResponsiveContainer>
                                     </Col>
@@ -78,13 +78,13 @@ class Trader extends Component{
                                 </Row>
                                 <Row className='border-bottom border-top investments_trades'>
                                     <Col className='col-6 investments' md={6} lg={6} xl={6}>
-                                        <div className='d-flex justify-content-between'>
-                                            <strong className='it-fs16'>Investments</strong>
+                                        <div className='d-flex justify-content-between investments-title'>
+                                            <span className='it-fs16 it-fw6'>Investments</span>
                                             <span className='text-primary it-fs16'>See all</span>
                                         </div>
                                         {
                                             [1,2,3].map(item => (
-                                                <Row className='mt-4' key={item}>
+                                                <Row className='investments-row' key={item}>
                                                     <Col className='col-8' md={8} xl={8} lg={8}>
                                                         <div className='d-flex flex-row'>
                                                             <div>
@@ -92,12 +92,12 @@ class Trader extends Component{
                                                                 <img src='https://chain.so/Bitcoin@2x.png' />
                                                             </div>
                                                             <div className='name'>
-                                                                <strong className='text-primary it-fs14'>XMR/BTC</strong>
+                                                                <span className='text-primary it-fs14 it-fw6'>XMR/BTC</span>
                                                             </div>
                                                         </div>
                                                     </Col>
                                                     <Col className='col-2 text-center number' md={2} xl={2} lg={2}>
-                                                        <strong className='it-fs18'>96</strong>
+                                                        <span className='it-fs18'>96</span>
                                                         <div>
                                                 <span className='it-fs12 it-half-opacity it-medium'>
                                                     trades
@@ -105,7 +105,7 @@ class Trader extends Component{
                                                         </div>
                                                     </Col>
                                                     <Col className='col-2 text-center number' md={2} xl={2} lg={2}>
-                                                        <strong className='it-fs18'>96</strong>
+                                                        <span className='it-fs18'>96</span>
                                                         <div>
                                                 <span className='it-fs12 it-half-opacity it-medium'>
                                                     trades

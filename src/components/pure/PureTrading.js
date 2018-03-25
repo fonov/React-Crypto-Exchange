@@ -122,10 +122,10 @@ class Trading extends Component{
                         <div className='mt-4 buy-sell'>
                             <Card>
                                 <CardBody>
-                                    <div className='text-center'>
+                                    <div className='text-center wallet-count-block'>
                                         <img src={theme.nav_wallet} className='it-icon non_op'/>
-                                        <span className='it-fs16 ml-2 align-middle it-medium'>40.00600209 XMR</span>
-                                        <p className='it-fs14'>
+                                        <span className='it-fs16 ml-2 align-middle it-medium wallet-count'>40.00600209 XMR</span>
+                                        <p className='it-fs12'>
                                             Total 1000.90 USD
                                             <hr className="it-hr-text" data-content="DEMO"/>
                                         </p>
@@ -157,13 +157,16 @@ class Trading extends Component{
                                     </div>
                                     <Label className='mt-3'>Order type</Label>
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className='mb-3'>
-                                        <DropdownToggle color='light' className='w-100'>
+                                        <DropdownToggle color='light' className='w-100 order-dropdown'>
                                             <div className='d-flex justify-content-between'>
                                                 <div>Order type</div>
                                                 <FontAwesome name='caret-down'/>
                                             </div>
                                         </DropdownToggle>
                                         <DropdownMenu>
+                                            <DropdownItem disabled>
+                                                <FontAwesome name='check' className='dropdown-check'/> Action
+                                            </DropdownItem>
                                             {
                                                 [
                                                     'Limit',
@@ -191,7 +194,7 @@ class Trading extends Component{
                                         <span className='text-primary mr-2'>Bid</span>
                                         <span className='text-primary mr-2'>Ask</span>
                                     </div>
-                                    <Label for="total" className='mt-3'>Amount</Label>
+                                    <Label for="total" className='label-amount'>Amount</Label>
                                     <div className="input-group mb-1">
                                         <input type="text" className="form-control" />
                                         <div className="input-group-append">
@@ -212,7 +215,7 @@ class Trading extends Component{
                                         <span className='text-secondary ml-4'>23%</span>
                                     </div>
                                     <Button
-                                        className='bg-success mt-4 mb-3 border-0 py-2'
+                                        className='bg-success mb-3 border-0 py-2 btn-buy'
                                         block
                                         onClick={() => baseWrapper(() => null)}
                                     >
@@ -263,7 +266,7 @@ class Trading extends Component{
                                     </div>
                                     {
                                         order_book ? (
-                                            <Row className='mt-4 text-right it-order-book'>
+                                            <Row className='mt-4 text-right it-order-book row-padding'>
                                                 <Col className='tb-1 col-6'>
                                                     <Table className='order-book-table'>
                                                         <thead>
@@ -335,40 +338,13 @@ class Trading extends Component{
                         <Col md={12} lg={4} xl={4} className='col-12 market'>
                             <Card>
                                 <CardBody className='ml-4'>
-                                    <Row className='mt-2'>
+                                    <Row className='mt-2 row-padding'>
                                         <Col className='it-fs18'>
                                             <strong>Market history</strong>
                                         </Col>
                                     </Row>
-                                    <Row className='mt-4'>
-                                        <Col className='it-fs12 pr-4'>
-
-                                            <Table className='market-history-table'>
-                                                <thead>
-                                                <tr>
-                                                    <th>Time</th>
-                                                    <th>Type</th>
-                                                    <th>Price</th>
-                                                    <th>Amount</th>
-                                                    <th>Total cost</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {
-                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} onClick={() => set_order_close_modal(true)} className='it-pointer'>
-                                                            <td>15:19</td>
-                                                            <td className='text-success'>Buy</td>
-                                                            <td>0.02315000</td>
-                                                            <td>1.05022332</td>
-                                                            <td>1.05022332</td>
-                                                        </tr>
-                                                    ))
-                                                }
-                                                </tbody>
-                                            </Table>
-                                        </Col>
-                                        <Col className='it-fs12 pr-4 it-market-history-extra-col'>
+                                    <Row className='mt-4 row-padding it-market-history-row'>
+                                        <Col className='it-fs12 pr-4' sm={6}>
                                             <Table className='market-history-table'>
                                                 <thead>
                                                 <tr>

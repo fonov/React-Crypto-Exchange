@@ -4,6 +4,7 @@ import {BasePage} from '../elements'
 import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input, Badge } from 'reactstrap';
 import FontAwesome from 'react-fontawesome'
 import TradingViewWidget from 'react-tradingview-widget';
+import TraderBio from '../elements/traderBio'
 
 
 class Trading extends Component{
@@ -13,34 +14,10 @@ class Trading extends Component{
             <BasePage
                 active={[false, false, false]}
             >
-                <div className='it-post'>
+                <div className='it-page it-post'>
                     <div className="d-flex justify-content-center">
-                        <div>
-                            <img src='http://via.placeholder.com/140x140' className='rounded-circle mb-4'/>
-                            <div>
-                                <strong className='it-fs24 text-primary'>Eddie Becker</strong>
-                            </div>
-                            <div className='d-flex flex-row mt-2'>
-                                <div>
-                                    <Badge color='primary' pill className='badge-2'>
-                                        <span>59</span><span>/289</span>
-                                    </Badge>
-                                </div>
-                                <div className='profit'>
-                                    <div className='d-flex flex-row'>
-                                        <div>
-                                            <img src={require('../assets/icons/profit/profit.png')} />
-                                        </div>
-                                        <div className='text-left text'>
-                                            <div><strong className='text-success it-fs12'>57%</strong></div>
-                                            <div><span className='it-fs12 it-half-opacity'>top profit</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <TraderBio short/>
                     </div>
-
                     <Row className='justify-content-center'>
                         <Col className='col-7'>
                             <Card className='post'>
@@ -103,8 +80,6 @@ class Trading extends Component{
                             </Card>
                         </Col>
                     </Row>
-
-
                 </div>
             </BasePage>
         )

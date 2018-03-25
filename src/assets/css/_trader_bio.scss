@@ -1,0 +1,57 @@
+.it-trade_bio {
+  .avatar {
+    margin-bottom: 18px;
+  }
+  .badge {
+    padding: 0.4em 1.0em;
+    span {
+      color: white !important;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .badge-2 {
+    position: relative;
+    span:first-child {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    span:last-child {
+      margin-left: 3px;
+      position: relative;
+      top: -2px;
+      font-size: 12px;
+      opacity: 0.6;
+      font-weight: normal;
+    }
+  }
+  .top-profit {
+    div:last-child {
+      margin-top: 2px;
+    }
+  }
+  .top-100 {
+    letter-spacing: 2px;
+  }
+  .profit {
+    margin-top: 0px;
+    margin-left: 2em;
+    img {
+      width: 27px;
+      height: 27px;
+    }
+    .text {
+      margin-top: 4px;
+      line-height: 10px;
+      margin-left: 5px;
+    }
+  }
+  .copy_trader {
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: #fafcff;
+    }
+  }
+}

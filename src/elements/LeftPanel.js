@@ -7,6 +7,7 @@ import URLS from '../constants/urls'
 import {MyOrdersContainer} from './index'
 import {set_top_panel, set_my_orders} from '../actions/menu'
 import {baseWrapper} from "../actions/eventWrapper";
+import ReactSVG from 'react-svg';
 
 
 class LeftPanel extends Component{
@@ -24,10 +25,11 @@ class LeftPanel extends Component{
     }
 
     _open_left_item(url) {
-        const {push, set_top_panel} = this.props;
+        const {push, set_top_panel, set_my_orders} = this.props;
 
         push(url);
-        set_top_panel(-1)
+        set_top_panel(-1);
+        set_my_orders(0);
     }
 
     render() {
@@ -68,10 +70,10 @@ class LeftPanel extends Component{
                     </div>
                     {
                         [
-                            [wallet_active, URLS.Wallet, theme.nav_wallet, 'Wallets'],
-                            [analytics_active, URLS.Analytics, theme.analytics, 'Analytics'],
-                            [traders_active, URLS.Traders, theme.traders, 'Traders'],
-                            [message_active, URLS.Messages, theme.message_icon, 'Messages']
+                            [wallet_active, URLS.Wallet, require('../assets/icons/nav_wallet.svg'), 'Wallets'],
+                            [analytics_active, URLS.Analytics, require('../assets/icons/analytics.svg'), 'Analytics'],
+                            [traders_active, URLS.Traders, require('../assets/icons/traders.svg'), 'Traders'],
+                            [message_active, URLS.Messages, require('../assets/icons/message.svg'), 'Messages']
                         ].map((item, index) => (
                             <div
                                 key={index}
@@ -80,7 +82,7 @@ class LeftPanel extends Component{
                                     this._open_left_item(item[1])
                                 })}
                             >
-                                <img src={item[2]} className='img_icon' style={{opacity: 1}} />
+                                <ReactSVG path={item[2]} className='img_icon'/>
                                 <p>{item[3]}</p>
                             </div>
                         ))

@@ -25,7 +25,7 @@
       position: relative;
       > span {
         position: relative;
-        top: 1px;
+        top: 0.5px;
       }
     }
     .closed {
@@ -161,6 +161,7 @@
   }
   .no-account {
     margin-left: 15px;
+    margin-right: 8px;
     .singin {
       position: relative;
       top: 7px;
@@ -169,8 +170,10 @@
     }
     .singup {
       position: relative;
-      top: 4px;
+      top: 6px;
       right: -10px;
+      font-weight: 600;
+      font-size: 14px;
     }
   }
 }

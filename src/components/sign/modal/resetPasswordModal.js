@@ -19,11 +19,11 @@ class ResetPasswordModal extends Component {
                 toggle={() => switchResetPasswordModal(false)}
             >
                 <div className='text-center'>
-                    <strong className='it-fs24'>
+                    <strong className='it-fs24 mt-4 it-fw6'>
                         Reset password
                     </strong>
                 </div>
-                <FormGroup className='text-left'>
+                <FormGroup className='text-left mt-4'>
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name="email" />
                 </FormGroup>
