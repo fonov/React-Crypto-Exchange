@@ -11,6 +11,9 @@
   padding-left: 2em;
   padding-right: 2em;
   z-index: 2;
+  @media (max-width: 1439px) {
+    padding-left: 0;
+  }
   .checkbox-label {
     margin-left: 8px;
     position: relative;
@@ -25,6 +28,7 @@
       svg path {
         color: #f26451 !important;
         fill:  #f26451 !important;
+        stroke:  #f26451 !important;
         opacity: 1;
       }
       svg {
@@ -35,6 +39,9 @@
     }
   }
   .table {
+    @media (max-width: 1439px) {
+      font-size: 13px;
+    }
     thead {
       tr {
         th {

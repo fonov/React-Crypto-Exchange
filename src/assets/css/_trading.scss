@@ -50,19 +50,7 @@
     }
   }
   .order-dropdown {
-    height: 34px;
-    padding: 0 0.4em;
-  }
-  .dropdown-item {
-    padding-left: 30px;
-  }
-  .disabled.dropdown-item {
-    position: relative;
-    .dropdown-check {
-      position: absolute;
-      left: 8px;
-      top: 7px
-    }
+    padding: 0.25rem 0.75rem;
   }
   .btn-buy {
     margin-top: 20px;

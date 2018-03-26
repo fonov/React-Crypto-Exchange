@@ -5,16 +5,27 @@ import { Card, CardBody, Row, Col, ButtonGroup, Button, FormGroup, Label, Input,
 import FontAwesome from 'react-fontawesome'
 import TradingViewWidget from 'react-tradingview-widget';
 import TraderBio from '../elements/traderBio'
+import URLS from "../constants/urls";
+import ReactSVG from 'react-svg';
+import {push} from "react-router-redux";
 
 
 class Trading extends Component{
 
     render() {
+
+        const {push} = this.props;
+
         return(
             <BasePage
                 active={[false, false, false]}
             >
                 <div className='it-page it-post'>
+                    <div className='back' onClick={() => push(URLS.Trader)}>
+                        <ReactSVG
+                            path={require('../assets/icons/arrow-left.svg')}
+                        />
+                    </div>
                     <div className="d-flex justify-content-center">
                         <TraderBio short/>
                     </div>
@@ -94,7 +105,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        push: url => dispatch(push(url))
     }
 };
 

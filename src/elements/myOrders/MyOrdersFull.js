@@ -70,6 +70,9 @@ class MyOrdersFull extends Component{
                                 </div>
                             </DropdownToggle>
                             <DropdownMenu>
+                                <DropdownItem disabled>
+                                    <FontAwesome name='check' className='dropdown-check'/> 19/10/2016
+                                </DropdownItem>
                                 <DropdownItem>19/10/2016</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -84,6 +87,9 @@ class MyOrdersFull extends Component{
                                 </div>
                             </DropdownToggle>
                             <DropdownMenu>
+                                <DropdownItem disabled>
+                                    <FontAwesome name='check' className='dropdown-check'/> 19/10/2016
+                                </DropdownItem>
                                 <DropdownItem>19/10/2016</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -97,6 +103,9 @@ class MyOrdersFull extends Component{
                                 </div>
                             </DropdownToggle>
                             <DropdownMenu>
+                                <DropdownItem disabled>
+                                    <FontAwesome name='check' className='dropdown-check'/> All
+                                </DropdownItem>
                                 <DropdownItem>All</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -111,6 +120,9 @@ class MyOrdersFull extends Component{
                                 </div>
                             </DropdownToggle>
                             <DropdownMenu>
+                                <DropdownItem disabled>
+                                    <FontAwesome name='check' className='dropdown-check'/> BTC
+                                </DropdownItem>
                                 <DropdownItem>BTC</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -124,6 +136,9 @@ class MyOrdersFull extends Component{
                                 </div>
                             </DropdownToggle>
                             <DropdownMenu>
+                                <DropdownItem disabled>
+                                    <FontAwesome name='check' className='dropdown-check'/> All type
+                                </DropdownItem>
                                 <DropdownItem>All type</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

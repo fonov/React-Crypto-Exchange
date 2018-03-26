@@ -592,7 +592,7 @@ select, .it-pointer, svg {
   }
   .btn.btn-light.small {
     font-size: 12px;
-    padding: 0.1rem 0.5rem;
+    padding: 0.32rem 0.75rem;
     span {
       top: 0px;
     }
@@ -600,6 +600,20 @@ select, .it-pointer, svg {
   .dropdown-menu {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
+    min-width: 0px;
+    padding: 0;
+    font-size: 12px;
+    .dropdown-item {
+      padding-left: 30px;
+      &.disabled {
+        position: relative;
+        .dropdown-check {
+          position: absolute;
+          left: 8px;
+          top: 7px
+        }
+      }
+    }
   }
 }
 .my-checkbox {

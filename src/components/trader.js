@@ -34,7 +34,9 @@ class Trader extends Component{
                         <div className='d-flex justify-content-between mt-3'>
                             <div className='d-flex flex-row'>
                                 <div className='back' onClick={() => push(URLS.Traders)}>
-                                    <FontAwesome name='long-arrow-left' className=''/>
+                                    <ReactSVG
+                                        path={require('../assets/icons/arrow-left.svg')}
+                                    />
                                 </div>
                                 <span className='it_light_opacity it-fs14 back-label'>Back to traders list</span>
                             </div>

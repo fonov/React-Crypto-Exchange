@@ -4,6 +4,61 @@ $night_bg: #202434;
   background-color: $night_bg !important;
 }
 .it-container.night {
+  .it-trading {
+    .info_row {
+      .col {
+        .row {
+          .col {
+            .row {
+              .col {
+                &:first-child {
+                  color: white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dropdown {
+    .btn.btn-light {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      span.fa-caret-down {
+        color: rgba(255, 255, 255, 0.4)
+      }
+      span {
+      }
+    }
+    .btn.btn-light.small {
+      span {
+      }
+    }
+    .dropdown-menu {
+      background-color: #434955;
+      .dropdown-item {
+        color: white;
+        &.disabled {
+          color: silver;
+          .dropdown-check {
+          }
+        }
+        &:focus, &:hover {
+          background-color: silver;
+          color: black;
+        }
+      }
+    }
+  }
+  .my-checkbox {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    background-image: none !important;
+  }
+  .my_orders_full {
+    .export_btn_small, .export_btn_big {
+      background-color: #393f4c !important;
+    }
+  }
   svg:not(.recharts-surface){
     path, g {
       fill: white;
