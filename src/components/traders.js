@@ -44,74 +44,67 @@ class Traders extends Component{
                             </div>
                         </Col>
                     </Row>
-                    {
-                        [1,2,3].map(item => (
-                            <Row className='traders-cards mt-4' key={item}>
-                                {
-                                    [
-                                        1,
-                                        2,
-                                        3,
-                                        4
-                                    ].map((item) => (
-                                        <Col key={item} className='col-3 it-pointer' md={3} lg={3} xl={3}>
-                                            <Card onClick={() => push(URLS.Trader)}>
-                                                <CardBody>
-                                                    <div className='top-100'>
-                                                        <Badge color='warning' pill>
-                                                            <span>top 100</span>
-                                                        </Badge>
-                                                    </div>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <div>
-                                                            <img src='http://via.placeholder.com/75x75' className='rounded-circle'/>
-                                                        </div>
-                                                        <div className='mt-3'>
-                                                            <div className='d-flex flex-column'>
-                                                                <div><strong className='it-fs18'>Jack Bowman</strong></div>
-                                                                <div className='it-fs12 it-medium it-half-opacity'>
-                                                                    <FontAwesome name='map-marker'/> Uzbekistan
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div className='plus_icon mt-3' onClick={() => push(URLS.Trading)}>
-                                                                <img src={theme['plus']} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <Row className='mt-4'>
-                                                        <Col md={4}>
-                                                            <div className='d-flex flex-column text-center'>
-                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                            </div>
-                                                        </Col>
-                                                        <Col md={4}>
-                                                            <div className='d-flex flex-column text-center'>
-                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                            </div>
-                                                        </Col>
-                                                        <Col md={4}>
-                                                            <div className='d-flex flex-column text-center'>
-                                                                <div><span className='it-medium text-success it-fs22'>34</span></div>
-                                                                <div><span className='it-fs12 it-half-opacity'>trades</span></div>
-                                                            </div>
-                                                        </Col>
-                                                    </Row>
-                                                </CardBody>
-                                                <div className='risk it-fs14 text-center'>
-                                                    <span className='it_light_opacity mr-2'>Risk</span>
-                                                    <span className='it-medium'>3</span>
+                    <Row className='traders-cards'>
+                        {
+                            [1,2,3].map(() => [1, 2, 3, 4].map((item) => (
+                                <Col key={item} className='col-3 it-pointer' sm={4} md={4} lg={3} xl={3}>
+                                    <Card onClick={() => push(URLS.Trader)}>
+                                        <CardBody>
+                                            <div className='top-100'>
+                                                <Badge color='warning' pill>
+                                                    <span>top 100</span>
+                                                </Badge>
+                                            </div>
+                                            <div className='d-flex justify-content-between'>
+                                                <div>
+                                                    <img src='http://via.placeholder.com/75x75' className='rounded-circle'/>
                                                 </div>
-                                            </Card>
-                                        </Col>
-                                    ))
-                                }
-                            </Row>
-                        ))
-                    }
+                                                <div className='mt-3'>
+                                                    <div className='d-flex flex-column'>
+                                                        <div><strong className='it-fs18'>Jack Bowman</strong></div>
+                                                        <div className='it-fs12 it-medium it-half-opacity'>
+                                                            <FontAwesome name='map-marker'/> Uzbekistan
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div className='plus_icon mt-3' onClick={() => push(URLS.Trading)}>
+                                                        <img src={theme['plus']} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <Row className='mt-4'>
+                                                <Col md={4}>
+                                                    <div className='d-flex flex-column text-center'>
+                                                        <div><span className='it-medium text-success it-fs22'>34</span></div>
+                                                        <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                    </div>
+                                                </Col>
+                                                <Col md={4}>
+                                                    <div className='d-flex flex-column text-center'>
+                                                        <div className='it-medium text-success it-fs22 text-truncate'>
+                                                            343434343434343434343434
+                                                        </div>
+                                                        <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                    </div>
+                                                </Col>
+                                                <Col md={4}>
+                                                    <div className='d-flex flex-column text-center'>
+                                                        <div><span className='it-medium text-success it-fs22'>34</span></div>
+                                                        <div><span className='it-fs12 it-half-opacity'>trades</span></div>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                        </CardBody>
+                                        <div className='risk it-fs14 text-center'>
+                                            <span className='it_light_opacity mr-2'>Risk</span>
+                                            <span className='it-medium'>3</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                            )))
+                        }
+                    </Row>
                 </div>
             </BaseLeftPage>
         )

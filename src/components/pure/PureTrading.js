@@ -5,7 +5,6 @@ import {
     FormGroup, Label, Input, Table,
     Dropdown, DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
-// import TradingViewWidget from 'react-tradingview-widget';
 import {push} from "react-router-redux";
 import ReactSVG from 'react-svg';
 import {set_order_close_modal} from "../../actions/menu";
@@ -67,55 +66,75 @@ class Trading extends Component{
                                 <div className='it-title'>
                                     XMR/BTC
                                 </div>
-                                <div className="d-flex it-char-flex">
-                                    <div className='it-char'>
-                                        <span>Price</span>
-                                        <span className='text-success'>0.023206</span>
-                                    </div>
-                                    <div className='it-char'>
-                                        <span>Vol</span>
-                                        <span>8,480</span>
-                                    </div>
-                                </div>
-                                <div className="d-flex flex-column ml-4 it-char-flex-other">
-                                    <div className='it-char'>
-                                        <span>24h</span>
-                                        <span className='text-success'>+6.29%</span>
-                                    </div>
-                                    <div className='it-char'>
-                                        <span>1h</span>
-                                        <span className='text-danger'>−0.01%</span>
-                                    </div>
-                                </div>
-                                <div className="d-flex flex-column ml-4 it-char-flex-other">
-                                    <div className='it-char'>
-                                        <span>Bid</span>
-                                        <span className='text-success'>0.023159</span>
-                                    </div>
-                                    <div className='it-char'>
-                                        <span>Bid</span>
-                                        <span className='text-danger'>0.023194</span>
-                                    </div>
-                                </div>
-                                <div className="d-flex flex-column ml-4 it-char-flex-other">
-                                    <div className='it-char'>
-                                        <span>24H high</span>
-                                        <span>0.024957</span>
-                                    </div>
-                                    <div className='it-char'>
-                                        <span>24H low</span>
-                                        <span>0.023100</span>
-                                    </div>
-                                </div>
+                                <Row className='info_row'>
+                                    <Col sm={3} md={3} lg={5} xl={5} className='align-self-center'>
+                                        <Row className='justify-content-around'>
+                                            <Col sm={12} md={12} lg={5} xl={5}>
+                                                <Row>
+                                                    <Col sm={4} md={3} className='align-self-center'>Price</Col>
+                                                    <Col sm={8} md={9} className='align-self-center text-success'>0.023206</Col>
+                                                </Row>
+                                            </Col>
+                                            <Col sm={12} md={12} lg={5} xl={5}>
+                                                <Row>
+                                                    <Col sm={4} md={3} className='align-self-center'>Vol</Col>
+                                                    <Col sm={8} md={9} className='align-self-center'>8,48048</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    <Col sm={2} md={2} lg={2} xl={2} className='align-self-center'>
+                                        <Row>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={3} className='align-self-center'>24h</Col>
+                                                    <Col sm={9} className='text-success align-self-center'>+6.29%</Col>
+                                                </Row>
+                                            </Col>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={3} className='align-self-center'>1h</Col>
+                                                    <Col sm={9} className='text-danger align-self-center'>−0.01%</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    <Col sm={2} md={2} lg={2} xl={2} className='align-self-center'>
+                                        <Row>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={3} className='align-self-center'>Bid</Col>
+                                                    <Col sm={9} className='text-success align-self-center'>0.023159</Col>
+                                                </Row>
+                                            </Col>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={3} className='align-self-center'>Ask</Col>
+                                                    <Col sm={9} className='text-danger align-self-center'>0.023194</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    <Col sm={2} md={3} lg={3} xl={3} className='align-self-center'>
+                                        <Row>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={7} lg={5} className='align-self-center'>24H high</Col>
+                                                    <Col sm={5} lg={7} className='align-self-center'>0.024957</Col>
+                                                </Row>
+                                            </Col>
+                                            <Col sm={12} md={12} lg={12} xl={12}>
+                                                <Row>
+                                                    <Col sm={7} lg={5} className='align-self-center'>24H low</Col>
+                                                    <Col sm={5} lg={7} className='align-self-center'>0.023100</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
                             </div>
                             <Card className='mt-2 it-trading_view'>
                                 <CardBody>
-                                    {/*<TradingViewWidget*/}
-                                        {/*symbol="BITFINEX:BTCUSD"*/}
-                                        {/*autosize*/}
-                                        {/*locale="ru"*/}
-                                        {/*theme={theme.main_chart}*/}
-                                    {/*/>*/}
                                 </CardBody>
                             </Card>
                         </div>

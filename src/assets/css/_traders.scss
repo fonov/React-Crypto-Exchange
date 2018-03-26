@@ -37,12 +37,11 @@
     background-image: linear-gradient(to right, #27ae66, #f0a202 51%, #f26451), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
   }
   .traders-cards {
-    margin-top: 14px;
+    margin-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
     .col {
-      padding-left: 5px;
-      padding-right: 5px;
+      padding: 14px 5px;
       .card {
         position: relative;
         .top-100 {
