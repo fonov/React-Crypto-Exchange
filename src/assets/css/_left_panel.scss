@@ -78,4 +78,11 @@
     left: 0;
     z-index: 2;
   }
+  @media (max-height: 820px) {
+    overflow-y: scroll;
+    .footer {
+      position: relative;
+      margin-top: 440px;
+    }
+  }
 }
