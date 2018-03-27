@@ -1,10 +1,11 @@
 .my_orders_full {
-  position: fixed;
+  position: absolute;
   left: 94px;
   top: 47px;
   background-color: white;
   width: calc(100% - 94px);
   height: calc(100% - 46px);
+  min-height: $content-min-height;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
   border-top-right-radius: 5px;
   overflow-x: hidden;

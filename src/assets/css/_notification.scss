@@ -3,7 +3,8 @@
   position: fixed;
   width: 324px;
   height: calc(100% - 46px);
-  top: 46px;
+  min-height: $content-min-height;
+  top: 47px;
   box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   right: 4px;

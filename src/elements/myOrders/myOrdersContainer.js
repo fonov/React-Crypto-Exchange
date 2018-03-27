@@ -39,7 +39,7 @@ class MyOrdersContainer extends Component{
                             <div className='my_orders_full' style={{
                                 width: `calc(${value.width}% - 94px)`,
                                 display: value.width > 10 ? 'block' : 'none',
-                                minWidth: value.width === 100 ? 1024 : 0
+                                minWidth: value.width === 100 ? 936 : 0
                             }}>
                                 <MyOrdersFull />
                             </div>

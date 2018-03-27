@@ -1,16 +1,18 @@
 .it-left-panel {
   width: 94px;
   height: 100%;
+  min-height: 800px;
   background-color: #f5f7fa;
-  position: fixed;
+  position: absolute;
   .logo {
     width: 30px;
   }
 }
 .it-left-panel-nav {
   width: 94px;
-  height: 100%;
-  position: fixed;
+  height: calc(100% - 45px);
+  min-height: calc(800px - 45px);
+  position: absolute;
   z-index: 5;
   top: 45px;
   padding-top: 1px;
@@ -19,7 +21,7 @@
   }
   .footer {
     position: absolute;
-    bottom: 55px;
+    bottom: 5px;
     width: 100%;
   }
   .item {
@@ -77,12 +79,5 @@
     width: 100%;
     left: 0;
     z-index: 2;
-  }
-  @media (max-height: 820px) {
-    overflow-y: scroll;
-    .footer {
-      position: relative;
-      margin-top: 440px;
-    }
   }
 }
