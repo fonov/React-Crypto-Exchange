@@ -8,6 +8,7 @@ import {set_theme} from '../actions/theme'
 import {set_top_panel, switch_notification} from "../actions/menu";
 import {switchSingUPModal, switchSingINModal} from '../actions/modals'
 import {baseWrapper} from '../actions/eventWrapper'
+import ReactSVG from 'react-svg';
 
 
 class TopPanel extends Component {
@@ -76,14 +77,16 @@ class TopPanel extends Component {
                         <div className='d-flex flex-row-reverse mr-2'>
                             {
                                 account ? [
-                                    'bg_logout',
+                                    'signout',
                                     'help',
                                     'cog',
                                     'bell'
                                 ].map((item, i) => (
                                     <div onClick={() => item === 'cog' ? push(URLS.Account) :
                                         item === 'bell' ? switch_notification() : null} key={i} className='left-icon'>
-                                        <img src={theme[item]} className='icon'/>
+                                        <div className='icon'>
+                                            <ReactSVG path={require(`../assets/icons/${item}.svg`)}/>
+                                        </div>
                                     </div>
                                 )) : (
                                     <div className='no-account'>

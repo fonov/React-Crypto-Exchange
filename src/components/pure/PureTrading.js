@@ -10,6 +10,7 @@ import ReactSVG from 'react-svg';
 import {set_order_close_modal} from "../../actions/menu";
 import {baseWrapper} from "../../actions/eventWrapper";
 import FontAwesome from 'react-fontawesome'
+import OrderBookTable from './orderBook/table'
 
 
 class Trading extends Component{
@@ -245,10 +246,10 @@ class Trading extends Component{
                             </Card>
                         </div>
                     </div>
-                    <Row className='mt-4'>
+                    <Row className='mt-4 button-cards'>
                         <Col className='col-12' md={12} lg={8} xl={8}>
                             <Card className='order-book-card'>
-                                <CardBody className='ml-3'>
+                                <CardBody>
                                     <div className='d-flex justify-content-between mt-2'>
                                         <div>
                                             <div className="d-flex flex-row">
@@ -283,113 +284,44 @@ class Trading extends Component{
                                             </div>
                                         </div>
                                     </div>
-                                    {
-                                        order_book ? (
-                                            <Row className='mt-4 text-right it-order-book row-padding'>
-                                                <Col className='tb-1 col-6'>
-                                                    <Table className='order-book-table'>
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Sum BTC</th>
-                                                            <th>Total XMR</th>
-                                                            <th>Size BTC</th>
-                                                            <th>Bid</th>
-                                                            <th/>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        {
-                                                            [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                                <tr key={item} className={`${active_index === item ? 'active' : ''} it-pointer`}>
-                                                                    <td>0.00017239</td>
-                                                                    <td>0.00017239</td>
-                                                                    <td>0.00017239</td>
-                                                                    <td className='text-success'>0.00017239</td>
-                                                                    <td className='icon'>
-                                                                        <div className='bg-success'>
-                                                                            <img src={require('../../assets/icons/raw_up.svg')} />
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            ))
-                                                        }
-                                                        </tbody>
-                                                    </Table>
-                                                </Col>
-                                                <Col className='tb-2 col-6'>
-                                                    <Table className='order-book-table reverse'>
-                                                        <thead>
-                                                        <tr>
-                                                            <th/>
-                                                            <th>Ask</th>
-                                                            <th>Total BTC</th>
-                                                            <th>Size XMR</th>
-                                                            <th>Sum BTC</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        {
-                                                            [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                                <tr key={item} className={`${active_index_1 === item ? 'active' : ''} it-pointer`}>
-                                                                    <td className='icon'>
-                                                                        <div className='bg-danger'>
-                                                                            <ReactSVG
-                                                                                path={require('../../assets/icons/raw_down.svg')}
-                                                                            />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td className='text-danger'>0.00017239</td>
-                                                                    <td>0.00017239</td>
-                                                                    <td>0.00017239</td>
-                                                                    <td>0.00017239</td>
-                                                                </tr>
-                                                            ))
-                                                        }
-                                                        </tbody>
-                                                    </Table>
-                                                </Col>
-                                            </Row>
-                                        ) : null
-                                    }
+                                    {order_book ? (<OrderBookTable active_index={active_index} active_index_1={active_index_1}/>) : null}
                                 </CardBody>
                             </Card>
                         </Col>
                         <Col md={12} lg={4} xl={4} className='col-12 market'>
                             <Card>
-                                <CardBody className='ml-4'>
-                                    <Row className='mt-2 row-padding'>
-                                        <Col className='it-fs18'>
-                                            <strong>Market history</strong>
-                                        </Col>
-                                    </Row>
-                                    <Row className='mt-4 row-padding it-market-history-row'>
-                                        <Col className='it-fs12 pr-4' sm={6}>
-                                            <Table className='market-history-table'>
-                                                <thead>
-                                                <tr>
-                                                    <th>Time</th>
-                                                    <th>Type</th>
-                                                    <th>Price</th>
-                                                    <th>Amount</th>
-                                                    <th>Total cost</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {
-                                                    [1,2,3,4,5,6,7,8,9].map((item) => (
-                                                        <tr key={item} onClick={() => set_order_close_modal(true)} className='it-pointer'>
-                                                            <td>15:19</td>
-                                                            <td className='text-success'>Buy</td>
-                                                            <td>0.02315000</td>
-                                                            <td>1.05022332</td>
-                                                            <td>1.05022332</td>
-                                                        </tr>
-                                                    ))
-                                                }
-                                                </tbody>
-                                            </Table>
-                                        </Col>
-                                    </Row>
+                                <CardBody>
+                                    <strong className='market-title it-fs18'>Market history</strong>
+                                    <div>
+                                        <Row className='it-market-history-row justify-content-center'>
+                                            <Col className='it-fs12' sm={6} md={6} lg={12} xl={12}>
+                                                <Table className='market-history-table'>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Time</th>
+                                                        <th>Type</th>
+                                                        <th>Price</th>
+                                                        <th>Amount</th>
+                                                        <th>Total cost</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {
+                                                        [1,2,3,4,5,6,7,8,9].map((item) => (
+                                                            <tr key={item} onClick={() => set_order_close_modal(true)} className='it-pointer'>
+                                                                <td>15:19</td>
+                                                                <td className='text-success'>Buy</td>
+                                                                <td>0.02315000</td>
+                                                                <td>1.05022332</td>
+                                                                <td>1.05022332</td>
+                                                            </tr>
+                                                        ))
+                                                    }
+                                                    </tbody>
+                                                </Table>
+                                            </Col>
+                                        </Row>
+                                    </div>
                                 </CardBody>
                             </Card>
                         </Col>

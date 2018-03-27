@@ -1,9 +1,33 @@
 //Variables
 $night_bg: #202434;
+
+
 .body_night {
   background-color: $night_bg !important;
 }
 .it-container.night {
+  svg[name=help] {
+    g {
+      path:first-child {
+        fill: none;
+      }
+      path:last-child {
+        stroke: none;
+      }
+    }
+  }
+  svg[name=nav_wallet] {
+    g {
+      path:last-child {
+        stroke: none;
+      }
+    }
+  }
+  svg[name=bell], svg[name=cog], svg[name=signout], svg[name=analytics], svg[name=traders], svg[name=message] {
+    path {
+      stroke: none !important;
+    }
+  }
   .it-trading {
     .info_row {
       .col {
@@ -458,8 +482,13 @@ $night_bg: #202434;
   }
   .it-top-panel {
     background-color: #202434;
-    .nav-item.active {
-      background-color: #282e3d;
+    .nav-item {
+      strong {
+        font-weight: 500;
+      }
+      &.active {
+        background-color: #282e3d;
+      }
     }
     .theme-switch {
       background-color: #0b0d14;

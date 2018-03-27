@@ -58,10 +58,40 @@
   .label-amount {
     margin-top: 12px;
   }
+  .button-cards {
+    > .col {
+      &:first-child {
+        padding-right: 10px;
+      }
+      &:last-child {
+        padding-left: 0;
+      }
+      @media all and (max-width: 1439px){
+        &:first-child {
+          padding-right: 15px;
+        }
+        &:last-child {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
   .market {
     .card-body {
       padding: 0;
-      padding-top: 10px;
+      padding-top: 18px;
+      .market-title {
+        margin-top: 8px;
+        margin-left: 24px;
+      }
+      .it-market-history-row {
+        margin: 24px 0 0 0;
+        padding-left: 24px;
+        padding-right: 24px;
+        .col {
+          padding: 0;
+        }
+      }
     }
     table.market-history-table {
       margin-bottom: 10px;
@@ -98,12 +128,6 @@
           opacity: 0.5;
         }
       }
-    }
-  }
-  .row-padding {
-    .col {
-      padding-left: 13px;
-      padding-right: 16px;
     }
   }
   .btn-buy-sell {
@@ -156,8 +180,11 @@
         }
         .input-group {
           height: 34px;
+          input {
+            font-size: 14px;
+            text-align: right;
+          }
         }
-
       }
     }
     position: relative;
@@ -174,13 +201,24 @@
   }
   .order-book-card {
     .card-body {
-      padding-bottom: 0;
-      padding-right: 5px;
-      padding-left: 5px;
-      padding-top: 10px;
+      padding: 10px 0 0 0;
+      > div:first-child {
+        margin-left: 23px;
+      }
     }
     .row-padding .col {
       padding: 0;
+    }
+  }
+  @media (max-width: 1439px) {
+    .market, .order-book-card {
+      .card-body {
+        padding-left: 20px !important;
+        padding-right: 10px !important;
+      }
+    }
+    .market {
+      margin-top: 10px;
     }
   }
   .it-char {
@@ -263,6 +301,166 @@
   .it-trading_view {
     .card-body {
       height: 453px;
+    }
+  }
+  .it-title {
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 8px;
+    @media (min-width: 1440px) {
+      margin-top: 5px;
+      font-size: 34px;
+      font-weight: 700;
+    }
+  }
+  .it-order-book {
+    position: relative;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+    > .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    table.order-book-table.reverse {
+      tbody {
+        tr {
+          td {
+            border-top: none;
+            font-size: 12px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            transition: background-color 300ms, opacity 300ms;
+          }
+          td.icon {
+            position: relative;
+            > div {
+              position: relative;
+              right: -14px;
+              width: 30px;
+              height: 24px;
+              text-align: center;
+              border-radius: 3px;
+              img {
+                margin-top: 6px;
+              }
+              svg {
+                margin-top: 7px;
+                path {
+                  fill: white;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        tr:first-child {
+          td, td:last-child {
+            border-top: 1px solid #dee2e6;
+          }
+          td.icon {
+            padding-top: 2px;
+          }
+          td:first-child {
+            border-top: none;
+          }
+        }
+        tr:last-child {
+          opacity: 0.5;
+        }
+        tr:hover, tr.active {
+          td, td:last-child {
+            background-color: #eceff4;
+          }
+          td:first-child {
+            background-color: white;
+          }
+          td.icon {
+            opacity: 1;
+          }
+        }
+        tr.active {
+          td.icon {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    table.order-book-table {
+      margin-bottom: 10px;
+      thead {
+        tr {
+          th {
+            border: none;
+            font-size: 12px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            border-top: none;
+            font-size: 12px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            transition: background-color 300ms, opacity 300ms;
+          }
+          td.icon {
+            opacity: 0;
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            div {
+              width: 30px;
+              height: 24px;
+              text-align: center;
+              border-radius: 3px;
+              img {
+                margin-top: 6px;
+              }
+              svg {
+                margin-top: 7px;
+                path {
+                  fill: white;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        tr:first-child {
+          td {
+            border-top: 1px solid #dee2e6;
+          }
+          td.icon {
+            padding-top: 2px;
+          }
+          td:last-child {
+            border-top: none;
+          }
+        }
+        tr:last-child {
+          opacity: 0.5;
+        }
+        tr:hover, tr.active {
+          td {
+            background-color: #eceff4;
+          }
+          td:last-child {
+            background-color: white;
+          }
+          td.icon {
+            opacity: 1;
+          }
+        }
+        tr.active {
+          td.icon {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
 }

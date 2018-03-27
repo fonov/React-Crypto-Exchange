@@ -68,15 +68,6 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
-.it-title {
-  font-size: 21px;
-  font-weight: 600;
-  margin-top: 8px;
-  @media (min-width: 1440px) {
-    margin-top: 5px;
-    font-size: 34px;
-  }
-}
 .it_page_title {
   font-size: 28px;
   font-weight: 600;
@@ -200,157 +191,6 @@ select, .it-pointer, svg {
     background-color: #fcfcfa;
   }
 }
-.it-order-book {
-  position: relative;
-  .tb-1 {
-    padding-right: 0;
-  }
-  .tb-2 {
-    position: relative;
-    left: -20px;
-    padding-left: 0;
-  }
-  table.order-book-table.reverse {
-    tbody {
-      tr {
-        td {
-          border-top: none;
-          font-size: 12px;
-          padding-top: 4px;
-          padding-bottom: 4px;
-          transition: background-color 300ms, opacity 300ms;
-        }
-        td.icon {
-          position: relative;
-          > div {
-            position: relative;
-            right: -14px;
-            width: 30px;
-            height: 24px;
-            text-align: center;
-            border-radius: 3px;
-            img {
-              margin-top: 6px;
-            }
-            svg {
-              margin-top: 7px;
-              path {
-                fill: white;
-                opacity: 1;
-              }
-            }
-          }
-        }
-      }
-      tr:first-child {
-        td, td:last-child {
-          border-top: 1px solid #dee2e6;
-        }
-        td.icon {
-          padding-top: 2px;
-        }
-        td:first-child {
-          border-top: none;
-        }
-      }
-      tr:last-child {
-        opacity: 0.5;
-      }
-      tr:hover, tr.active {
-        td, td:last-child {
-          background-color: #eceff4;
-        }
-        td:first-child {
-          background-color: white;
-        }
-        td.icon {
-          opacity: 1;
-        }
-      }
-      tr.active {
-        td.icon {
-          opacity: 0;
-        }
-      }
-    }
-  }
-  table.order-book-table {
-    margin-bottom: 10px;
-    thead {
-      tr {
-        th {
-          border: none;
-          font-size: 12px;
-          padding-top: 4px;
-          padding-bottom: 4px;
-        }
-      }
-    }
-    tbody {
-      tr {
-        td {
-          border-top: none;
-          font-size: 12px;
-          padding-top: 4px;
-          padding-bottom: 4px;
-          transition: background-color 300ms, opacity 300ms;
-        }
-        td.icon {
-          opacity: 0;
-          padding-left: 0;
-          padding-top: 0;
-          padding-bottom: 0;
-          div {
-            width: 30px;
-            height: 24px;
-            text-align: center;
-            border-radius: 3px;
-            img {
-              margin-top: 6px;
-            }
-            svg {
-              margin-top: 7px;
-              path {
-                fill: white;
-                opacity: 1;
-              }
-            }
-          }
-        }
-      }
-      tr:first-child {
-        td {
-          border-top: 1px solid #dee2e6;
-        }
-        td.icon {
-          padding-top: 2px;
-        }
-        td:last-child {
-          border-top: none;
-        }
-      }
-      tr:last-child {
-        opacity: 0.5;
-      }
-      tr:hover, tr.active {
-        td {
-          background-color: #eceff4;
-        }
-        td:last-child {
-          background-color: white;
-        }
-        td.icon {
-          opacity: 1;
-        }
-      }
-      tr.active {
-        td.icon {
-          opacity: 0;
-        }
-      }
-    }
-  }
-}
 .it-table-block {
   width: 20px;
   height: 20px;
@@ -387,7 +227,7 @@ select, .it-pointer, svg {
   margin-left: 93px;
   background-color: #ffffff;
   height: calc(100% - 47px);
-  width: calc(100% - 94px);
+  width: calc(100% - 93px);
   min-width: 936px;
   min-height: $content-min-height;
   border-top-left-radius: 5px;
@@ -406,11 +246,6 @@ select, .it-pointer, svg {
     > div {
       opacity: 0;
     }
-  }
-}
-.it-market-history-row {
-  @media (max-width: 1439px) {
-    justify-content: center !important;
   }
 }
 .it-shadow {
@@ -518,17 +353,6 @@ select, .it-pointer, svg {
 .it-dashed {
   border-bottom: 1px dashed #282e3d;
 }
-@media (max-width: 1439px) {
-  .market, .order-book-card {
-    .card-body {
-      padding-left: 20px !important;
-      padding-right: 10px !important;
-    }
-  }
-  .market {
-    margin-top: 10px;
-  }
-}
 .price_range {
   position: relative;
   span {
@@ -599,16 +423,17 @@ select, .it-pointer, svg {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     min-width: 0px;
-    padding: 0;
+    padding: 10px 0px;
     font-size: 12px;
     .dropdown-item {
       padding-left: 30px;
+      font-size: 14px;
       &.disabled {
         position: relative;
         .dropdown-check {
           position: absolute;
           left: 8px;
-          top: 7px
+          top: 6px
         }
       }
     }

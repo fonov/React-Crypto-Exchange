@@ -74,13 +74,13 @@ class Traders extends Component{
                                                 </div>
                                             </div>
                                             <Row className='mt-4'>
-                                                <Col md={4}>
+                                                <Col sm={4} md={4}>
                                                     <div className='d-flex flex-column text-center'>
                                                         <div><span className='it-medium text-success it-fs22'>34</span></div>
                                                         <div><span className='it-fs12 it-half-opacity'>trades</span></div>
                                                     </div>
                                                 </Col>
-                                                <Col md={4}>
+                                                <Col sm={4} md={4}>
                                                     <div className='d-flex flex-column text-center'>
                                                         <div className='it-medium text-success it-fs22 text-truncate'>
                                                             343434343434343434343434
@@ -88,7 +88,7 @@ class Traders extends Component{
                                                         <div><span className='it-fs12 it-half-opacity'>trades</span></div>
                                                     </div>
                                                 </Col>
-                                                <Col md={4}>
+                                                <Col sm={4} md={4}>
                                                     <div className='d-flex flex-column text-center'>
                                                         <div><span className='it-medium text-success it-fs22'>34</span></div>
                                                         <div><span className='it-fs12 it-half-opacity'>trades</span></div>

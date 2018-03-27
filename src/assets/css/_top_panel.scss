@@ -1,17 +1,12 @@
 .it-top-panel {
   height: auto;
-  width: calc(100% - 96px);
+  width: calc(100% - 93px);
   min-width: 936px;
   background-color: #f5f7fa;
   margin-left: 93px;
   position: absolute;
   overflow-x: hidden;
   overflow-y: hidden;
-  //@media all and (max-width: 1020px){
-  //  background-color: red;
-  //  overflow: scroll;
-  //  width: 100%;
-  //}
   .nav-item {
     background-color: rgba(40, 46, 61, 0.07);
     height: 44px;
@@ -100,7 +95,8 @@
     margin-right: 10px !important;
     margin-left: 10px !important;
     position: relative;
-    top: 12px;
+    top: 14px;
+    opacity: 0.8;
   }
   .theme-switch {
     cursor: pointer;

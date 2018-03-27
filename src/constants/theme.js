@@ -112,7 +112,7 @@ const theme = {
         require('../assets/icons/white_logout.svg'),
     ],
     bg_logout: [
-        require('../assets/icons/bg-signout.svg'),
+        require('../assets/icons/signout.svg'),
         require('../assets/icons/white_bg-signout.svg'),
     ],
     help: [
