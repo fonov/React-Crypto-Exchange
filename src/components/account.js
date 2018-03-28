@@ -77,7 +77,9 @@ class Account extends Component{
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <FontAwesome name='home' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Overview</span>
+                                    <div className='d-flex flex-row'>
+                                        <ReactSVG path={require('../assets/icons/home.svg')}/> <span className='it-fs14 it_light_opacity text'>Overview</span>
+                                    </div>
                                 </ListGroupItem>
                                 <ListGroupItem className={`text_with_icon ${account ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('account')}>
                                     <div className='active_line' />
@@ -102,7 +104,7 @@ class Account extends Component{
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />
-                                    <img src={theme.api} />  <span className='it-fs14 it_light_opacity text'>API</span>
+                                    <img src={theme.api}/>  <span className='it-fs14 it_light_opacity text'>API</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='text_with_icon'>
                                     <div className='active_line' />

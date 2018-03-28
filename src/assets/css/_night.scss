@@ -25,7 +25,9 @@ $night_bg: #202434;
   }
   svg[name=bell], svg[name=cog], svg[name=signout], svg[name=analytics], svg[name=traders], svg[name=message], svg[name=close],
   svg[name=raw_down], svg[name=arrow-left],
-  svg[name=like], svg[name=share2] {
+  svg[name=like],
+  svg[name=home],
+  svg[name=share2] {
     path {
       stroke: none !important;
     }
