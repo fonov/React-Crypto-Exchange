@@ -14,6 +14,7 @@
   overflow-y: scroll;
   .icon-action {
     margin-top: 2px;
+    opacity: 0.8
   }
   svg {
     opacity: 0.8;
@@ -21,8 +22,8 @@
   .lists {
     .list {
       padding: 12px;
-      border-top: 1px solid rgba(0,0,0,0.15);
-      border-bottom: 1px solid rgba(0,0,0,0.15);
+      border-top: 0.5px solid rgba(0,0,0,0.15);
+      border-bottom: 0.5px solid rgba(0,0,0,0.15);
       &.active {
         background-color: rgba(52, 84, 209, 0.15);
       }

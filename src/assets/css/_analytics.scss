@@ -191,6 +191,11 @@
   .my-badge {
     line-height: 10px;
     font-weight: 400;
+    position: relative;
+    span {
+      position: relative;
+      top: 1px;
+    }
   }
   .block-1 {
     margin-right: 12%;

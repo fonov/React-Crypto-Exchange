@@ -23,7 +23,9 @@ $night_bg: #202434;
       }
     }
   }
-  svg[name=bell], svg[name=cog], svg[name=signout], svg[name=analytics], svg[name=traders], svg[name=message] {
+  svg[name=bell], svg[name=cog], svg[name=signout], svg[name=analytics], svg[name=traders], svg[name=message], svg[name=close],
+  svg[name=raw_down], svg[name=arrow-left],
+  svg[name=like], svg[name=share2] {
     path {
       stroke: none !important;
     }
@@ -42,6 +44,16 @@ $night_bg: #202434;
             }
           }
         }
+      }
+    }
+  }
+  .it-notification {
+    background-color: #282e3d;
+    box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+    .lists {
+      .list {
+        border-top: 0.5px solid rgba(255,255,255,0.1);
+        border-bottom: 0.5px solid rgba(255,255,255,0.1);
       }
     }
   }
@@ -77,11 +89,6 @@ $night_bg: #202434;
   .my-checkbox {
     background-color: rgba(255, 255, 255, 0.08) !important;
     background-image: none !important;
-  }
-  .my_orders_full {
-    .export_btn_small, .export_btn_big {
-      background-color: #393f4c !important;
-    }
   }
   svg:not(.recharts-surface){
     path, g {
@@ -129,7 +136,7 @@ $night_bg: #202434;
     .account {
       input, textarea {
         background-color: rgba(255, 255, 255, 0.05) !important;
-        border: solid 1px rgba(255, 255, 255, 0.2) !important;
+        border: solid 1px rgba(255, 255, 255, 0.1) !important;
       }
     }
     .session {
@@ -168,7 +175,7 @@ $night_bg: #202434;
   }
   .it-market-list {
     .top-nav {
-      border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
       .item {
         .active {
           background-color: #3454d1;
@@ -177,14 +184,14 @@ $night_bg: #202434;
       }
     }
     table {
-      border-color: rgba(255, 255, 255, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
       thead, tr, th {
-        border-color: rgba(255, 255, 255, 0.2) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
 
       }
       tbody {
         tr {
-          border-color: rgba(255, 255, 255, 0.2) !important;
+          border-color: rgba(255, 255, 255, 0.1) !important;
         }
       }
     }
@@ -219,7 +226,7 @@ $night_bg: #202434;
       border: 0;
       textarea {
         background-color: rgba(255, 255, 255, 0.05);
-        border: solid 1px rgba(255, 255, 255, 0.2);
+        border: solid 1px rgba(255, 255, 255, 0.1);
       }
     }
     .btn.btn-light {
@@ -238,7 +245,7 @@ $night_bg: #202434;
       }
       input {
         background-color: rgba(255, 255, 255, 0.05) !important;
-        border: solid 1px rgba(255, 255, 255, 0.2) !important;
+        border: solid 1px rgba(255, 255, 255, 0.1) !important;
       }
       .comments {
         .comment {
@@ -282,7 +289,7 @@ $night_bg: #202434;
           }
           input {
             background-color: rgba(255, 255, 255, 0.05) !important;
-            border: solid 1px rgba(255, 255, 255, 0.2) !important;
+            border: solid 1px rgba(255, 255, 255, 0.1) !important;
           }
         }
       }
@@ -409,12 +416,12 @@ $night_bg: #202434;
     background-color: #282e3d;
     .export_btn_big, .export_btn_small {
       .fa.fa-file{
-        color: rgba(255, 255, 255, 0.5) !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
-      background-color: rgba(255, 255, 255, 0.08);
+      background-color: #393f4c !important;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
       border: 0 !important;
-      color: rgba(255, 255, 255, 0.5) !important;
+      color: rgba(255, 255, 255, 1) !important;
     }
     table, thead, tbody, tr, td {
       border-color: rgba(255, 255, 255, 0.1) !important;
@@ -425,7 +432,7 @@ $night_bg: #202434;
     opacity: 0.15;
   }
   .progress {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
   }
   .counter-list {
     .key, .value {
@@ -452,6 +459,14 @@ $night_bg: #202434;
     }
     div:first-child {
       border-right: 0;
+    }
+    .it-btn {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+      }
+      &.active:hover {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+      }
     }
   }
   background-color: #1b1f2b;
@@ -595,8 +610,8 @@ $night_bg: #202434;
   .table-night > thead > tr > td,
   .table-night > thead > tr > th {
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   .bnt-light {
     color: white;
@@ -608,6 +623,11 @@ $night_bg: #202434;
       background-color: rgba(255, 255, 255, 0.05);
       color: white;
       border-color: transparent;
+    }
+  }
+  .dropdown {
+    .btn.btn-light {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
     }
   }
 }

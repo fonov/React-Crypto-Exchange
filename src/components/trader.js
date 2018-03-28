@@ -189,11 +189,11 @@ class Trader extends Component{
                                                         </div>
                                                         <div className='it-fs14 it_light_opacity'>
                                                             <div className='d-flex flex-row'>
-                                                                <div>
-                                                                    <FontAwesome name='thumbs-o-up' /> Like 0
+                                                                <div className='d-flex flex-row'>
+                                                                    <ReactSVG path={require('../assets/icons/like.svg')}/> <span className='ml-1'>Like 0</span>
                                                                 </div>
                                                                 <div className='share'>
-                                                                    <FontAwesome name='share-square-o' />
+                                                                    <ReactSVG path={require('../assets/icons/share2.svg')}/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -214,11 +214,11 @@ class Trader extends Component{
                                                         </div>
                                                         <div className='it-fs14 it_light_opacity'>
                                                             <div className='d-flex flex-row'>
-                                                                <div>
-                                                                    <FontAwesome name='thumbs-o-up' /> Like 0
+                                                                <div className='d-flex flex-row'>
+                                                                    <ReactSVG path={require('../assets/icons/like.svg')}/> <span className='ml-1'>Like 0</span>
                                                                 </div>
                                                                 <div className='share'>
-                                                                    <FontAwesome name='share-square-o' />
+                                                                    <ReactSVG path={require('../assets/icons/share2.svg')}/>
                                                                 </div>
                                                             </div>
                                                         </div>

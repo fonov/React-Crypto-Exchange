@@ -41,7 +41,9 @@ class MyOrdersFull extends Component{
             <div>
                 <Row className='justify-content-between mt-3 ml-4'>
                     <Col>
-                        <p className='it_page_title'>My orders</p>
+                        <p className='it_page_title'>
+                            <strong>My orders</strong>
+                        </p>
                     </Col>
                     <Col>
                         <div className='it_cycle_times main' onClick={() => {
@@ -142,8 +144,11 @@ class MyOrdersFull extends Component{
                                 <DropdownItem>All type</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <CheckBox />
-                        <span className='it_light_opacity checkbox-label'>Hide all canceled</span>
+                        <CheckBox className='ml-2' label={
+                            <span className='it_light_opacity checkbox-label it-pointer'>
+                                Hide all canceled
+                            </span>
+                        }/>
                     </Form>
                     <div>
                         <ExportBtn extraClass='export_btn_big'/>

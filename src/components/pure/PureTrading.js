@@ -59,7 +59,7 @@ class Trading extends Component{
             } = this.state;
 
         return(
-            <div className='it-page'>
+            <div className='it-page it-page-trading'>
                 <div className='it-trading'>
                     <div className='d-flex flex-row mb-2'>
                         <div className='mt-3 main-view'>

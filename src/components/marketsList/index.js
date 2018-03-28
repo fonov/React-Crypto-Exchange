@@ -61,18 +61,18 @@ class MarketList extends Component{
                         <div className='d-flex justify-content-between top-nav'>
                             <div className='d-flex flex-row'>
                                 <div className='item'>
-                                    <strong className='it-fs18 it_light_opacity'>All</strong>
+                                    <span className='it-fs18 it_light_opacity it-medium'>All</span>
                                     <span className='it-fs18 it-half-opacity ml-2'>10</span>
                                 </div>
                                 <div className='item'>
                                     <img src='https://chain.so/Bitcoin@2x.png' />
-                                    <strong className='it-fs18 it_light_opacity'>Bitcoin BTC</strong>
+                                    <span className='it-fs18 it_light_opacity it-medium'>Bitcoin BTC</span>
                                     <span className='it-fs18 it-half-opacity ml-2'>10</span>
                                     <div className='active' />
                                 </div>
                                 <div className='item'>
                                     <img src='https://avatars1.githubusercontent.com/u/7450663?v=3' />
-                                    <strong className='it-fs18 it_light_opacity'>Ethereum ETH</strong>
+                                    <span className='it-fs18 it_light_opacity it-medium'>Ethereum ETH</span>
                                     <span className='it-fs18 it-half-opacity ml-2'>10</span>
                                 </div>
                             </div>

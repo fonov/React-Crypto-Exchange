@@ -122,7 +122,7 @@ class Messages extends Component{
                                     </div>
                                     <div className='w-100'>
                                         <Input type="textarea" className='textarea' name="text" id="exampleText" placeHolder='Write a message...'/>
-                                        <Button color='light' className='border it-fs13 it-medium mt-2'>
+                                        <Button color='light' className='border it-fs13 it-medium mt-2 btn-send'>
                                             Send
                                         </Button>
                                     </div>

@@ -29,17 +29,17 @@ class TraderBio extends Component{
                                 <div>
                                     <FontAwesome name='map-marker'/> Uzbekistan
                                 </div>
-                                <div className='mt-1'>
+                                <div>
                                     Member since 19.09.2017
                                 </div>
-                                <div className='mt-1'>
+                                <div>
                                     218 copiers
                                 </div>
                             </div>
                         </div>
                     ) : null
                 }
-                <div className='d-flex justify-content-center mt-2'>
+                <div className='d-flex justify-content-center mt-3'>
                     <div>
                         <Badge color='primary' pill className='badge-2 it-fixed-badge'>
                             <span>59</span><span>/289</span>

@@ -160,6 +160,9 @@ select, .it-pointer, svg {
 .it-fw6 {
   font-weight: 500;
 }
+.it-ml-10 {
+  margin-left: 10px;
+}
 .it-hr-text {
   margin-top: 1px;
   line-height: 1em;
@@ -221,6 +224,10 @@ select, .it-pointer, svg {
   background-color: #eaebef;
   overflow-x: scroll;
   transition: filter 400ms;
+  overflow-y: hidden;
+  @media all and (max-height: $min-height) {
+    overflow-y: scroll;
+  }
 }
 .it-page {
   top: 46px;
@@ -295,10 +302,10 @@ select, .it-pointer, svg {
       opacity: 0.5;
     }
     &:hover {
-      background-color: #fafcff !important;
+      background-color: #fafcff;
     }
     &.active:hover {
-      background-color: whitesmoke !important;
+      background-color: whitesmoke;
     }
   }
   .it-btn:first-child {
@@ -413,17 +420,24 @@ select, .it-pointer, svg {
     }
   }
   .btn.btn-light.small {
-    font-size: 12px;
+    font-size: 14px;
     padding: 0.32rem 0.75rem;
     span {
-      top: 0px;
+      top: 0;
+    }
+  }
+  .btn.btn-light.extra-small {
+    font-size: 12px;
+    padding: 0.1rem 0.75rem;
+    span {
+      top: 0;
     }
   }
   .dropdown-menu {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
-    min-width: 0px;
-    padding: 10px 0px;
+    min-width: 0;
+    padding: 10px 0;
     font-size: 12px;
     .dropdown-item {
       padding-left: 30px;

@@ -46,9 +46,8 @@
   }
   .progress-block {
     position: relative;
-    margin-left: 1rem;
     .progress {
-      width: 85%;
+      width: 234px;
     }
     svg {
       margin-left: 10px;
@@ -58,8 +57,7 @@
   }
   .counter-list {
     ul {
-      margin-left: -25px;
-      margin-right: 20px;
+      margin-left: -40px;
       li {
         display: block;
         position: relative;
@@ -97,5 +95,11 @@
   .btn {
     padding: 5px 35px;
     font-size: 12px;
+  }
+  .row-sections {
+    > .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }

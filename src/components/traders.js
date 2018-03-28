@@ -56,14 +56,14 @@ class Traders extends Component{
                                                 </Badge>
                                             </div>
                                             <div className='d-flex justify-content-between'>
-                                                <div>
-                                                    <img src='http://via.placeholder.com/75x75' className='rounded-circle'/>
-                                                </div>
-                                                <div className='mt-3'>
-                                                    <div className='d-flex flex-column'>
-                                                        <div><strong className='it-fs18'>Jack Bowman</strong></div>
-                                                        <div className='it-fs12 it-medium it-half-opacity'>
-                                                            <FontAwesome name='map-marker'/> Uzbekistan
+                                                <div className='d-flex flex-row align-items-center'>
+                                                    <img src='http://via.placeholder.com/70x70' className='rounded-circle'/>
+                                                    <div className='it-ml-10'>
+                                                        <div className='d-flex flex-column'>
+                                                            <div><strong className='it-fs18'>Jack Bowman</strong></div>
+                                                            <div className='it-fs12 it-medium it-half-opacity'>
+                                                                <FontAwesome name='map-marker'/> Uzbekistan
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

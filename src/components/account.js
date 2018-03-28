@@ -8,6 +8,7 @@ import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import CircularProgressbar from 'react-circular-progressbar';
 import {set_top_panel} from "../actions/menu";
+import ReactSVG from 'react-svg';
 
 
 class Account extends Component{
@@ -113,12 +114,15 @@ class Account extends Component{
                                 </ListGroupItem>
                                 <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('notification')}>
                                     <div className='active_line' />
-                                    <FontAwesome name='bell' className='it-fs18'/> <span className='it-fs14 it_light_opacity text'>Notifications</span>
+                                    <div className='d-flex flex-row'>
+                                        <ReactSVG path={require('../assets/icons/bell.svg')}/>
+                                        <span className='it-fs14 it_light_opacity text'>Notifications</span>
+                                    </div>
                                 </ListGroupItem>
                             </ListGroup>
-                            <p className='mt-4 pl-4 it-pointer'>
-                                <FontAwesome name='sign-out' className='it-fs18'/> <span className='it-fs14 ml-2'>Logout</span>
-                            </p>
+                            <div className='mt-4 pl-4 it-pointer d-flex flex-row'>
+                                <ReactSVG path={require('../assets/icons/signout.svg')}/> <span className='it-fs14 ml-2'>Logout</span>
+                            </div>
                         </Col>
                         {
                             account ? [<Col className='col-7 account'>

@@ -144,7 +144,7 @@ class Analytics extends Component {
                                                 <Dropdown isOpen={this.state.dropdownOpen} toggle={() => this.setState({
                                                     dropdownOpen: !this.state.dropdownOpen
                                                 })}>
-                                                    <DropdownToggle color='light small'>
+                                                    <DropdownToggle color='light extra-small'>
                                                         <div className='d-flex justify-content-between'>
                                                             <div className='mr-3'>1 day</div>
                                                             <FontAwesome name='caret-down'/>
@@ -237,7 +237,7 @@ class Analytics extends Component {
                                     <Dropdown isOpen={this.state.dropdownOpen1} toggle={() => this.setState({
                                         dropdownOpen1: !this.state.dropdownOpen1
                                     })} className='mr-2'>
-                                        <DropdownToggle color='light small'>
+                                        <DropdownToggle color='light extra-small'>
                                             <div className='d-flex justify-content-between'>
                                                 <div className='mr-3'>ALL</div>
                                                 <FontAwesome name='caret-down'/>
@@ -251,7 +251,7 @@ class Analytics extends Component {
                                     <Dropdown isOpen={this.state.dropdownOpen2} toggle={() => this.setState({
                                         dropdownOpen2: !this.state.dropdownOpen2
                                     })} className='ml-2 mr-2'>
-                                        <DropdownToggle color='light small'>
+                                        <DropdownToggle color='light extra-small'>
                                             <div className='d-flex justify-content-between'>
                                                 <div className='mr-3'>BTC</div>
                                                 <FontAwesome name='caret-down'/>
@@ -265,7 +265,7 @@ class Analytics extends Component {
                                     <Dropdown isOpen={this.state.dropdownOpen3} toggle={() => this.setState({
                                         dropdownOpen3: !this.state.dropdownOpen3
                                     })} className='mr-2'>
-                                        <DropdownToggle color='light small'>
+                                        <DropdownToggle color='light extra-small'>
                                             <div className='d-flex justify-content-between'>
                                                 <div className='mr-3'>USD profit session</div>
                                                 <FontAwesome name='caret-down'/>
@@ -287,7 +287,9 @@ class Analytics extends Component {
                                                 <div className='d-flex flex-column block-1'>
                                                     <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                     <div className='it_light_opacity'>
-                                                        <Badge pill className='bg-secondary my-badge'>Closed</Badge>
+                                                        <Badge pill className='bg-secondary my-badge'>
+                                                            <span>Closed</span>
+                                                        </Badge>
                                                     </div>
                                                 </div>
                                                 <div className='d-flex flex-column'>
@@ -345,7 +347,9 @@ class Analytics extends Component {
                                                 <div className='d-flex flex-column block-1'>
                                                     <strong className='it-fs24 text-primary'>LTC/BTC</strong>
                                                     <div className='it_light_opacity'>
-                                                        <Badge pill className='bg-secondary my-badge'>Closed</Badge>
+                                                        <Badge pill className='bg-secondary my-badge'>
+                                                            <span>Closed</span>
+                                                        </Badge>
                                                     </div>
                                                 </div>
                                                 <div className='d-flex flex-column'>

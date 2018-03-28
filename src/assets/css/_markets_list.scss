@@ -1,5 +1,11 @@
 .it-market-list {
   .top-nav {
+    margin-top: 34px;
+    position: relative;
+    > div.d-flex.flex-row:last-child {
+      position: relative;
+      top: -8px;
+    }
     .item {
       padding-left: 20px;
       padding-right: 20px;
@@ -11,7 +17,7 @@
       }
       .active {
         position: relative;
-        bottom: -21px;
+        bottom: -12px;
         width: 100%;
         border: 2px solid #3454d1;
         border-radius: 1.5px;
@@ -38,7 +44,7 @@
       top: 9px;
     }
     border-bottom: 1px solid #dee2e6;
-    padding-bottom: 12px;
+    padding-bottom: 4px;
     .non_active {
       opacity: 0.2;
     }

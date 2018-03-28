@@ -1,3 +1,7 @@
+.it-page.it-page-trading {
+  padding-left: 32px;
+  padding-right: 16px;
+}
 .it-trading {
   .info_row {
     margin-left: 12px;
@@ -335,8 +339,8 @@
           td.icon {
             position: relative;
             > div {
-              position: relative;
-              right: -14px;
+              position: absolute;
+              right: 0;
               width: 30px;
               height: 24px;
               text-align: center;

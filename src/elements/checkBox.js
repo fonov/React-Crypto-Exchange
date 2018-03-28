@@ -13,12 +13,15 @@ export default class CheckBox extends Component {
     }
 
     render() {
-        const {state} = this.state;
+        const {state} = this.state, {className, label} = this.props;
 
-        return(
-            <div className='my-checkbox' onClick={() => this.setState({state: !state})}>
+        return [
+            <div className={`my-checkbox ${className}`} onClick={() => this.setState({state: !state})}>
                 {state ? <FontAwesome name='check'/> : null}
-            </div>
-        )
+            </div>,
+            <span onClick={() => this.setState({state: !state})}>
+                {label}
+            </span>
+        ]
     }
 }

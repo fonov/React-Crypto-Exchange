@@ -2,6 +2,10 @@
   input::placeholder, input:-ms-input-placeholder {
     color: #282e3d;
     opacity: 0.6;
+    font-size: 14px;
+  }
+  input {
+    font-size: 14px;
   }
   .it_cycle_times {
     right: 0;
@@ -30,7 +34,8 @@
       font-size: 24px;
       font-weight: normal;
       color: #282e3d;
-      background-color: #e5be56;
+      background-color: rgba(229, 190, 86, 0.7);
+      padding: 3px 0.75rem 3px 0.75rem;
     }
     .gr-rating {
       width: 80%;
@@ -131,7 +136,7 @@
       .share {
         position: relative;
         top: -8px;
-        margin-left: 23px;
+        margin-left: 20px;
         width: 33px;
         height: 33px;
         background-color: #f5f7fa;
@@ -141,13 +146,17 @@
         font-size: 15px;
         padding-top: 7px;
         border: 1px solid rgba(0, 0, 0, 0.1);
+        svg {
+          position: relative;
+          left: 1px;
+        }
       }
     }
-    .card:first-child {
-      margin-top: 0;
-    }
     .card {
-      margin-top: 80px;
+      margin-top: 22px;
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
   .trading_journal {
