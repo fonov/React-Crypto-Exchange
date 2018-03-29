@@ -67,23 +67,23 @@ class Account extends Component{
                                     <ListGroupItem className='text_with_icon'>
                                         <div className='active_line' />
                                         <div className='d-flex flex-row'>
-                                            <ReactSVG path={require('../../assets/icons/home.svg')}/> <span className='it-fs14 it_light_opacity text'>Overview</span>
+                                            <ReactSVG path={require('../../assets/icons/home.svg')}/> <span className='it-fs14 it_light_opacity text align-middle'>Overview</span>
                                         </div>
                                     </ListGroupItem>
                                     <ListGroupItem className={`text_with_icon ${account ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('account')}>
                                         <div className='active_line' />
-                                        <img src={theme.account} /> <span className='it-fs14 it_light_opacity text'>Account</span>
+                                        <img src={theme.account} /> <span className='it-fs14 it_light_opacity text align-middle'>Account</span>
                                     </ListGroupItem>
                                     <ListGroupItem className={`text_with_icon ${security ? 'active_tab': ''}`}  onClick={() => this.changeLeftNav('security')}>
                                         <div className='active_line' />
-                                        <img src={theme.security} />  <span className='it-fs14 it_light_opacity text'>Security</span>
+                                        <img src={theme.security} />  <span className='it-fs14 it_light_opacity text align-middle'>Security</span>
                                     </ListGroupItem>
                                     <ListGroupItem className='text_with_icon with_c_prog'>
                                         <div className='active_line' />
                                         <div className='d-flex justify-content-between'>
                                             <div className="d-flex align-items-center">
                                                 <img src={theme.verifications} />
-                                                <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                                <span className='it-fs14 it_light_opacity text align-middle'>Verifications</span>
                                             </div>
                                             <div style={{width: 33, height: 33}}>
                                                 <CircularProgressbar
@@ -95,21 +95,21 @@ class Account extends Component{
                                     </ListGroupItem>
                                     <ListGroupItem className='text_with_icon'>
                                         <div className='active_line' />
-                                        <img src={theme.api}/>  <span className='it-fs14 it_light_opacity text'>API</span>
+                                        <img src={theme.api}/>  <span className='it-fs14 it_light_opacity text align-middle'>API</span>
                                     </ListGroupItem>
                                     <ListGroupItem className='text_with_icon'>
                                         <div className='active_line' />
-                                        <img src={theme.interface} />  <span className='it-fs14 it_light_opacity text'>Interface</span>
+                                        <img src={theme.interface} />  <span className='it-fs14 it_light_opacity text align-middle'>Interface</span>
                                     </ListGroupItem>
                                     <ListGroupItem className='text_with_icon'>
                                         <div className='active_line' />
-                                        <img src={theme.reports} />  <span className='it-fs14 it_light_opacity text'>Reports</span>
+                                        <img src={theme.reports} />  <span className='it-fs14 it_light_opacity text align-middle'>Reports</span>
                                     </ListGroupItem>
                                     <ListGroupItem className={`text_with_icon ${notification ? 'active_tab': ''}`} onClick={() => this.changeLeftNav('notification')}>
                                         <div className='active_line' />
                                         <div className='d-flex flex-row'>
                                             <ReactSVG path={require('../../assets/icons/bell.svg')}/>
-                                            <span className='it-fs14 it_light_opacity text'>Notifications</span>
+                                            <span className='it-fs14 it_light_opacity text align-middle'>Notifications</span>
                                         </div>
                                     </ListGroupItem>
                                 </ListGroup>

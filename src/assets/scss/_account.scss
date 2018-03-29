@@ -5,6 +5,7 @@
     .list-group {
       .list-group-item {
         padding: 1rem 1.25rem;
+        padding-left: 36px;
         position: relative;
         //span.it-fs14 {
         //  line-height: 14px;
@@ -15,7 +16,7 @@
         padding-bottom: 0.63rem;
         position: relative;
         .text {
-          margin-top: 0.45rem;
+          //margin-top: 0.45rem;
         }
         .CircularProgressbar-path {
           stroke: $CircularProgressbarColor !important;

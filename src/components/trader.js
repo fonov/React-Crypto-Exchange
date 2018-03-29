@@ -1,16 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {BasePage} from '../elements'
-import { Row, Col, Progress, Card, CardBody, CardText, Badge, Button, Input } from 'reactstrap';
-import FontAwesome from 'react-fontawesome'
+import {
+    Row, Col, Progress, Card, CardBody,
+    CardText, Badge, Button, Input, Tooltip as TooltipEl
+} from 'reactstrap';
 import URLS from '../constants/urls'
 import {push} from "react-router-redux";
 import { AreaChart, Area, Cell, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 import TradeBio from '../elements/traderBio'
 import ReactSVG from 'react-svg';
+import {FacebookIcon, TwitterIcon, TelegramIcon} from 'react-share';
 
 
 class Trader extends Component{
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            tooltipShare: false
+        };
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.setState({tooltipShare: true}), 500)
+    }
+
     render() {
 
         const {push, theme} = this.props,
@@ -22,7 +38,8 @@ class Trader extends Component{
                 {name: '26.11', uv: 1890, pv: 4800, amt: 2181},
                 {name: '26.11', uv: 2390, pv: 3800, amt: 2500},
                 {name: '26.11', uv: 3490, pv: 4300, amt: 2100},
-            ];
+            ],
+            {tooltipShare} = this.state;
 
         return (
             <BasePage
@@ -192,9 +209,21 @@ class Trader extends Component{
                                                                 <div className='d-flex flex-row'>
                                                                     <ReactSVG path={require('../assets/icons/like.svg')}/> <span className='ml-1'>Like 0</span>
                                                                 </div>
-                                                                <div className='share'>
+                                                                <div className='share' id='TooltipShare'>
                                                                     <ReactSVG path={require('../assets/icons/share2.svg')}/>
                                                                 </div>
+                                                                <TooltipEl placement="top" isOpen={tooltipShare} target="TooltipShare" toggle={() => null}>
+                                                                    <div className='d-flex flex-row tooltip-content'>
+                                                                        <div className='mr-2'>
+                                                                            <FacebookIcon size={34} round={true}/>
+                                                                        </div>
+                                                                        <div className='mr-2'>
+                                                                            <TwitterIcon size={34} round={true} />
+                                                                        </div>
+                                                                        <TelegramIcon size={34} round={true} />
+                                                                    </div>
+                                                                    <div className='my-arrow'/>
+                                                                </TooltipEl>
                                                             </div>
                                                         </div>
                                                     </div>
