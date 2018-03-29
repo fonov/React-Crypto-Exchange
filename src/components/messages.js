@@ -36,7 +36,7 @@ class Messages extends Component{
                         </Col>
                     </Row>
                     <Row className='mt-4'>
-                        <Col className='col-3 contact-list' md={3} lg={3} xl={3}>
+                        <Col className='contact-list' sm={4} md={4} lg={3} xl={3}>
                             <Row>
                                 <Col className='col-10' md={10} xl={10} lg={10}>
                                     <div className="input-group search">
@@ -64,9 +64,11 @@ class Messages extends Component{
                                                     <span className='it-medium it-fs13'>Victor Dunn</span>
                                                     <p className='it-fs12 it_light_opacity'>Comment On The</p>
                                                 </Col>
-                                                <Col className='col-3'>
-                                                    <span className='it-medium it-fs12 it-half-opacity'>16:41</span>
-                                                    <Badge pill style={{backgroundColor: '#9596a0'}}>23</Badge>
+                                                <Col className='col-3 d-flex justify-content-end'>
+                                                    <div className='d-flex flex-column'>
+                                                        <div><span className='it-medium it-fs12 it-half-opacity'>16:41</span></div>
+                                                        <div><Badge pill style={{backgroundColor: '#9596a0'}}>23</Badge></div>
+                                                    </div>
                                                 </Col>
                                             </Row>
                                         </ListGroupItem>
@@ -81,15 +83,17 @@ class Messages extends Component{
                                             <span className='it-medium it-fs13'>Victor Dunn</span>
                                             <p className='it-fs12 it_light_opacity'>Comment On The</p>
                                         </Col>
-                                        <Col className='col-3'>
-                                            <span className='it-medium it-fs12 it-half-opacity'>16:41</span>
-                                            <Badge pill color='light'>23</Badge>
+                                        <Col className='col-3 d-flex justify-content-end'>
+                                            <div className='d-flex flex-column'>
+                                                <div><span className='it-medium it-fs12 it-half-opacity'>16:41</span></div>
+                                                <div><Badge pill color='light'>23</Badge></div>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </ListGroupItem>
                             </ListGroup>
                         </Col>
-                        <Col className='col-6' md={6} lg={6} xl={6}>
+                        <Col sm={5} md={5} lg={6} xl={6}>
                             <div className='chat'>
                                 {
                                     [1,2,3,4,5,6].map(item => (
@@ -129,7 +133,7 @@ class Messages extends Component{
                                 </div>
                             </div>
                         </Col>
-                        <Col className='col-2 text-center trader' md={2} xl={2} lg={2}>
+                        <Col className='text-center trader' sm={3} md={3} xl={2} lg={2}>
                             <TradeBio/>
                         </Col>
                     </Row>

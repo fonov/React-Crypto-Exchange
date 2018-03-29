@@ -94,8 +94,10 @@
   }
   .trader {
     position: relative;
-    left: 60px;
-    margin-top: 62px;
+    margin: 0 auto;
+    > div.it-trade_bio {
+      margin-top: 62px;
+    }
   }
   .btn-send {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
