@@ -12,9 +12,6 @@
   padding-left: 2em;
   padding-right: 2em;
   z-index: 2;
-  @media (max-width: 1439px) {
-    padding-left: 0;
-  }
   .checkbox-label {
     margin-left: 8px;
     position: relative;
@@ -163,6 +160,31 @@
           background: #fff;
           padding-left: 5px;
         }
+      }
+    }
+  }
+  .form-rm {
+    margin-right: 32px;
+  }
+  @media (max-width: 1439px) {
+    padding-left: 0;
+    .checkbox-label {
+      font-size: 12px;
+    }
+    .form-rm {
+      margin-right: 14px;
+    }
+    .dropdown .btn.btn-light.small {
+      font-size: 14px;
+      padding: 0.32rem 0.5rem;
+    }
+    .table th, .table td {
+      padding: 0.75rem 5px;
+    }
+    .progress {
+      .progress-bar {
+        line-height: 20px;
+        font-size: 9px;
       }
     }
   }

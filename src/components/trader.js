@@ -49,10 +49,10 @@ class Trader extends Component{
                             </Col>
                         </div>
                         <Row className='bio'>
-                            <Col className='col-2 text-center' md={2} xl={2} lg={2}>
+                            <Col className='text-center' sm={3} md={3} xl={2} lg={2}>
                                 <TradeBio/>
                             </Col>
-                            <Col className='col-10 section-2' md={10} xl={10} lg={10}>
+                            <Col className='section-2' sm={9} md={9} xl={10} lg={10}>
                                 <div className='d-flex flex-row'>
                                     <strong className='it-fs16'>Return</strong>
                                     <div className="d-flex flex-row it-btn-group ml-2">

@@ -120,14 +120,14 @@ class Trading extends Component{
                                         <Row>
                                             <Col sm={12} md={12} lg={12} xl={12}>
                                                 <Row>
-                                                    <Col sm={7} lg={5} className='align-self-center'>24H high</Col>
-                                                    <Col sm={5} lg={7} className='align-self-center'>0.024957</Col>
+                                                    <Col sm={7} md={6} lg={5} className='align-self-center'>24H high</Col>
+                                                    <Col sm={5} md={6} lg={7} className='align-self-center'>0.024957</Col>
                                                 </Row>
                                             </Col>
                                             <Col sm={12} md={12} lg={12} xl={12}>
                                                 <Row>
-                                                    <Col sm={7} lg={5} className='align-self-center'>24H low</Col>
-                                                    <Col sm={5} lg={7} className='align-self-center'>0.023100</Col>
+                                                    <Col sm={7} md={6} lg={5} className='align-self-center'>24H low</Col>
+                                                    <Col sm={5} md={6} lg={7} className='align-self-center'>0.023100</Col>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -246,7 +246,7 @@ class Trading extends Component{
                             </Card>
                         </div>
                     </div>
-                    <Row className='mt-4 button-cards'>
+                    <Row className='button-cards'>
                         <Col className='col-12' md={12} lg={8} xl={8}>
                             <Card className='order-book-card'>
                                 <CardBody>

@@ -51,7 +51,7 @@ const accountTab = () => {
                         <strong>Save</strong>
                     </Button>
                     <hr/>
-                    <Row className='other-setting'>
+                    <Row className='other-setting mb-2'>
                         <Col className='col-6 border-right'>
                             <strong className='it-fs16'>Email</strong>
                             <div className='mt-3'>

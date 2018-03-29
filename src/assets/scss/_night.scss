@@ -181,7 +181,6 @@ $night_bg: #202434;
       .item {
         .active {
           background-color: #3454d1;
-          bottom: -21px;
         }
       }
     }
@@ -259,11 +258,13 @@ $night_bg: #202434;
   .border-top, .border-right, .border-bottom, .investments .row, .investments{
     border-color: rgba(255, 255, 255, 0.1) !important;
   }
-  .it-trader {
+  .it-trader, .it-post {
     .back {
       background-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
     }
+  }
+  .it-trader {
     .copy_trader {
       background-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
@@ -552,6 +553,23 @@ $night_bg: #202434;
   .it-page {
     background-color: #282e3d;
     .it-trading {
+      table.order-book-table {
+        tbody {
+          tr:hover, tr.active {
+            td {
+              background-color: #1b1f2b;
+            }
+            td:last-child {
+              background-color: transparent;
+            }
+          }
+          tr:first-child {
+            td, td:first-child {
+              border-top: 1px solid rgba(255,255,255, 0.3);
+            }
+          }
+        }
+      }
       table.order-book-table.reverse {
         tbody {
           tr:hover, tr.active {
@@ -562,16 +580,23 @@ $night_bg: #202434;
               background-color: transparent;
             }
           }
+          tr:first-child {
+            td, td:last-child {
+              border-top: 1px solid rgba(255,255,255, 0.3);
+            }
+          }
         }
       }
-      table.order-book-table {
+      table.market-history-table {
         tbody {
           tr:hover, tr.active {
             td {
               background-color: #1b1f2b;
             }
-            td:last-child {
-              background-color: transparent;
+          }
+          tr:first-child {
+            td {
+              border-top: 1px solid rgba(255,255,255, 0.3);
             }
           }
         }
@@ -601,8 +626,15 @@ $night_bg: #202434;
         border-color: rgba(255, 255, 255, 0.25) !important;
       }
     }
-    .card, .it-hr-text, .it-hr-text:after {
-      background-color: #282e3d;
+    .card, .it-hr-text {
+      background-color: transparent;
+      &:before {
+        background: rgba(255, 255, 255, 0.5) !important;
+      }
+      &:after {
+        background: #353b48 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
     }
   }
   .table-night > tbody > tr > td,

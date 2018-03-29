@@ -13,7 +13,7 @@ export default class CheckBox extends Component {
     }
 
     render() {
-        const {state} = this.state, {className, label} = this.props;
+        const {state} = this.state, {className = {}, label} = this.props;
 
         return [
             <div className={`my-checkbox ${className}`} onClick={() => this.setState({state: !state})}>

@@ -58,6 +58,18 @@
       top: 2px;
     }
   }
+  table.table {
+    margin-top: -1px;
+    @media all and (max-width: 1439px){
+      tbody {
+        tr {
+          td, span {
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+  }
   td {
     .fa {
       position: relative;
@@ -112,6 +124,19 @@
               width: 1px;
               background-color: #282e3d;
               opacity: 0.5;
+            }
+            @media all and (max-width: 1439px){
+              .row {
+                .col {
+                  div {
+                    div.text-truncate {
+                      span {
+                        font-size: 14px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

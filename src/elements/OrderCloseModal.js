@@ -68,7 +68,7 @@ class OrderCloseModal extends Component{
                             </LineChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className='d-flex justify-content-center mt-4'>
+                    <div className='d-flex justify-content-center social'>
                         <div className='d-flex flex-row social'>
                             <FacebookIcon size={34} round={true}/>
                             <span className='ml-2 it_light_opacity it-fs12'>Share on Facebook</span>

@@ -1,7 +1,11 @@
 import {SET_TOP_PANEL, SET_MY_ORDERS, SWITCH_NOTIFICATION} from '../../constants/actions'
 
 
-const initialState = {top_panel: 2, left_panel: 0, my_orders: 0, notification: false};
+let initialState = {top_panel: 2, left_panel: 0, my_orders: 0, notification: false};
+
+if (process.env.NODE_ENV === 'development') {
+    initialState = {top_panel: 2, left_panel: 0, my_orders: 0, notification: false};
+}
 
 const menu = (state=initialState, action) => {
     switch (action.type) {

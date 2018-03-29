@@ -8,8 +8,8 @@ export default class SecurityTab extends Component {
         super(props);
 
         this.state = {
-            security_login: false,
-            security_session: true,
+            security_login: true,
+            security_session: false,
             security_two_step: false,
         }
     }
@@ -44,20 +44,33 @@ export default class SecurityTab extends Component {
                             </div>
                         </div>
                     </div>
-
                     <div className='security-data'>
                         {
                             security_login ? (
                                 <div className='login'>
-                                    <Table className='table-night'>
+                                    <Table className='table-night table-small'>
                                         <tbody>
                                         {
                                             [1,2,3,4,5,6,7,8,9,10].map(item => (
                                                 <tr key={item}>
-                                                    <td width="20">185.27.49.66</td>
+                                                    <td>185.27.49.66</td>
                                                     <td><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
                                                     <td>05:36</td>
                                                     <td>09-06-2017</td>
+                                                </tr>
+                                            ))
+                                        }
+                                        </tbody>
+                                    </Table>
+                                    <Table className='table-night table-big'>
+                                        <tbody>
+                                        {
+                                            [1,2,3,4,5,6,7,8,9,10].map(item => (
+                                                <tr key={item}>
+                                                    <td width="25%">185.27.49.66</td>
+                                                    <td width="25%"><span className='it-half-opacity'>Saint Petersburg, Russia</span></td>
+                                                    <td width="25%">05:36</td>
+                                                    <td width="25%">09-06-2017</td>
                                                 </tr>
                                             ))
                                         }
@@ -70,7 +83,21 @@ export default class SecurityTab extends Component {
                             security_session ? (
                                 <div className='session'>
                                     <strong className='it-fs16'>Current sessions</strong>
-                                    <Table className='table-night'>
+                                    <Table className='table-night table-small'>
+                                        <tbody className='border-bottom'>
+                                        <tr>
+                                            <td width="60%">
+                                                OS X 10.13.2, Chrome, 63.0.2347.65<br/>
+                                                162.27.19.10 <span className='it-half-opacity'>Saint Petersburg, Russia</span><br/>
+                                                05:36<span className='ml-2'>09-06-2017</span>
+                                            </td>
+                                            <td width="40%">
+                                                <span className='text-primary'>Online</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </Table>
+                                    <Table className='table-night table-big'>
                                         <tbody className='border-bottom'>
                                         <tr>
                                             <td>OS X 10.13.2, Chrome, 63.0.2347.65</td>
@@ -84,7 +111,26 @@ export default class SecurityTab extends Component {
                                     <span className='text-danger'>Terminate all other sessions</span>
                                     <div className='current-sessions'>
                                         <strong className='it-fs16'>Current sessions</strong>
-                                        <Table className='table-night'>
+                                        <Table className='table-night table-small'>
+                                            <tbody className='border-bottom'>
+                                            {
+                                                [1,2,3,4].map(item => (
+                                                    <tr key={item}>
+                                                        <td width="60%">
+                                                            OS X 10.13.2, Chrome, 63.0.2347.65<br/>
+                                                            162.27.19.10 <span className='it-half-opacity'>Saint Petersburg, Russia</span><br/>
+                                                            05:36<span className='ml-2'>09-06-2017</span>
+
+                                                        </td>
+                                                        <td width="40%">
+                                                            <span className='text-primary it-pointer'>Revoke</span>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            }
+                                            </tbody>
+                                        </Table>
+                                        <Table className='table-night table-big'>
                                             <tbody className='border-bottom'>
                                             {
                                                 [1,2,3,4].map(item => (

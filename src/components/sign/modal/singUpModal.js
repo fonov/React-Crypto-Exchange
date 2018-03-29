@@ -27,11 +27,11 @@ class SingUpModal extends Component {
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name="email" />
                 </FormGroup>
-                <FormGroup className='text-left'>
+                <FormGroup className='text-left mt-2'>
                     <Label for="exampleEmail">Password</Label>
                     <Input type="password" name="password" />
                 </FormGroup>
-                <FormGroup className='text-left'>
+                <FormGroup className='text-left mt-2'>
                     <Label for="exampleEmail">Password confirmation</Label>
                     <Input type="password" name="password_confirmation"/>
                 </FormGroup>

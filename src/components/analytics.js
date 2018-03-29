@@ -96,7 +96,7 @@ class Analytics extends Component {
                     <Row className='card-info'>
                         {
                             [
-                                ['today', 24, 190.58, '+ 16%'],
+                                ['today', 242, 190.58, '+ 16%'],
                                 ['This week', 43, 489.39, '+ 16%'],
                                 ['This month', 90, 700, '+ 16%'],
                                 ['This Year', 200, 2500, '+ 26%'],
@@ -105,23 +105,30 @@ class Analytics extends Component {
                                     <Card>
                                         <CardBody>
                                             <span className='label'>{item[0]}</span>
-                                            <div className="d-flex flex-row info-block">
-                                                <img src={theme.my_orders_icon} />
-                                                <div className="d-flex flex-column info">
-                                                    <span className='value'>{item[1]}</span>
-                                                    <span className='key'>orders</span>
-                                                </div>
-                                                <div className="d-flex flex-column info">
-                                                    <div className='d-flex flex-row'>
-                                                        <ReactSVG
-                                                            path={require('../assets/icons/dollor.svg')}
-                                                            className='symbol'
-                                                        />
-                                                        <span className='value'>{item[2]}</span>
+                                            <Row>
+                                                <Col sm={6} md={6} lg={6} xl={6}>
+                                                    <div className="d-flex flex-row info-block">
+                                                        <img src={theme.my_orders_icon} />
+                                                        <div className="d-flex flex-column info" >
+                                                            <span className='value'>{item[1]}</span>
+                                                            <span className='key'>orders</span>
+                                                        </div>
                                                     </div>
-                                                    <span className='key'>investment</span>
-                                                </div>
-                                            </div>
+                                                </Col>
+                                                <Col className='info-block' sm={6} md={6} lg={6} xl={6}>
+                                                    <div className="d-flex flex-column info">
+                                                        <div className='d-flex flex-row'>
+                                                            <ReactSVG
+                                                                path={require('../assets/icons/dollor.svg')}
+                                                                className='symbol'
+                                                            />
+                                                            <span className='value'>{item[2]}</span>
+                                                        </div>
+                                                        <span className='key'>investment</span>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+
                                             <div className="d-flex flex-row info-block bottom">
                                                 <Badge pill className='bg-success'>{item[3]}</Badge>
                                                 <span>from average performance</span>

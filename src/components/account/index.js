@@ -18,8 +18,8 @@ class Account extends Component{
         super(props);
 
         this.state = {
-            account: true,
-            security: false,
+            account: false,
+            security: true,
             notification: false,
         }
     }
@@ -42,7 +42,7 @@ class Account extends Component{
     render() {
 
         const {push, theme} = this.props,
-            {account, security, security_login, security_session, security_two_step, notification} = this.state;
+            {account, security, notification} = this.state;
 
         return (
             <BasePage
@@ -51,7 +51,7 @@ class Account extends Component{
                 <div className='it-page'>
                     <div className='it-account'>
                         <Row>
-                            <Col className='col-3 left-nav'>
+                            <Col className='left-nav' sm={4} md={4} lg={3} xl={3}>
                                 <ListGroup className='it-pointer'>
                                     <ListGroupItem>
                                         <Row>
@@ -80,9 +80,11 @@ class Account extends Component{
                                     </ListGroupItem>
                                     <ListGroupItem className='text_with_icon with_c_prog'>
                                         <div className='active_line' />
-                                        <div className='d-flex flex-row'>
-                                            <img src={theme.verifications} />
-                                            <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                        <div className='d-flex justify-content-between'>
+                                            <div className="d-flex align-items-center">
+                                                <img src={theme.verifications} />
+                                                <span className='it-fs14 it_light_opacity text'>Verifications</span>
+                                            </div>
                                             <div style={{width: 33, height: 33}}>
                                                 <CircularProgressbar
                                                     percentage={66}
@@ -115,7 +117,7 @@ class Account extends Component{
                                     <ReactSVG path={require('../../assets/icons/signout.svg')}/> <span className='it-fs14 ml-2'>Logout</span>
                                 </div>
                             </Col>
-                            <Col className='col-9'>
+                            <Col sm={8} md={8} lg={9} xl={9}>
                                 {account ? <AccountTab/> : null}
                                 {security ? <SecurityTab/> : null}
                                 {notification ?  <NotificationTab/> : null}

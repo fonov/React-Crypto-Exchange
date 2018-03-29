@@ -163,37 +163,6 @@ select, .it-pointer, svg {
 .it-ml-10 {
   margin-left: 10px;
 }
-.it-hr-text {
-  margin-top: 1px;
-  line-height: 1em;
-  position: relative;
-  outline: 0;
-  border: 0;
-  color: black;
-  text-align: center;
-  height: 1.5em;
-  opacity: .5;
-  font-weight: 600;
-  &:before {
-    content: '';
-    background: #818078;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 0.05em;
-  }
-  &:after {
-    content: attr(data-content);
-    position: relative;
-    display: inline-block;
-    font-size: 9px;
-    padding: 0 .5em;
-    line-height: 2.2em;
-    color: #818078;
-    background-color: #fcfcfa;
-  }
-}
 .it-table-block {
   width: 20px;
   height: 20px;
@@ -211,6 +180,9 @@ select, .it-pointer, svg {
   padding: 5px 10px 5px 10px;
   font-size: 12px;
   color: #282e3d
+}
+.it-modal, .it-container {
+  font-family: "Avenir Next" ,sans-serif !important;
 }
 .it-container {
   width: 100%;

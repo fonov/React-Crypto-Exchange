@@ -22,7 +22,7 @@ class BaseLeftPage extends Component{
     render() {
 
         const {BasePageProps, children, LeftPage} = this.props,
-            page_width = window.innerWidth-96;
+            page_width = window.innerWidth-93;
 
         return (
             <BasePage {...BasePageProps}>

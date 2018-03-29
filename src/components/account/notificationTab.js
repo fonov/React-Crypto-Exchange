@@ -15,7 +15,7 @@ const notificationTab = (props) => {
                 <div className='notification'>
                     <strong className='it-fs28'>Notifications</strong>
                     <Row className='it-pointer'>
-                        <Col className='col-3'>
+                        <Col sm={6} md={4} lg={3} xl={3}>
                             <Card>
                                 <CardBody className='text-center'>
                                     <img src={theme.on_sms} />
@@ -28,7 +28,7 @@ const notificationTab = (props) => {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col className='col-3'>
+                        <Col sm={6} md={4} lg={3} xl={3}>
                             <Card>
                                 <CardBody className='text-center'>
                                     <img src={theme.on_email} />
@@ -40,7 +40,7 @@ const notificationTab = (props) => {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col className='col-3'>
+                        <Col sm={6} md={4} lg={3} xl={3}>
                             <Card>
                                 <CardBody className='text-center'>
                                     <img src={theme.browser} />
@@ -53,7 +53,7 @@ const notificationTab = (props) => {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col className='col-3'>
+                        <Col sm={6} md={4} lg={3} xl={3}>
                             <Card>
                                 <CardBody className='text-center'>
                                     <img src={theme.sound} />

@@ -58,7 +58,7 @@ class MyOrdersFull extends Component{
                 </Row>
                 <div className='d-flex justify-content-between body'>
                     <Form inline className='ml-4'>
-                        <div className="d-flex flex-row it-btn-group mr-4">
+                        <div className="d-flex flex-row it-btn-group form-rm">
                             <div className="it-btn active ">Opened</div>
                             <div className="it-btn border-left-0 "><span>Closed</span></div>
                         </div>
@@ -81,7 +81,7 @@ class MyOrdersFull extends Component{
                         <div className='it-delimiter' />
                         <Dropdown isOpen={this.state.dropdownOpen2} toggle={() => this.setState({
                             dropdownOpen2: !this.state.dropdownOpen2
-                        })} className='ml-2'>
+                        })} className='form-rm ml-2'>
                             <DropdownToggle color='light small'>
                                 <div className='d-flex justify-content-between'>
                                     <div className='mr-3'>19/10/2016</div>
@@ -97,7 +97,7 @@ class MyOrdersFull extends Component{
                         </Dropdown>
                         <Dropdown isOpen={this.state.dropdownOpen3} toggle={() => this.setState({
                             dropdownOpen3: !this.state.dropdownOpen3
-                        })} className='ml-4 mr-2'>
+                        })} className='mr-2'>
                             <DropdownToggle color='light small'>
                                 <div className='d-flex justify-content-between'>
                                     <div className='mr-3'>All</div>
@@ -114,7 +114,7 @@ class MyOrdersFull extends Component{
                         <div className='it-delimiter' />
                         <Dropdown isOpen={this.state.dropdownOpen4} toggle={() => this.setState({
                             dropdownOpen4: !this.state.dropdownOpen4
-                        })} className='ml-2 mr-4'>
+                        })} className='ml-2 form-rm'>
                             <DropdownToggle color='light small'>
                                 <div className='d-flex justify-content-between'>
                                     <div className='mr-3'>BTC</div>
@@ -130,7 +130,7 @@ class MyOrdersFull extends Component{
                         </Dropdown>
                         <Dropdown isOpen={this.state.dropdownOpen5} toggle={() => this.setState({
                             dropdownOpen5: !this.state.dropdownOpen5
-                        })} className='ml-2 mr-4'>
+                        })} className='form-rm'>
                             <DropdownToggle color='light small'>
                                 <div className='d-flex justify-content-between'>
                                     <div className='mr-3'>All type</div>
@@ -144,7 +144,7 @@ class MyOrdersFull extends Component{
                                 <DropdownItem>All type</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <CheckBox className='ml-2' label={
+                        <CheckBox label={
                             <span className='it_light_opacity checkbox-label it-pointer'>
                                 Hide all canceled
                             </span>
@@ -180,7 +180,38 @@ class MyOrdersFull extends Component{
                                     <ReactSVG
                                         path={require('../../assets/icons/raw_down.svg')}
                                     />
-                                    <span>
+                                    <span className='text-danger'>
+                                            Market
+                                    </span>
+                                </div>
+                            </td>
+                            <td className='align-middle'>0.023238</td>
+                            <td className='align-middle'>0.02315878</td>
+                            <td className='align-middle'>0.33023974</td>
+                            <td className='align-middle'>0.00764794 BTC</td>
+                            <td className='align-middle'>
+                                <Progress color="success" value="50">50%</Progress>
+                            </td>
+                            <td className='text-success align-middle'>+18.09 %</td>
+                            <td className='align-middle'>04:44 27/11/2017 </td>
+                            <td>
+                                <div className='it_cycle_times position-static'>
+                                    <ReactSVG
+                                        path={require('../../assets/icons/close_bg.svg')}
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className='align-middle'>
+                                <span className='text-primary it-fw6'>XMR/BTC</span>
+                            </td>
+                            <td className='text-danger align-middle arrow'>
+                                <div className='d-flex flex-row'>
+                                    <ReactSVG
+                                        path={require('../../assets/icons/raw_down.svg')}
+                                    />
+                                    <span className='text-danger'>
                                             Market
                                         </span>
                                 </div>
@@ -211,38 +242,7 @@ class MyOrdersFull extends Component{
                                     <ReactSVG
                                         path={require('../../assets/icons/raw_down.svg')}
                                     />
-                                    <span>
-                                            Market
-                                        </span>
-                                </div>
-                            </td>
-                            <td className='align-middle'>0.023238</td>
-                            <td className='align-middle'>0.02315878</td>
-                            <td className='align-middle'>0.33023974</td>
-                            <td className='align-middle'>0.00764794 BTC</td>
-                            <td className='align-middle'>
-                                <Progress color="success" value="50">50%</Progress>
-                            </td>
-                            <td className='text-success align-middle'>+18.09 %</td>
-                            <td className='align-middle'>04:44 27/11/2017 </td>
-                            <td>
-                                <div className='it_cycle_times position-static'>
-                                    <ReactSVG
-                                        path={require('../../assets/icons/close_bg.svg')}
-                                    />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='align-middle'>
-                                <span className='text-primary it-fw6'>XMR/BTC</span>
-                            </td>
-                            <td className='text-danger align-middle arrow'>
-                                <div className='d-flex flex-row'>
-                                    <ReactSVG
-                                        path={require('../../assets/icons/raw_down.svg')}
-                                    />
-                                    <span>
+                                    <span className='text-danger'>
                                             Market
                                         </span>
                                 </div>

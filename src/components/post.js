@@ -36,20 +36,20 @@ class Trading extends Component{
                                     <div className='it-half-opacity it-fs12 it-medium'>
                                         28 dec 2017
                                     </div>
-                                    <span className='it-fs14'>
+                                    <div className='mt-2 it-fs14'>
                                         So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are.
-                                    </span>
+                                    </div>
                                     <div className='d-flex justify-content-between mt-4'>
                                         <div className='it-fs14 text-primary'>
                                             Hide 4 comments
                                         </div>
                                         <div className='it-fs14 it_light_opacity'>
                                             <div className='d-flex flex-row'>
-                                                <div>
-                                                    <FontAwesome name='thumbs-o-up' /> Like 0
+                                                <div className='d-flex flex-row'>
+                                                    <ReactSVG path={require('../assets/icons/like.svg')}/> <span className='ml-1'>Like 0</span>
                                                 </div>
                                                 <div className='share'>
-                                                    <FontAwesome name='share-square-o' />
+                                                    <ReactSVG path={require('../assets/icons/share2.svg')}/>
                                                 </div>
                                             </div>
                                         </div>

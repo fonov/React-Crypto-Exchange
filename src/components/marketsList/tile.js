@@ -70,26 +70,32 @@ const tile = (props) => {
                                         <FontAwesome name='sort-asc'/> {item[3]}
                                     </span>
                                     {base_chart()}
-                                    <div className='d-flex justify-content-around'>
-                                        <div className='text-center'>
-                                            <span className='it-fs12 it-half-opacity'>Bid</span>
-                                            <div>
-                                                <span className='it-fs18'>{item[4]}</span>
+                                    <Row>
+                                        <Col sm={4} md={4} lg={4} xl={4} className='text-truncate'>
+                                            <div className='text-center'>
+                                                <span className='it-fs12 it-half-opacity'>Bid</span>
+                                                <div className='text-truncate'>
+                                                    <span className='it-fs18'>{item[4]}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='text-center border-left border-right px-4 mx-2'>
-                                            <span className='it-fs12 it-half-opacity'>Spread</span>
-                                            <div>
-                                                <span className='it-fs18'>{item[5]}</span>
+                                        </Col>
+                                        <Col sm={4} md={4} lg={4} xl={4} className='border-left border-right'>
+                                            <div className='text-center text-truncate'>
+                                                <span className='it-fs12 it-half-opacity'>Bid</span>
+                                                <div className='text-truncate'>
+                                                    <span className='it-fs18'>{item[4]}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='text-center'>
-                                            <span className='it-fs12 it-half-opacity'>Ask</span>
-                                            <div>
-                                                <span className='it-fs18'>{item[6]}</span>
+                                        </Col>
+                                        <Col sm={4} md={4} lg={4} xl={4}>
+                                            <div className='text-center'>
+                                                <span className='it-fs12 it-half-opacity'>Ask</span>
+                                                <div className='text-truncate'>
+                                                    <span className='it-fs18'>{item[6]}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </Col>
+                                    </Row>
                                 </CardBody>
                             </Card>
                         </Col>

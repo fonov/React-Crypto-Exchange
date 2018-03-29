@@ -6,6 +6,9 @@
       .list-group-item {
         padding: 1rem 1.25rem;
         position: relative;
+        //span.it-fs14 {
+        //  line-height: 14px;
+        //}
       }
       .list-group-item.with_c_prog {
         padding-top: 0.63rem;
@@ -13,10 +16,6 @@
         position: relative;
         .text {
           margin-top: 0.45rem;
-        }
-        .CircularProgressbar {
-          position: relative;
-          left: 70px;
         }
         .CircularProgressbar-path {
           stroke: $CircularProgressbarColor !important;
@@ -85,7 +84,6 @@
     .security-data {
       margin-top: 40px;
       .login {
-        padding-right: 350px;
         table {
           tbody {
             tr {
@@ -98,7 +96,6 @@
         }
       }
       .session {
-        padding-right: 150px;
         table {
           tbody {
             border-top: 10px solid white;
@@ -115,6 +112,30 @@
         }
       }
     }
+    .table-big {
+      display: block;
+      @media all and (max-width: 1439px) {
+        display: none;
+      }
+    }
+    .table-small {
+      display: none;
+      @media all and (max-width: 1439px) {
+        display: block;
+      }
+      tbody {
+        tr {
+          td:last-child:not(:nth-child(1)) {
+            position: relative;
+            > span {
+              position: absolute;
+              bottom: 0.75rem;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
   }
   .notification {
     margin-top: 22px;
@@ -122,8 +143,7 @@
       margin-top: 20px;
       padding-left: 7.5px;
       .col {
-        padding-left: 7.5px;
-        padding-right: 7.5px;
+        padding: 7.5px;
         .card {
           .card-body {
             padding-top: 40px;
