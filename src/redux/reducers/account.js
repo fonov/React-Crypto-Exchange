@@ -1,7 +1,7 @@
 import {SINGIN, SINGOUT} from '../../constants/actions'
 
 
-let initState = null;
+let initState = {};
 
 if (process.env.NODE_ENV === 'development') {
     initState = {};
